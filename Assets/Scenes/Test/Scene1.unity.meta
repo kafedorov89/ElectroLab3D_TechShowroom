@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d69909ad3d23f754b80f94db420f3ea4
+labels:
+- Sky
+- Ground
+- Concrete
+- Terrain
+- Wall
+- Weapon
+timeCreated: 1445807202
+licenseType: Free
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
