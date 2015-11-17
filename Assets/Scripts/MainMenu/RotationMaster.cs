@@ -20,10 +20,13 @@ public class RotationMaster : MonoBehaviour {
 	public float rotationSpeed = 5.0f; //auto rotation speed
 	public float manualRotation = 5.0f;  //power of manual rotation
 	public RotationDir rotationDir = RotationDir.Right;
+	
+
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+	{
+
 	}
 	
 	// Update is called once per frame

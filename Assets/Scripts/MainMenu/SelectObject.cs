@@ -11,6 +11,13 @@ public class SelectObject : MonoBehaviour {
 	private Ray ray;   
 	private RaycastHit hit; 	
 
+	//private float lastClickTime = 0.0f;
+	public float catchTime = 0.25f;
+
+	public float lastDown = 0.0f;
+	//private float lastUp = 0.0f;
+	
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -30,6 +37,21 @@ public class SelectObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		/*if(Input.GetMouseButtonDown(0)){
+			if(Time.time-lastClickTime < catchTime){
+				//double click
+				print("done:"+(Time.time-lastClickTime).ToString());
+			}else{
+				//normal click
+				print("miss:"+(Time.time-lastClickTime).ToString());
+			}
+			lastClickTime=Time.time;
+		}*/
+		if (Input.GetMouseButtonDown (0)) 
+		{
+			lastDown = Time.time;
+		}
+
 		for (int i = 0; i < targets.Length; ++i)
 		{
 			GameObject obj = targets[i];  //get current object
@@ -43,13 +65,18 @@ public class SelectObject : MonoBehaviour {
 				//obj.transform.localScale = scaleFactor * scales[i];
 
 				//mouse click on object => Load Browser level 
-				if (Input.GetMouseButtonDown(0))
+				if (Input.GetMouseButtonUp(0))
 				{
-					GameObject ctrlObject = GameObject.FindWithTag("GameController");
-					GameControl ctrlComponent = ctrlObject.GetComponent<GameControl>();
-					obj.transform.SetParent(ctrlObject.transform);
-					ctrlComponent.SetTarget(obj);
-					Application.LoadLevel(1);  
+					float deltaTime = Time.time - lastDown;
+					print(deltaTime);
+					if (deltaTime < catchTime)
+					{
+						GameObject ctrlObject = GameObject.FindWithTag("GameController");
+						GameControl ctrlComponent = ctrlObject.GetComponent<GameControl>();
+						obj.transform.SetParent(ctrlObject.transform);
+						ctrlComponent.SetTarget(obj);
+						Application.LoadLevel(1);  
+					}
 				}
 			}
 		}
