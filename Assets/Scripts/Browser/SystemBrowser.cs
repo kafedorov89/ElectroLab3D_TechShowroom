@@ -98,8 +98,9 @@ public class SystemBrowser : MonoBehaviour {
 		for (int i = 0; i < Subs.list.Count; ++i) 
 		{
 			original = Subs.list[i].gameObject;
-			clone = Instantiate(original);
+			if (original == null) continue;
 
+			clone = Instantiate(original);
 			clones.Add(clone);
 			clone.SetActive(false);
 			clone.transform.rotation = original.gameObject.transform.rotation;
@@ -181,20 +182,17 @@ public class SystemBrowser : MonoBehaviour {
 	// Go to subsystem browsing with check current situation
 	public void GoToSubsystemWithCheck(int subs_index)
 	{
-		if (isReady == false)
-			return;
+		if (isReady == false) return;
 		//if index not valid OR this is current zoomed subsystem
-		if (subs_index == -1 || subs_index == current_subs_index)
-			return;
+		if (subs_index == -1 || subs_index == current_subs_index) return;
+		if (Subs.list[subs_index].gameObject == null) return;
+
+		if (current_subs_index == -1)
+			GoToSubsystem(subs_index);
 		else
 		{
-			if (current_subs_index == -1)
-				GoToSubsystem(subs_index);
-			else
-			{
-				stored_index = subs_index;
-				GoToSystem();
-			}
+			stored_index = subs_index;
+			GoToSystem();
 		}
 	}
 	//Go to system browsing
