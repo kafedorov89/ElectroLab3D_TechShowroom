@@ -10,13 +10,9 @@ public class SelectObject : MonoBehaviour {
 	private Vector3[] scales;   //initial scale of each target
 	private Ray ray;   
 	private RaycastHit hit; 	
-
-	//private float lastClickTime = 0.0f;
-	public float catchTime = 0.25f;
-
-	public float lastDown = 0.0f;
-	//private float lastUp = 0.0f;
 	
+	public float catchTime = 0.25f; //maximum time to catch object
+	private float lastDown = 0.0f; //when mouse button down
 
 	// Use this for initialization
 	void Start () 
@@ -37,16 +33,6 @@ public class SelectObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		/*if(Input.GetMouseButtonDown(0)){
-			if(Time.time-lastClickTime < catchTime){
-				//double click
-				print("done:"+(Time.time-lastClickTime).ToString());
-			}else{
-				//normal click
-				print("miss:"+(Time.time-lastClickTime).ToString());
-			}
-			lastClickTime=Time.time;
-		}*/
 		if (Input.GetMouseButtonDown (0)) 
 		{
 			lastDown = Time.time;
@@ -68,7 +54,7 @@ public class SelectObject : MonoBehaviour {
 				if (Input.GetMouseButtonUp(0))
 				{
 					float deltaTime = Time.time - lastDown;
-					print(deltaTime);
+					//print(deltaTime);
 					if (deltaTime < catchTime)
 					{
 						GameObject ctrlObject = GameObject.FindWithTag("GameController");
