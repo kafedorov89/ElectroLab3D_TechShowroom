@@ -10,11 +10,14 @@ public class SelectObject : MonoBehaviour {
 	private Vector3[] scales;   //initial scale of each target
 	private Ray ray;   
 	private RaycastHit hit; 	
+	
+	public float catchTime = 0.25f; //maximum time to catch object
+	private float lastDown = 0.0f; //when mouse button down
 
 	// Use this for initialization
 	void Start () 
 	{
-		SaveInitialScale();
+		//SaveInitialScale();
 	}
 	
 	//Save initial scale of all target objects
@@ -30,26 +33,36 @@ public class SelectObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		if (Input.GetMouseButtonDown (0)) 
+		{
+			lastDown = Time.time;
+		}
+
 		for (int i = 0; i < targets.Length; ++i)
 		{
 			GameObject obj = targets[i];  //get current object
-			obj.transform.localScale = scales[i];  //set origin scale
+			//obj.transform.localScale = scales[i];  //set origin scale
 
 			//detect collision between ray and gameobject collider
 			ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			if (Physics.Raycast(ray, out hit, maxDistance) && hit.collider.gameObject == obj)
 			{
 				//set increased scale
-				obj.transform.localScale = scaleFactor * scales[i];
+				//obj.transform.localScale = scaleFactor * scales[i];
 
 				//mouse click on object => Load Browser level 
-				if (Input.GetMouseButtonDown(0))
+				if (Input.GetMouseButtonUp(0))
 				{
-					GameObject ctrlObject = GameObject.FindWithTag("GameController");
-					GameControl ctrlComponent = ctrlObject.GetComponent<GameControl>();
-					obj.transform.SetParent(ctrlObject.transform);
-					ctrlComponent.SetTarget(obj);
-					Application.LoadLevel(1);  
+					float deltaTime = Time.time - lastDown;
+					//print(deltaTime);
+					if (deltaTime < catchTime)
+					{
+						GameObject ctrlObject = GameObject.FindWithTag("GameController");
+						GameControl ctrlComponent = ctrlObject.GetComponent<GameControl>();
+						obj.transform.SetParent(ctrlObject.transform);
+						ctrlComponent.SetTarget(obj);
+						Application.LoadLevel(1);  
+					}
 				}
 			}
 		}
