@@ -68,9 +68,10 @@ public class MouseOrbit: MonoBehaviour {
 
                 // Smoothly interpolate between the camera's current 
                 // position and it's target position.
-
-                transform.localPosition = Vector3.Lerp(transform.localPosition,
-                                                  new Vector3(transform.localPosition.x - 0.005f * mouseDeltaPosition.x, transform.localPosition.y - 0.005f * mouseDeltaPosition.y, transform.localPosition.z),
+				Vector3 local = transform.localPosition;
+                transform.localPosition = Vector3.Lerp(local,
+                                                  new Vector3(local.x - 0.005f * mouseDeltaPosition.x, 
+				            						local.y - 0.005f * mouseDeltaPosition.y, local.z),
                                                   smoothing * Time.deltaTime);
 
                 Debug.Log("Moving...");

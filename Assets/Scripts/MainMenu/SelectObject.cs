@@ -14,7 +14,7 @@ public class SelectObject : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		SaveInitialScale();
+		//SaveInitialScale();
 	}
 	
 	//Save initial scale of all target objects
@@ -33,14 +33,14 @@ public class SelectObject : MonoBehaviour {
 		for (int i = 0; i < targets.Length; ++i)
 		{
 			GameObject obj = targets[i];  //get current object
-			obj.transform.localScale = scales[i];  //set origin scale
+			//obj.transform.localScale = scales[i];  //set origin scale
 
 			//detect collision between ray and gameobject collider
 			ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			if (Physics.Raycast(ray, out hit, maxDistance) && hit.collider.gameObject == obj)
 			{
 				//set increased scale
-				obj.transform.localScale = scaleFactor * scales[i];
+				//obj.transform.localScale = scaleFactor * scales[i];
 
 				//mouse click on object => Load Browser level 
 				if (Input.GetMouseButtonDown(0))

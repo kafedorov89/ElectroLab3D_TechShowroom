@@ -105,6 +105,7 @@ public class SystemBrowser : MonoBehaviour {
 			clone.SetActive(false);
 			clone.transform.rotation = original.gameObject.transform.rotation;
 			clone.transform.position = original.gameObject.transform.position;
+			clone.transform.localScale = GO.transform.localScale;
 		}
 	}
 
@@ -166,6 +167,9 @@ public class SystemBrowser : MonoBehaviour {
 		float dist = Mathf.Lerp (from, to, fractJourney);
 		
 		orb.distance = dist;
+		orb.cameraDistance.transform.localPosition = new Vector3(orb.cameraDistance.transform.localPosition.x, 
+		                                                    orb.cameraDistance.transform.localPosition.y, 
+		                                                    -dist);
 	}
 	void ChangeAlpha(GameObject obj, float start_time, float shift_time, float from, float to)
 	{
