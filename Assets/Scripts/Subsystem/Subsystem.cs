@@ -2,7 +2,7 @@
 using System.Collections;
 
 [System.Serializable]
-public class Subsystem {
+public class Subsystem /*: MonoBehaviour*/ {
 
 	public string name;
 	public GameObject gameObject;
@@ -16,10 +16,15 @@ public class Subsystem {
 		set { name = value;}
 	}*/
 
+	//void Start()
+	//{
+	
+	//}
+
 	public Subsystem()
 	{
 		name = "some subsystem";
-		gameObject = null;
+		gameObject = null;//transform.gameObject;
 		textAbout = "some description";
 	}
 }

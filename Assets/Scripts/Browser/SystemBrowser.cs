@@ -98,12 +98,14 @@ public class SystemBrowser : MonoBehaviour {
 		for (int i = 0; i < Subs.list.Count; ++i) 
 		{
 			original = Subs.list[i].gameObject;
-			clone = Instantiate(original);
+			if (original == null) continue;
 
+			clone = Instantiate(original);
 			clones.Add(clone);
 			clone.SetActive(false);
 			clone.transform.rotation = original.gameObject.transform.rotation;
 			clone.transform.position = original.gameObject.transform.position;
+			clone.transform.localScale = GO.transform.localScale;
 		}
 	}
 
@@ -165,6 +167,9 @@ public class SystemBrowser : MonoBehaviour {
 		float dist = Mathf.Lerp (from, to, fractJourney);
 		
 		orb.distance = dist;
+		orb.cameraDistance.transform.localPosition = new Vector3(orb.cameraDistance.transform.localPosition.x, 
+		                                                    orb.cameraDistance.transform.localPosition.y, 
+		                                                    -dist);
 	}
 	void ChangeAlpha(GameObject obj, float start_time, float shift_time, float from, float to)
 	{
@@ -181,20 +186,17 @@ public class SystemBrowser : MonoBehaviour {
 	// Go to subsystem browsing with check current situation
 	public void GoToSubsystemWithCheck(int subs_index)
 	{
-		if (isReady == false)
-			return;
+		if (isReady == false) return;
 		//if index not valid OR this is current zoomed subsystem
-		if (subs_index == -1 || subs_index == current_subs_index)
-			return;
+		if (subs_index == -1 || subs_index == current_subs_index) return;
+		if (Subs.list[subs_index].gameObject == null) return;
+
+		if (current_subs_index == -1)
+			GoToSubsystem(subs_index);
 		else
 		{
-			if (current_subs_index == -1)
-				GoToSubsystem(subs_index);
-			else
-			{
-				stored_index = subs_index;
-				GoToSystem();
-			}
+			stored_index = subs_index;
+			GoToSystem();
 		}
 	}
 	//Go to system browsing
