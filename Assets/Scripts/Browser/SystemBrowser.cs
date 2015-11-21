@@ -117,6 +117,9 @@ public class SystemBrowser : MonoBehaviour {
 		{
 			foreach (Material material in rend.materials)
 			{
+				//material.shader = Shader.Find("Standart");
+				//material.GetTag();
+
 				material.SetFloat ("_Mode", (float)renderingMode); //fade or transparent
 				material.SetInt ("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
 				material.SetInt ("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
@@ -125,17 +128,27 @@ public class SystemBrowser : MonoBehaviour {
 				material.EnableKeyword ("_ALPHABLEND_ON");
 				material.DisableKeyword ("_ALPHAPREMULTIPLY_ON");
 				material.renderQueue = 3000;
+
+
 			}
 		}
 	}
 
 	public void SetAlpha(float a)
 	{
-		float r, g, b;
+		//float r, g, b;
 		foreach (MeshRenderer rend in meshes)
 		{
 			foreach (Material material in rend.materials)
 			{
+				/*if (material.HasProperty("_Diff_Color"))
+				{
+					Color clr = material.GetColor("_Diff_Color");
+					r = clr.r;
+					g = clr.g;
+					b = clr.b;
+					material.SetColor("_Diff_Color", new Color(r, g, b, a));
+				}
 				if (material.HasProperty("_Color"))
 				{
 					Color clr = material.GetColor("_Color");
@@ -143,7 +156,14 @@ public class SystemBrowser : MonoBehaviour {
 					g = clr.g;
 					b = clr.b;
 					material.SetColor("_Color", new Color(r, g, b, a));
-				}
+				}*/
+				if (material.HasProperty("_node_op"))
+					material.SetFloat("_node_op", a);
+				SetColorMaterialAlpha(material, "_Color", a);
+				//SetColorMaterialAlpha(material, "Diff_Color", a);
+				//SetColorMaterialAlpha(material, "Spec_Color", a);
+				//SetColorMaterialAlpha(material, "_Diff_Color", a);
+				//SetColorMaterialAlpha(material, "_Spec_Color", a);
 			}
 		}
 	}
@@ -324,5 +344,16 @@ public class SystemBrowser : MonoBehaviour {
 		temp = a;
 		a = b;
 		b = temp;
+	}
+	void SetColorMaterialAlpha(Material material, string colorName, float a)
+	{
+		float r, g, b;
+		if (material.HasProperty (colorName)) {
+			Color clr = material.GetColor (colorName);
+			r = clr.r;
+			g = clr.g;
+			b = clr.b;
+			material.SetColor (colorName, new Color (r, g, b, a));
+		}
 	}
 }
