@@ -50,7 +50,7 @@ public class GameControl : MonoBehaviour {
 		} 
 		else if (currentLevel == 1 && previousLevel == 0)
 		{
-			target.transform.localPosition = new Vector3();
+			//target.transform.localPosition = new Vector3();
 
 			//BrowserGUI gui = t.GetComponent<BrowserGUI>();
 			SystemBrowser browser = target.GetComponent<SystemBrowser>();

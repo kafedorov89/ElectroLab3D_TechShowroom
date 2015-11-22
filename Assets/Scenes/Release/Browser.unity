@@ -128,7 +128,7 @@ Transform:
   m_Children:
   - {fileID: 926436771}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!1 &472135407
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ Transform:
   m_Children:
   - {fileID: 1862511552}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1 &703704065
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +494,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22483640, guid: 387d89e0dac77ff488149210e9e591e0, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22483640, guid: 387d89e0dac77ff488149210e9e591e0, type: 2}
       propertyPath: m_AnchoredPosition.x

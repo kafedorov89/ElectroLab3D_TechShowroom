@@ -59,13 +59,6 @@ public class MouseOrbit: MonoBehaviour {
 
             if (mouseDeltaPosition.magnitude >= step)
             {
-                //var camForward = transform.rotation * Vector3.up; // rotate vector forward 45 degrees around Y
-                //var camForward = transform.rotation * Vector3.left; // rotate vector forward 45 degrees around Y
-                //var camForward = transform.rotation * Vector3.right; // rotate vector forward 45 degrees around Y
-                //var camForward = transform.rotation * Vector3.right; // rotate vector forward 45 degrees around Y
-                //mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-                //Vector3 newCamPos = transform.position + camForward * step;
-
                 // Smoothly interpolate between the camera's current 
                 // position and it's target position.
 				Vector3 local = transform.localPosition;
@@ -95,15 +88,6 @@ public class MouseOrbit: MonoBehaviour {
 
         distance = startDistance;
         cameraDistance.transform.localPosition = new Vector3(0.0f, 0.0f, -distance);
-
-
-        //rigidbody = GetComponent<Rigidbody>();
-
-        // Make the rigid body not change rotation
-        //if (rigidbody != null)
-        //{
-        //	rigidbody.freezeRotation = true;
-        //}
     }
 	
     void Update()
@@ -137,6 +121,7 @@ public class MouseOrbit: MonoBehaviour {
                     y = ClampAngle(y, yMinLimit, yMaxLimit);
                     rotation = Quaternion.Euler(y, x, 0);
                     cameraRotation.transform.localRotation = rotation;
+					//cameraRotation.transform.rotation = rotation;
                     //transform.LookAt(cameraContainer.transform);
                 }
 

@@ -42,6 +42,10 @@ public class SystemBrowser : MonoBehaviour {
 	[Tooltip("Rendering mode for transparency")]
 	public RenderingMode renderingMode = RenderingMode.Fade;
 
+	public float catchTime = 0.25f; //maximum time to catch object
+	private float lastDown0 = 0.0f; //when mouse button down
+	//private float lastDown1 = 0.0f; //when mouse button down
+
 	private int current_subs_index = -1;
 	private Vector3 subFrom, subTo;
 	private float distFrom, distTo;
@@ -89,6 +93,11 @@ public class SystemBrowser : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		if (Input.GetMouseButtonDown (0)) 
+		{
+			lastDown0 = Time.time;
+		}
+
 		if (state == State.System) {
 			if (stored_index != -1)
 				GoToSubsystem (stored_index);
@@ -123,17 +132,19 @@ public class SystemBrowser : MonoBehaviour {
 			{
 				bGUI.textSubsystemName.text = flag.subsystemName;
 				//OutlineObject(flag.gameObject);
-				if (Input.GetMouseButton(0))
+				if (Input.GetMouseButtonUp(0))
 				{
-					int a = GetSubsystemIndex(flag.gameObject);
-					bGUI.ChooseSubsystem(a);
+					float deltaTime = Time.time - lastDown0;
+					if (deltaTime < catchTime)
+					{
+						int a = GetSubsystemIndex(flag.gameObject);
+						bGUI.ChooseSubsystem(a);
+					}
 				}
 				if (Input.GetMouseButton(1))
 				{
-					//flag.gameObject.SetActive(false);
 					int a = GetSubsystemIndex(flag.gameObject);
 					bGUI.HideSubsystem(a);
-					//bGUI.ChooseSubsystem(a);
 				}
 			}
 		}
@@ -226,29 +237,9 @@ public class SystemBrowser : MonoBehaviour {
 		{
 			foreach (Material material in rend.materials)
 			{
-				/*if (material.HasProperty("_Diff_Color"))
-				{
-					Color clr = material.GetColor("_Diff_Color");
-					r = clr.r;
-					g = clr.g;
-					b = clr.b;
-					material.SetColor("_Diff_Color", new Color(r, g, b, a));
-				}
-				if (material.HasProperty("_Color"))
-				{
-					Color clr = material.GetColor("_Color");
-					r = clr.r;
-					g = clr.g;
-					b = clr.b;
-					material.SetColor("_Color", new Color(r, g, b, a));
-				}*/
 				if (material.HasProperty("_node_op"))
 					material.SetFloat("_node_op", a);
 				SetColorMaterialAlpha(material, "_Color", a);
-				//SetColorMaterialAlpha(material, "Diff_Color", a);
-				//SetColorMaterialAlpha(material, "Spec_Color", a);
-				//SetColorMaterialAlpha(material, "_Diff_Color", a);
-				//SetColorMaterialAlpha(material, "_Spec_Color", a);
 			}
 		}
 	}
