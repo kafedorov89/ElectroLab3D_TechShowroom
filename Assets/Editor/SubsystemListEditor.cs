@@ -57,10 +57,14 @@ public class SubsystemListEditor : Editor
 		EditorGUILayout.EndHorizontal();*/
 		//EditorGUILayout.Space();
 
-		EditorGUILayout.BeginHorizontal();
-		if (GUILayout.Button (new GUIContent ("Search and build"))) //, GUILayout.Width (200))) 
+		EditorGUILayout.BeginVertical();
+		if (GUILayout.Button (new GUIContent ("Search subsystems"))) //, GUILayout.Width (200))) 
 			SearchAndBuild ();
-		EditorGUILayout.EndHorizontal();
+		if (GUILayout.Button (new GUIContent ("Create mesh colliders"))) 
+			CreateMeshColliders();
+		if (GUILayout.Button (new GUIContent ("Delete mesh colliders"))) 
+			DeleteMeshColliders();
+		EditorGUILayout.EndVertical();
 
 		//Create List<string> with names of subsystems,
 		//then create popup menu based on it
@@ -153,6 +157,65 @@ public class SubsystemListEditor : Editor
 			MyGameObj.objectReferenceValue = flag.gameObject;
 			MyTextAbout.stringValue = flag.textAbout;
 		}
+	}
+	//automatically create mesh collider for any children mesh of each subsystem
+	void CreateMeshColliders()
+	{
+		int count = 0;
+		Debug.Log ("Creating mesh colliders ...");
+		List<Subsystem> list = t.list;
+		foreach (Subsystem sub in list)
+		{
+			Transform[] childrens = sub.gameObject.GetComponentsInChildren<Transform>();
+			foreach (Transform children in childrens)
+			{
+				MeshFilter meshFilter = children.gameObject.GetComponent<MeshFilter>();
+				if (meshFilter == null) continue;
+
+				//delete old mesh collider
+				MeshCollider meshCollider = children.gameObject.GetComponent<MeshCollider>();
+				if (meshCollider != null)
+				{
+					DestroyImmediate(meshCollider);
+					meshCollider = null;
+				}
+
+				//add new mesh collider
+				children.gameObject.AddComponent<MeshCollider>();
+				count++;
+
+			}
+		}
+		Debug.Log (count + " created");
+
+	}
+	void DeleteMeshColliders()
+	{
+		int count = 0;
+		Debug.Log ("Deleting mesh colliders ...");
+		List<Subsystem> list = t.list;
+		foreach (Subsystem sub in list)
+		{
+			Transform[] childrens = sub.gameObject.GetComponentsInChildren<Transform>();
+			foreach (Transform children in childrens)
+			{
+				MeshFilter meshFilter = children.gameObject.GetComponent<MeshFilter>();
+				if (meshFilter == null) continue;
+				
+				//delete old mesh collider
+				MeshCollider meshCollider = children.gameObject.GetComponent<MeshCollider>();
+				if (meshCollider != null)
+				{
+					DestroyImmediate(meshCollider);
+					meshCollider = null;
+					count++;
+				}
+				//add new mesh collider
+				//children.gameObject.AddComponent<MeshCollider>();
+				
+			}
+		}
+		Debug.Log (count + " deleted");
 	}
 }
 

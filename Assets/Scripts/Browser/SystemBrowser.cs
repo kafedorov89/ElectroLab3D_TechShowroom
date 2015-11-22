@@ -5,8 +5,11 @@ using System.Collections.Generic;
 public enum State {System = 0, ReduceAlpha, ZoomInSubsystem, Subsystem, ZoomOutSubsystem, IncreaseAlpha};
 
 public enum RenderingMode {Fade = 2, Transparent = 3};
+public enum FadeMode {Continuously, Fast};
 
 public class SystemBrowser : MonoBehaviour {
+
+	//public Material outlineMat; 
 
 	Camera mainCam; //main camera
 	GameObject GO; //gameobject of main system
@@ -15,6 +18,7 @@ public class SystemBrowser : MonoBehaviour {
 	SubsystemList Subs;
 	MouseOrbit orbitNav;  //orbit navigation
 	GameObject cameraHelper; //camera looks on it when moving
+	BrowserGUI bGUI;
 
 	Vector3 mainPos;
 	Vector3 subPos;
@@ -32,6 +36,9 @@ public class SystemBrowser : MonoBehaviour {
 	[Tooltip("How mush camera distance must be reduced when zoom in")]
 	public float zoomIncrement = 2.0f; //насколько приближать подсистему к камере
 
+	[Tooltip("How should system fade")]
+	public FadeMode fadeMode = FadeMode.Continuously;
+
 	[Tooltip("Rendering mode for transparency")]
 	public RenderingMode renderingMode = RenderingMode.Fade;
 
@@ -47,6 +54,9 @@ public class SystemBrowser : MonoBehaviour {
 	private State state = State.System;
 	private List<GameObject> clones = new List<GameObject>();
 
+	private Ray ray;   
+	private RaycastHit hit;
+
 	//Is browser ready to handle new command
 	public bool IsReady()
 	{
@@ -56,6 +66,9 @@ public class SystemBrowser : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		GameObject canvas = GameObject.FindWithTag ("Player");
+		bGUI = canvas.GetComponent<BrowserGUI> (); 
+		
 		GO = gameObject;
 		cameraHelper = new GameObject("CameraHelper");
 
@@ -69,6 +82,7 @@ public class SystemBrowser : MonoBehaviour {
 
 		meshes = GetComponentsInChildren<MeshRenderer>();
 		PrepareForAlphaBlending ();
+		//PrepareForOutline (); //New !!!
 		m_alpha = alphaMax;
 	}
 	
@@ -89,8 +103,58 @@ public class SystemBrowser : MonoBehaviour {
 			ZoomOutSub();
 		if (state == State.IncreaseAlpha) 
 			IncreaseAlpha();
-	}
 
+		UpdateRaycasting ();
+	}
+	void UpdateRaycasting()
+	{
+		if (state != State.System)
+			return;
+
+		//raycasting
+		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		bool isHit = Physics.Raycast (ray, out hit, 100.0f);
+		if (isHit) 
+		{
+			//Collider coll = hit.collider;
+			GameObject obj = hit.collider.gameObject;
+			SubsystemFlag flag = obj.GetComponentInParent<SubsystemFlag>();
+			if (flag != null)
+			{
+				bGUI.textSubsystemName.text = flag.subsystemName;
+				//OutlineObject(flag.gameObject);
+				if (Input.GetMouseButton(0))
+				{
+					int a = GetSubsystemIndex(flag.gameObject);
+					bGUI.ChooseSubsystem(a);
+				}
+				if (Input.GetMouseButton(1))
+				{
+					//flag.gameObject.SetActive(false);
+					int a = GetSubsystemIndex(flag.gameObject);
+					bGUI.HideSubsystem(a);
+					//bGUI.ChooseSubsystem(a);
+				}
+			}
+		}
+		else
+			bGUI.textSubsystemName.text = "";
+
+	}
+	/*void OutlineObject(GameObject obj)
+	{
+		MeshRenderer[] objMeshes = obj.GetComponentsInChildren<MeshRenderer>();
+		if (objMeshes == null)
+			return;
+		foreach (MeshRenderer rend in objMeshes)
+		{
+			Material m = rend.materials[1];
+			m.SetFloat("_outline_enable", 1.0f);
+			//Material m = Resources.Load("Outline") as Material;
+			//m.SetFloat("_outline_width", 0.3f);
+			//rend.materials.SetValue(m, 1);
+		}
+	}*/
 	//Create clone for each subsystem gameobject
 	void CreateClones()
 	{
@@ -105,7 +169,11 @@ public class SystemBrowser : MonoBehaviour {
 			clone.SetActive(false);
 			clone.transform.rotation = original.gameObject.transform.rotation;
 			clone.transform.position = original.gameObject.transform.position;
-			clone.transform.localScale = GO.transform.localScale;
+			//clone.transform.localScale = GO.transform.localScale;
+
+			clone.transform.parent = GO.transform;
+			clone.transform.localScale = original.gameObject.transform.localScale;
+			//clone.transform.sca = original.gameObject.transform.lossyScale;
 		}
 	}
 
@@ -117,9 +185,6 @@ public class SystemBrowser : MonoBehaviour {
 		{
 			foreach (Material material in rend.materials)
 			{
-				//material.shader = Shader.Find("Standart");
-				//material.GetTag();
-
 				material.SetFloat ("_Mode", (float)renderingMode); //fade or transparent
 				material.SetInt ("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
 				material.SetInt ("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
@@ -128,11 +193,31 @@ public class SystemBrowser : MonoBehaviour {
 				material.EnableKeyword ("_ALPHABLEND_ON");
 				material.DisableKeyword ("_ALPHAPREMULTIPLY_ON");
 				material.renderQueue = 3000;
-
-
 			}
 		}
 	}
+	/*void PrepareForOutline()
+	{
+		if (meshes == null)
+			return;
+		foreach (MeshRenderer rend in meshes)
+		{
+
+			Material m = outlineMat;
+
+			m.SetFloat("_outline_enable", 0.0f);
+			//m.SetFloat("_outline_width", 0.0f);
+			//m.SetColor("_outline_color", new Color(0,1,0,0));
+
+			//m.shader = Shader.Find("Outline");
+			Material[] oldMats = rend.materials;
+			Material[] newMats = new Material[oldMats.Length+1];
+			for (int i = 0; i < oldMats.Length; ++i)
+				newMats[i] = oldMats[i];
+			newMats[oldMats.Length] = m;
+			rend.materials = newMats;
+		}
+	}*/
 
 	public void SetAlpha(float a)
 	{
@@ -202,6 +287,16 @@ public class SystemBrowser : MonoBehaviour {
 		SetAlpha(alpha);
 	}
 	//--- increadible code duplicate --- !!!
+	public int GetSubsystemIndex(GameObject obj)
+	{
+		List<Subsystem> list = Subs.list;
+		for (int i = 0; i < list.Count; ++i)
+		{
+			if (list[i].gameObject == obj)
+				return i;
+		}
+		return -1;
+	}
 
 	// Go to subsystem browsing with check current situation
 	public void GoToSubsystemWithCheck(int subs_index)
@@ -211,13 +306,26 @@ public class SystemBrowser : MonoBehaviour {
 		if (subs_index == -1 || subs_index == current_subs_index) return;
 		if (Subs.list[subs_index].gameObject == null) return;
 
-		if (current_subs_index == -1)
+		if (current_subs_index == -1 && IsHiddenSubsystems()==false)
 			GoToSubsystem(subs_index);
 		else
 		{
 			stored_index = subs_index;
 			GoToSystem();
 		}
+	}
+	public bool IsHiddenSubsystems()
+	{
+		foreach (Subsystem sub in Subs.list)
+		{
+			if (sub.gameObject.activeInHierarchy == false)
+				return true;
+		}
+		return false;
+	}
+	public void HideSubsystem(int index)
+	{
+		Subs.list [index].gameObject.SetActive (false);
 	}
 	//Go to system browsing
 	public void GoToSystem()
@@ -230,6 +338,11 @@ public class SystemBrowser : MonoBehaviour {
 		isReady = false;
 		FixTime ();
 		orbitNav.target = GO.transform;
+
+		//new fuctional +++
+		//foreach (Subsystem sub in Subs.list)
+		//	sub.gameObject.SetActive (true);
+		//new fuctional ---
 
 		//switch point from and point to, start distance
 		//and finish distance
@@ -259,8 +372,15 @@ public class SystemBrowser : MonoBehaviour {
 	//Reduce alpha-channel of whole system
 	void ReduceAlpha()
 	{
-		if (m_alpha != alphaMin) {
-			ChangeAlpha (GO, startTime, shiftAlphaTime, alphaMax, alphaMin);
+		if (m_alpha != alphaMin)
+		{
+			if (fadeMode == FadeMode.Continuously)
+				ChangeAlpha (GO, startTime, shiftAlphaTime, alphaMax, alphaMin);
+			else
+			{
+				m_alpha = alphaMin;
+				SetAllMeshesVisibility(false);
+			}
 		}
 		else
 		{
@@ -282,7 +402,15 @@ public class SystemBrowser : MonoBehaviour {
 	void IncreaseAlpha()
 	{
 		if (m_alpha != alphaMax)
-			ChangeAlpha (GO, startTime, shiftAlphaTime, alphaMin, alphaMax);
+		{
+			if (fadeMode == FadeMode.Continuously)
+				ChangeAlpha (GO, startTime, shiftAlphaTime, alphaMin, alphaMax);
+			else
+			{
+				m_alpha = alphaMax;
+				SetAllMeshesVisibility(true);
+			}
+		}
 		else
 		{
 			state = State.System; //next state
@@ -347,13 +475,34 @@ public class SystemBrowser : MonoBehaviour {
 	}
 	void SetColorMaterialAlpha(Material material, string colorName, float a)
 	{
-		float r, g, b;
-		if (material.HasProperty (colorName)) {
-			Color clr = material.GetColor (colorName);
-			r = clr.r;
-			g = clr.g;
-			b = clr.b;
-			material.SetColor (colorName, new Color (r, g, b, a));
+		if (material.HasProperty (colorName))
+		{
+			Color clr = material.GetColor(colorName);
+			material.SetColor (colorName, new Color (clr.r, clr.g, clr.b, a));
+		}
+	}
+	void SetAllSubsystemsActivity(bool isActive)
+	{
+		foreach (Subsystem sub in Subs.list)
+			sub.gameObject.SetActive (isActive);
+	}
+	void SetAllSubsystemsVisibility(bool isVisible)
+	{
+		foreach (Subsystem sub in Subs.list)
+			SetVisibility (sub.gameObject, isVisible);
+	}
+	void SetAllMeshesVisibility(bool isVisible)
+	{
+		foreach (MeshRenderer mesh in meshes)
+			mesh.enabled = isVisible;
+	}
+	//Set object visible or invisible
+	void SetVisibility(GameObject obj, bool isVisible)
+	{
+		MeshRenderer[] meshes = obj.GetComponentsInChildren<MeshRenderer>();
+		foreach (MeshRenderer rend in meshes)
+		{
+			rend.enabled = isVisible;
 		}
 	}
 }

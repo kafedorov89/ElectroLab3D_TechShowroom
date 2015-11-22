@@ -56,6 +56,10 @@ public class GameControl : MonoBehaviour {
 			SystemBrowser browser = target.GetComponent<SystemBrowser>();
 			//if (gui != null) gui.enabled = true;
 			if (browser != null) browser.enabled = true;
+
+			BoxCollider box = target.GetComponent<BoxCollider>();
+			//if (gui != null) gui.enabled = true;
+			if (box != null) box.enabled = false;
 			
 			Camera mainCam = Camera.main;
 			MouseOrbit orbitNav = mainCam.GetComponent<MouseOrbit>();

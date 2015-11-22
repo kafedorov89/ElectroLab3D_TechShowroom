@@ -98,7 +98,8 @@ public class BrowserGUI : MonoBehaviour {
 	//Go to selected subsystem
 	public void ChooseSubsystem(int index)
 	{
-		ToogleDropDown ();
+		//ToogleDropDown ();
+		dropDownMenu.SetActive (false);
 		if (browser.IsReady () == false)
 			return;
 
@@ -115,11 +116,21 @@ public class BrowserGUI : MonoBehaviour {
 		if (browser.IsReady () == false)
 			return;
 
+		//new fuctional +++
+		foreach (Subsystem sub in list.list)
+			sub.gameObject.SetActive (true);
+		//new fuctional ---
+
 		textSubsystemName.text = "";
 		HideTextAbout ();
 		help.interactable = false;
 		compile.interactable = false;
 		browser.GoToSystem();
+	}
+	public void HideSubsystem(int index)
+	{
+		compile.interactable = true;
+		browser.HideSubsystem (index);
 	}
 
 	//Text About on

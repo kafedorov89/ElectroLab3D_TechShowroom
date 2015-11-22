@@ -540,6 +540,10 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 703704069}
+    - target: {fileID: 170112, guid: 387d89e0dac77ff488149210e9e591e0, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 387d89e0dac77ff488149210e9e591e0, type: 2}
   m_IsPrefabParent: 0
