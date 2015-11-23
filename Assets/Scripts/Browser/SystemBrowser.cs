@@ -418,10 +418,8 @@ public class SystemBrowser : MonoBehaviour {
 			orbitNav.SetTarget(cameraHelper.transform);
 
 			subFrom = GO.transform.position;
-			subTo = clonedSub.transform.position;
-			//Debug.Log(subTo);
-			//subTo = clones[current_subs_index].transform.position;
-			//subFrom = orbitNav.cameraRotation.transform.position;
+			//subTo = clonedSub.transform.position;
+			subTo = CalcCenterOfGameObject(clonedSub);
 
 			parallelFrom = orbitNav.transform.localPosition;
 			parallelTo = new Vector3(0,0,0);
@@ -544,5 +542,18 @@ public class SystemBrowser : MonoBehaviour {
 		{
 			rend.enabled = isVisible;
 		}
+	}
+	Vector3 CalcCenterOfGameObject(GameObject obj)
+	{
+		int N = 0;
+		Vector3 center = new Vector3(0,0,0);
+		MeshRenderer[] meshes = obj.GetComponentsInChildren<MeshRenderer>();
+		foreach (MeshRenderer rend in meshes)
+		{
+			center += rend.bounds.center;
+			N++;
+		}
+		center /= (float)N;
+		return center;
 	}
 }
