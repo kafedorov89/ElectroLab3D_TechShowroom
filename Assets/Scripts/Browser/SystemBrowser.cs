@@ -44,10 +44,11 @@ public class SystemBrowser : MonoBehaviour {
 
 	public float catchTime = 0.25f; //maximum time to catch object
 	private float lastDown0 = 0.0f; //when mouse button down
-	//private float lastDown1 = 0.0f; //when mouse button down
+	private float lastDown1 = 0.0f; //when mouse button down
 
 	private int current_subs_index = -1;
 	private Vector3 subFrom, subTo;
+	private Vector3 parallelFrom = new Vector3(), parallelTo = new Vector3();
 	private float distFrom, distTo;
 	private float startTime; //start time for some process (alpha changing/camera moving)
 	private float subJourneyLength;
@@ -76,6 +77,11 @@ public class SystemBrowser : MonoBehaviour {
 		GO = gameObject;
 		cameraHelper = new GameObject("CameraHelper");
 
+		//+++
+		//GameObject ctrlObject = GameObject.FindWithTag("GameController");
+		//GameControl ctrlComponent = ctrlObject.GetComponent<GameControl>();
+		//cameraHelper.transform.parent = ctrlComponent.target.transform;
+
 		Subs = GetComponent<SubsystemList> ();
 		CreateClones ();
 
@@ -89,15 +95,17 @@ public class SystemBrowser : MonoBehaviour {
 		//PrepareForOutline (); //New !!!
 		m_alpha = alphaMax;
 	}
-	
+
 	// Update is called once per frame
 	void Update () 
 	{
+		//update LMB and RMB down
 		if (Input.GetMouseButtonDown (0)) 
-		{
 			lastDown0 = Time.time;
-		}
+		if (Input.GetMouseButtonDown (1)) 
+			lastDown1 = Time.time;
 
+		//update state
 		if (state == State.System) {
 			if (stored_index != -1)
 				GoToSubsystem (stored_index);
@@ -113,6 +121,7 @@ public class SystemBrowser : MonoBehaviour {
 		if (state == State.IncreaseAlpha) 
 			IncreaseAlpha();
 
+		//raycasting
 		UpdateRaycasting ();
 	}
 	void UpdateRaycasting()
@@ -120,7 +129,6 @@ public class SystemBrowser : MonoBehaviour {
 		if (state != State.System)
 			return;
 
-		//raycasting
 		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		bool isHit = Physics.Raycast (ray, out hit, 100.0f);
 		if (isHit) 
@@ -141,10 +149,14 @@ public class SystemBrowser : MonoBehaviour {
 						bGUI.ChooseSubsystem(a);
 					}
 				}
-				if (Input.GetMouseButton(1))
+				if (Input.GetMouseButtonUp(1))
 				{
-					int a = GetSubsystemIndex(flag.gameObject);
-					bGUI.HideSubsystem(a);
+					float deltaTime = Time.time - lastDown1;
+					if (deltaTime < catchTime)
+					{
+						int a = GetSubsystemIndex(flag.gameObject);
+						bGUI.HideSubsystem(a);
+					}
 				}
 			}
 		}
@@ -182,12 +194,13 @@ public class SystemBrowser : MonoBehaviour {
 			clone.transform.position = original.gameObject.transform.position;
 			//clone.transform.localScale = GO.transform.localScale;
 
-			clone.transform.parent = GO.transform;
+			clone.transform.parent = GO.transform; //<=
 			clone.transform.localScale = original.gameObject.transform.localScale;
 			//clone.transform.sca = original.gameObject.transform.lossyScale;
 		}
 	}
 
+	//prepare standart shader for transparency
 	void PrepareForAlphaBlending()
 	{
 		if (meshes == null)
@@ -253,6 +266,19 @@ public class SystemBrowser : MonoBehaviour {
 		float fractJourney = distCovered / journeyLength;
 
 		obj.transform.position = Vector3.Lerp(from, to, fractJourney);
+	}
+	void MoveLocal(GameObject obj, float start_time, float shift_time, Vector3 from, Vector3 to)
+	{
+		if (from == to)
+			return;
+
+		float journeyLength = Vector3.Distance(from, to);
+		float speed = journeyLength / shift_time;
+		float distCovered = (Time.time - start_time) * speed;
+		float fractJourney = distCovered / journeyLength;
+
+		//Debug.Log (from + "/" + to);
+		obj.transform.localPosition = Vector3.Lerp(from, to, fractJourney);
 	}
 	void ChangeDist(MouseOrbit orb, float start_time, float shift_time, float from, float to)
 	{
@@ -328,7 +354,8 @@ public class SystemBrowser : MonoBehaviour {
 
 		isReady = false;
 		FixTime ();
-		orbitNav.target = GO.transform;
+		//orbitNav.target = GO.transform;
+		//orbitNav.SetTarget (GO.transform;);
 
 		//new fuctional +++
 		//foreach (Subsystem sub in Subs.list)
@@ -338,9 +365,17 @@ public class SystemBrowser : MonoBehaviour {
 		//switch point from and point to, start distance
 		//and finish distance
 		SwithVector3Value (ref subTo, ref subFrom);
-		SwithFloatValue (ref distFrom, ref distTo);
 
-		orbitNav.target = cameraHelper.transform; //look at camera helper
+		SwithVector3Value (ref parallelTo, ref parallelFrom);
+		//parallelFrom = orbitNav.gameObject.transform.localPosition;
+		//parallelTo = new Vector3(0,0,0);
+
+		//SwithFloatValue (ref distFrom, ref distTo);
+		distFrom = orbitNav.distance;
+		distTo = Mathf.Min(orbitNav.distanceMax, orbitNav.distance + zoomIncrement);
+
+		//orbitNav.target = cameraHelper.transform; //look at camera helper
+		orbitNav.SetTarget (cameraHelper.transform);
 		state = State.ZoomOutSubsystem; //next state
 
 		current_subs_index = -1;
@@ -378,11 +413,18 @@ public class SystemBrowser : MonoBehaviour {
 			FixTime();
 			state = State.ZoomInSubsystem; //next state
 
-			cameraHelper.transform.position = GO.transform.position;
-			orbitNav.target = cameraHelper.transform;
+			//cameraHelper.transform.position = GO.transform.position;
+			//orbitNav.target = cameraHelper.transform;
+			orbitNav.SetTarget(cameraHelper.transform);
 
+			subFrom = GO.transform.position;
 			subTo = clonedSub.transform.position;
-			subFrom = GO.transform.position; 
+			//Debug.Log(subTo);
+			//subTo = clones[current_subs_index].transform.position;
+			//subFrom = orbitNav.cameraRotation.transform.position;
+
+			parallelFrom = orbitNav.transform.localPosition;
+			parallelTo = new Vector3(0,0,0);
 
 			distFrom = orbitNav.distance;
 			distTo = Mathf.Max(orbitNav.distanceMin, orbitNav.distance - zoomIncrement);
@@ -406,7 +448,8 @@ public class SystemBrowser : MonoBehaviour {
 		{
 			state = State.System; //next state
 			clonedSub.SetActive(false);
-			orbitNav.target = GO.transform;
+			//orbitNav.target = GO.transform;
+			orbitNav.SetTarget(GO.transform);
 		}
 	}
 
@@ -416,13 +459,18 @@ public class SystemBrowser : MonoBehaviour {
 		if (cameraHelper.transform.position != subTo)
 		{
 			Move(cameraHelper, startTime, shiftZoomTime, subFrom, subTo);
+			MoveLocal(orbitNav.gameObject, startTime, shiftZoomTime, parallelFrom, parallelTo);
+			//Move(orbitNav.cameraRotation, startTime, shiftZoomTime, subFrom, subTo);
 			ChangeDist(orbitNav, startTime, shiftZoomTime, distFrom, distTo);
 		}
 		else 
 		{
 			state = State.Subsystem; //next state
 			isReady = true;
-			orbitNav.target = clonedSub.transform;
+			//orbitNav.target = clonedSub.transform;
+			orbitNav.SetTarget(cameraHelper.transform);
+
+			//mainCam.transform.LookAt(GO.transform);
 		}
 	}
 
@@ -432,6 +480,7 @@ public class SystemBrowser : MonoBehaviour {
 		if (cameraHelper.transform.position != subTo)
 		{
 			Move(cameraHelper, startTime, shiftZoomTime, subFrom, subTo);
+			MoveLocal(orbitNav.gameObject, startTime, shiftZoomTime, parallelFrom, parallelTo);
 			ChangeDist(orbitNav, startTime, shiftZoomTime, distFrom, distTo);
 		}
 		else 

@@ -5,7 +5,7 @@ public class GameControl : MonoBehaviour {
 
 	public static GameControl control;
 
-	private GameObject target; //object transfered to next scene
+	public GameObject target; //object transfered to next scene
 	private int previousLevel = 0;
 
 	void Awake()
@@ -63,7 +63,10 @@ public class GameControl : MonoBehaviour {
 			
 			Camera mainCam = Camera.main;
 			MouseOrbit orbitNav = mainCam.GetComponent<MouseOrbit>();
-			if (orbitNav != null) orbitNav.target = target.transform;
+			if (orbitNav != null){ 
+				orbitNav.SetTarget(target.transform);
+				//orbitNav.target = target.transform;
+			}
 		}
 		previousLevel = currentLevel;
 	}

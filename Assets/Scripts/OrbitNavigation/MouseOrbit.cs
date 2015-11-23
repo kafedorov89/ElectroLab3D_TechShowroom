@@ -95,15 +95,23 @@ public class MouseOrbit: MonoBehaviour {
         //ParallelMoving();
     }
 
+	public void SetTarget(Transform t)
+	{
+		target = t;
+		cameraRotation.transform.position = target.transform.position;
+	}
 	void LateUpdate () 
 	{
         if (target)
         {
-            if (!PosInited)
+			cameraRotation.transform.position = target.transform.position;
+
+			if (!PosInited)
             {
                 PosInited = true;
                 //Set camera view point to object's center
-                cameraRotation.transform.localPosition = target.transform.localPosition;
+                //cameraRotation.transform.localPosition = target.transform.localPosition;
+				cameraRotation.transform.position = target.transform.position;
             }
 
             //Если нажата ЛКМ - обрабатываем вращение объекта
