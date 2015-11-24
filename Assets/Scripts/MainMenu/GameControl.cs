@@ -5,7 +5,7 @@ public class GameControl : MonoBehaviour {
 
 	public static GameControl control;
 
-	private GameObject target; //object transfered to next scene
+	public GameObject target; //object transfered to next scene
 	private int previousLevel = 0;
 
 	void Awake()
@@ -50,16 +50,23 @@ public class GameControl : MonoBehaviour {
 		} 
 		else if (currentLevel == 1 && previousLevel == 0)
 		{
-			target.transform.localPosition = new Vector3();
+			//target.transform.localPosition = new Vector3();
 
 			//BrowserGUI gui = t.GetComponent<BrowserGUI>();
 			SystemBrowser browser = target.GetComponent<SystemBrowser>();
 			//if (gui != null) gui.enabled = true;
 			if (browser != null) browser.enabled = true;
+
+			BoxCollider box = target.GetComponent<BoxCollider>();
+			//if (gui != null) gui.enabled = true;
+			if (box != null) box.enabled = false;
 			
 			Camera mainCam = Camera.main;
 			MouseOrbit orbitNav = mainCam.GetComponent<MouseOrbit>();
-			if (orbitNav != null) orbitNav.target = target.transform;
+			if (orbitNav != null){ 
+				orbitNav.SetTarget(target.transform);
+				//orbitNav.target = target.transform;
+			}
 		}
 		previousLevel = currentLevel;
 	}

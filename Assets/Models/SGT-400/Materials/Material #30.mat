@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 'Material #30'
-  m_Shader: {fileID: 4800000, guid: 21cc588384ed2f44f8d6bfa99e0d2585, type: 3}
+  m_Shader: {fileID: 4800000, guid: 28691873638a34c46b50e03d23abd66d, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: 2000
@@ -32,6 +32,27 @@ Material:
       data:
         first:
           name: _DetailNormalMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Diff_map
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Spec_map
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _NM
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -78,27 +99,6 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Diff_map
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Spec_map
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _NM
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -112,6 +112,18 @@ Material:
         first:
           name: _Cutoff
         second: .5
+      data:
+        first:
+          name: _Metallic
+        second: .0529999994
+      data:
+        first:
+          name: _node_2022
+        second: 1
+      data:
+        first:
+          name: _node_2022_copy
+        second: 0
       data:
         first:
           name: _Parallax
@@ -146,15 +158,11 @@ Material:
         second: 0
       data:
         first:
-          name: _Metallic
-        second: .0529999994
+          name: _node_op
+        second: 1
       data:
         first:
-          name: _node_2022
-        second: 0
-      data:
-        first:
-          name: _node_2022_copy
+          name: _node_opc
         second: 0
     m_Colors:
       data:

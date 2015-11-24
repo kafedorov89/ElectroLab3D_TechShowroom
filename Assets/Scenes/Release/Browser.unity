@@ -128,7 +128,7 @@ Transform:
   m_Children:
   - {fileID: 926436771}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!1 &472135407
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ Transform:
   m_Children:
   - {fileID: 1862511552}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1 &703704065
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +207,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: .0196078438}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -226,7 +226,6 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -495,7 +494,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22483640, guid: 387d89e0dac77ff488149210e9e591e0, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22483640, guid: 387d89e0dac77ff488149210e9e591e0, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -541,6 +540,10 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 703704069}
+    - target: {fileID: 170112, guid: 387d89e0dac77ff488149210e9e591e0, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 387d89e0dac77ff488149210e9e591e0, type: 2}
   m_IsPrefabParent: 0
