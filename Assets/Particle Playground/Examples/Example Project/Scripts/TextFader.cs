@@ -8,7 +8,7 @@ public class TextFader : MonoBehaviour {
 	Color fadedColor;
 
 	void Start () {
-		gText = guiText;
+		gText = GetComponent<GUIText>();
 		startColor = gText.material.color;
 		fadedColor = new Color(startColor.r, startColor.g, startColor.b, .5f);
 	}

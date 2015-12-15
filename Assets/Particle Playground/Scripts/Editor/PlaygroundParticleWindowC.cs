@@ -117,7 +117,7 @@ class PlaygroundParticleWindowC : EditorWindow {
 			}
 		}
 
-		Texture2D particleImageDefault = Resources.LoadAssetAtPath("Assets/"+playgroundSettings.playgroundPath+playgroundSettings.iconPath+"Default.png", typeof(Texture2D)) as Texture2D;
+		Texture2D particleImageDefault = AssetDatabase.LoadAssetAtPath("Assets/"+playgroundSettings.playgroundPath+playgroundSettings.iconPath+"Default.png", typeof(Texture2D)) as Texture2D;
 		Texture2D particleImage;
 
 		presetObjects = new List<PresetObjectC>();
@@ -126,11 +126,11 @@ class PlaygroundParticleWindowC : EditorWindow {
 			presetObjects.Add(new PresetObjectC());
 			presetObjects[i].presetObject = particlePrefabs[i];
 			presetObjects[i].example = (i>=userPrefabCount);
-			particleImage = Resources.LoadAssetAtPath("Assets/"+playgroundSettings.playgroundPath+playgroundSettings.iconPath+presetObjects[i].presetObject.name+".png", typeof(Texture2D)) as Texture2D;
+			particleImage = AssetDatabase.LoadAssetAtPath("Assets/"+playgroundSettings.playgroundPath+playgroundSettings.iconPath+presetObjects[i].presetObject.name+".png", typeof(Texture2D)) as Texture2D;
 			
 			// Try the asset location if we didn't find it in regular editor folder
 			if (particleImage==null) {
-				particleImage = Resources.LoadAssetAtPath(Path.GetDirectoryName(AssetDatabase.GetAssetPath(presetObjects[i].presetObject as UnityEngine.Object))+"/"+presetObjects[i].presetObject.name+".png", typeof(Texture2D)) as Texture2D;
+				particleImage = AssetDatabase.LoadAssetAtPath(Path.GetDirectoryName(AssetDatabase.GetAssetPath(presetObjects[i].presetObject as UnityEngine.Object))+"/"+presetObjects[i].presetObject.name+".png", typeof(Texture2D)) as Texture2D;
 			}
 			
 			// Finally use the specified icon (or the default)

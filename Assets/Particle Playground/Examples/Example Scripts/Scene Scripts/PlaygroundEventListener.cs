@@ -29,8 +29,8 @@ public class PlaygroundEventListener : MonoBehaviour {
 
 		// Cache components of this GameObject (helps performance on low-end devices)
 		thisTransform = transform;
-		thisCollider = collider;
-		thisRenderer = renderer;
+		thisCollider = GetComponent<Collider>();
+		thisRenderer = GetComponent<Renderer>();
 
 		// Create materials to show if the event listener is active or not
 		if (activeMaterial==null) {

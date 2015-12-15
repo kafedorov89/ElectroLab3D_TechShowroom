@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using ParticlePlayground;
 
-public enum State {System = 0, ReduceAlpha, ZoomInSubsystem, Subsystem, ZoomOutSubsystem, IncreaseAlpha};
+public enum State {System = 0, ReduceAlpha, ZoomInSubsystem, Subsystem, ZoomOutSubsystem, IncreaseAlpha,
+	PlayAnimation};
 
 public enum RenderingMode {Fade = 2, Transparent = 3};
 public enum FadeMode {Continuously, Fast};
@@ -10,6 +12,8 @@ public enum FadeMode {Continuously, Fast};
 public class SystemBrowser : MonoBehaviour {
 
 	//public Material outlineMat; 
+	//public PlaygroundParticlesC[] Particles;
+	public GameObject ParticleController;
 
 	Camera mainCam; //main camera
 	GameObject GO; //gameobject of main system
@@ -24,8 +28,12 @@ public class SystemBrowser : MonoBehaviour {
 	Vector3 subPos;
 
 	[Tooltip("Value of system alpha-cannel when subsystem is browsing. Set 0 for system invisible")]
-	public float alphaMin = 0.0f; //alpha-cannel when subsystem browsing
+	[Range(0.0f,1.0f)]
+	public float alphaMin = 0.1f; //alpha-cannel when subsystem browsing
 	private float alphaMax = 1.0f; //alpha-cannel when system browsing
+
+	[Range(0.0f,1.0f)]
+	public float alphaWhenPlay = 0.1f; //alpha-channel when playing animation
 
 	[Tooltip("Time in seconds for alpha-cannel reducing and increasing process")]
 	public float shiftAlphaTime = 1.0f; //time for change system alpha-channel
@@ -71,6 +79,9 @@ public class SystemBrowser : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		if (ParticleController != null)
+			ParticleController.SetActive (false);
+
 		GameObject canvas = GameObject.FindWithTag ("Player");
 		bGUI = canvas.GetComponent<BrowserGUI> (); 
 		
@@ -123,6 +134,41 @@ public class SystemBrowser : MonoBehaviour {
 
 		//raycasting
 		UpdateRaycasting ();
+	}
+	public void Play()
+	{
+		if (state == State.System)
+			StartPlay ();
+		else if (state == State.PlayAnimation)
+			StopPlay ();
+	}
+	//play animation or other actions
+	public void StartPlay()
+	{
+		state = State.PlayAnimation;
+
+		//1. make all system transparent
+		SetAlpha (alphaWhenPlay);
+
+		//2. start emit particles
+		//foreach (PlaygroundParticlesC P in Particles) {
+		//	P.Emit (true);
+		//}
+		if (ParticleController != null)
+			ParticleController.SetActive (true);
+	}
+	public void StopPlay()
+	{
+		state = State.System;
+
+		//1. stop emit particles
+		//foreach (PlaygroundParticlesC P in Particles)
+		//	P.Emit (false);
+		if (ParticleController != null)
+			ParticleController.SetActive (false);
+
+		//2. make all system non transparent
+		SetAlpha (alphaMax);
 	}
 	void UpdateRaycasting()
 	{

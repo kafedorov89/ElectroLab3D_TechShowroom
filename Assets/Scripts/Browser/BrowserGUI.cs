@@ -161,4 +161,8 @@ public class BrowserGUI : MonoBehaviour {
 	{
 		obj.SetActive (!obj.activeInHierarchy);
 	}
+	public void Play()
+	{
+		browser.Play ();
+	}
 }

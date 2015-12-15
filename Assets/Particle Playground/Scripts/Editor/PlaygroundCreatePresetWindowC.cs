@@ -262,7 +262,7 @@ class PlaygroundCreatePresetWindowC : EditorWindow {
 	
 	public void RefreshFromPresetList () {
 		if (PlaygroundParticleWindowC.presetNames.Length==0) return;
-		particleSystemIcon = Resources.LoadAssetAtPath(PlaygroundParticleSystemInspectorC.playgroundSettings.playgroundPath+PlaygroundParticleSystemInspectorC.playgroundSettings.iconPath+PlaygroundParticleWindowC.presetNames[selectedPreset]+".png", typeof(Texture2D)) as Texture2D;
+		particleSystemIcon = AssetDatabase.LoadAssetAtPath(PlaygroundParticleSystemInspectorC.playgroundSettings.playgroundPath+PlaygroundParticleSystemInspectorC.playgroundSettings.iconPath+PlaygroundParticleWindowC.presetNames[selectedPreset]+".png", typeof(Texture2D)) as Texture2D;
 		particleSystemName = PlaygroundParticleWindowC.presetNames[selectedPreset];
 	}
 }

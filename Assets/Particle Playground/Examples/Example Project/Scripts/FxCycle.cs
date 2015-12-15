@@ -54,7 +54,7 @@ public class FxCycle : MonoBehaviour {
 	void Start () {
 
 		// Mouse cursor not wanted
-		Screen.showCursor = false;
+		Cursor.visible = false;
 
 		// Make sure particle systems are inactive
 		foreach (PlaygroundFxCycleItem p in particleFx) {

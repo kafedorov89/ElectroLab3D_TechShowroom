@@ -1767,8 +1767,8 @@ namespace ParticlePlayground {
 			playgroundParticles.particleSystemGameObject = go;
 			playgroundParticles.particleSystemGameObject.name = name;
 			playgroundParticles.shurikenParticleSystem = playgroundParticles.particleSystemGameObject.GetComponent<ParticleSystem>();
-			playgroundParticles.particleSystemRenderer = playgroundParticles.shurikenParticleSystem.renderer;
-			playgroundParticles.particleSystemRenderer2 = playgroundParticles.shurikenParticleSystem.renderer as ParticleSystemRenderer;
+			playgroundParticles.particleSystemRenderer = playgroundParticles.shurikenParticleSystem.GetComponent<Renderer>();
+			playgroundParticles.particleSystemRenderer2 = playgroundParticles.shurikenParticleSystem.GetComponent<Renderer>() as ParticleSystemRenderer;
 			playgroundParticles.particleSystemTransform = playgroundParticles.particleSystemGameObject.transform;
 			playgroundParticles.sourceTransform = playgroundParticles.particleSystemTransform;
 			playgroundParticles.source = SOURCEC.Transform;
@@ -2681,7 +2681,7 @@ namespace ParticlePlayground {
 				playgroundParticles.playgroundCache.position[p] = position;
 			}
 			if (refreshParticleSystem)
-				playgroundParticles.particleSystem.SetParticles(playgroundParticles.particleCache, playgroundParticles.particleCache.Length);
+				playgroundParticles.GetComponent<ParticleSystem>().SetParticles(playgroundParticles.particleCache, playgroundParticles.particleCache.Length);
 		}
 
 		// Set emission of PlaygroundParticlesC object
@@ -5826,9 +5826,9 @@ namespace ParticlePlayground {
 			if (particleSystemGameObject==null) {
 				particleSystemGameObject = gameObject;
 				particleSystemTransform = transform;
-				particleSystemRenderer = renderer;
+				particleSystemRenderer = GetComponent<Renderer>();
 				shurikenParticleSystem = particleSystemGameObject.GetComponent<ParticleSystem>();
-				particleSystemRenderer2 = gameObject.particleSystem.renderer as ParticleSystemRenderer;
+				particleSystemRenderer2 = gameObject.GetComponent<ParticleSystem>().GetComponent<Renderer>() as ParticleSystemRenderer;
 			}
 		}
 
@@ -7032,7 +7032,7 @@ namespace ParticlePlayground {
 			// To find out which of the 24 possible simplices we're in, we need to
 			// determine the magnitude ordering of x0, y0, z0 and w0.
 			// The method below is a good way of finding the ordering of x,y,z,w and
-			// then find the correct traversal order for the simplex we’re in.
+			// then find the correct traversal order for the simplex weвЂ™re in.
 			// First, six pair-wise comparisons are performed between each possible pair
 			// of the four coordinates, and the results are used to add up binary bits
 			// for an integer index.

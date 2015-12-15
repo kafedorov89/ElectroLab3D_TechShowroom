@@ -208,7 +208,7 @@ class PlaygroundParticleSystemInspectorC : Editor {
 		if (playgroundParticlesScriptReference==null) return;
 		playgroundParticles = new SerializedObject(playgroundParticlesScriptReference);
 		
-		shurikenRenderer = playgroundParticlesScriptReference.particleSystemGameObject.particleSystem.renderer as ParticleSystemRenderer;
+		shurikenRenderer = playgroundParticlesScriptReference.particleSystemGameObject.GetComponent<ParticleSystem>().GetComponent<Renderer>() as ParticleSystemRenderer;
 
 		// Sorting layers
 		Type internalEditorUtilityType = typeof(InternalEditorUtility);
@@ -299,7 +299,7 @@ class PlaygroundParticleSystemInspectorC : Editor {
 		threadMethod = playgroundParticles.FindProperty("threadMethod");
 
 		playgroundParticlesScriptReference.shurikenParticleSystem = playgroundParticlesScriptReference.GetComponent<ParticleSystem>();
-		playgroundParticlesScriptReference.particleSystemRenderer = playgroundParticlesScriptReference.shurikenParticleSystem.renderer;
+		playgroundParticlesScriptReference.particleSystemRenderer = playgroundParticlesScriptReference.shurikenParticleSystem.GetComponent<Renderer>();
 		particleMaterial = playgroundParticlesScriptReference.particleSystemRenderer.sharedMaterial;
 		
 		onlySourcePositioning = playgroundParticles.FindProperty("onlySourcePositioning");
@@ -374,9 +374,9 @@ class PlaygroundParticleSystemInspectorC : Editor {
 			// Cache components
 			playgroundParticlesScriptReference.particleSystemGameObject = playgroundParticlesScriptReference.gameObject;
 			playgroundParticlesScriptReference.particleSystemTransform = playgroundParticlesScriptReference.transform;
-			playgroundParticlesScriptReference.particleSystemRenderer = playgroundParticlesScriptReference.renderer;
+			playgroundParticlesScriptReference.particleSystemRenderer = playgroundParticlesScriptReference.GetComponent<Renderer>();
 			playgroundParticlesScriptReference.shurikenParticleSystem = playgroundParticlesScriptReference.particleSystemGameObject.GetComponent<ParticleSystem>();
-			playgroundParticlesScriptReference.particleSystemRenderer2 = playgroundParticlesScriptReference.particleSystemGameObject.particleSystem.renderer as ParticleSystemRenderer;
+			playgroundParticlesScriptReference.particleSystemRenderer2 = playgroundParticlesScriptReference.particleSystemGameObject.GetComponent<ParticleSystem>().GetComponent<Renderer>() as ParticleSystemRenderer;
 			
 			// Set manager as parent 
 			//if (PlaygroundC.reference.autoGroup && playgroundParticlesScriptReference.particleSystemTransform!=null && playgroundParticlesScriptReference.particleSystemTransform.parent == null && Selection.activeTransform!=null)
@@ -591,7 +591,7 @@ class PlaygroundParticleSystemInspectorC : Editor {
 				playgroundParticlesScriptReference.particleSystemTransform.localScale = new Vector3(1f,1f,1f);
 			EditorGUILayout.EndVertical();
 		}
-		if (playgroundParticlesScriptReference.particleSystem.simulationSpace!=ParticleSystemSimulationSpace.Local && 
+		if (playgroundParticlesScriptReference.GetComponent<ParticleSystem>().simulationSpace!=ParticleSystemSimulationSpace.Local && 
 		    playgroundParticlesScriptReference.source!=SOURCEC.Projection &&
 			(playgroundParticlesScriptReference.particleSystemTransform.rotation.x != 0 ||
 		    playgroundParticlesScriptReference.particleSystemTransform.rotation.y != 0 ||
@@ -599,7 +599,7 @@ class PlaygroundParticleSystemInspectorC : Editor {
 			EditorGUILayout.BeginVertical(boxStyle);
 			EditorGUILayout.HelpBox(playgroundLanguage.rotationSimulationSpace, MessageType.Info);
 			if (GUILayout.Button (playgroundLanguage.setLocalSpaceSimulation, EditorStyles.toolbarButton, GUILayout.ExpandWidth(false)))
-				playgroundParticlesScriptReference.particleSystem.simulationSpace = ParticleSystemSimulationSpace.Local;
+				playgroundParticlesScriptReference.GetComponent<ParticleSystem>().simulationSpace = ParticleSystemSimulationSpace.Local;
 			EditorGUILayout.EndVertical();
 		}
 
@@ -2610,7 +2610,7 @@ class PlaygroundParticleSystemInspectorC : Editor {
 			}
 
 			// Advanced Settings
-			string localSimulationSpaceName = playgroundParticlesScriptReference.particleSystem.simulationSpace==ParticleSystemSimulationSpace.Local?playgroundLanguage.localSpace:playgroundLanguage.globalSpace;
+			string localSimulationSpaceName = playgroundParticlesScriptReference.GetComponent<ParticleSystem>().simulationSpace==ParticleSystemSimulationSpace.Local?playgroundLanguage.localSpace:playgroundLanguage.globalSpace;
 			if (GUILayout.Button(playgroundLanguage.advanced+" ("+localSimulationSpaceName+")", EditorStyles.toolbarDropDown)) playgroundSettings.advancedFoldout=!playgroundSettings.advancedFoldout;
 			if (playgroundSettings.advancedFoldout) {
 
@@ -2618,13 +2618,13 @@ class PlaygroundParticleSystemInspectorC : Editor {
 				GUILayout.BeginVertical(boxStyle);
 				GUILayout.BeginHorizontal();
 				playgroundSettings.advancedSimulationFoldout = GUILayout.Toggle(playgroundSettings.advancedSimulationFoldout, playgroundLanguage.simulationSpace, EditorStyles.foldout);
-				GUILayout.Label (playgroundParticlesScriptReference.particleSystem.simulationSpace.ToString(), EditorStyles.miniLabel, GUILayout.ExpandWidth(false));
+				GUILayout.Label (playgroundParticlesScriptReference.GetComponent<ParticleSystem>().simulationSpace.ToString(), EditorStyles.miniLabel, GUILayout.ExpandWidth(false));
 				GUILayout.EndHorizontal();
 				if (playgroundSettings.advancedSimulationFoldout) {
 					GUI.enabled = (playgroundParticlesScriptReference.source!=SOURCEC.Projection);
-					playgroundParticlesScriptReference.particleSystem.simulationSpace = (ParticleSystemSimulationSpace)EditorGUILayout.EnumPopup(playgroundLanguage.simulationSpace, playgroundParticlesScriptReference.particleSystem.simulationSpace);
+					playgroundParticlesScriptReference.GetComponent<ParticleSystem>().simulationSpace = (ParticleSystemSimulationSpace)EditorGUILayout.EnumPopup(playgroundLanguage.simulationSpace, playgroundParticlesScriptReference.GetComponent<ParticleSystem>().simulationSpace);
 					GUI.enabled = true;
-					if (playgroundParticlesScriptReference.particleSystem.simulationSpace==ParticleSystemSimulationSpace.Local && playgroundParticlesScriptReference.source!=SOURCEC.Projection) {
+					if (playgroundParticlesScriptReference.GetComponent<ParticleSystem>().simulationSpace==ParticleSystemSimulationSpace.Local && playgroundParticlesScriptReference.source!=SOURCEC.Projection) {
 
 						playgroundParticlesScriptReference.applyLocalSpaceMovementCompensation = EditorGUILayout.ToggleLeft (playgroundLanguage.movementCompensation, playgroundParticlesScriptReference.applyLocalSpaceMovementCompensation);
 						GUI.enabled = playgroundParticlesScriptReference.applyLocalSpaceMovementCompensation;

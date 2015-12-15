@@ -31,7 +31,7 @@ public class PlaygroundDragSplineObject : MonoBehaviour {
 			}
 			turbulenceScript = GameObject.FindObjectOfType<PlaygroundTurbulenceOnGameObjects>();
 		}
-		r = renderer;
+		r = GetComponent<Renderer>();
 		t = transform;
 		exitMaterial = r.sharedMaterial;
 		camZ = -mainCamTransform.position.z+t.position.z;

@@ -2991,7 +2991,7 @@ namespace ParticlePlayground {
 		/// </summary>
 		public void Initialize () {
 			gameObject = transform.gameObject;
-			rigidbody = gameObject.rigidbody;
+			rigidbody = gameObject.GetComponent<Rigidbody>();
 			renderer = transform.GetComponentInChildren<Renderer>();
 			meshFilter = transform.GetComponentInChildren<MeshFilter>();
 			if (meshFilter!=null) {
@@ -3085,7 +3085,7 @@ namespace ParticlePlayground {
 		public void Initialize () {
 			gameObject = transform.gameObject;
 			cachedId = gameObject.GetInstanceID();
-			rigidbody = gameObject.rigidbody;
+			rigidbody = gameObject.GetComponent<Rigidbody>();
 			renderer = transform.GetComponentInChildren<SkinnedMeshRenderer>();
 			mesh = renderer.sharedMesh;
 			if (mesh!=null) {
@@ -5074,7 +5074,7 @@ namespace ParticlePlayground {
 		NoThreads,
 		/// <summary>
 		/// One calculation thread per particle system will be created. Use this when having heavy particle systems in your scene. 
-		/// Note that this method will never bundle calculation calls unless specified in each individual particle system’s Particle Thread Method.
+		/// Note that this method will never bundle calculation calls unless specified in each individual particle systemвЂ™s Particle Thread Method.
 		/// </summary>
 		OnePerSystem,
 		/// <summary>
