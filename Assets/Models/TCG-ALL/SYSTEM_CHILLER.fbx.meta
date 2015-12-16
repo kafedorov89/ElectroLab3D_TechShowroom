@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: 9cf6dcc3b9a8fc04fb540f1290939e44
+timeCreated: 1450242934
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: 128_Diesel_Tubes_006
+    100002: 128_Diesel_Tubes_007
+    100004: 128_Diesel_Tubes_009
+    100006: 128_Diesel_Tubes_012
+    100008: 128_Diesel_Tubes_013
+    100010: 128_Diesel_Tubes_019
+    100012: 128_Diesel_Tubes_028
+    100014: DryCooler_Friterm_000
+    100016: DryCooler_Friterm_001
+    100018: DryCooler_Friterm_001 1
+    100020: DryCooler_Friterm_002
+    100022: DryCooler_Friterm_003
+    100024: DryCooler_Friterm_004
+    100026: DryCooler_Friterm_005
+    100028: DryCooler_Friterm_006
+    100030: DryCooler_Friterm_007
+    100032: DryCooler_Friterm_008
+    100034: DryCooler_Friterm_009
+    100036: DryCooler_Friterm_010
+    100038: DryCooler_Friterm_011
+    100040: DryCooler_Friterm_012
+    100042: DryCooler_Friterm_013
+    100044: DryCooler_Friterm_014
+    100046: DryCooler_Friterm_015
+    100048: //RootNode
+    400000: 128_Diesel_Tubes_006
+    400002: 128_Diesel_Tubes_007
+    400004: 128_Diesel_Tubes_009
+    400006: 128_Diesel_Tubes_012
+    400008: 128_Diesel_Tubes_013
+    400010: 128_Diesel_Tubes_019
+    400012: 128_Diesel_Tubes_028
+    400014: DryCooler_Friterm_000
+    400016: DryCooler_Friterm_001
+    400018: DryCooler_Friterm_001 1
+    400020: DryCooler_Friterm_002
+    400022: DryCooler_Friterm_003
+    400024: DryCooler_Friterm_004
+    400026: DryCooler_Friterm_005
+    400028: DryCooler_Friterm_006
+    400030: DryCooler_Friterm_007
+    400032: DryCooler_Friterm_008
+    400034: DryCooler_Friterm_009
+    400036: DryCooler_Friterm_010
+    400038: DryCooler_Friterm_011
+    400040: DryCooler_Friterm_012
+    400042: DryCooler_Friterm_013
+    400044: DryCooler_Friterm_014
+    400046: DryCooler_Friterm_015
+    400048: //RootNode
+    2300000: 128_Diesel_Tubes_006
+    2300002: 128_Diesel_Tubes_007
+    2300004: 128_Diesel_Tubes_009
+    2300006: 128_Diesel_Tubes_012
+    2300008: 128_Diesel_Tubes_013
+    2300010: 128_Diesel_Tubes_019
+    2300012: 128_Diesel_Tubes_028
+    2300014: DryCooler_Friterm_000
+    2300016: DryCooler_Friterm_001
+    2300018: DryCooler_Friterm_001 1
+    2300020: DryCooler_Friterm_002
+    2300022: DryCooler_Friterm_003
+    2300024: DryCooler_Friterm_004
+    2300026: DryCooler_Friterm_006
+    2300028: DryCooler_Friterm_007
+    2300030: DryCooler_Friterm_008
+    2300032: DryCooler_Friterm_009
+    2300034: DryCooler_Friterm_010
+    2300036: DryCooler_Friterm_011
+    2300038: DryCooler_Friterm_012
+    2300040: DryCooler_Friterm_014
+    2300042: DryCooler_Friterm_015
+    3300000: 128_Diesel_Tubes_006
+    3300002: 128_Diesel_Tubes_007
+    3300004: 128_Diesel_Tubes_009
+    3300006: 128_Diesel_Tubes_012
+    3300008: 128_Diesel_Tubes_013
+    3300010: 128_Diesel_Tubes_019
+    3300012: 128_Diesel_Tubes_028
+    3300014: DryCooler_Friterm_000
+    3300016: DryCooler_Friterm_001
+    3300018: DryCooler_Friterm_001 1
+    3300020: DryCooler_Friterm_002
+    3300022: DryCooler_Friterm_003
+    3300024: DryCooler_Friterm_004
+    3300026: DryCooler_Friterm_006
+    3300028: DryCooler_Friterm_007
+    3300030: DryCooler_Friterm_008
+    3300032: DryCooler_Friterm_009
+    3300034: DryCooler_Friterm_010
+    3300036: DryCooler_Friterm_011
+    3300038: DryCooler_Friterm_012
+    3300040: DryCooler_Friterm_014
+    3300042: DryCooler_Friterm_015
+    4300000: 128_Diesel_Tubes_006
+    4300002: 128_Diesel_Tubes_028
+    4300004: 128_Diesel_Tubes_019
+    4300006: 128_Diesel_Tubes_007
+    4300008: 128_Diesel_Tubes_009
+    4300010: 128_Diesel_Tubes_012
+    4300012: 128_Diesel_Tubes_013
+    4300014: DryCooler_Friterm_000
+    4300016: DryCooler_Friterm_001
+    4300018: DryCooler_Friterm_002
+    4300020: DryCooler_Friterm_003
+    4300022: DryCooler_Friterm_004
+    4300024: DryCooler_Friterm_006
+    4300026: DryCooler_Friterm_007
+    4300028: DryCooler_Friterm_008
+    4300030: DryCooler_Friterm_009
+    4300032: DryCooler_Friterm_010
+    4300034: DryCooler_Friterm_011
+    4300036: DryCooler_Friterm_012
+    4300038: DryCooler_Friterm_014
+    4300040: DryCooler_Friterm_015
+    4300042: DryCooler_Friterm_001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

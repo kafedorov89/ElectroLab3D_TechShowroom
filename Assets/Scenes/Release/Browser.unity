@@ -268,7 +268,7 @@ MonoBehaviour:
   yMinLimit: -20
   yMaxLimit: 80
   distanceMin: .5
-  distanceMax: 15
+  distanceMax: 30
   step: .00999999978
   smoothing: 1
   cameraRotation: {fileID: 472135407}
