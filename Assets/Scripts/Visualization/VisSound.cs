@@ -26,7 +26,8 @@ public class VisSound : VisClass {
 	public override void StopVis()
 	{
 		base.StopVis();
-		source.Pause (); //maybe source.Stop() ?
+		//source.Pause ();
+		source.Stop ();
 
 	}
 

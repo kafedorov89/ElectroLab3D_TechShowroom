@@ -22,6 +22,8 @@ public class BrowserGUI : MonoBehaviour {
 	public Button compile;
 	public Button home;
 	public Button help;
+	public Button play;
+	public Button stop;
 
 	private GameObject target;
 	private SubsystemList list;
@@ -30,6 +32,8 @@ public class BrowserGUI : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		stop.transform.gameObject.SetActive (false);
+
 		SetInitialGUIState ();
 
 		//get target browsing object
@@ -90,6 +94,7 @@ public class BrowserGUI : MonoBehaviour {
 	{
 		menu.interactable = false;
 		compile.interactable = false;
+		//compile.transform.gameObject.se
 		home.interactable = true;
 		help.interactable = false;
 	}
@@ -174,18 +179,28 @@ public class BrowserGUI : MonoBehaviour {
 	}
 	public void Play()
 	{
-		if (VisState == false)
-		{
-			VisState = true;
-			foreach (VisClass vis in Visualizations)
-				vis.StartVis ();
-		} 
-		else
-		{
-			VisState = false;
-			foreach (VisClass vis in Visualizations)
-				vis.StopVis ();
-		}
-		//browser.Play ();
+		//set current state
+		VisState = true;
+
+		//switch buttons
+		play.transform.gameObject.SetActive (false);
+		stop.transform.gameObject.SetActive (true);
+
+		//start all visualizations
+		foreach (VisClass vis in Visualizations)
+			vis.StartVis ();
+	}
+	public void Stop()
+	{
+		//set current state
+		VisState = false;
+
+		//switch buttons
+		play.transform.gameObject.SetActive (true);
+		stop.transform.gameObject.SetActive (false);
+
+		//stop all visualizations
+		foreach (VisClass vis in Visualizations)
+			vis.StopVis ();
 	}
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using ParticlePlayground;
+//using ParticlePlayground;
 
 public enum State {System = 0, ReduceAlpha, ZoomInSubsystem, Subsystem, ZoomOutSubsystem, IncreaseAlpha,
 	PlayAnimation};
@@ -9,15 +9,24 @@ public enum State {System = 0, ReduceAlpha, ZoomInSubsystem, Subsystem, ZoomOutS
 public enum RenderingMode {Fade = 2, Transparent = 3};
 public enum FadeMode {Continuously, Fast};
 
+public struct MeshPack
+{
+	public MeshRenderer[] meshes;
+}
+
 public class SystemBrowser : MonoBehaviour {
 
 	//public Material outlineMat; 
 	//public PlaygroundParticlesC[] Particles;
-	public GameObject ParticleController;
+	//public GameObject ParticleController;
 
 	Camera mainCam; //main camera
 	GameObject GO; //gameobject of main system
-	MeshRenderer[] meshes; //meshes of 3D model
+	MeshRenderer[] meshes; //all meshes of 3D model
+
+	MeshPack[] meshesALL; //меши подсистем
+	List<MeshRenderer> meshesTrash; //меши мусора (объекты, не входящие ни в одну подсистему)
+
 	GameObject clonedSub;  //clone of subsystem
 	SubsystemList Subs;
 	MouseOrbit orbitNav;  //orbit navigation
@@ -79,8 +88,8 @@ public class SystemBrowser : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		if (ParticleController != null)
-			ParticleController.SetActive (false);
+		//if (ParticleController != null)
+		//	ParticleController.SetActive (false);
 
 		GameObject canvas = GameObject.FindWithTag ("Player");
 		bGUI = canvas.GetComponent<BrowserGUI> (); 
@@ -94,17 +103,48 @@ public class SystemBrowser : MonoBehaviour {
 		//cameraHelper.transform.parent = ctrlComponent.target.transform;
 
 		Subs = GetComponent<SubsystemList> ();
-		CreateClones ();
+		//CreateClones ();
 
 		GameObject mainCamObj = GameObject.FindWithTag ("MainCamera"); 
 		mainCam = mainCamObj.GetComponent<Camera>();
 		orbitNav = mainCam.GetComponent<MouseOrbit>();
 		mainPos = GO.transform.position;
 
-		meshes = GetComponentsInChildren<MeshRenderer>();
+
+		BuildMeshes ();
+
 		PrepareForAlphaBlending ();
 		//PrepareForOutline (); //New !!!
 		m_alpha = alphaMax;
+	}
+	void BuildMeshes()
+	{
+		//суть в том, что надо собрать группы мешей, которые относятся к каждой подсистеме
+		//а также все остальные меши надо объеденить в отдельную группу
+		int N = Subs.list.Count;
+		meshesALL = new MeshPack[N];
+
+		for (int i = 0; i < N; ++i)
+		{
+			//получаем все меши данной подсистемы
+			MeshRenderer[] subsystemMeshes = Subs.list[i].gameObject.GetComponentsInChildren<MeshRenderer>();
+			meshesALL[i].meshes = subsystemMeshes;
+
+		}
+
+		//получаем вообще все меши
+		meshes = gameObject.GetComponentsInChildren<MeshRenderer>();
+
+		meshesTrash = new List<MeshRenderer> (0); //заводим новый массив
+		//теперь смотрим, какие меши нигде не присутствуют
+		foreach (MeshRenderer m in meshes)
+		{
+			//если среди родителя не найден флаг подсистемы
+			SubsystemFlag flag = m.gameObject.GetComponentInParent<SubsystemFlag>();
+			if (flag == null)
+				meshesTrash.Add(m); //добавляем мусорный меш
+		}
+
 	}
 
 	// Update is called once per frame
@@ -135,41 +175,41 @@ public class SystemBrowser : MonoBehaviour {
 		//raycasting
 		UpdateRaycasting ();
 	}
-	public void Play()
-	{
-		if (state == State.System)
-			StartPlay ();
-		else if (state == State.PlayAnimation)
-			StopPlay ();
-	}
+	//public void Play()
+	//{
+	//	if (state == State.System)
+	//		StartPlay ();
+	//	else if (state == State.PlayAnimation)
+	//		StopPlay ();
+	//}
 	//play animation or other actions
-	public void StartPlay()
-	{
-		state = State.PlayAnimation;
+	//public void StartPlay()
+	//{
+	//	state = State.PlayAnimation;
 
 		//1. make all system transparent
-		SetAlpha (alphaWhenPlay);
+	//	SetAlpha (alphaWhenPlay);
 
 		//2. start emit particles
 		//foreach (PlaygroundParticlesC P in Particles) {
 		//	P.Emit (true);
 		//}
-		if (ParticleController != null)
-			ParticleController.SetActive (true);
-	}
-	public void StopPlay()
-	{
-		state = State.System;
+		//if (ParticleController != null)
+		//	ParticleController.SetActive (true);
+	//}
+	//public void StopPlay()
+	//{
+	//	state = State.System;
 
 		//1. stop emit particles
 		//foreach (PlaygroundParticlesC P in Particles)
 		//	P.Emit (false);
-		if (ParticleController != null)
-			ParticleController.SetActive (false);
+		//if (ParticleController != null)
+		//	ParticleController.SetActive (false);
 
 		//2. make all system non transparent
-		SetAlpha (alphaMax);
-	}
+	//	SetAlpha (alphaMax);
+	//}
 	void UpdateRaycasting()
 	{
 		if (state != State.System)
@@ -224,7 +264,7 @@ public class SystemBrowser : MonoBehaviour {
 			//rend.materials.SetValue(m, 1);
 		}
 	}*/
-	//Create clone for each subsystem gameobject
+	//Create clone for each subsystem gameobject //DEPRECATED
 	void CreateClones()
 	{
 		GameObject original, clone;
@@ -292,7 +332,39 @@ public class SystemBrowser : MonoBehaviour {
 	public void SetAlpha(float a)
 	{
 		//float r, g, b;
-		foreach (MeshRenderer rend in meshes)
+		/*foreach (MeshRenderer rend in meshes)
+		{
+			foreach (Material material in rend.materials)
+			{
+				if (material.HasProperty("_node_op"))
+					material.SetFloat("_node_op", a);
+				SetColorMaterialAlpha(material, "_Color", a);
+			}
+		}*/
+		SetAlphaForSubsystems (a);
+		SetAlphaForTrash (a);
+	}
+	public void SetAlphaForSubsystems(float a)
+	{
+		for (int i = 0; i < meshesALL.Length; ++i)
+		{
+			if (i != current_subs_index) //для выбранной подсистемы ничего не делаем!
+			{
+				foreach (MeshRenderer rend in meshesALL[i].meshes)
+				{
+					foreach (Material material in rend.materials)
+					{
+						if (material.HasProperty("_node_op"))
+							material.SetFloat("_node_op", a);
+						SetColorMaterialAlpha(material, "_Color", a);
+					}
+				}
+			}
+		}
+	}
+	public void SetAlphaForTrash(float a)
+	{
+		foreach (MeshRenderer rend in meshesTrash)
 		{
 			foreach (Material material in rend.materials)
 			{
@@ -424,7 +496,7 @@ public class SystemBrowser : MonoBehaviour {
 		orbitNav.SetTarget (cameraHelper.transform);
 		state = State.ZoomOutSubsystem; //next state
 
-		current_subs_index = -1;
+		//current_subs_index = -1;
 	}
 
 	// Go to subsystem browsing; NOT FOR EXTERNAL USING!
@@ -437,8 +509,8 @@ public class SystemBrowser : MonoBehaviour {
 		if (stored_index != -1) //clear memory about task
 			stored_index = -1;
 
-		clonedSub = clones[subs_index];
-		clonedSub.SetActive (true);
+		//clonedSub = clones[subs_index];
+		//clonedSub.SetActive (true);
 	}
 
 	//Reduce alpha-channel of whole system
@@ -451,7 +523,7 @@ public class SystemBrowser : MonoBehaviour {
 			else
 			{
 				m_alpha = alphaMin;
-				SetAllMeshesVisibility(false);
+				SetAllMeshesVisibility(false); //кроме выбранной
 			}
 		}
 		else
@@ -465,7 +537,7 @@ public class SystemBrowser : MonoBehaviour {
 
 			subFrom = GO.transform.position;
 			//subTo = clonedSub.transform.position;
-			subTo = CalcCenterOfGameObject(clonedSub);
+			subTo = CalcCenterOfGameObject(Subs.list[current_subs_index].gameObject); //clonedSub
 
 			parallelFrom = orbitNav.transform.localPosition;
 			parallelTo = new Vector3(0,0,0);
@@ -491,9 +563,10 @@ public class SystemBrowser : MonoBehaviour {
 		else
 		{
 			state = State.System; //next state
-			clonedSub.SetActive(false);
+			//clonedSub.SetActive(false);
 			//orbitNav.target = GO.transform;
 			orbitNav.SetTarget(GO.transform);
+			current_subs_index = -1;
 		}
 	}
 
@@ -577,8 +650,22 @@ public class SystemBrowser : MonoBehaviour {
 	}
 	void SetAllMeshesVisibility(bool isVisible)
 	{
-		foreach (MeshRenderer mesh in meshes)
-			mesh.enabled = isVisible;
+		//foreach (MeshRenderer mesh in meshes)
+		//	mesh.enabled = isVisible;
+		for (int i = 0; i < meshesALL.Length; ++i) 
+		{
+			if (i != current_subs_index)
+			{
+				foreach (MeshRenderer m in meshesALL[i].meshes)
+				{
+					m.enabled = isVisible;
+				}
+			}
+		}
+		foreach (MeshRenderer m in meshesTrash)
+		{
+			m.enabled = isVisible;
+		}
 	}
 	//Set object visible or invisible
 	void SetVisibility(GameObject obj, bool isVisible)

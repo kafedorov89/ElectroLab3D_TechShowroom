@@ -5139,6 +5139,7 @@ ModelImporter:
     4301938: Generator_close_002
     4301940: bolty2
     7400000: Take 001
+    7400002: Take 0010
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -5159,7 +5160,4499 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 128_Diesel
+        weight: 1
+      - path: 128_Diesel/128_Diesel_Tubes_029
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_010
+        weight: 1
+      - path: Chassis_001
+        weight: 1
+      - path: Chassis_001/pointO_001
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001/Plane021
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001/pointA_001
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001/pointA_001/rod_001
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001/pointA_001/rod_001/rod_R1
+        weight: 1
+      - path: Chassis_001/splOffset
+        weight: 1
+      - path: Chassis_001/splOffset/pointB_001
+        weight: 1
+      - path: Chassis_001/splOffset/pointB_001/Piston_001
+        weight: 1
+      - path: Chassis_001/splOffset/pointB_001/Piston_001/Piston_r1
+        weight: 1
+      - path: Chassis_002
+        weight: 1
+      - path: Chassis_002/pointO_002
+        weight: 1
+      - path: Chassis_002/pointO_002/Crank_002
+        weight: 1
+      - path: Chassis_002/pointO_002/Crank_002/pointA_002
+        weight: 1
+      - path: Chassis_002/pointO_002/Crank_002/pointA_002/rod_002
+        weight: 1
+      - path: Chassis_002/pointO_002/Crank_002/pointA_002/rod_002/rod_L1
+        weight: 1
+      - path: Chassis_002/splOffset 1
+        weight: 1
+      - path: Chassis_002/splOffset 1/pointB_002
+        weight: 1
+      - path: Chassis_002/splOffset 1/pointB_002/Piston_002
+        weight: 1
+      - path: Chassis_002/splOffset 1/pointB_002/Piston_002/Piston_L1
+        weight: 1
+      - path: Chassis_003
+        weight: 1
+      - path: Chassis_003/pointO_003
+        weight: 1
+      - path: Chassis_003/pointO_003/Crank_003
+        weight: 1
+      - path: Chassis_003/pointO_003/Crank_003/pointA_003
+        weight: 1
+      - path: Chassis_003/pointO_003/Crank_003/pointA_003/rod_003
+        weight: 1
+      - path: Chassis_003/pointO_003/Crank_003/pointA_003/rod_003/rod_R002
+        weight: 1
+      - path: Chassis_003/splOffset002
+        weight: 1
+      - path: Chassis_003/splOffset002/pointB_003
+        weight: 1
+      - path: Chassis_003/splOffset002/pointB_003/Piston_004
+        weight: 1
+      - path: Chassis_003/splOffset002/pointB_003/Piston_004/Piston_r003
+        weight: 1
+      - path: Chassis_004
+        weight: 1
+      - path: Chassis_004/pointO_004
+        weight: 1
+      - path: Chassis_004/pointO_004/Crank_004
+        weight: 1
+      - path: Chassis_004/pointO_004/Crank_004/pointA_004
+        weight: 1
+      - path: Chassis_004/pointO_004/Crank_004/pointA_004/rod_004
+        weight: 1
+      - path: Chassis_004/pointO_004/Crank_004/pointA_004/rod_004/rod_L002
+        weight: 1
+      - path: Chassis_004/splOffset001
+        weight: 1
+      - path: Chassis_004/splOffset001/pointB_004
+        weight: 1
+      - path: Chassis_004/splOffset001/pointB_004/Piston_003
+        weight: 1
+      - path: Chassis_004/splOffset001/pointB_004/Piston_003/Piston_L002
+        weight: 1
+      - path: Chassis_005
+        weight: 1
+      - path: Chassis_005/pointO_005
+        weight: 1
+      - path: Chassis_005/pointO_005/Crank_006
+        weight: 1
+      - path: Chassis_005/pointO_005/Crank_006/pointA_006
+        weight: 1
+      - path: Chassis_005/pointO_005/Crank_006/pointA_006/rod_005
+        weight: 1
+      - path: Chassis_005/pointO_005/Crank_006/pointA_006/rod_005/rod_R003
+        weight: 1
+      - path: Chassis_005/splOffset004
+        weight: 1
+      - path: Chassis_005/splOffset004/pointB_005
+        weight: 1
+      - path: Chassis_005/splOffset004/pointB_005/Piston_006
+        weight: 1
+      - path: Chassis_005/splOffset004/pointB_005/Piston_006/Piston_r004
+        weight: 1
+      - path: Chassis_006
+        weight: 1
+      - path: Chassis_006/pointO_006
+        weight: 1
+      - path: Chassis_006/pointO_006/Crank_005
+        weight: 1
+      - path: Chassis_006/pointO_006/Crank_005/pointA_005
+        weight: 1
+      - path: Chassis_006/pointO_006/Crank_005/pointA_005/rod_006
+        weight: 1
+      - path: Chassis_006/pointO_006/Crank_005/pointA_005/rod_006/rod_L003
+        weight: 1
+      - path: Chassis_006/splOffset003
+        weight: 1
+      - path: Chassis_006/splOffset003/pointB_006
+        weight: 1
+      - path: Chassis_006/splOffset003/pointB_006/Piston_005
+        weight: 1
+      - path: Chassis_006/splOffset003/pointB_006/Piston_005/Piston_L003
+        weight: 1
+      - path: Chassis_007
+        weight: 1
+      - path: Chassis_007/pointO_007
+        weight: 1
+      - path: Chassis_007/pointO_007/Crank_010
+        weight: 1
+      - path: Chassis_007/pointO_007/Crank_010/pointA_007
+        weight: 1
+      - path: Chassis_007/pointO_007/Crank_010/pointA_007/rod_007
+        weight: 1
+      - path: Chassis_007/pointO_007/Crank_010/pointA_007/rod_007/rod_R005
+        weight: 1
+      - path: Chassis_007/splOffset005
+        weight: 1
+      - path: Chassis_007/splOffset005/pointB_007
+        weight: 1
+      - path: Chassis_007/splOffset005/pointB_007/Piston_010
+        weight: 1
+      - path: Chassis_007/splOffset005/pointB_007/Piston_010/Piston_r006
+        weight: 1
+      - path: Chassis_008
+        weight: 1
+      - path: Chassis_008/pointO_008
+        weight: 1
+      - path: Chassis_008/pointO_008/Crank_009
+        weight: 1
+      - path: Chassis_008/pointO_008/Crank_009/pointA_008
+        weight: 1
+      - path: Chassis_008/pointO_008/Crank_009/pointA_008/rod_008
+        weight: 1
+      - path: Chassis_008/pointO_008/Crank_009/pointA_008/rod_008/rod_L004
+        weight: 1
+      - path: Chassis_008/splOffset008
+        weight: 1
+      - path: Chassis_008/splOffset008/pointB_008
+        weight: 1
+      - path: Chassis_008/splOffset008/pointB_008/Piston_009
+        weight: 1
+      - path: Chassis_008/splOffset008/pointB_008/Piston_009/Piston_L005
+        weight: 1
+      - path: Chassis_009
+        weight: 1
+      - path: Chassis_009/pointO_009
+        weight: 1
+      - path: Chassis_009/pointO_009/Crank_008
+        weight: 1
+      - path: Chassis_009/pointO_009/Crank_008/pointA_010
+        weight: 1
+      - path: Chassis_009/pointO_009/Crank_008/pointA_010/rod_009
+        weight: 1
+      - path: Chassis_009/pointO_009/Crank_008/pointA_010/rod_009/rod_R004
+        weight: 1
+      - path: Chassis_009/splOffset007
+        weight: 1
+      - path: Chassis_009/splOffset007/pointB_009
+        weight: 1
+      - path: Chassis_009/splOffset007/pointB_009/Piston_008
+        weight: 1
+      - path: Chassis_009/splOffset007/pointB_009/Piston_008/Piston_r005
+        weight: 1
+      - path: Chassis_010
+        weight: 1
+      - path: Chassis_010/pointO_010
+        weight: 1
+      - path: Chassis_010/pointO_010/Crank_007
+        weight: 1
+      - path: Chassis_010/pointO_010/Crank_007/pointA_009
+        weight: 1
+      - path: Chassis_010/pointO_010/Crank_007/pointA_009/rod_010
+        weight: 1
+      - path: Chassis_010/pointO_010/Crank_007/pointA_009/rod_010/rod_L005
+        weight: 1
+      - path: Chassis_010/splOffset006
+        weight: 1
+      - path: Chassis_010/splOffset006/pointB_010
+        weight: 1
+      - path: Chassis_010/splOffset006/pointB_010/Piston_007
+        weight: 1
+      - path: Chassis_010/splOffset006/pointB_010/Piston_007/Piston_L004
+        weight: 1
+      - path: Chassis_011
+        weight: 1
+      - path: Chassis_011/pointO_011
+        weight: 1
+      - path: Chassis_011/pointO_011/Crank_014
+        weight: 1
+      - path: Chassis_011/pointO_011/Crank_014/pointA_011
+        weight: 1
+      - path: Chassis_011/pointO_011/Crank_014/pointA_011/rod_011
+        weight: 1
+      - path: Chassis_011/pointO_011/Crank_014/pointA_011/rod_011/rod_R007
+        weight: 1
+      - path: Chassis_011/splOffset009
+        weight: 1
+      - path: Chassis_011/splOffset009/pointB_011
+        weight: 1
+      - path: Chassis_011/splOffset009/pointB_011/Piston_014
+        weight: 1
+      - path: Chassis_011/splOffset009/pointB_011/Piston_014/Piston_r008
+        weight: 1
+      - path: Chassis_012
+        weight: 1
+      - path: Chassis_012/pointO_012
+        weight: 1
+      - path: Chassis_012/pointO_012/Crank_013
+        weight: 1
+      - path: Chassis_012/pointO_012/Crank_013/pointA_012
+        weight: 1
+      - path: Chassis_012/pointO_012/Crank_013/pointA_012/rod_012
+        weight: 1
+      - path: Chassis_012/pointO_012/Crank_013/pointA_012/rod_012/rod_L006
+        weight: 1
+      - path: Chassis_012/splOffset012
+        weight: 1
+      - path: Chassis_012/splOffset012/pointB_012
+        weight: 1
+      - path: Chassis_012/splOffset012/pointB_012/Piston_013
+        weight: 1
+      - path: Chassis_012/splOffset012/pointB_012/Piston_013/Piston_L007
+        weight: 1
+      - path: Chassis_013
+        weight: 1
+      - path: Chassis_013/pointO_013
+        weight: 1
+      - path: Chassis_013/pointO_013/Crank_012
+        weight: 1
+      - path: Chassis_013/pointO_013/Crank_012/pointA_014
+        weight: 1
+      - path: Chassis_013/pointO_013/Crank_012/pointA_014/rod_013
+        weight: 1
+      - path: Chassis_013/pointO_013/Crank_012/pointA_014/rod_013/rod_R006
+        weight: 1
+      - path: Chassis_013/splOffset011
+        weight: 1
+      - path: Chassis_013/splOffset011/pointB_013
+        weight: 1
+      - path: Chassis_013/splOffset011/pointB_013/Piston_012
+        weight: 1
+      - path: Chassis_013/splOffset011/pointB_013/Piston_012/Piston_r007
+        weight: 1
+      - path: Chassis_014
+        weight: 1
+      - path: Chassis_014/pointO_014
+        weight: 1
+      - path: Chassis_014/pointO_014/Crank_011
+        weight: 1
+      - path: Chassis_014/pointO_014/Crank_011/pointA_013
+        weight: 1
+      - path: Chassis_014/pointO_014/Crank_011/pointA_013/rod_014
+        weight: 1
+      - path: Chassis_014/pointO_014/Crank_011/pointA_013/rod_014/rod_L007
+        weight: 1
+      - path: Chassis_014/splOffset010
+        weight: 1
+      - path: Chassis_014/splOffset010/pointB_014
+        weight: 1
+      - path: Chassis_014/splOffset010/pointB_014/Piston_011
+        weight: 1
+      - path: Chassis_014/splOffset010/pointB_014/Piston_011/Piston_L006
+        weight: 1
+      - path: Chassis_015
+        weight: 1
+      - path: Chassis_015/pointO_015
+        weight: 1
+      - path: Chassis_015/pointO_015/Crank_016
+        weight: 1
+      - path: Chassis_015/pointO_015/Crank_016/pointA_016
+        weight: 1
+      - path: Chassis_015/pointO_015/Crank_016/pointA_016/rod_015
+        weight: 1
+      - path: Chassis_015/pointO_015/Crank_016/pointA_016/rod_015/rod_R008
+        weight: 1
+      - path: Chassis_015/splOffset013
+        weight: 1
+      - path: Chassis_015/splOffset013/pointB_015
+        weight: 1
+      - path: Chassis_015/splOffset013/pointB_015/Piston_016
+        weight: 1
+      - path: Chassis_015/splOffset013/pointB_015/Piston_016/Piston_r009
+        weight: 1
+      - path: Chassis_016
+        weight: 1
+      - path: Chassis_016/pointO_016
+        weight: 1
+      - path: Chassis_016/pointO_016/Crank_015
+        weight: 1
+      - path: Chassis_016/pointO_016/Crank_015/pointA_015
+        weight: 1
+      - path: Chassis_016/pointO_016/Crank_015/pointA_015/rod_016
+        weight: 1
+      - path: Chassis_016/pointO_016/Crank_015/pointA_015/rod_016/rod_L008
+        weight: 1
+      - path: Chassis_016/splOffset014
+        weight: 1
+      - path: Chassis_016/splOffset014/pointB_016
+        weight: 1
+      - path: Chassis_016/splOffset014/pointB_016/Piston_015
+        weight: 1
+      - path: Chassis_016/splOffset014/pointB_016/Piston_015/Piston_L008
+        weight: 1
+      - path: Couplung_group
+        weight: 1
+      - path: Couplung_group/coupling
+        weight: 1
+      - path: Couplung_group/coupling_cover
+        weight: 1
+      - path: Diesel_buttom
+        weight: 1
+      - path: Diesel_buttom/Block_mount
+        weight: 1
+      - path: Diesel_buttom/Block_mount/Block_mount_000
+        weight: 1
+      - path: Diesel_buttom/Block_mount/Block_mount_001
+        weight: 1
+      - path: Diesel_buttom/Block_mount/Block_mount_002
+        weight: 1
+      - path: Diesel_buttom/Block_mount/Block_mount_003
+        weight: 1
+      - path: Diesel_buttom/Diesel_buttom_1
+        weight: 1
+      - path: Diesel_buttom/Diesel_buttom_2
+        weight: 1
+      - path: Diesel_cilinder_block
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_buttom_001
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_buttom_001/Block_cover_buttom_000
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_buttom_001/Block_cover_buttom_002
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_buttom_001/Block_cover_buttom_003
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_buttom_001/Block_cover_buttom_004
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_buttom_001/Block_cover_buttom_005
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_buttom_001/Block_cover_buttom_006
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_buttom_001/Block_cover_buttom_007
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_buttom_001/Block_cover_buttom_008
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_upper_001
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_upper_001/Block_cover_upper_000
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_upper_001/Block_cover_upper_002
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_upper_001/Block_cover_upper_003
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_upper_001/Block_cover_upper_004
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_001
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_002
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_003
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_004
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_005
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_006
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_007
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_008
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_009
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_010
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_011
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_012
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_013
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_014
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_015
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_016
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_017
+        weight: 1
+      - path: Diesel_cilinder_wires_001
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_000
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_002
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_003
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_004
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_005
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_006
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_007
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_008
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_009
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_010
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_011
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_012
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_013
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_014
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_015
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_016
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_017
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_018
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_019
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_020
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_021
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_022
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_023
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_024
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_025
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_026
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_027
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_028
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_029
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_030
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_031
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_032
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_033
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_034
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_035
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_036
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_037
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_038
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_039
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_040
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_041
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_042
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_043
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_044
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_045
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_046
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_047
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_048
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_049
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_050
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_051
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_052
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_053
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_054
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_055
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_056
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_057
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_058
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_059
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_060
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_061
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_062
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_063
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_064
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_065
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_066
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_067
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_068
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_069
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_070
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_071
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_072
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_073
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_074
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_075
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_076
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_077
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_078
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_079
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_080
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_081
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_082
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_083
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_084
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_085
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_086
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_087
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_088
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_089
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_090
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_091
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_092
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_093
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_094
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_095
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_096
+        weight: 1
+      - path: Diesel_wires_and_equipment_001
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_000
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_002
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_003
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_004
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_005
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_008
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_009
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_010
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_011
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_012
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_013
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_014
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_015
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_016
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_017
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_018
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_019
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_020
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_021
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_022
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_023
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_024
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_025
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_026
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_027
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_028
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_029
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_030
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_031
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_032
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_033
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_034
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_035
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_036
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_037
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_038
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_039
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_040
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_041
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_042
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_043
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_044
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_045
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_046
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_047
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_048
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_049
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_050
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_051
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_052
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_053
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_054
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_055
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_056
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_057
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_058
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_059
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_060
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_061
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_062
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_063
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_064
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_065
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_066
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_067
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_068
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_069
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_070
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_071
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_072
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_073
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_074
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_075
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_076
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_077
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_078
+        weight: 1
+      - path: Exhaust_system_001
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_000
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_002
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_003
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_004
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_005
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_006
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_007
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_008
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_009
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_010
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_011
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_012
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_013
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_014
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_015
+        weight: 1
+      - path: Generator
+        weight: 1
+      - path: Generator/Generator_back_end
+        weight: 1
+      - path: Generator/Generator_back_end/Generator_back_end_000
+        weight: 1
+      - path: Generator/Generator_back_end/Generator_back_end_001
+        weight: 1
+      - path: Generator/Generator_back_end/Generator_back_end_002
+        weight: 1
+      - path: Generator/Generator_back_end/Generator_back_end_003
+        weight: 1
+      - path: Generator/Generator_back_end/Generator_back_end_004
+        weight: 1
+      - path: Generator/Generator_back_end/Generator_back_end_005
+        weight: 1
+      - path: Generator/Generator_back_end/Generator_back_end_006
+        weight: 1
+      - path: Generator/Generator_close
+        weight: 1
+      - path: Generator/Generator_close/bolty2
+        weight: 1
+      - path: Generator/Generator_close/Generator_close_000
+        weight: 1
+      - path: Generator/Generator_close/Generator_close_001
+        weight: 1
+      - path: Generator/Generator_close/Generator_close_002
+        weight: 1
+      - path: Generator/Generator_front_end
+        weight: 1
+      - path: Generator/Generator_front_end/Generator_front_end_000
+        weight: 1
+      - path: Generator/Generator_front_end/Generator_front_end_001
+        weight: 1
+      - path: Generator/Generator_front_end/Generator_front_end_002
+        weight: 1
+      - path: Generator/Generator_front_end/Generator_front_end_003
+        weight: 1
+      - path: Generator/Generator_front_end/Generator_front_end_004
+        weight: 1
+      - path: Generator/Generator_front_end/Generator_front_end_005
+        weight: 1
+      - path: Generator/Generator_front_end/Generator_front_end_006
+        weight: 1
+      - path: Generator/Generator_open
+        weight: 1
+      - path: Generator/Generator_open/Bolty
+        weight: 1
+      - path: Generator/Generator_open/Generator_open_000
+        weight: 1
+      - path: Generator/Generator_open/Generator_open_0001
+        weight: 1
+      - path: Generator/Generator_open/Generator_open_001
+        weight: 1
+      - path: Generator/Generator_open/Generator_open_002
+        weight: 1
+      - path: Generator/Generator_open/Generator_open_003
+        weight: 1
+      - path: Generator/Generator_open/obmotka
+        weight: 1
+      - path: Generator/Generator_open/obmotka2
+        weight: 1
+      - path: Generator/Generator_top
+        weight: 1
+      - path: Generator/Rotor
+        weight: 1
+      - path: Generator/Rotor/Rotor_element_000
+        weight: 1
+      - path: Generator/Rotor/Rotor_element_001
+        weight: 1
+      - path: Generator/Rotor/Rotor_element_002
+        weight: 1
+      - path: Generator/Rotor/Rotor_element_003
+        weight: 1
+      - path: Generator/Rotor/Rotor_element_004
+        weight: 1
+      - path: Generator/Rotor/Rotor_element_005
+        weight: 1
+      - path: intake_system_001
+        weight: 1
+      - path: intake_system_001/intake_system_000
+        weight: 1
+      - path: intake_system_001/intake_system_002
+        weight: 1
+      - path: intake_system_001/intake_system_003
+        weight: 1
+      - path: intake_system_001/intake_system_004
+        weight: 1
+      - path: intake_system_001/intake_system_005
+        weight: 1
+      - path: intake_system_001/intake_system_006
+        weight: 1
+      - path: intake_system_001/intake_system_007
+        weight: 1
+      - path: intake_system_001/intake_system_008
+        weight: 1
+      - path: intake_system_001/intake_system_009
+        weight: 1
+      - path: intake_system_001/intake_system_010
+        weight: 1
+      - path: intake_system_001/intake_system_011
+        weight: 1
+      - path: intake_system_001/intake_system_012
+        weight: 1
+      - path: intake_system_001/intake_system_013
+        weight: 1
+      - path: intake_system_001/intake_system_014
+        weight: 1
+      - path: intake_system_001/intake_system_015
+        weight: 1
+      - path: intake_system_001/intake_system_016
+        weight: 1
+      - path: Line245
+        weight: 1
+      - path: Line246
+        weight: 1
+      - path: Line247
+        weight: 1
+      - path: Line248
+        weight: 1
+      - path: Line249
+        weight: 1
+      - path: Line250
+        weight: 1
+      - path: Line251
+        weight: 1
+      - path: Line252
+        weight: 1
+      - path: Point001
+        weight: 1
+      - path: Point002
+        weight: 1
+      - path: Point003
+        weight: 1
+      - path: Point004
+        weight: 1
+      - path: Point005
+        weight: 1
+      - path: Walves_001
+        weight: 1
+      - path: Walves_001/Walves_000
+        weight: 1
+      - path: Walves_001/Walves_002
+        weight: 1
+      - path: Walves_001/Walves_003
+        weight: 1
+      - path: Walves_001/Walves_004
+        weight: 1
+      - path: Walves_001/Walves_005
+        weight: 1
+      - path: Walves_001/Walves_006
+        weight: 1
+      - path: Walves_001/Walves_007
+        weight: 1
+      - path: Walves_001/Walves_008
+        weight: 1
+      - path: Walves_001/Walves_009
+        weight: 1
+      - path: Walves_001/Walves_010
+        weight: 1
+      - path: Walves_001/Walves_011
+        weight: 1
+      - path: Walves_001/Walves_012
+        weight: 1
+      - path: Walves_001/Walves_013
+        weight: 1
+      - path: Walves_001/Walves_014
+        weight: 1
+      - path: Walves_001/Walves_015
+        weight: 1
+      - path: Walves_001/Walves_016
+        weight: 1
+      - path: Walves_001/Walves_017
+        weight: 1
+      - path: Walves_001/Walves_018
+        weight: 1
+      - path: Walves_001/Walves_019
+        weight: 1
+      - path: Walves_001/Walves_020
+        weight: 1
+      - path: Walves_001/Walves_021
+        weight: 1
+      - path: Walves_001/Walves_022
+        weight: 1
+      - path: Walves_001/Walves_023
+        weight: 1
+      - path: Walves_001/Walves_024
+        weight: 1
+      - path: Walves_001/Walves_025
+        weight: 1
+      - path: Walves_001/Walves_026
+        weight: 1
+      - path: Walves_001/Walves_027
+        weight: 1
+      - path: Walves_001/Walves_028
+        weight: 1
+      - path: Walves_001/Walves_029
+        weight: 1
+      - path: Walves_001/Walves_030
+        weight: 1
+      - path: Walves_001/Walves_031
+        weight: 1
+      - path: Walves_001/Walves_032
+        weight: 1
+      - path: Walves_001/Walves_033
+        weight: 1
+      - path: Walves_001/Walves_034
+        weight: 1
+      - path: Walves_001/Walves_035
+        weight: 1
+      - path: Walves_001/Walves_036
+        weight: 1
+      - path: Walves_001/Walves_037
+        weight: 1
+      - path: Walves_001/Walves_038
+        weight: 1
+      - path: Walves_001/Walves_039
+        weight: 1
+      - path: Walves_001/Walves_040
+        weight: 1
+      - path: Walves_001/Walves_041
+        weight: 1
+      - path: Walves_001/Walves_042
+        weight: 1
+      - path: Walves_001/Walves_043
+        weight: 1
+      - path: Walves_001/Walves_044
+        weight: 1
+      - path: Walves_001/Walves_045
+        weight: 1
+      - path: Walves_001/Walves_046
+        weight: 1
+      - path: Walves_001/Walves_047
+        weight: 1
+      - path: Walves_001/Walves_048
+        weight: 1
+      - path: Walves_001/Walves_049
+        weight: 1
+      - path: Walves_001/Walves_050
+        weight: 1
+      - path: Walves_001/Walves_051
+        weight: 1
+      - path: Walves_001/Walves_052
+        weight: 1
+      - path: Walves_001/Walves_053
+        weight: 1
+      - path: Walves_001/Walves_054
+        weight: 1
+      - path: Walves_001/Walves_055
+        weight: 1
+      - path: Walves_001/Walves_056
+        weight: 1
+      - path: Walves_001/Walves_057
+        weight: 1
+      - path: Walves_001/Walves_058
+        weight: 1
+      - path: Walves_001/Walves_059
+        weight: 1
+      - path: Walves_001/Walves_060
+        weight: 1
+      - path: Walves_001/Walves_061
+        weight: 1
+      - path: Walves_001/Walves_062
+        weight: 1
+      - path: Walves_001/Walves_063
+        weight: 1
+      - path: Walves_001/Walves_064
+        weight: 1
+      - path: Walves_001/Walves_065
+        weight: 1
+      - path: Walves_001/Walves_066
+        weight: 1
+      - path: Walves_001/Walves_067
+        weight: 1
+      - path: Walves_001/Walves_068
+        weight: 1
+      - path: Walves_001/Walves_069
+        weight: 1
+      - path: Walves_001/Walves_070
+        weight: 1
+      - path: Walves_001/Walves_071
+        weight: 1
+      - path: Walves_001/Walves_072
+        weight: 1
+      - path: Walves_001/Walves_073
+        weight: 1
+      - path: Walves_001/Walves_074
+        weight: 1
+      - path: Walves_001/Walves_075
+        weight: 1
+      - path: Walves_001/Walves_076
+        weight: 1
+      - path: Walves_001/Walves_077
+        weight: 1
+      - path: Walves_001/Walves_078
+        weight: 1
+      - path: Walves_001/Walves_079
+        weight: 1
+      - path: Walves_001/Walves_080
+        weight: 1
+      - path: Walves_001/Walves_081
+        weight: 1
+      - path: Walves_001/Walves_082
+        weight: 1
+      - path: Walves_001/Walves_083
+        weight: 1
+      - path: Walves_001/Walves_084
+        weight: 1
+      - path: Walves_001/Walves_085
+        weight: 1
+      - path: Walves_001/Walves_086
+        weight: 1
+      - path: Walves_001/Walves_087
+        weight: 1
+      - path: Walves_001/Walves_088
+        weight: 1
+      - path: Walves_001/Walves_089
+        weight: 1
+      - path: Walves_001/Walves_090
+        weight: 1
+      - path: Walves_001/Walves_091
+        weight: 1
+      - path: Walves_001/Walves_092
+        weight: 1
+      - path: Walves_001/Walves_093
+        weight: 1
+      - path: Walves_001/Walves_094
+        weight: 1
+      - path: Walves_001/Walves_095
+        weight: 1
+      - path: Walves_001/Walves_096
+        weight: 1
+      - path: Walves_001/Walves_097
+        weight: 1
+      - path: Walves_001/Walves_098
+        weight: 1
+      - path: Walves_001/Walves_099
+        weight: 1
+      - path: Walves_001/Walves_100
+        weight: 1
+      - path: Walves_001/Walves_101
+        weight: 1
+      - path: Walves_001/Walves_102
+        weight: 1
+      - path: Walves_001/Walves_103
+        weight: 1
+      - path: Walves_001/Walves_104
+        weight: 1
+      - path: Walves_001/Walves_105
+        weight: 1
+      - path: Walves_001/Walves_106
+        weight: 1
+      - path: Walves_001/Walves_107
+        weight: 1
+      - path: Walves_001/Walves_108
+        weight: 1
+      - path: Walves_001/Walves_109
+        weight: 1
+      - path: Walves_001/Walves_110
+        weight: 1
+      - path: Walves_001/Walves_111
+        weight: 1
+      - path: Walves_001/Walves_112
+        weight: 1
+      - path: Walves_001/Walves_113
+        weight: 1
+      - path: Walves_001/Walves_114
+        weight: 1
+      - path: Walves_001/Walves_115
+        weight: 1
+      - path: Walves_001/Walves_116
+        weight: 1
+      - path: Walves_001/Walves_117
+        weight: 1
+      - path: Walves_001/Walves_118
+        weight: 1
+      - path: Walves_001/Walves_119
+        weight: 1
+      - path: Walves_001/Walves_120
+        weight: 1
+      - path: Walves_001/Walves_121
+        weight: 1
+      - path: Walves_001/Walves_122
+        weight: 1
+      - path: Walves_001/Walves_123
+        weight: 1
+      - path: Walves_001/Walves_124
+        weight: 1
+      - path: Walves_001/Walves_125
+        weight: 1
+      - path: Walves_001/Walves_126
+        weight: 1
+      - path: Walves_001/Walves_127
+        weight: 1
+      - path: Walves_001/Walves_128
+        weight: 1
+      - path: Walves_001/Walves_129
+        weight: 1
+      - path: Walves_001/Walves_130
+        weight: 1
+      - path: Walves_001/Walves_131
+        weight: 1
+      - path: Walves_001/Walves_132
+        weight: 1
+      - path: Walves_001/Walves_133
+        weight: 1
+      - path: Walves_001/Walves_134
+        weight: 1
+      - path: Walves_001/Walves_135
+        weight: 1
+      - path: Walves_001/Walves_136
+        weight: 1
+      - path: Walves_001/Walves_137
+        weight: 1
+      - path: Walves_001/Walves_138
+        weight: 1
+      - path: Walves_001/Walves_139
+        weight: 1
+      - path: Walves_001/Walves_140
+        weight: 1
+      - path: Walves_001/Walves_141
+        weight: 1
+      - path: Walves_001/Walves_142
+        weight: 1
+      - path: Walves_001/Walves_143
+        weight: 1
+      - path: Walves_001/Walves_144
+        weight: 1
+      - path: Walves_001/Walves_145
+        weight: 1
+      - path: Walves_001/Walves_146
+        weight: 1
+      - path: Walves_001/Walves_147
+        weight: 1
+      - path: Walves_001/Walves_148
+        weight: 1
+      - path: Walves_001/Walves_149
+        weight: 1
+      - path: Walves_001/Walves_150
+        weight: 1
+      - path: Walves_001/Walves_151
+        weight: 1
+      - path: Walves_001/Walves_152
+        weight: 1
+      - path: Walves_001/Walves_153
+        weight: 1
+      - path: Walves_001/Walves_154
+        weight: 1
+      - path: Walves_001/Walves_155
+        weight: 1
+      - path: Walves_001/Walves_156
+        weight: 1
+      - path: Walves_001/Walves_157
+        weight: 1
+      - path: Walves_001/Walves_158
+        weight: 1
+      - path: Walves_001/Walves_159
+        weight: 1
+      - path: Walves_001/Walves_160
+        weight: 1
+      - path: Walves_001/Walves_161
+        weight: 1
+      - path: Walves_001/Walves_162
+        weight: 1
+      - path: Walves_001/Walves_163
+        weight: 1
+      - path: Walves_001/Walves_164
+        weight: 1
+      - path: Walves_001/Walves_165
+        weight: 1
+      - path: Walves_001/Walves_166
+        weight: 1
+      - path: Walves_001/Walves_167
+        weight: 1
+      - path: Walves_001/Walves_168
+        weight: 1
+      - path: Walves_001/Walves_169
+        weight: 1
+      - path: Walves_001/Walves_170
+        weight: 1
+      - path: Walves_001/Walves_171
+        weight: 1
+      - path: Walves_001/Walves_172
+        weight: 1
+      - path: Walves_001/Walves_173
+        weight: 1
+      - path: Walves_001/Walves_174
+        weight: 1
+      - path: Walves_001/Walves_175
+        weight: 1
+      - path: Walves_001/Walves_176
+        weight: 1
+      - path: Walves_001/Walves_177
+        weight: 1
+      - path: Walves_001/Walves_178
+        weight: 1
+      - path: Walves_001/Walves_179
+        weight: 1
+      - path: Walves_001/Walves_180
+        weight: 1
+      - path: Walves_001/Walves_181
+        weight: 1
+      - path: Walves_001/Walves_182
+        weight: 1
+      - path: Walves_001/Walves_183
+        weight: 1
+      - path: Walves_001/Walves_184
+        weight: 1
+      - path: Walves_001/Walves_185
+        weight: 1
+      - path: Walves_001/Walves_186
+        weight: 1
+      - path: Walves_001/Walves_187
+        weight: 1
+      - path: Walves_001/Walves_188
+        weight: 1
+      - path: Walves_001/Walves_189
+        weight: 1
+      - path: Walves_001/Walves_190
+        weight: 1
+      - path: Walves_001/Walves_191
+        weight: 1
+      - path: Walves_001/Walves_192
+        weight: 1
+      - path: Walves_001/Walves_193
+        weight: 1
+      - path: Walves_001/Walves_194
+        weight: 1
+      - path: Walves_001/Walves_195
+        weight: 1
+      - path: Walves_001/Walves_196
+        weight: 1
+      - path: Walves_001/Walves_197
+        weight: 1
+      - path: Walves_001/Walves_198
+        weight: 1
+      - path: Walves_001/Walves_199
+        weight: 1
+      - path: Walves_001/Walves_200
+        weight: 1
+      - path: Walves_001/Walves_201
+        weight: 1
+      - path: Walves_001/Walves_202
+        weight: 1
+      - path: Walves_001/Walves_203
+        weight: 1
+      - path: Walves_001/Walves_204
+        weight: 1
+      - path: Walves_001/Walves_205
+        weight: 1
+      - path: Walves_001/Walves_206
+        weight: 1
+      - path: Walves_001/Walves_207
+        weight: 1
+      - path: Walves_001/Walves_208
+        weight: 1
+      - path: Walves_001/Walves_209
+        weight: 1
+      - path: Walves_001/Walves_210
+        weight: 1
+      - path: Walves_001/Walves_211
+        weight: 1
+      - path: Walves_001/Walves_212
+        weight: 1
+      - path: Walves_001/Walves_213
+        weight: 1
+      - path: Walves_001/Walves_214
+        weight: 1
+      - path: Walves_001/Walves_215
+        weight: 1
+      - path: Walves_001/Walves_216
+        weight: 1
+      - path: Walves_001/Walves_217
+        weight: 1
+      - path: Walves_001/Walves_218
+        weight: 1
+      - path: Walves_001/Walves_219
+        weight: 1
+      - path: Walves_001/Walves_220
+        weight: 1
+      - path: Walves_001/Walves_221
+        weight: 1
+      - path: Walves_001/Walves_222
+        weight: 1
+      - path: Walves_001/Walves_223
+        weight: 1
+      - path: Walves_001/Walves_224
+        weight: 1
+      - path: Walves_001/Walves_225
+        weight: 1
+      - path: Walves_001/Walves_226
+        weight: 1
+      - path: Walves_001/Walves_227
+        weight: 1
+      - path: Walves_001/Walves_228
+        weight: 1
+      - path: Walves_001/Walves_229
+        weight: 1
+      - path: Walves_001/Walves_230
+        weight: 1
+      - path: Walves_001/Walves_231
+        weight: 1
+      - path: Walves_001/Walves_232
+        weight: 1
+      - path: Walves_001/Walves_233
+        weight: 1
+      - path: Walves_001/Walves_234
+        weight: 1
+      - path: Walves_001/Walves_235
+        weight: 1
+      - path: Walves_001/Walves_236
+        weight: 1
+      - path: Walves_001/Walves_237
+        weight: 1
+      - path: Walves_001/Walves_238
+        weight: 1
+      - path: Walves_001/Walves_239
+        weight: 1
+      - path: Walves_001/Walves_240
+        weight: 1
+      - path: Walves_001/Walves_241
+        weight: 1
+      - path: Walves_001/Walves_242
+        weight: 1
+      - path: Walves_001/Walves_243
+        weight: 1
+      - path: Walves_001/Walves_244
+        weight: 1
+      - path: Walves_001/Walves_245
+        weight: 1
+      - path: Walves_001/Walves_246
+        weight: 1
+      - path: Walves_001/Walves_247
+        weight: 1
+      - path: Walves_001/Walves_248
+        weight: 1
+      - path: Walves_001/Walves_249
+        weight: 1
+      - path: Walves_001/Walves_250
+        weight: 1
+      - path: Walves_001/Walves_251
+        weight: 1
+      - path: Walves_001/Walves_252
+        weight: 1
+      - path: Walves_001/Walves_253
+        weight: 1
+      - path: Walves_001/Walves_254
+        weight: 1
+      - path: Walves_001/Walves_255
+        weight: 1
+      - path: Walves_001/Walves_256
+        weight: 1
+      - path: Walves_001/Walves_257
+        weight: 1
+      - path: Walves_001/Walves_258
+        weight: 1
+      - path: Walves_001/Walves_259
+        weight: 1
+      - path: Walves_001/Walves_260
+        weight: 1
+      - path: Walves_001/Walves_261
+        weight: 1
+      - path: Walves_001/Walves_262
+        weight: 1
+      - path: Walves_001/Walves_263
+        weight: 1
+      - path: Walves_001/Walves_264
+        weight: 1
+      - path: Walves_001/Walves_265
+        weight: 1
+      - path: Walves_001/Walves_266
+        weight: 1
+      - path: Walves_001/Walves_267
+        weight: 1
+      - path: Walves_001/Walves_268
+        weight: 1
+      - path: Walves_001/Walves_269
+        weight: 1
+      - path: Walves_001/Walves_270
+        weight: 1
+      - path: Walves_001/Walves_271
+        weight: 1
+      - path: Walves_001/Walves_272
+        weight: 1
+      - path: Walves_001/Walves_273
+        weight: 1
+      - path: Walves_001/Walves_274
+        weight: 1
+      - path: Walves_001/Walves_275
+        weight: 1
+      - path: Walves_001/Walves_276
+        weight: 1
+      - path: Walves_001/Walves_277
+        weight: 1
+      - path: Walves_001/Walves_278
+        weight: 1
+      - path: Walves_001/Walves_279
+        weight: 1
+      - path: Walves_001/Walves_280
+        weight: 1
+      - path: Walves_001/Walves_281
+        weight: 1
+      - path: Walves_001/Walves_282
+        weight: 1
+      - path: Walves_001/Walves_283
+        weight: 1
+      - path: Walves_001/Walves_284
+        weight: 1
+      - path: Walves_001/Walves_285
+        weight: 1
+      - path: Walves_001/Walves_286
+        weight: 1
+      - path: Walves_001/Walves_287
+        weight: 1
+      - path: Walves_001/Walves_288
+        weight: 1
+      - path: Walves_001/Walves_289
+        weight: 1
+      - path: Walves_001/Walves_290
+        weight: 1
+      - path: Walves_001/Walves_291
+        weight: 1
+      - path: Walves_001/Walves_292
+        weight: 1
+      - path: Walves_001/Walves_293
+        weight: 1
+      - path: Walves_001/Walves_294
+        weight: 1
+      - path: Walves_001/Walves_295
+        weight: 1
+      - path: Walves_001/Walves_296
+        weight: 1
+      - path: Walves_001/Walves_297
+        weight: 1
+      - path: Walves_001/Walves_298
+        weight: 1
+      - path: Walves_001/Walves_299
+        weight: 1
+      - path: Walves_001/Walves_300
+        weight: 1
+      - path: Walves_001/Walves_301
+        weight: 1
+      - path: Walves_001/Walves_302
+        weight: 1
+      - path: Walves_001/Walves_303
+        weight: 1
+      - path: Walves_001/Walves_304
+        weight: 1
+      - path: Walves_001/Walves_305
+        weight: 1
+      - path: Walves_001/Walves_306
+        weight: 1
+      - path: Walves_001/Walves_307
+        weight: 1
+      - path: Walves_001/Walves_308
+        weight: 1
+      - path: Walves_001/Walves_309
+        weight: 1
+      - path: Walves_001/Walves_310
+        weight: 1
+      - path: Walves_001/Walves_311
+        weight: 1
+      - path: Walves_001/Walves_312
+        weight: 1
+      - path: Walves_001/Walves_313
+        weight: 1
+      - path: Walves_001/Walves_314
+        weight: 1
+      - path: Walves_001/Walves_315
+        weight: 1
+      - path: Walves_001/Walves_316
+        weight: 1
+      - path: Walves_001/Walves_317
+        weight: 1
+      - path: Walves_001/Walves_318
+        weight: 1
+      - path: Walves_001/Walves_319
+        weight: 1
+      - path: Walves_001/Walves_320
+        weight: 1
+      - path: Walves_001/Walves_321
+        weight: 1
+      - path: Walves_001/Walves_322
+        weight: 1
+      - path: Walves_001/Walves_323
+        weight: 1
+      - path: Walves_001/Walves_324
+        weight: 1
+      - path: Walves_001/Walves_325
+        weight: 1
+      - path: Walves_001/Walves_326
+        weight: 1
+      - path: Walves_001/Walves_327
+        weight: 1
+      - path: Walves_001/Walves_328
+        weight: 1
+      - path: Walves_001/Walves_329
+        weight: 1
+      - path: Walves_001/Walves_330
+        weight: 1
+      - path: Walves_001/Walves_331
+        weight: 1
+      - path: Walves_001/Walves_332
+        weight: 1
+      - path: Walves_001/Walves_333
+        weight: 1
+      - path: Walves_001/Walves_334
+        weight: 1
+      - path: Walves_001/Walves_335
+        weight: 1
+      - path: Walves_001/Walves_336
+        weight: 1
+      - path: Walves_001/Walves_337
+        weight: 1
+      - path: Walves_001/Walves_338
+        weight: 1
+      - path: Walves_001/Walves_339
+        weight: 1
+      - path: Walves_001/Walves_340
+        weight: 1
+      - path: Walves_001/Walves_341
+        weight: 1
+      - path: Walves_001/Walves_342
+        weight: 1
+      - path: Walves_001/Walves_343
+        weight: 1
+      - path: Walves_001/Walves_344
+        weight: 1
+      - path: Walves_001/Walves_345
+        weight: 1
+      - path: Walves_001/Walves_346
+        weight: 1
+      - path: Walves_001/Walves_347
+        weight: 1
+      - path: Walves_001/Walves_348
+        weight: 1
+      - path: Walves_001/Walves_349
+        weight: 1
+      - path: Walves_001/Walves_350
+        weight: 1
+      - path: Walves_001/Walves_351
+        weight: 1
+      - path: Walves_001/Walves_352
+        weight: 1
+      - path: Walves_001/Walves_353
+        weight: 1
+      - path: Walves_001/Walves_354
+        weight: 1
+      - path: Walves_001/Walves_355
+        weight: 1
+      - path: Walves_001/Walves_356
+        weight: 1
+      - path: Walves_001/Walves_357
+        weight: 1
+      - path: Walves_001/Walves_358
+        weight: 1
+      - path: Walves_001/Walves_359
+        weight: 1
+      - path: Walves_001/Walves_360
+        weight: 1
+      - path: Walves_001/Walves_361
+        weight: 1
+      - path: Walves_001/Walves_362
+        weight: 1
+      - path: Walves_001/Walves_363
+        weight: 1
+      - path: Walves_001/Walves_364
+        weight: 1
+      - path: Walves_001/Walves_365
+        weight: 1
+      - path: Walves_001/Walves_366
+        weight: 1
+      - path: Walves_001/Walves_367
+        weight: 1
+      - path: Walves_001/Walves_368
+        weight: 1
+      - path: Walves_001/Walves_369
+        weight: 1
+      - path: Walves_001/Walves_370
+        weight: 1
+      - path: Walves_001/Walves_371
+        weight: 1
+      - path: Walves_001/Walves_372
+        weight: 1
+      - path: Walves_001/Walves_373
+        weight: 1
+      - path: Walves_001/Walves_374
+        weight: 1
+      - path: Walves_001/Walves_375
+        weight: 1
+      - path: Walves_001/Walves_376
+        weight: 1
+      - path: Walves_001/Walves_377
+        weight: 1
+      - path: Walves_001/Walves_378
+        weight: 1
+      - path: Walves_001/Walves_379
+        weight: 1
+      - path: Walves_001/Walves_380
+        weight: 1
+      - path: Walves_001/Walves_381
+        weight: 1
+      - path: Walves_001/Walves_382
+        weight: 1
+      - path: Walves_001/Walves_383
+        weight: 1
+      - path: Walves_001/Walves_384
+        weight: 1
+      - path: Walves_001/Walves_385
+        weight: 1
+      - path: Walves_001/Walves_386
+        weight: 1
+      - path: Walves_001/Walves_387
+        weight: 1
+      - path: Walves_001/Walves_388
+        weight: 1
+      - path: Walves_001/Walves_389
+        weight: 1
+      - path: Walves_001/Walves_390
+        weight: 1
+      - path: Walves_001/Walves_391
+        weight: 1
+      - path: Walves_001/Walves_392
+        weight: 1
+      - path: Walves_001/Walves_393
+        weight: 1
+      - path: Walves_001/Walves_394
+        weight: 1
+      - path: Walves_001/Walves_395
+        weight: 1
+      - path: Walves_001/Walves_396
+        weight: 1
+      - path: Walves_001/Walves_397
+        weight: 1
+      - path: Walves_001/Walves_398
+        weight: 1
+      - path: Walves_001/Walves_399
+        weight: 1
+      - path: Walves_001/Walves_400
+        weight: 1
+      - path: Walves_001/Walves_401
+        weight: 1
+      - path: Walves_001/Walves_402
+        weight: 1
+      - path: Walves_001/Walves_403
+        weight: 1
+      - path: Walves_001/Walves_404
+        weight: 1
+      - path: Walves_001/Walves_405
+        weight: 1
+      - path: Walves_001/Walves_406
+        weight: 1
+      - path: Walves_001/Walves_407
+        weight: 1
+      - path: Walves_001/Walves_408
+        weight: 1
+      - path: Walves_001/Walves_409
+        weight: 1
+      - path: Walves_001/Walves_410
+        weight: 1
+      - path: Walves_001/Walves_411
+        weight: 1
+      - path: Walves_001/Walves_412
+        weight: 1
+      - path: Walves_001/Walves_413
+        weight: 1
+      - path: Walves_001/Walves_414
+        weight: 1
+      - path: Walves_001/Walves_415
+        weight: 1
+      - path: Walves_001/Walves_416
+        weight: 1
+      - path: Walves_001/Walves_417
+        weight: 1
+      - path: Walves_001/Walves_418
+        weight: 1
+      - path: Walves_001/Walves_419
+        weight: 1
+      - path: Walves_001/Walves_420
+        weight: 1
+      - path: Walves_001/Walves_421
+        weight: 1
+      - path: Walves_001/Walves_422
+        weight: 1
+      - path: Walves_001/Walves_423
+        weight: 1
+      - path: Walves_001/Walves_424
+        weight: 1
+      - path: Walves_001/Walves_425
+        weight: 1
+      - path: Walves_001/Walves_426
+        weight: 1
+      - path: Walves_001/Walves_427
+        weight: 1
+      - path: Walves_001/Walves_428
+        weight: 1
+      - path: Walves_001/Walves_429
+        weight: 1
+      - path: Walves_001/Walves_430
+        weight: 1
+      - path: Walves_001/Walves_431
+        weight: 1
+      - path: Walves_001/Walves_432
+        weight: 1
+      - path: Walves_001/Walves_433
+        weight: 1
+      - path: Walves_001/Walves_434
+        weight: 1
+      - path: Walves_001/Walves_435
+        weight: 1
+      - path: Walves_001/Walves_436
+        weight: 1
+      - path: Walves_001/Walves_437
+        weight: 1
+      - path: Walves_001/Walves_438
+        weight: 1
+      - path: Walves_001/Walves_439
+        weight: 1
+      - path: Walves_001/Walves_440
+        weight: 1
+      - path: Walves_001/Walves_441
+        weight: 1
+      - path: Walves_001/Walves_442
+        weight: 1
+      - path: Walves_001/Walves_443
+        weight: 1
+      - path: Walves_001/Walves_444
+        weight: 1
+      - path: Walves_001/Walves_445
+        weight: 1
+      - path: Walves_001/Walves_446
+        weight: 1
+      - path: Walves_001/Walves_447
+        weight: 1
+      - path: Walves_001/Walves_448
+        weight: 1
+      - path: Walves_001/Walves_449
+        weight: 1
+      - path: Walves_001/Walves_450
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Take 0010
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 128_Diesel
+        weight: 1
+      - path: 128_Diesel/128_Diesel_Tubes_029
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity000/Cilinder001_000/Cilinder001_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity001/Cilinder002_000/Cilinder002_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity002/Cilinder003_000/Cilinder003_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity003/Cilinder004_000/Cilinder004_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity004/Cilinder005_000/Cilinder005_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity005/Cilinder006_000/Cilinder006_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity006/Cilinder007_000/Cilinder007_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity007/Cilinder008_000/Cilinder008_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity008/Cilinder009_000/Cilinder009_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity009/Cilinder010_000/Cilinder010_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity010/Cilinder011_000/Cilinder011_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity011/Cilinder012_000/Cilinder012_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity012/Cilinder013_000/Cilinder013_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity013/Cilinder014_000/Cilinder014_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity014/Cilinder015_000/Cilinder015_010
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_001
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_002
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_003
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_004
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_005
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_006
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_007
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_008
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_009
+        weight: 1
+      - path: AlignBox_Delete_in_Unity015/Cilinder016_000/Cilinder016_010
+        weight: 1
+      - path: Chassis_001
+        weight: 1
+      - path: Chassis_001/pointO_001
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001/Plane021
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001/pointA_001
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001/pointA_001/rod_001
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001/pointA_001/rod_001/rod_R1
+        weight: 1
+      - path: Chassis_001/splOffset
+        weight: 1
+      - path: Chassis_001/splOffset/pointB_001
+        weight: 1
+      - path: Chassis_001/splOffset/pointB_001/Piston_001
+        weight: 1
+      - path: Chassis_001/splOffset/pointB_001/Piston_001/Piston_r1
+        weight: 1
+      - path: Chassis_002
+        weight: 1
+      - path: Chassis_002/pointO_002
+        weight: 1
+      - path: Chassis_002/pointO_002/Crank_002
+        weight: 1
+      - path: Chassis_002/pointO_002/Crank_002/pointA_002
+        weight: 1
+      - path: Chassis_002/pointO_002/Crank_002/pointA_002/rod_002
+        weight: 1
+      - path: Chassis_002/pointO_002/Crank_002/pointA_002/rod_002/rod_L1
+        weight: 1
+      - path: Chassis_002/splOffset 1
+        weight: 1
+      - path: Chassis_002/splOffset 1/pointB_002
+        weight: 1
+      - path: Chassis_002/splOffset 1/pointB_002/Piston_002
+        weight: 1
+      - path: Chassis_002/splOffset 1/pointB_002/Piston_002/Piston_L1
+        weight: 1
+      - path: Chassis_003
+        weight: 1
+      - path: Chassis_003/pointO_003
+        weight: 1
+      - path: Chassis_003/pointO_003/Crank_003
+        weight: 1
+      - path: Chassis_003/pointO_003/Crank_003/pointA_003
+        weight: 1
+      - path: Chassis_003/pointO_003/Crank_003/pointA_003/rod_003
+        weight: 1
+      - path: Chassis_003/pointO_003/Crank_003/pointA_003/rod_003/rod_R002
+        weight: 1
+      - path: Chassis_003/splOffset002
+        weight: 1
+      - path: Chassis_003/splOffset002/pointB_003
+        weight: 1
+      - path: Chassis_003/splOffset002/pointB_003/Piston_004
+        weight: 1
+      - path: Chassis_003/splOffset002/pointB_003/Piston_004/Piston_r003
+        weight: 1
+      - path: Chassis_004
+        weight: 1
+      - path: Chassis_004/pointO_004
+        weight: 1
+      - path: Chassis_004/pointO_004/Crank_004
+        weight: 1
+      - path: Chassis_004/pointO_004/Crank_004/pointA_004
+        weight: 1
+      - path: Chassis_004/pointO_004/Crank_004/pointA_004/rod_004
+        weight: 1
+      - path: Chassis_004/pointO_004/Crank_004/pointA_004/rod_004/rod_L002
+        weight: 1
+      - path: Chassis_004/splOffset001
+        weight: 1
+      - path: Chassis_004/splOffset001/pointB_004
+        weight: 1
+      - path: Chassis_004/splOffset001/pointB_004/Piston_003
+        weight: 1
+      - path: Chassis_004/splOffset001/pointB_004/Piston_003/Piston_L002
+        weight: 1
+      - path: Chassis_005
+        weight: 1
+      - path: Chassis_005/pointO_005
+        weight: 1
+      - path: Chassis_005/pointO_005/Crank_006
+        weight: 1
+      - path: Chassis_005/pointO_005/Crank_006/pointA_006
+        weight: 1
+      - path: Chassis_005/pointO_005/Crank_006/pointA_006/rod_005
+        weight: 1
+      - path: Chassis_005/pointO_005/Crank_006/pointA_006/rod_005/rod_R003
+        weight: 1
+      - path: Chassis_005/splOffset004
+        weight: 1
+      - path: Chassis_005/splOffset004/pointB_005
+        weight: 1
+      - path: Chassis_005/splOffset004/pointB_005/Piston_006
+        weight: 1
+      - path: Chassis_005/splOffset004/pointB_005/Piston_006/Piston_r004
+        weight: 1
+      - path: Chassis_006
+        weight: 1
+      - path: Chassis_006/pointO_006
+        weight: 1
+      - path: Chassis_006/pointO_006/Crank_005
+        weight: 1
+      - path: Chassis_006/pointO_006/Crank_005/pointA_005
+        weight: 1
+      - path: Chassis_006/pointO_006/Crank_005/pointA_005/rod_006
+        weight: 1
+      - path: Chassis_006/pointO_006/Crank_005/pointA_005/rod_006/rod_L003
+        weight: 1
+      - path: Chassis_006/splOffset003
+        weight: 1
+      - path: Chassis_006/splOffset003/pointB_006
+        weight: 1
+      - path: Chassis_006/splOffset003/pointB_006/Piston_005
+        weight: 1
+      - path: Chassis_006/splOffset003/pointB_006/Piston_005/Piston_L003
+        weight: 1
+      - path: Chassis_007
+        weight: 1
+      - path: Chassis_007/pointO_007
+        weight: 1
+      - path: Chassis_007/pointO_007/Crank_010
+        weight: 1
+      - path: Chassis_007/pointO_007/Crank_010/pointA_007
+        weight: 1
+      - path: Chassis_007/pointO_007/Crank_010/pointA_007/rod_007
+        weight: 1
+      - path: Chassis_007/pointO_007/Crank_010/pointA_007/rod_007/rod_R005
+        weight: 1
+      - path: Chassis_007/splOffset005
+        weight: 1
+      - path: Chassis_007/splOffset005/pointB_007
+        weight: 1
+      - path: Chassis_007/splOffset005/pointB_007/Piston_010
+        weight: 1
+      - path: Chassis_007/splOffset005/pointB_007/Piston_010/Piston_r006
+        weight: 1
+      - path: Chassis_008
+        weight: 1
+      - path: Chassis_008/pointO_008
+        weight: 1
+      - path: Chassis_008/pointO_008/Crank_009
+        weight: 1
+      - path: Chassis_008/pointO_008/Crank_009/pointA_008
+        weight: 1
+      - path: Chassis_008/pointO_008/Crank_009/pointA_008/rod_008
+        weight: 1
+      - path: Chassis_008/pointO_008/Crank_009/pointA_008/rod_008/rod_L004
+        weight: 1
+      - path: Chassis_008/splOffset008
+        weight: 1
+      - path: Chassis_008/splOffset008/pointB_008
+        weight: 1
+      - path: Chassis_008/splOffset008/pointB_008/Piston_009
+        weight: 1
+      - path: Chassis_008/splOffset008/pointB_008/Piston_009/Piston_L005
+        weight: 1
+      - path: Chassis_009
+        weight: 1
+      - path: Chassis_009/pointO_009
+        weight: 1
+      - path: Chassis_009/pointO_009/Crank_008
+        weight: 1
+      - path: Chassis_009/pointO_009/Crank_008/pointA_010
+        weight: 1
+      - path: Chassis_009/pointO_009/Crank_008/pointA_010/rod_009
+        weight: 1
+      - path: Chassis_009/pointO_009/Crank_008/pointA_010/rod_009/rod_R004
+        weight: 1
+      - path: Chassis_009/splOffset007
+        weight: 1
+      - path: Chassis_009/splOffset007/pointB_009
+        weight: 1
+      - path: Chassis_009/splOffset007/pointB_009/Piston_008
+        weight: 1
+      - path: Chassis_009/splOffset007/pointB_009/Piston_008/Piston_r005
+        weight: 1
+      - path: Chassis_010
+        weight: 1
+      - path: Chassis_010/pointO_010
+        weight: 1
+      - path: Chassis_010/pointO_010/Crank_007
+        weight: 1
+      - path: Chassis_010/pointO_010/Crank_007/pointA_009
+        weight: 1
+      - path: Chassis_010/pointO_010/Crank_007/pointA_009/rod_010
+        weight: 1
+      - path: Chassis_010/pointO_010/Crank_007/pointA_009/rod_010/rod_L005
+        weight: 1
+      - path: Chassis_010/splOffset006
+        weight: 1
+      - path: Chassis_010/splOffset006/pointB_010
+        weight: 1
+      - path: Chassis_010/splOffset006/pointB_010/Piston_007
+        weight: 1
+      - path: Chassis_010/splOffset006/pointB_010/Piston_007/Piston_L004
+        weight: 1
+      - path: Chassis_011
+        weight: 1
+      - path: Chassis_011/pointO_011
+        weight: 1
+      - path: Chassis_011/pointO_011/Crank_014
+        weight: 1
+      - path: Chassis_011/pointO_011/Crank_014/pointA_011
+        weight: 1
+      - path: Chassis_011/pointO_011/Crank_014/pointA_011/rod_011
+        weight: 1
+      - path: Chassis_011/pointO_011/Crank_014/pointA_011/rod_011/rod_R007
+        weight: 1
+      - path: Chassis_011/splOffset009
+        weight: 1
+      - path: Chassis_011/splOffset009/pointB_011
+        weight: 1
+      - path: Chassis_011/splOffset009/pointB_011/Piston_014
+        weight: 1
+      - path: Chassis_011/splOffset009/pointB_011/Piston_014/Piston_r008
+        weight: 1
+      - path: Chassis_012
+        weight: 1
+      - path: Chassis_012/pointO_012
+        weight: 1
+      - path: Chassis_012/pointO_012/Crank_013
+        weight: 1
+      - path: Chassis_012/pointO_012/Crank_013/pointA_012
+        weight: 1
+      - path: Chassis_012/pointO_012/Crank_013/pointA_012/rod_012
+        weight: 1
+      - path: Chassis_012/pointO_012/Crank_013/pointA_012/rod_012/rod_L006
+        weight: 1
+      - path: Chassis_012/splOffset012
+        weight: 1
+      - path: Chassis_012/splOffset012/pointB_012
+        weight: 1
+      - path: Chassis_012/splOffset012/pointB_012/Piston_013
+        weight: 1
+      - path: Chassis_012/splOffset012/pointB_012/Piston_013/Piston_L007
+        weight: 1
+      - path: Chassis_013
+        weight: 1
+      - path: Chassis_013/pointO_013
+        weight: 1
+      - path: Chassis_013/pointO_013/Crank_012
+        weight: 1
+      - path: Chassis_013/pointO_013/Crank_012/pointA_014
+        weight: 1
+      - path: Chassis_013/pointO_013/Crank_012/pointA_014/rod_013
+        weight: 1
+      - path: Chassis_013/pointO_013/Crank_012/pointA_014/rod_013/rod_R006
+        weight: 1
+      - path: Chassis_013/splOffset011
+        weight: 1
+      - path: Chassis_013/splOffset011/pointB_013
+        weight: 1
+      - path: Chassis_013/splOffset011/pointB_013/Piston_012
+        weight: 1
+      - path: Chassis_013/splOffset011/pointB_013/Piston_012/Piston_r007
+        weight: 1
+      - path: Chassis_014
+        weight: 1
+      - path: Chassis_014/pointO_014
+        weight: 1
+      - path: Chassis_014/pointO_014/Crank_011
+        weight: 1
+      - path: Chassis_014/pointO_014/Crank_011/pointA_013
+        weight: 1
+      - path: Chassis_014/pointO_014/Crank_011/pointA_013/rod_014
+        weight: 1
+      - path: Chassis_014/pointO_014/Crank_011/pointA_013/rod_014/rod_L007
+        weight: 1
+      - path: Chassis_014/splOffset010
+        weight: 1
+      - path: Chassis_014/splOffset010/pointB_014
+        weight: 1
+      - path: Chassis_014/splOffset010/pointB_014/Piston_011
+        weight: 1
+      - path: Chassis_014/splOffset010/pointB_014/Piston_011/Piston_L006
+        weight: 1
+      - path: Chassis_015
+        weight: 1
+      - path: Chassis_015/pointO_015
+        weight: 1
+      - path: Chassis_015/pointO_015/Crank_016
+        weight: 1
+      - path: Chassis_015/pointO_015/Crank_016/pointA_016
+        weight: 1
+      - path: Chassis_015/pointO_015/Crank_016/pointA_016/rod_015
+        weight: 1
+      - path: Chassis_015/pointO_015/Crank_016/pointA_016/rod_015/rod_R008
+        weight: 1
+      - path: Chassis_015/splOffset013
+        weight: 1
+      - path: Chassis_015/splOffset013/pointB_015
+        weight: 1
+      - path: Chassis_015/splOffset013/pointB_015/Piston_016
+        weight: 1
+      - path: Chassis_015/splOffset013/pointB_015/Piston_016/Piston_r009
+        weight: 1
+      - path: Chassis_016
+        weight: 1
+      - path: Chassis_016/pointO_016
+        weight: 1
+      - path: Chassis_016/pointO_016/Crank_015
+        weight: 1
+      - path: Chassis_016/pointO_016/Crank_015/pointA_015
+        weight: 1
+      - path: Chassis_016/pointO_016/Crank_015/pointA_015/rod_016
+        weight: 1
+      - path: Chassis_016/pointO_016/Crank_015/pointA_015/rod_016/rod_L008
+        weight: 1
+      - path: Chassis_016/splOffset014
+        weight: 1
+      - path: Chassis_016/splOffset014/pointB_016
+        weight: 1
+      - path: Chassis_016/splOffset014/pointB_016/Piston_015
+        weight: 1
+      - path: Chassis_016/splOffset014/pointB_016/Piston_015/Piston_L008
+        weight: 1
+      - path: Couplung_group
+        weight: 1
+      - path: Couplung_group/coupling
+        weight: 1
+      - path: Couplung_group/coupling_cover
+        weight: 1
+      - path: Diesel_buttom
+        weight: 1
+      - path: Diesel_buttom/Block_mount
+        weight: 1
+      - path: Diesel_buttom/Block_mount/Block_mount_000
+        weight: 1
+      - path: Diesel_buttom/Block_mount/Block_mount_001
+        weight: 1
+      - path: Diesel_buttom/Block_mount/Block_mount_002
+        weight: 1
+      - path: Diesel_buttom/Block_mount/Block_mount_003
+        weight: 1
+      - path: Diesel_buttom/Diesel_buttom_1
+        weight: 1
+      - path: Diesel_buttom/Diesel_buttom_2
+        weight: 1
+      - path: Diesel_cilinder_block
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_buttom_001
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_buttom_001/Block_cover_buttom_000
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_buttom_001/Block_cover_buttom_002
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_buttom_001/Block_cover_buttom_003
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_buttom_001/Block_cover_buttom_004
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_buttom_001/Block_cover_buttom_005
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_buttom_001/Block_cover_buttom_006
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_buttom_001/Block_cover_buttom_007
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_buttom_001/Block_cover_buttom_008
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_upper_001
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_upper_001/Block_cover_upper_000
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_upper_001/Block_cover_upper_002
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_upper_001/Block_cover_upper_003
+        weight: 1
+      - path: Diesel_cilinder_block/Block_cover_upper_001/Block_cover_upper_004
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_001
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_002
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_003
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_004
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_005
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_006
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_007
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_008
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_009
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_010
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_011
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_012
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_013
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_014
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_015
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_016
+        weight: 1
+      - path: Diesel_cilinder_block/Engine_block_000/Engine_block_017
+        weight: 1
+      - path: Diesel_cilinder_wires_001
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_000
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_002
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_003
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_004
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_005
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_006
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_007
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_008
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_009
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_010
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_011
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_012
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_013
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_014
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_015
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_016
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_017
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_018
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_019
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_020
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_021
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_022
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_023
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_024
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_025
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_026
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_027
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_028
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_029
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_030
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_031
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_032
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_033
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_034
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_035
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_036
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_037
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_038
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_039
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_040
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_041
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_042
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_043
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_044
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_045
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_046
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_047
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_048
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_049
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_050
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_051
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_052
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_053
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_054
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_055
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_056
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_057
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_058
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_059
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_060
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_061
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_062
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_063
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_064
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_065
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_066
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_067
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_068
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_069
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_070
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_071
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_072
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_073
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_074
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_075
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_076
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_077
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_078
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_079
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_080
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_081
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_082
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_083
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_084
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_085
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_086
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_087
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_088
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_089
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_090
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_091
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_092
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_093
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_094
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_095
+        weight: 1
+      - path: Diesel_cilinder_wires_001/Diesel_cilinder_wires_096
+        weight: 1
+      - path: Diesel_wires_and_equipment_001
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_000
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_002
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_003
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_004
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_005
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_008
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_009
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_010
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_011
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_012
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_013
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_014
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_015
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_016
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_017
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_018
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_019
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_020
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_021
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_022
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_023
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_024
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_025
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_026
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_027
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_028
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_029
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_030
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_031
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_032
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_033
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_034
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_035
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_036
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_037
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_038
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_039
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_040
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_041
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_042
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_043
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_044
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_045
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_046
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_047
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_048
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_049
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_050
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_051
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_052
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_053
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_054
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_055
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_056
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_057
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_058
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_059
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_060
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_061
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_062
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_063
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_064
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_065
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_066
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_067
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_068
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_069
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_070
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_071
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_072
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_073
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_074
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_075
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_076
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_077
+        weight: 1
+      - path: Diesel_wires_and_equipment_001/Diesel_wires_and_equipment_078
+        weight: 1
+      - path: Exhaust_system_001
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_000
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_002
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_003
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_004
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_005
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_006
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_007
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_008
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_009
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_010
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_011
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_012
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_013
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_014
+        weight: 1
+      - path: Exhaust_system_001/Exhaust_system_015
+        weight: 1
+      - path: Generator
+        weight: 1
+      - path: Generator/Generator_back_end
+        weight: 1
+      - path: Generator/Generator_back_end/Generator_back_end_000
+        weight: 1
+      - path: Generator/Generator_back_end/Generator_back_end_001
+        weight: 1
+      - path: Generator/Generator_back_end/Generator_back_end_002
+        weight: 1
+      - path: Generator/Generator_back_end/Generator_back_end_003
+        weight: 1
+      - path: Generator/Generator_back_end/Generator_back_end_004
+        weight: 1
+      - path: Generator/Generator_back_end/Generator_back_end_005
+        weight: 1
+      - path: Generator/Generator_back_end/Generator_back_end_006
+        weight: 1
+      - path: Generator/Generator_close
+        weight: 1
+      - path: Generator/Generator_close/bolty2
+        weight: 1
+      - path: Generator/Generator_close/Generator_close_000
+        weight: 1
+      - path: Generator/Generator_close/Generator_close_001
+        weight: 1
+      - path: Generator/Generator_close/Generator_close_002
+        weight: 1
+      - path: Generator/Generator_front_end
+        weight: 1
+      - path: Generator/Generator_front_end/Generator_front_end_000
+        weight: 1
+      - path: Generator/Generator_front_end/Generator_front_end_001
+        weight: 1
+      - path: Generator/Generator_front_end/Generator_front_end_002
+        weight: 1
+      - path: Generator/Generator_front_end/Generator_front_end_003
+        weight: 1
+      - path: Generator/Generator_front_end/Generator_front_end_004
+        weight: 1
+      - path: Generator/Generator_front_end/Generator_front_end_005
+        weight: 1
+      - path: Generator/Generator_front_end/Generator_front_end_006
+        weight: 1
+      - path: Generator/Generator_open
+        weight: 1
+      - path: Generator/Generator_open/Bolty
+        weight: 1
+      - path: Generator/Generator_open/Generator_open_000
+        weight: 1
+      - path: Generator/Generator_open/Generator_open_0001
+        weight: 1
+      - path: Generator/Generator_open/Generator_open_001
+        weight: 1
+      - path: Generator/Generator_open/Generator_open_002
+        weight: 1
+      - path: Generator/Generator_open/Generator_open_003
+        weight: 1
+      - path: Generator/Generator_open/obmotka
+        weight: 1
+      - path: Generator/Generator_open/obmotka2
+        weight: 1
+      - path: Generator/Generator_top
+        weight: 1
+      - path: Generator/Rotor
+        weight: 1
+      - path: Generator/Rotor/Rotor_element_000
+        weight: 1
+      - path: Generator/Rotor/Rotor_element_001
+        weight: 1
+      - path: Generator/Rotor/Rotor_element_002
+        weight: 1
+      - path: Generator/Rotor/Rotor_element_003
+        weight: 1
+      - path: Generator/Rotor/Rotor_element_004
+        weight: 1
+      - path: Generator/Rotor/Rotor_element_005
+        weight: 1
+      - path: intake_system_001
+        weight: 1
+      - path: intake_system_001/intake_system_000
+        weight: 1
+      - path: intake_system_001/intake_system_002
+        weight: 1
+      - path: intake_system_001/intake_system_003
+        weight: 1
+      - path: intake_system_001/intake_system_004
+        weight: 1
+      - path: intake_system_001/intake_system_005
+        weight: 1
+      - path: intake_system_001/intake_system_006
+        weight: 1
+      - path: intake_system_001/intake_system_007
+        weight: 1
+      - path: intake_system_001/intake_system_008
+        weight: 1
+      - path: intake_system_001/intake_system_009
+        weight: 1
+      - path: intake_system_001/intake_system_010
+        weight: 1
+      - path: intake_system_001/intake_system_011
+        weight: 1
+      - path: intake_system_001/intake_system_012
+        weight: 1
+      - path: intake_system_001/intake_system_013
+        weight: 1
+      - path: intake_system_001/intake_system_014
+        weight: 1
+      - path: intake_system_001/intake_system_015
+        weight: 1
+      - path: intake_system_001/intake_system_016
+        weight: 1
+      - path: Line245
+        weight: 1
+      - path: Line246
+        weight: 1
+      - path: Line247
+        weight: 1
+      - path: Line248
+        weight: 1
+      - path: Line249
+        weight: 1
+      - path: Line250
+        weight: 1
+      - path: Line251
+        weight: 1
+      - path: Line252
+        weight: 1
+      - path: Point001
+        weight: 1
+      - path: Point002
+        weight: 1
+      - path: Point003
+        weight: 1
+      - path: Point004
+        weight: 1
+      - path: Point005
+        weight: 1
+      - path: Walves_001
+        weight: 1
+      - path: Walves_001/Walves_000
+        weight: 1
+      - path: Walves_001/Walves_002
+        weight: 1
+      - path: Walves_001/Walves_003
+        weight: 1
+      - path: Walves_001/Walves_004
+        weight: 1
+      - path: Walves_001/Walves_005
+        weight: 1
+      - path: Walves_001/Walves_006
+        weight: 1
+      - path: Walves_001/Walves_007
+        weight: 1
+      - path: Walves_001/Walves_008
+        weight: 1
+      - path: Walves_001/Walves_009
+        weight: 1
+      - path: Walves_001/Walves_010
+        weight: 1
+      - path: Walves_001/Walves_011
+        weight: 1
+      - path: Walves_001/Walves_012
+        weight: 1
+      - path: Walves_001/Walves_013
+        weight: 1
+      - path: Walves_001/Walves_014
+        weight: 1
+      - path: Walves_001/Walves_015
+        weight: 1
+      - path: Walves_001/Walves_016
+        weight: 1
+      - path: Walves_001/Walves_017
+        weight: 1
+      - path: Walves_001/Walves_018
+        weight: 1
+      - path: Walves_001/Walves_019
+        weight: 1
+      - path: Walves_001/Walves_020
+        weight: 1
+      - path: Walves_001/Walves_021
+        weight: 1
+      - path: Walves_001/Walves_022
+        weight: 1
+      - path: Walves_001/Walves_023
+        weight: 1
+      - path: Walves_001/Walves_024
+        weight: 1
+      - path: Walves_001/Walves_025
+        weight: 1
+      - path: Walves_001/Walves_026
+        weight: 1
+      - path: Walves_001/Walves_027
+        weight: 1
+      - path: Walves_001/Walves_028
+        weight: 1
+      - path: Walves_001/Walves_029
+        weight: 1
+      - path: Walves_001/Walves_030
+        weight: 1
+      - path: Walves_001/Walves_031
+        weight: 1
+      - path: Walves_001/Walves_032
+        weight: 1
+      - path: Walves_001/Walves_033
+        weight: 1
+      - path: Walves_001/Walves_034
+        weight: 1
+      - path: Walves_001/Walves_035
+        weight: 1
+      - path: Walves_001/Walves_036
+        weight: 1
+      - path: Walves_001/Walves_037
+        weight: 1
+      - path: Walves_001/Walves_038
+        weight: 1
+      - path: Walves_001/Walves_039
+        weight: 1
+      - path: Walves_001/Walves_040
+        weight: 1
+      - path: Walves_001/Walves_041
+        weight: 1
+      - path: Walves_001/Walves_042
+        weight: 1
+      - path: Walves_001/Walves_043
+        weight: 1
+      - path: Walves_001/Walves_044
+        weight: 1
+      - path: Walves_001/Walves_045
+        weight: 1
+      - path: Walves_001/Walves_046
+        weight: 1
+      - path: Walves_001/Walves_047
+        weight: 1
+      - path: Walves_001/Walves_048
+        weight: 1
+      - path: Walves_001/Walves_049
+        weight: 1
+      - path: Walves_001/Walves_050
+        weight: 1
+      - path: Walves_001/Walves_051
+        weight: 1
+      - path: Walves_001/Walves_052
+        weight: 1
+      - path: Walves_001/Walves_053
+        weight: 1
+      - path: Walves_001/Walves_054
+        weight: 1
+      - path: Walves_001/Walves_055
+        weight: 1
+      - path: Walves_001/Walves_056
+        weight: 1
+      - path: Walves_001/Walves_057
+        weight: 1
+      - path: Walves_001/Walves_058
+        weight: 1
+      - path: Walves_001/Walves_059
+        weight: 1
+      - path: Walves_001/Walves_060
+        weight: 1
+      - path: Walves_001/Walves_061
+        weight: 1
+      - path: Walves_001/Walves_062
+        weight: 1
+      - path: Walves_001/Walves_063
+        weight: 1
+      - path: Walves_001/Walves_064
+        weight: 1
+      - path: Walves_001/Walves_065
+        weight: 1
+      - path: Walves_001/Walves_066
+        weight: 1
+      - path: Walves_001/Walves_067
+        weight: 1
+      - path: Walves_001/Walves_068
+        weight: 1
+      - path: Walves_001/Walves_069
+        weight: 1
+      - path: Walves_001/Walves_070
+        weight: 1
+      - path: Walves_001/Walves_071
+        weight: 1
+      - path: Walves_001/Walves_072
+        weight: 1
+      - path: Walves_001/Walves_073
+        weight: 1
+      - path: Walves_001/Walves_074
+        weight: 1
+      - path: Walves_001/Walves_075
+        weight: 1
+      - path: Walves_001/Walves_076
+        weight: 1
+      - path: Walves_001/Walves_077
+        weight: 1
+      - path: Walves_001/Walves_078
+        weight: 1
+      - path: Walves_001/Walves_079
+        weight: 1
+      - path: Walves_001/Walves_080
+        weight: 1
+      - path: Walves_001/Walves_081
+        weight: 1
+      - path: Walves_001/Walves_082
+        weight: 1
+      - path: Walves_001/Walves_083
+        weight: 1
+      - path: Walves_001/Walves_084
+        weight: 1
+      - path: Walves_001/Walves_085
+        weight: 1
+      - path: Walves_001/Walves_086
+        weight: 1
+      - path: Walves_001/Walves_087
+        weight: 1
+      - path: Walves_001/Walves_088
+        weight: 1
+      - path: Walves_001/Walves_089
+        weight: 1
+      - path: Walves_001/Walves_090
+        weight: 1
+      - path: Walves_001/Walves_091
+        weight: 1
+      - path: Walves_001/Walves_092
+        weight: 1
+      - path: Walves_001/Walves_093
+        weight: 1
+      - path: Walves_001/Walves_094
+        weight: 1
+      - path: Walves_001/Walves_095
+        weight: 1
+      - path: Walves_001/Walves_096
+        weight: 1
+      - path: Walves_001/Walves_097
+        weight: 1
+      - path: Walves_001/Walves_098
+        weight: 1
+      - path: Walves_001/Walves_099
+        weight: 1
+      - path: Walves_001/Walves_100
+        weight: 1
+      - path: Walves_001/Walves_101
+        weight: 1
+      - path: Walves_001/Walves_102
+        weight: 1
+      - path: Walves_001/Walves_103
+        weight: 1
+      - path: Walves_001/Walves_104
+        weight: 1
+      - path: Walves_001/Walves_105
+        weight: 1
+      - path: Walves_001/Walves_106
+        weight: 1
+      - path: Walves_001/Walves_107
+        weight: 1
+      - path: Walves_001/Walves_108
+        weight: 1
+      - path: Walves_001/Walves_109
+        weight: 1
+      - path: Walves_001/Walves_110
+        weight: 1
+      - path: Walves_001/Walves_111
+        weight: 1
+      - path: Walves_001/Walves_112
+        weight: 1
+      - path: Walves_001/Walves_113
+        weight: 1
+      - path: Walves_001/Walves_114
+        weight: 1
+      - path: Walves_001/Walves_115
+        weight: 1
+      - path: Walves_001/Walves_116
+        weight: 1
+      - path: Walves_001/Walves_117
+        weight: 1
+      - path: Walves_001/Walves_118
+        weight: 1
+      - path: Walves_001/Walves_119
+        weight: 1
+      - path: Walves_001/Walves_120
+        weight: 1
+      - path: Walves_001/Walves_121
+        weight: 1
+      - path: Walves_001/Walves_122
+        weight: 1
+      - path: Walves_001/Walves_123
+        weight: 1
+      - path: Walves_001/Walves_124
+        weight: 1
+      - path: Walves_001/Walves_125
+        weight: 1
+      - path: Walves_001/Walves_126
+        weight: 1
+      - path: Walves_001/Walves_127
+        weight: 1
+      - path: Walves_001/Walves_128
+        weight: 1
+      - path: Walves_001/Walves_129
+        weight: 1
+      - path: Walves_001/Walves_130
+        weight: 1
+      - path: Walves_001/Walves_131
+        weight: 1
+      - path: Walves_001/Walves_132
+        weight: 1
+      - path: Walves_001/Walves_133
+        weight: 1
+      - path: Walves_001/Walves_134
+        weight: 1
+      - path: Walves_001/Walves_135
+        weight: 1
+      - path: Walves_001/Walves_136
+        weight: 1
+      - path: Walves_001/Walves_137
+        weight: 1
+      - path: Walves_001/Walves_138
+        weight: 1
+      - path: Walves_001/Walves_139
+        weight: 1
+      - path: Walves_001/Walves_140
+        weight: 1
+      - path: Walves_001/Walves_141
+        weight: 1
+      - path: Walves_001/Walves_142
+        weight: 1
+      - path: Walves_001/Walves_143
+        weight: 1
+      - path: Walves_001/Walves_144
+        weight: 1
+      - path: Walves_001/Walves_145
+        weight: 1
+      - path: Walves_001/Walves_146
+        weight: 1
+      - path: Walves_001/Walves_147
+        weight: 1
+      - path: Walves_001/Walves_148
+        weight: 1
+      - path: Walves_001/Walves_149
+        weight: 1
+      - path: Walves_001/Walves_150
+        weight: 1
+      - path: Walves_001/Walves_151
+        weight: 1
+      - path: Walves_001/Walves_152
+        weight: 1
+      - path: Walves_001/Walves_153
+        weight: 1
+      - path: Walves_001/Walves_154
+        weight: 1
+      - path: Walves_001/Walves_155
+        weight: 1
+      - path: Walves_001/Walves_156
+        weight: 1
+      - path: Walves_001/Walves_157
+        weight: 1
+      - path: Walves_001/Walves_158
+        weight: 1
+      - path: Walves_001/Walves_159
+        weight: 1
+      - path: Walves_001/Walves_160
+        weight: 1
+      - path: Walves_001/Walves_161
+        weight: 1
+      - path: Walves_001/Walves_162
+        weight: 1
+      - path: Walves_001/Walves_163
+        weight: 1
+      - path: Walves_001/Walves_164
+        weight: 1
+      - path: Walves_001/Walves_165
+        weight: 1
+      - path: Walves_001/Walves_166
+        weight: 1
+      - path: Walves_001/Walves_167
+        weight: 1
+      - path: Walves_001/Walves_168
+        weight: 1
+      - path: Walves_001/Walves_169
+        weight: 1
+      - path: Walves_001/Walves_170
+        weight: 1
+      - path: Walves_001/Walves_171
+        weight: 1
+      - path: Walves_001/Walves_172
+        weight: 1
+      - path: Walves_001/Walves_173
+        weight: 1
+      - path: Walves_001/Walves_174
+        weight: 1
+      - path: Walves_001/Walves_175
+        weight: 1
+      - path: Walves_001/Walves_176
+        weight: 1
+      - path: Walves_001/Walves_177
+        weight: 1
+      - path: Walves_001/Walves_178
+        weight: 1
+      - path: Walves_001/Walves_179
+        weight: 1
+      - path: Walves_001/Walves_180
+        weight: 1
+      - path: Walves_001/Walves_181
+        weight: 1
+      - path: Walves_001/Walves_182
+        weight: 1
+      - path: Walves_001/Walves_183
+        weight: 1
+      - path: Walves_001/Walves_184
+        weight: 1
+      - path: Walves_001/Walves_185
+        weight: 1
+      - path: Walves_001/Walves_186
+        weight: 1
+      - path: Walves_001/Walves_187
+        weight: 1
+      - path: Walves_001/Walves_188
+        weight: 1
+      - path: Walves_001/Walves_189
+        weight: 1
+      - path: Walves_001/Walves_190
+        weight: 1
+      - path: Walves_001/Walves_191
+        weight: 1
+      - path: Walves_001/Walves_192
+        weight: 1
+      - path: Walves_001/Walves_193
+        weight: 1
+      - path: Walves_001/Walves_194
+        weight: 1
+      - path: Walves_001/Walves_195
+        weight: 1
+      - path: Walves_001/Walves_196
+        weight: 1
+      - path: Walves_001/Walves_197
+        weight: 1
+      - path: Walves_001/Walves_198
+        weight: 1
+      - path: Walves_001/Walves_199
+        weight: 1
+      - path: Walves_001/Walves_200
+        weight: 1
+      - path: Walves_001/Walves_201
+        weight: 1
+      - path: Walves_001/Walves_202
+        weight: 1
+      - path: Walves_001/Walves_203
+        weight: 1
+      - path: Walves_001/Walves_204
+        weight: 1
+      - path: Walves_001/Walves_205
+        weight: 1
+      - path: Walves_001/Walves_206
+        weight: 1
+      - path: Walves_001/Walves_207
+        weight: 1
+      - path: Walves_001/Walves_208
+        weight: 1
+      - path: Walves_001/Walves_209
+        weight: 1
+      - path: Walves_001/Walves_210
+        weight: 1
+      - path: Walves_001/Walves_211
+        weight: 1
+      - path: Walves_001/Walves_212
+        weight: 1
+      - path: Walves_001/Walves_213
+        weight: 1
+      - path: Walves_001/Walves_214
+        weight: 1
+      - path: Walves_001/Walves_215
+        weight: 1
+      - path: Walves_001/Walves_216
+        weight: 1
+      - path: Walves_001/Walves_217
+        weight: 1
+      - path: Walves_001/Walves_218
+        weight: 1
+      - path: Walves_001/Walves_219
+        weight: 1
+      - path: Walves_001/Walves_220
+        weight: 1
+      - path: Walves_001/Walves_221
+        weight: 1
+      - path: Walves_001/Walves_222
+        weight: 1
+      - path: Walves_001/Walves_223
+        weight: 1
+      - path: Walves_001/Walves_224
+        weight: 1
+      - path: Walves_001/Walves_225
+        weight: 1
+      - path: Walves_001/Walves_226
+        weight: 1
+      - path: Walves_001/Walves_227
+        weight: 1
+      - path: Walves_001/Walves_228
+        weight: 1
+      - path: Walves_001/Walves_229
+        weight: 1
+      - path: Walves_001/Walves_230
+        weight: 1
+      - path: Walves_001/Walves_231
+        weight: 1
+      - path: Walves_001/Walves_232
+        weight: 1
+      - path: Walves_001/Walves_233
+        weight: 1
+      - path: Walves_001/Walves_234
+        weight: 1
+      - path: Walves_001/Walves_235
+        weight: 1
+      - path: Walves_001/Walves_236
+        weight: 1
+      - path: Walves_001/Walves_237
+        weight: 1
+      - path: Walves_001/Walves_238
+        weight: 1
+      - path: Walves_001/Walves_239
+        weight: 1
+      - path: Walves_001/Walves_240
+        weight: 1
+      - path: Walves_001/Walves_241
+        weight: 1
+      - path: Walves_001/Walves_242
+        weight: 1
+      - path: Walves_001/Walves_243
+        weight: 1
+      - path: Walves_001/Walves_244
+        weight: 1
+      - path: Walves_001/Walves_245
+        weight: 1
+      - path: Walves_001/Walves_246
+        weight: 1
+      - path: Walves_001/Walves_247
+        weight: 1
+      - path: Walves_001/Walves_248
+        weight: 1
+      - path: Walves_001/Walves_249
+        weight: 1
+      - path: Walves_001/Walves_250
+        weight: 1
+      - path: Walves_001/Walves_251
+        weight: 1
+      - path: Walves_001/Walves_252
+        weight: 1
+      - path: Walves_001/Walves_253
+        weight: 1
+      - path: Walves_001/Walves_254
+        weight: 1
+      - path: Walves_001/Walves_255
+        weight: 1
+      - path: Walves_001/Walves_256
+        weight: 1
+      - path: Walves_001/Walves_257
+        weight: 1
+      - path: Walves_001/Walves_258
+        weight: 1
+      - path: Walves_001/Walves_259
+        weight: 1
+      - path: Walves_001/Walves_260
+        weight: 1
+      - path: Walves_001/Walves_261
+        weight: 1
+      - path: Walves_001/Walves_262
+        weight: 1
+      - path: Walves_001/Walves_263
+        weight: 1
+      - path: Walves_001/Walves_264
+        weight: 1
+      - path: Walves_001/Walves_265
+        weight: 1
+      - path: Walves_001/Walves_266
+        weight: 1
+      - path: Walves_001/Walves_267
+        weight: 1
+      - path: Walves_001/Walves_268
+        weight: 1
+      - path: Walves_001/Walves_269
+        weight: 1
+      - path: Walves_001/Walves_270
+        weight: 1
+      - path: Walves_001/Walves_271
+        weight: 1
+      - path: Walves_001/Walves_272
+        weight: 1
+      - path: Walves_001/Walves_273
+        weight: 1
+      - path: Walves_001/Walves_274
+        weight: 1
+      - path: Walves_001/Walves_275
+        weight: 1
+      - path: Walves_001/Walves_276
+        weight: 1
+      - path: Walves_001/Walves_277
+        weight: 1
+      - path: Walves_001/Walves_278
+        weight: 1
+      - path: Walves_001/Walves_279
+        weight: 1
+      - path: Walves_001/Walves_280
+        weight: 1
+      - path: Walves_001/Walves_281
+        weight: 1
+      - path: Walves_001/Walves_282
+        weight: 1
+      - path: Walves_001/Walves_283
+        weight: 1
+      - path: Walves_001/Walves_284
+        weight: 1
+      - path: Walves_001/Walves_285
+        weight: 1
+      - path: Walves_001/Walves_286
+        weight: 1
+      - path: Walves_001/Walves_287
+        weight: 1
+      - path: Walves_001/Walves_288
+        weight: 1
+      - path: Walves_001/Walves_289
+        weight: 1
+      - path: Walves_001/Walves_290
+        weight: 1
+      - path: Walves_001/Walves_291
+        weight: 1
+      - path: Walves_001/Walves_292
+        weight: 1
+      - path: Walves_001/Walves_293
+        weight: 1
+      - path: Walves_001/Walves_294
+        weight: 1
+      - path: Walves_001/Walves_295
+        weight: 1
+      - path: Walves_001/Walves_296
+        weight: 1
+      - path: Walves_001/Walves_297
+        weight: 1
+      - path: Walves_001/Walves_298
+        weight: 1
+      - path: Walves_001/Walves_299
+        weight: 1
+      - path: Walves_001/Walves_300
+        weight: 1
+      - path: Walves_001/Walves_301
+        weight: 1
+      - path: Walves_001/Walves_302
+        weight: 1
+      - path: Walves_001/Walves_303
+        weight: 1
+      - path: Walves_001/Walves_304
+        weight: 1
+      - path: Walves_001/Walves_305
+        weight: 1
+      - path: Walves_001/Walves_306
+        weight: 1
+      - path: Walves_001/Walves_307
+        weight: 1
+      - path: Walves_001/Walves_308
+        weight: 1
+      - path: Walves_001/Walves_309
+        weight: 1
+      - path: Walves_001/Walves_310
+        weight: 1
+      - path: Walves_001/Walves_311
+        weight: 1
+      - path: Walves_001/Walves_312
+        weight: 1
+      - path: Walves_001/Walves_313
+        weight: 1
+      - path: Walves_001/Walves_314
+        weight: 1
+      - path: Walves_001/Walves_315
+        weight: 1
+      - path: Walves_001/Walves_316
+        weight: 1
+      - path: Walves_001/Walves_317
+        weight: 1
+      - path: Walves_001/Walves_318
+        weight: 1
+      - path: Walves_001/Walves_319
+        weight: 1
+      - path: Walves_001/Walves_320
+        weight: 1
+      - path: Walves_001/Walves_321
+        weight: 1
+      - path: Walves_001/Walves_322
+        weight: 1
+      - path: Walves_001/Walves_323
+        weight: 1
+      - path: Walves_001/Walves_324
+        weight: 1
+      - path: Walves_001/Walves_325
+        weight: 1
+      - path: Walves_001/Walves_326
+        weight: 1
+      - path: Walves_001/Walves_327
+        weight: 1
+      - path: Walves_001/Walves_328
+        weight: 1
+      - path: Walves_001/Walves_329
+        weight: 1
+      - path: Walves_001/Walves_330
+        weight: 1
+      - path: Walves_001/Walves_331
+        weight: 1
+      - path: Walves_001/Walves_332
+        weight: 1
+      - path: Walves_001/Walves_333
+        weight: 1
+      - path: Walves_001/Walves_334
+        weight: 1
+      - path: Walves_001/Walves_335
+        weight: 1
+      - path: Walves_001/Walves_336
+        weight: 1
+      - path: Walves_001/Walves_337
+        weight: 1
+      - path: Walves_001/Walves_338
+        weight: 1
+      - path: Walves_001/Walves_339
+        weight: 1
+      - path: Walves_001/Walves_340
+        weight: 1
+      - path: Walves_001/Walves_341
+        weight: 1
+      - path: Walves_001/Walves_342
+        weight: 1
+      - path: Walves_001/Walves_343
+        weight: 1
+      - path: Walves_001/Walves_344
+        weight: 1
+      - path: Walves_001/Walves_345
+        weight: 1
+      - path: Walves_001/Walves_346
+        weight: 1
+      - path: Walves_001/Walves_347
+        weight: 1
+      - path: Walves_001/Walves_348
+        weight: 1
+      - path: Walves_001/Walves_349
+        weight: 1
+      - path: Walves_001/Walves_350
+        weight: 1
+      - path: Walves_001/Walves_351
+        weight: 1
+      - path: Walves_001/Walves_352
+        weight: 1
+      - path: Walves_001/Walves_353
+        weight: 1
+      - path: Walves_001/Walves_354
+        weight: 1
+      - path: Walves_001/Walves_355
+        weight: 1
+      - path: Walves_001/Walves_356
+        weight: 1
+      - path: Walves_001/Walves_357
+        weight: 1
+      - path: Walves_001/Walves_358
+        weight: 1
+      - path: Walves_001/Walves_359
+        weight: 1
+      - path: Walves_001/Walves_360
+        weight: 1
+      - path: Walves_001/Walves_361
+        weight: 1
+      - path: Walves_001/Walves_362
+        weight: 1
+      - path: Walves_001/Walves_363
+        weight: 1
+      - path: Walves_001/Walves_364
+        weight: 1
+      - path: Walves_001/Walves_365
+        weight: 1
+      - path: Walves_001/Walves_366
+        weight: 1
+      - path: Walves_001/Walves_367
+        weight: 1
+      - path: Walves_001/Walves_368
+        weight: 1
+      - path: Walves_001/Walves_369
+        weight: 1
+      - path: Walves_001/Walves_370
+        weight: 1
+      - path: Walves_001/Walves_371
+        weight: 1
+      - path: Walves_001/Walves_372
+        weight: 1
+      - path: Walves_001/Walves_373
+        weight: 1
+      - path: Walves_001/Walves_374
+        weight: 1
+      - path: Walves_001/Walves_375
+        weight: 1
+      - path: Walves_001/Walves_376
+        weight: 1
+      - path: Walves_001/Walves_377
+        weight: 1
+      - path: Walves_001/Walves_378
+        weight: 1
+      - path: Walves_001/Walves_379
+        weight: 1
+      - path: Walves_001/Walves_380
+        weight: 1
+      - path: Walves_001/Walves_381
+        weight: 1
+      - path: Walves_001/Walves_382
+        weight: 1
+      - path: Walves_001/Walves_383
+        weight: 1
+      - path: Walves_001/Walves_384
+        weight: 1
+      - path: Walves_001/Walves_385
+        weight: 1
+      - path: Walves_001/Walves_386
+        weight: 1
+      - path: Walves_001/Walves_387
+        weight: 1
+      - path: Walves_001/Walves_388
+        weight: 1
+      - path: Walves_001/Walves_389
+        weight: 1
+      - path: Walves_001/Walves_390
+        weight: 1
+      - path: Walves_001/Walves_391
+        weight: 1
+      - path: Walves_001/Walves_392
+        weight: 1
+      - path: Walves_001/Walves_393
+        weight: 1
+      - path: Walves_001/Walves_394
+        weight: 1
+      - path: Walves_001/Walves_395
+        weight: 1
+      - path: Walves_001/Walves_396
+        weight: 1
+      - path: Walves_001/Walves_397
+        weight: 1
+      - path: Walves_001/Walves_398
+        weight: 1
+      - path: Walves_001/Walves_399
+        weight: 1
+      - path: Walves_001/Walves_400
+        weight: 1
+      - path: Walves_001/Walves_401
+        weight: 1
+      - path: Walves_001/Walves_402
+        weight: 1
+      - path: Walves_001/Walves_403
+        weight: 1
+      - path: Walves_001/Walves_404
+        weight: 1
+      - path: Walves_001/Walves_405
+        weight: 1
+      - path: Walves_001/Walves_406
+        weight: 1
+      - path: Walves_001/Walves_407
+        weight: 1
+      - path: Walves_001/Walves_408
+        weight: 1
+      - path: Walves_001/Walves_409
+        weight: 1
+      - path: Walves_001/Walves_410
+        weight: 1
+      - path: Walves_001/Walves_411
+        weight: 1
+      - path: Walves_001/Walves_412
+        weight: 1
+      - path: Walves_001/Walves_413
+        weight: 1
+      - path: Walves_001/Walves_414
+        weight: 1
+      - path: Walves_001/Walves_415
+        weight: 1
+      - path: Walves_001/Walves_416
+        weight: 1
+      - path: Walves_001/Walves_417
+        weight: 1
+      - path: Walves_001/Walves_418
+        weight: 1
+      - path: Walves_001/Walves_419
+        weight: 1
+      - path: Walves_001/Walves_420
+        weight: 1
+      - path: Walves_001/Walves_421
+        weight: 1
+      - path: Walves_001/Walves_422
+        weight: 1
+      - path: Walves_001/Walves_423
+        weight: 1
+      - path: Walves_001/Walves_424
+        weight: 1
+      - path: Walves_001/Walves_425
+        weight: 1
+      - path: Walves_001/Walves_426
+        weight: 1
+      - path: Walves_001/Walves_427
+        weight: 1
+      - path: Walves_001/Walves_428
+        weight: 1
+      - path: Walves_001/Walves_429
+        weight: 1
+      - path: Walves_001/Walves_430
+        weight: 1
+      - path: Walves_001/Walves_431
+        weight: 1
+      - path: Walves_001/Walves_432
+        weight: 1
+      - path: Walves_001/Walves_433
+        weight: 1
+      - path: Walves_001/Walves_434
+        weight: 1
+      - path: Walves_001/Walves_435
+        weight: 1
+      - path: Walves_001/Walves_436
+        weight: 1
+      - path: Walves_001/Walves_437
+        weight: 1
+      - path: Walves_001/Walves_438
+        weight: 1
+      - path: Walves_001/Walves_439
+        weight: 1
+      - path: Walves_001/Walves_440
+        weight: 1
+      - path: Walves_001/Walves_441
+        weight: 1
+      - path: Walves_001/Walves_442
+        weight: 1
+      - path: Walves_001/Walves_443
+        weight: 1
+      - path: Walves_001/Walves_444
+        weight: 1
+      - path: Walves_001/Walves_445
+        weight: 1
+      - path: Walves_001/Walves_446
+        weight: 1
+      - path: Walves_001/Walves_447
+        weight: 1
+      - path: Walves_001/Walves_448
+        weight: 1
+      - path: Walves_001/Walves_449
+        weight: 1
+      - path: Walves_001/Walves_450
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []

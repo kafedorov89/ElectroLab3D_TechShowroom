@@ -53,7 +53,7 @@ MonoBehaviour:
   forceAnnihilationFoldout: 0
   forceInitialVelocityFoldout: 0
   forceLifetimeVelocityFoldout: 0
-  forceVelocityBendingFoldout: 1
+  forceVelocityBendingFoldout: 0
   forceTurbulenceFoldout: 1
   forceConstantForceFoldout: 1
   forceVelocityScaleFoldout: 0
