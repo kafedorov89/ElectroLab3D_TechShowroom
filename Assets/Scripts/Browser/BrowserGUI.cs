@@ -7,6 +7,11 @@ using UnityEngine.UI;
 
 public class BrowserGUI : MonoBehaviour {
 
+
+	//Vizualizations
+	VisClass[] Visualizations;
+	bool VisState = false; //false = stopped, true = playing
+
 	public Text textSystemName;
 	public Text textSubsystemName;
 	public Text textAbout;
@@ -37,6 +42,12 @@ public class BrowserGUI : MonoBehaviour {
 		browser = target.GetComponent<SystemBrowser> ();
 		if (list == null || browser == null)
 			return;
+
+		//get visualizations
+		Visualizations = target.GetComponentsInChildren<VisClass>();
+
+		//search audio in childrens
+		//audio = target.GetComponentInChildren<AudioSource>();
 
 		textSystemName.text = list.systemName;
 		if (list.list.Count > 0)
@@ -163,6 +174,18 @@ public class BrowserGUI : MonoBehaviour {
 	}
 	public void Play()
 	{
-		browser.Play ();
+		if (VisState == false)
+		{
+			VisState = true;
+			foreach (VisClass vis in Visualizations)
+				vis.StartVis ();
+		} 
+		else
+		{
+			VisState = false;
+			foreach (VisClass vis in Visualizations)
+				vis.StopVis ();
+		}
+		//browser.Play ();
 	}
 }
