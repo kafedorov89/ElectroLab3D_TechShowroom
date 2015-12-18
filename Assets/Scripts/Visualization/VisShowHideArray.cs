@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 //show or hide array of gameobjects
 public class VisShowHideArray : VisClass {
 	
-	public GameObject[] targets;
 	public bool initialState = true; //true = show, false = hide
 	private bool state = true;
+	public GameObject[] targets;
+	public List<GameObject> targets2;
 
 	// Update is called once per frame
 	void Update () {
@@ -22,7 +24,7 @@ public class VisShowHideArray : VisClass {
 	
 	public override void StopVis()
 	{
-		Debug.Log ("Stop");
+		//Debug.Log ("Stop");
 		base.StopVis();
 		SwitchState ();
 		SetState ();
@@ -30,7 +32,7 @@ public class VisShowHideArray : VisClass {
 	
 	public override void Start()
 	{
-		Debug.Log ("Start");
+		//Debug.Log ("Start");
 		base.Start();
 		state = initialState;
 		SetState ();
@@ -43,7 +45,10 @@ public class VisShowHideArray : VisClass {
 	public void SetState()
 	{
 		foreach (GameObject t in targets)
-			t.SetActive (state);
+		{
+			if (t != null)
+				t.SetActive (state);
+		}
 
 	}
 

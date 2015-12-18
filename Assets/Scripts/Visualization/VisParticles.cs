@@ -8,6 +8,12 @@ public class VisParticles : VisClass {
 	//при активации объекта - мы видим частицы, как они движутся
 	//при деактивации объекта - мы перестаем видеть частицы
 	public GameObject ParticleGameObject;
+
+	//то есть все управление частицами заключается
+	//в активации и деактивации оъекта, на который они навешаны
+
+	//public bool initialState = false; 
+	//private bool state = false;
 	
 
 	// Update is called once per frame
@@ -19,7 +25,6 @@ public class VisParticles : VisClass {
 	{
 		base.StartVis();
 		ParticleGameObject.SetActive (true);
-		
 	}
 	
 	public override void StopVis()
@@ -33,5 +38,13 @@ public class VisParticles : VisClass {
 		base.Start();
 		//SetAudioSource();
 		ParticleGameObject.SetActive (false);
+	}
+	public void SwitchState()
+	{
+		//state = !state;
+	}
+	public void SetState()
+	{
+		//ParticleGameObject.SetActive (state);
 	}
 }

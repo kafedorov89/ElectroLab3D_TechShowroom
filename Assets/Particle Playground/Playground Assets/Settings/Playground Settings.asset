@@ -46,26 +46,26 @@ MonoBehaviour:
   particleSettingsOverflowOffsetFoldout: 0
   particleSettingsScatterFoldout: 0
   particleSettingsEmissionFoldout: 0
-  particleSettingsSizeFoldout: 1
+  particleSettingsSizeFoldout: 0
   particleSettingsRotationFoldout: 0
-  particleSettingsLifetimeFoldout: 0
+  particleSettingsLifetimeFoldout: 1
   particleSettingsMaskFoldout: 0
   forceAnnihilationFoldout: 0
   forceInitialVelocityFoldout: 0
   forceLifetimeVelocityFoldout: 0
   forceVelocityBendingFoldout: 0
-  forceTurbulenceFoldout: 1
+  forceTurbulenceFoldout: 0
   forceConstantForceFoldout: 1
   forceVelocityScaleFoldout: 0
   collisionSettingsFoldout: 0
   collisionPlanesFoldout: 0
   collisionExclusionFoldout: 0
-  renderingMaterialFoldout: 1
+  renderingMaterialFoldout: 0
   renderingColorFoldout: 1
   renderingRenderModeFoldout: 0
   renderingShadowsFoldout: 0
   advancedTimeFoldout: 0
-  advancedSimulationFoldout: 0
+  advancedSimulationFoldout: 1
   advancedRebirthOptionsFoldout: 0
   advancedLocksFoldout: 0
   advancedOnEnableFoldout: 0
