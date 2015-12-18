@@ -8,7 +8,7 @@ public class VisShowHideArray : VisClass {
 	public bool initialState = true; //true = show, false = hide
 	private bool state = true;
 	public GameObject[] targets;
-	public List<GameObject> targets2;
+	//public List<GameObject> targets2;
 
 	// Update is called once per frame
 	void Update () {

@@ -28,8 +28,8 @@ MonoBehaviour:
   statesFoldout: 1
   sourceFoldout: 0
   createNewStateFoldout: 1
-  particleSettingsFoldout: 0
-  forcesFoldout: 1
+  particleSettingsFoldout: 1
+  forcesFoldout: 0
   manipulatorsFoldout: 0
   eventsFoldout: 0
   collisionFoldout: 0
@@ -55,7 +55,7 @@ MonoBehaviour:
   forceLifetimeVelocityFoldout: 0
   forceVelocityBendingFoldout: 0
   forceTurbulenceFoldout: 0
-  forceConstantForceFoldout: 1
+  forceConstantForceFoldout: 0
   forceVelocityScaleFoldout: 0
   collisionSettingsFoldout: 0
   collisionPlanesFoldout: 0
