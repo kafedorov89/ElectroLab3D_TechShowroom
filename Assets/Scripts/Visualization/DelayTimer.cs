@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DelayTimer : MonoBehaviour{
+public class DelayTimer /*: MonoBehaviour*/ {
 
     private float startTime;
     private float currentTime;
@@ -24,9 +24,9 @@ public class DelayTimer : MonoBehaviour{
 
     public void PrintTime()
     {
-        //Debug.Log("DeltaTime = " + DeltaTime.ToString());
-        //Debug.Log("StartTime = " + startTime);
-        //Debug.Log("CurrentTime = " + currentTime);
+        Debug.Log("DeltaTime = " + DeltaTime.ToString());
+        Debug.Log("StartTime = " + startTime);
+        Debug.Log("CurrentTime = " + currentTime);
     }
 
     public void TimerStart()

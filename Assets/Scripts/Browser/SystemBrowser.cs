@@ -528,6 +528,7 @@ public class SystemBrowser : MonoBehaviour {
 		}
 		else
 		{
+			SetAllMeshesVisibility(false); //кроме выбранной //!!!
 			FixTime();
 			state = State.ZoomInSubsystem; //next state
 
@@ -604,6 +605,7 @@ public class SystemBrowser : MonoBehaviour {
 		{
 			FixTime();
 			state = State.IncreaseAlpha; //next state
+			SetAllMeshesVisibility(true); //кроме выбранной //!!!
 		}
 	}
 
