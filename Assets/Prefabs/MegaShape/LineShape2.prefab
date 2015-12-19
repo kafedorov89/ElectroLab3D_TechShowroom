@@ -1,0 +1,359 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &115564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 474940}
+  - 114: {fileID: 11497808}
+  m_Layer: 0
+  m_Name: LineShape2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &474940
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115564}
+  m_LocalRotation: {x: -1.15202326e-07, y: -.707106829, z: .707106709, w: -1.15202312e-07}
+  m_LocalPosition: {x: -17.0919991, y: 13.9099998, z: -1.21800005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11497808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e53a95847f1db6343961b55bdc53b5dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axis: 1
+  col1: {r: 1, g: 1, b: 1, a: 1}
+  col2: {r: 0, g: 0, b: 0, a: 1}
+  KnotCol: {r: 0, g: 1, b: 0, a: 1}
+  HandleCol: {r: 1, g: 0, b: 0, a: 1}
+  VecCol: {r: .100000001, g: .100000001, b: .200000003, a: .5}
+  KnotSize: 1
+  stepdist: 2
+  normalizedInterp: 1
+  drawHandles: 1
+  drawKnots: 1
+  drawspline: 1
+  drawTwist: 0
+  lockhandles: 1
+  showorigin: 1
+  usesnap: 0
+  usesnaphandles: 0
+  snap: {x: 1, y: 1, z: 1}
+  handleType: 0
+  CursorPos: 0
+  splines:
+  - length: 12.0010252
+    closed: 0
+    knots:
+    - p: {x: -6.95310831, y: -4.8538413, z: .428979337}
+      invec: {x: -6.95310831, y: -5.19205236, z: .428979427}
+      outvec: {x: -6.95310831, y: -4.51562977, z: .428979248}
+      seglength: 4.46942997
+      length: 4.46942997
+      notlocked: 0
+      twist: 0
+      id: 0
+      lengths:
+      - 0
+      - .199707642
+      - .567598104
+      - 1.06120789
+      - 1.63806975
+      - 2.25571823
+      - 2.87168646
+      - 3.44350815
+      - 3.92871666
+      - 4.28484583
+      - 4.46942997
+      points:
+      - {x: -6.95310831, y: -4.8538413, z: .428979337}
+      - {x: -6.95443821, y: -4.65413809, z: .428979278}
+      - {x: -6.9580512, y: -4.28626537, z: .428979337}
+      - {x: -6.96337318, y: -3.79268432, z: .428979337}
+      - {x: -6.96983671, y: -3.2158587, z: .428979367}
+      - {x: -6.97686958, y: -2.59825015, z: .428979367}
+      - {x: -6.98390293, y: -1.98232222, z: .428979367}
+      - {x: -6.99036598, y: -1.41053712, z: .428979397}
+      - {x: -6.99568844, y: -.925357938, z: .428979397}
+      - {x: -6.9993, y: -.569247186, z: .428979397}
+      - {x: -7.00063086, y: -.384667665, z: .428979367}
+    - p: {x: -7.00063086, y: -.384667665, z: .428979367}
+      invec: {x: -7.00063086, y: -.666867733, z: .428979486}
+      outvec: {x: -7.00063086, y: -.10246852, z: .428979307}
+      seglength: 1.17858291
+      length: 5.64801359
+      notlocked: 0
+      twist: 0
+      id: 0
+      lengths:
+      - 4.46942997
+      - 4.56029844
+      - 4.6609602
+      - 4.76719856
+      - 4.87527227
+      - 4.98280382
+      - 5.08992577
+      - 5.20057774
+      - 5.32299662
+      - 5.4682827
+      - 5.64801359
+      points:
+      - {x: -7.00063086, y: -.384667665, z: .428979367}
+      - {x: -7.0039711, y: -.293860734, z: .428979456}
+      - {x: -7.01019144, y: -.193391412, z: .428979874}
+      - {x: -7.01358223, y: -.0872072279, z: .42898038}
+      - {x: -7.00844097, y: .0207440052, z: .428981066}
+      - {x: -6.98905993, y: .126514614, z: .428981781}
+      - {x: -6.94973469, y: .22615692, z: .428982496}
+      - {x: -6.8847599, y: .315723211, z: .428983182}
+      - {x: -6.78842878, y: .39126572, z: .428983748}
+      - {x: -6.65503597, y: .448836774, z: .428984135}
+      - {x: -6.47887659, y: .484488636, z: .428984284}
+    - p: {x: -6.47887659, y: .484488636, z: .428984284}
+      invec: {x: -7.14369345, y: .406567186, z: .428984225}
+      outvec: {x: -5.81405973, y: .56242609, z: .428984314}
+      seglength: 1.12987828
+      length: 6.77789164
+      notlocked: 0
+      twist: 0
+      id: 0
+      lengths:
+      - 5.64801359
+      - 5.82620192
+      - 5.9652853
+      - 6.07449341
+      - 6.16307402
+      - 6.24029493
+      - 6.31539965
+      - 6.39757347
+      - 6.49595356
+      - 6.61967516
+      - 6.77789164
+      points:
+      - {x: -6.47887659, y: .484488636, z: .428984284}
+      - {x: -6.30182362, y: .504571974, z: .428984225}
+      - {x: -6.16345882, y: .518690169, z: .428984225}
+      - {x: -6.05463028, y: .52778852, z: .428984046}
+      - {x: -5.96619225, y: .532812715, z: .428983867}
+      - {x: -5.88899469, y: .534708142, z: .428983599}
+      - {x: -5.81389046, y: .534420431, z: .428983271}
+      - {x: -5.73173094, y: .532895148, z: .428982913}
+      - {x: -5.63336754, y: .531077802, z: .428982496}
+      - {x: -5.50965118, y: .529913902, z: .42898199}
+      - {x: -5.35143518, y: .530349016, z: .428981453}
+    - p: {x: -5.35143518, y: .530349016, z: .428981453}
+      invec: {x: -5.94648933, y: .525183022, z: .42898339}
+      outvec: {x: -4.75638103, y: .535517871, z: .428979516}
+      seglength: 5.22313309
+      length: 12.0010252
+      notlocked: 0
+      twist: 0
+      id: 0
+      lengths:
+      - 6.77789164
+      - 7.05871344
+      - 7.51394987
+      - 8.09832287
+      - 8.76654816
+      - 9.47334385
+      - 10.1734266
+      - 10.8215151
+      - 11.3723269
+      - 11.7805843
+      - 12.0010252
+      points:
+      - {x: -5.35143518, y: .530349016, z: .428981453}
+      - {x: -5.07061529, y: .53133595, z: .428980887}
+      - {x: -4.61537886, y: .53125757, z: .428980559}
+      - {x: -4.03100681, y: .530206561, z: .428980201}
+      - {x: -3.36278439, y: .528275907, z: .428979993}
+      - {x: -2.65599394, y: .525558531, z: .428979784}
+      - {x: -1.95591915, y: .522147238, z: .428979665}
+      - {x: -1.30784333, y: .518135071, z: .428979605}
+      - {x: -.757049978, y: .513614774, z: .428979576}
+      - {x: -.348822385, y: .50867933, z: .428979546}
+      - {x: -.128444105, y: .503421664, z: .428979516}
+    - p: {x: -.128444105, y: .503421664, z: .428979516}
+      invec: {x: -.499642909, y: .521381259, z: .428979605}
+      outvec: {x: .242754072, y: .48546207, z: .428979427}
+      seglength: 0
+      length: 0
+      notlocked: 0
+      twist: 0
+      id: 0
+      lengths: []
+      points: []
+    animations: []
+    offset: {x: 0, y: 0, z: 0}
+    rotate: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    reverse: 0
+    outlineSpline: -1
+    outline: 0
+    constantSpeed: 0
+    subdivs: 10
+    twistmode: 0
+    splineanim:
+      Enabled: 0
+      knots: []
+  showanimations: 0
+  keytime: 0
+  updateondrag: 1
+  angleError: .0799999982
+  areaError: .150000006
+  hardAngle: 88
+  packMargin: .00389999989
+  defRadius: 1
+  testtime: 0
+  time: 0
+  animate: 0
+  speed: 1
+  selcurve: 0
+  imported: 0
+  CursorPercent: 0
+  MaxTime: 1
+  LoopMode: 0
+  dolateupdate: 0
+  makeMesh: 0
+  meshType: 0
+  DoubleSided: 1
+  CalcTangents: 0
+  GenUV: 1
+  PhysUV: 0
+  Height: 0
+  HeightSegs: 1
+  Sides: 4
+  TubeStep: .100000001
+  Start: 0
+  End: 100
+  Rotate: 0
+  Pivot: {x: 0, y: 0, z: 0}
+  UVOffset: {x: 0, y: 0}
+  UVRotate: {x: 0, y: 0}
+  UVScale: {x: 1, y: 1}
+  UVOffset1: {x: 0, y: 0}
+  UVRotate1: {x: 0, y: 0}
+  UVScale1: {x: 1, y: 1}
+  UVOffset2: {x: 0, y: 0}
+  UVRotate3: {x: 0, y: 0}
+  UVScale3: {x: 1, y: 1}
+  autosmooth: 0
+  smoothness: .75
+  flipNormals: 0
+  mat1: {fileID: 0}
+  mat2: {fileID: 0}
+  mat3: {fileID: 0}
+  UseHeightCurve: 0
+  heightCrv:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  heightOff: 0
+  shapemesh: {fileID: 0}
+  tsides: 8
+  crossType: 0
+  Twist: 0
+  strands: 1
+  tradius: .100000001
+  offset: 0
+  uvtilex: 1
+  uvtiley: 1
+  uvtwist: 0
+  TubeLength: 1
+  TubeStart: 0
+  SegsPerUnit: 20
+  TwistPerUnit: 0
+  strandRadius: 0
+  startAng: 0
+  rotate: 0
+  cap: 0
+  RopeUp: 1
+  scaleX:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  scaleY:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  unlinkScale: 0
+  boxwidth: .200000003
+  boxheight: .200000003
+  raxis: 0
+  ribsegs: 1
+  conform: 0
+  target: {fileID: 0}
+  conformCollider: {fileID: 0}
+  offsets: []
+  last: []
+  conformAmount: 1
+  raystartoff: 0
+  raydist: 10
+  conformOffset: 0
+  conformWeight: 1
+  points: 5
+  length: 20
+  dir: 0
+  end: {fileID: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 115564}
+  m_IsPrefabParent: 1

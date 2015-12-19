@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public enum State {System = 0, ReduceAlpha, ZoomInSubsystem, Subsystem, ZoomOutSubsystem, IncreaseAlpha,
 	PlayAnimation};
 
-public enum RenderingMode {Fade = 2, Transparent = 3};
+public enum RenderingMode {Opaque = 0, Cutout = 1, Fade = 2, Transparent = 3};
 public enum FadeMode {Continuously, Fast};
 
 public struct MeshPack
@@ -295,6 +295,7 @@ public class SystemBrowser : MonoBehaviour {
 		{
 			foreach (Material material in rend.materials)
 			{
+				//material.SetFloat ("_Mode", 1.0f);
 				material.SetFloat ("_Mode", (float)renderingMode); //fade or transparent
 				material.SetInt ("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
 				material.SetInt ("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);

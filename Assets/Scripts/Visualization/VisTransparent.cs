@@ -53,7 +53,7 @@ public class VisTransparent : VisClass {
 			SetAlphaForMeshes (pack.meshes, a);
 	}
 
-	void PrepareForAlphaBlending(MeshRenderer[] meshes)
+	/*void PrepareForAlphaBlending(MeshRenderer[] meshes)
 	{
 		if (meshes == null)
 			return;
@@ -61,17 +61,17 @@ public class VisTransparent : VisClass {
 		{
 			foreach (Material material in rend.materials)
 			{
-				material.SetFloat ("_Mode", 2.0f); //fade or transparent
+				material.SetFloat ("_Mode", 1.0f); //fade or transparent
 				material.SetInt ("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
 				material.SetInt ("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
 				//material.SetInt ("_ZWrite", 0);
-				material.DisableKeyword ("_ALPHATEST_ON");
+				//material.DisableKeyword ("_ALPHATEST_ON");
 				material.EnableKeyword ("_ALPHABLEND_ON");
 				material.DisableKeyword ("_ALPHAPREMULTIPLY_ON");
-				material.renderQueue = 3000;
+				material.renderQueue = 4000;
 			}
 		}
-	}
+	}*/
 
 	public void SetAlphaForMeshes(MeshRenderer[] meshes, float a)
 	{
