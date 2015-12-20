@@ -7,10 +7,10 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Playground AlphaBlended Smoke
-  m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: d07a3872c78344ff0adeabcadabdde0b, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON
   m_LightmapFlags: 5
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 3000
   stringTagMap:
     RenderType: TransparentCutout
   m_SavedProperties:
@@ -105,10 +105,6 @@ Material:
         second: .699999988
       data:
         first:
-          name: _InvFade
-        second: .769999981
-      data:
-        first:
           name: _Parallax
         second: .0199999996
       data:
@@ -143,6 +139,10 @@ Material:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _InvFade
+        second: .769999981
     m_Colors:
       data:
         first:
