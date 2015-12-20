@@ -46,7 +46,7 @@ MonoBehaviour:
   particleSettingsOverflowOffsetFoldout: 0
   particleSettingsScatterFoldout: 0
   particleSettingsEmissionFoldout: 0
-  particleSettingsSizeFoldout: 0
+  particleSettingsSizeFoldout: 1
   particleSettingsRotationFoldout: 0
   particleSettingsLifetimeFoldout: 1
   particleSettingsMaskFoldout: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   collisionPlanesFoldout: 0
   collisionExclusionFoldout: 0
   renderingMaterialFoldout: 0
-  renderingColorFoldout: 1
+  renderingColorFoldout: 0
   renderingRenderModeFoldout: 0
   renderingShadowsFoldout: 0
   advancedTimeFoldout: 0
