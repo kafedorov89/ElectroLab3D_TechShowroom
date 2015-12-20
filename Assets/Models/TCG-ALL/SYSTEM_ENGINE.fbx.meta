@@ -5138,8 +5138,8 @@ ModelImporter:
     4301936: Generator_close_001
     4301938: Generator_close_002
     4301940: bolty2
-    7400000: Take 001
-    7400002: Take 0010
+    7400000: Work
+    7400002: Idle
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -5162,7 +5162,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Work
       takeName: Take 001
       firstFrame: 0
       lastFrame: 100
@@ -5171,7 +5171,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -7408,7 +7408,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Take 0010
+      name: Idle
       takeName: Take 001
       firstFrame: 0
       lastFrame: 1

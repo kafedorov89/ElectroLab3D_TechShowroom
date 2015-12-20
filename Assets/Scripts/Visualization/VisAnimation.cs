@@ -11,7 +11,7 @@ public class VisAnimation : VisClass {
     public string workStateName;
 
     public string[] AnimatorStateNames;
-    private Animator animator { get; set; }
+	private Animator animator { get; set; }
     private Dictionary<int, string> NameTable { get; set; }
 
     int waitState;
@@ -32,7 +32,7 @@ public class VisAnimation : VisClass {
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         int loops = (int)Mathf.Floor(stateInfo.normalizedTime / stateInfo.length);
 
-        Debug.Log("Loops = " + loops);
+        //Debug.Log("Loops = " + loops);
 
         return loops;
     }
@@ -53,9 +53,12 @@ public class VisAnimation : VisClass {
         }
     }
 
-    void Start()
+    public override void Start()
     {
-        waitState = Animator.StringToHash("Base." + waitStateName);
+		base.Start();
+		animator = VisObject.GetComponent<Animator>();
+
+		waitState = Animator.StringToHash("Base." + waitStateName);
         workState = Animator.StringToHash("Base." + workStateName);
     }
     
@@ -69,11 +72,12 @@ public class VisAnimation : VisClass {
         animator.SetTrigger("Stop");
     }
 
-    void Update()
+    public override void Update()
     {
-        if (GetLoopCount() >= LoopCount)
+		base.Update ();
+		if (GetLoopCount() >= LoopCount)
         {
-            StopVis();
+            //StopVis();
         }
     }
 }

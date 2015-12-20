@@ -16,10 +16,7 @@ public class VisParticles : VisClass {
 	//private bool state = false;
 	
 
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 
 	public override void StartVis()
 	{

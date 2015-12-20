@@ -7,25 +7,25 @@ public class SoundPlay : MonoBehaviour {
     public bool play;
     public bool stop;
 
-    AudioSource audio;
+    AudioSource source;
     
     void Start()
     {
-        audio = GetComponent<AudioSource>();
-        audio.Play();
-        audio.Play(44100);
+        source = GetComponent<AudioSource>();
+        source.Play();
+        //audio.Play(44100);
     }
 
     public void Update()
     {
         if (play)
         {
-            audio.Play();
-            audio.Play(44100);
+            source.Play();
+            //source.Play(44100);
         }
         else if (stop)
         {
-            audio.Stop();
+            source.Stop();
         }
     }
 }

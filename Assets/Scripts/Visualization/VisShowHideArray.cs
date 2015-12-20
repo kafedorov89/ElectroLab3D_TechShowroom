@@ -10,10 +10,7 @@ public class VisShowHideArray : VisClass {
 	public GameObject[] targets;
 	//public List<GameObject> targets2;
 
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 
 	public override void StartVis()
 	{
