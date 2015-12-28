@@ -9,11 +9,12 @@ public class VisSound3Step : VisClass {
 
 	public AudioSource soundStart;
 	public AudioSource soundWork;
-	public AudioSource soundStop;
+	public AudioSource soundStop; //звук должен быть полной копией старта, но только с реверсом
 
 	private float L1, L2, L3;
 
-	private float t, t2;
+	private float t = 0.0f; //момент перехода Start->Work
+	private float t2 = 0.0f; //момент перехода Stop->Idle
 
 	
 	public override void StartVis()
@@ -66,6 +67,7 @@ public class VisSound3Step : VisClass {
 		{
 			unitState = UnitState.Working;
 			soundStart.Stop();
+			soundWork.time = 5.0f;
 			soundWork.Play();
 		}
 		if (unitState == UnitState.Stopping &&
@@ -73,6 +75,8 @@ public class VisSound3Step : VisClass {
 		{
 			unitState = UnitState.Idle;
 		}
+		if (soundWork.time > 10.0f)
+			soundWork.time = 5.0f;
 	}
 	//public void SetAudioSource()
 	//{

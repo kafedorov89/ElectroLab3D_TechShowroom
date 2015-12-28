@@ -19,7 +19,14 @@ public class VisRotation : VisClass {
     {
         if (VisStarted)
         {
-            VisObject.transform.Rotate(RotationVector, Speed * Time.deltaTime);
+			VisObject.transform.Rotate(RotationVector, Speed * Time.fixedDeltaTime);
+
+			//Quaternion.Slerp();
+			//VisObject.transform.RotateAround(new Vector3(1.0f, 0.0f, 0.0f), );
+			//VisObject.transform.localRotation.x += Speed * Time.deltaTime;
+			//Debug.Log(VisObject.transform.eulerAngles.x);
+
+
         }
     }
 
@@ -41,22 +48,22 @@ public class VisRotation : VisClass {
         RotationVector = new Vector3();
         
         if (RotationX)
-            RotationVector += new Vector3(1, 0, 0);
+            RotationVector += new Vector3(1.0f, 0.0f, 0.0f);
 
         if (RotationY)
         {
-            RotationVector += new Vector3(0, 1, 0);
+            RotationVector += new Vector3(0.0f, 1.0f, 0.0f);
         }
 
         if (RotationZ)
         {
-            RotationVector += new Vector3(0, 0, 1);
+            RotationVector += new Vector3(0.0f, 0.0f, 1.0f);
         }
 
         if (!PositiveRotation)
         {
-            Debug.Log("Set negative rotation");
-            RotationVector = RotationVector * -1.0f;
+            //Debug.Log("Set negative rotation");
+            //RotationVector = (RotationVector) * (-1.0f);
         }
     }
     
@@ -114,20 +121,22 @@ public class VisRotation : VisClass {
 
         return true;
     }
+	public override void Update()
+	{
+		base.Update();
 
-    public override void Update()
+	}
+    public void FixedUpdate()
     {
-        base.Update();
-        //SetDirection();
-        
-        if(RotateToAngle){
-            if (!CheckAngle())
-            {
-                StopVis();
-            }
-        }
-
-        RotationProcess();
+		if(RotateToAngle)
+		{
+			if (!CheckAngle())
+			{
+				StopVis();
+			}
+		}
+		
+		RotationProcess();   
     }
 
     public override void Start()
@@ -135,4 +144,20 @@ public class VisRotation : VisClass {
         base.Start();
         SetRotation();
     }
+	public static float CalcEulerSafeX(float x)
+	{
+		if (x >= -90 && x <= 90)
+			return x;
+		x = x % 180;
+		if (x > 0)
+			x -= 180;
+		else
+			x += 180;
+		return x;
+	}
+	public static Vector3 EulerSafeX(ref Vector3 eulerAngles)
+	{
+		eulerAngles.x = CalcEulerSafeX(eulerAngles.x);
+		return eulerAngles;
+	}
 }
