@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Playground Additive Smoke
-  m_Shader: {fileID: 4800000, guid: d07a3872c78344ff0adeabcadabdde0b, type: 3}
+  m_Shader: {fileID: 200, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHABLEND_ON
   m_LightmapFlags: 5
   m_CustomRenderQueue: 3000
@@ -33,6 +33,13 @@ Material:
       data:
         first:
           name: _DetailNormalMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Refraction
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -86,13 +93,6 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Refraction
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -110,6 +110,14 @@ Material:
         first:
           name: _Shininess
         second: .699999988
+      data:
+        first:
+          name: _Metallic
+        second: 0
+      data:
+        first:
+          name: _RefractionIntensity
+        second: .100000001
       data:
         first:
           name: _Parallax
@@ -144,16 +152,8 @@ Material:
         second: 2
       data:
         first:
-          name: _Metallic
-        second: 0
-      data:
-        first:
           name: _InvFade
         second: .00999999978
-      data:
-        first:
-          name: _RefractionIntensity
-        second: .100000001
     m_Colors:
       data:
         first:
