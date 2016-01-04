@@ -34855,7 +34855,7 @@ MonoBehaviour:
   sourceTransform: {fileID: 331079458}
   sourceTransforms:
   - transform: {fileID: 331079458}
-    instanceID: 1735832
+    instanceID: 23246
     available: 1
     position: {x: 9.954355, y: 1.5116146, z: 3.9445438}
     localPosition: {x: 0, y: 0, z: 0}
@@ -35020,15 +35020,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  isReadyForThreadedCalculations: 0
+  isReadyForThreadedCalculations: 1
   prewarm: 0
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  localTime: 49.313652
-  localDeltaTime: 0
+  localTime: 405.1723
+  localDeltaTime: 402.0677
   previousActiveState: 0
-  simulationStarted: 49.313652
+  simulationStarted: 3.104628
   loopExceeded: 0
   loopExceededOnParticle: -1
 --- !u!199 &331079460
@@ -40569,7 +40569,7 @@ MonoBehaviour:
   sourceTransform: {fileID: 489485506}
   sourceTransforms:
   - transform: {fileID: 489485506}
-    instanceID: 1736536
+    instanceID: 23950
     available: 1
     position: {x: 9.922855, y: 1.6661146, z: 4.303044}
     localPosition: {x: 0, y: 0, z: 0}
@@ -40734,15 +40734,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  isReadyForThreadedCalculations: 0
+  isReadyForThreadedCalculations: 1
   prewarm: 0
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  localTime: 49.313652
-  localDeltaTime: 0
+  localTime: 405.1723
+  localDeltaTime: 402.0677
   previousActiveState: 0
-  simulationStarted: 49.313652
+  simulationStarted: 3.104628
   loopExceeded: 0
   loopExceededOnParticle: -1
 --- !u!199 &489485508
@@ -48665,7 +48665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subsystemName: "\u0413\u0430\u0437\u043E\u0432\u0430\u044F \u0442\u0443\u0440\u0438\u043D\u0430
+  subsystemName: "\u0413\u0430\u0437\u043E\u0432\u0430\u044F \u0442\u0443\u0440\u0431\u0438\u043D\u0430
     \u0438 \u0432\u0441\u043F\u043E\u043C\u043E\u0433\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0439
     \u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440"
   textAbout: 
@@ -50848,10 +50848,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d74ee0854b5644eb323e0af69b1774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPositionMode: 0
-  startPosition: {x: 0.74, y: 2.73, z: 0.27}
-  startRotation: {x: 0, y: 0, z: 0}
-  startDistance: 8
+  startCamPositionMode: 0
+  startCamPosition: {x: 0, y: 0, z: 0}
+  startCamRotation: {x: 0, y: 0, z: 0}
+  startCamDistance: 8
   shiftAlphaTime: 1
   shiftZoomTime: 1
   zoomIncrement: 2
@@ -58748,10 +58748,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d74ee0854b5644eb323e0af69b1774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPositionMode: 0
-  startPosition: {x: -7, y: 5.2, z: 5.4}
-  startRotation: {x: 0, y: 0, z: 0}
-  startDistance: 18
+  startCamPositionMode: 0
+  startCamPosition: {x: 0, y: 0, z: 0}
+  startCamRotation: {x: 0, y: 0, z: 0}
+  startCamDistance: 18
   shiftAlphaTime: 1
   shiftZoomTime: 1
   zoomIncrement: 2
@@ -83411,7 +83411,7 @@ MonoBehaviour:
   sourceTransform: {fileID: 1772199458}
   sourceTransforms:
   - transform: {fileID: 1772199458}
-    instanceID: 1741938
+    instanceID: 29352
     available: 1
     position: {x: 9.928355, y: 1.5306144, z: 4.6530437}
     localPosition: {x: 0, y: 0, z: 0}
@@ -83576,15 +83576,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  isReadyForThreadedCalculations: 0
+  isReadyForThreadedCalculations: 1
   prewarm: 0
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  localTime: 49.313652
-  localDeltaTime: 0
+  localTime: 405.1723
+  localDeltaTime: 402.0677
   previousActiveState: 0
-  simulationStarted: 49.313652
+  simulationStarted: 3.104628
   loopExceeded: 0
   loopExceededOnParticle: -1
 --- !u!199 &1772199460
@@ -86658,10 +86658,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d74ee0854b5644eb323e0af69b1774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPositionMode: 0
-  startPosition: {x: 9.4, y: 6, z: 0.3}
-  startRotation: {x: 0, y: 180, z: 0}
-  startDistance: 12
+  startCamPositionMode: 0
+  startCamPosition: {x: 0, y: 0, z: 0}
+  startCamRotation: {x: 0, y: 180, z: 0}
+  startCamDistance: 12
   shiftAlphaTime: 1
   shiftZoomTime: 1
   zoomIncrement: 2
@@ -86682,10 +86682,17 @@ MonoBehaviour:
   systemName: "\u0413\u0430\u0437\u043E\u0442\u0443\u0440\u0431\u0438\u043D\u043D\u0430\u044F
     \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 SGT-400"
   list:
-  - name: "\u0413\u0430\u0437\u043E\u0432\u0430\u044F \u0442\u0443\u0440\u0438\u043D\u0430
+  - name: "\u0413\u0430\u0437\u043E\u0432\u0430\u044F \u0442\u0443\u0440\u0431\u0438\u043D\u0430
       \u0438 \u0432\u0441\u043F\u043E\u043C\u043E\u0433\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0439
       \u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440"
     gameObject: {fileID: 642105013}
+    textAbout: 
+  - name: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u0437\u0430\u043F\u0443\u0441\u043A\u0430"
+    gameObject: {fileID: 535672432}
+    textAbout: 
+  - name: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u0441\u043C\u0430\u0437\u043E\u0447\u043D\u043E\u0433\u043E
+      \u043C\u0430\u0441\u043B\u0430"
+    gameObject: {fileID: 1974055498}
     textAbout: 
   - name: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u0440\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u0438\u044F
       \u0432\u043E\u0437\u0434\u0443\u0445\u0430"
@@ -86718,13 +86725,6 @@ MonoBehaviour:
     textAbout: 
   - name: "\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440"
     gameObject: {fileID: 914464995}
-    textAbout: 
-  - name: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u0441\u043C\u0430\u0437\u043E\u0447\u043D\u043E\u0433\u043E
-      \u043C\u0430\u0441\u043B\u0430"
-    gameObject: {fileID: 1974055498}
-    textAbout: 
-  - name: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u0437\u0430\u043F\u0443\u0441\u043A\u0430"
-    gameObject: {fileID: 535672432}
     textAbout: 
 --- !u!65 &1846505130
 BoxCollider:

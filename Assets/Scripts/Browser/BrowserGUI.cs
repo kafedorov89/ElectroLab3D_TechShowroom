@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 //Advanced GUI for browser
 //Using new UI System
@@ -49,9 +50,6 @@ public class BrowserGUI : MonoBehaviour {
 
 		//get visualizations
 		Visualizations = target.GetComponentsInChildren<VisClass>();
-
-		//search audio in childrens
-		//audio = target.GetComponentInChildren<AudioSource>();
 
 		textSystemName.text = list.systemName;
 		if (list.list.Count > 0)
@@ -116,7 +114,7 @@ public class BrowserGUI : MonoBehaviour {
 	{
 		//ToogleDropDown ();
 		dropDownMenu.SetActive (false);
-		if (browser.IsReady () == false)
+		if (browser.IsReady == false)
 			return;
 
 		compile.interactable = true;
@@ -129,7 +127,7 @@ public class BrowserGUI : MonoBehaviour {
 	//Go to whole system browsing
 	public void Compile()
 	{
-		if (browser.IsReady () == false)
+		if (browser.IsReady == false)
 			return;
 
 		//new fuctional +++
@@ -202,5 +200,16 @@ public class BrowserGUI : MonoBehaviour {
 		//stop all visualizations
 		foreach (VisClass vis in Visualizations)
 			vis.StopVis ();
+	}
+
+	public void Update()
+	{
+		if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+		{
+			if (EventSystem.current.IsPointerOverGameObject () == false)
+			{
+				dropDownMenu.SetActive (false);
+			}
+		}
 	}
 }
