@@ -7,7 +7,18 @@ public class MouseOrbit: MonoBehaviour {
 	//move camera, not object
 
 	public Transform target;
+
 	public float distance;
+	public float Distance
+	{
+		get { return distance; }
+		set 
+		{ 
+			distance = value;
+			cameraDistance.transform.localPosition = new Vector3(0.0f, 0.0f, -distance);
+		}
+	}
+
 	public float xSpeed = 120.0f;
 	public float ySpeed = 120.0f;
 	
@@ -33,7 +44,9 @@ public class MouseOrbit: MonoBehaviour {
     public GameObject cameraRotation;
     public GameObject cameraDistance;
     private bool PosInited;
+
     public float startDistance = 10.0f;
+	public Vector3 startRotation = new Vector3 (0,0,0);
 
     void ParallelMoving()
     {
@@ -86,8 +99,9 @@ public class MouseOrbit: MonoBehaviour {
 		x = angles.y;
 		y = angles.x;
 
-        distance = startDistance;
-        cameraDistance.transform.localPosition = new Vector3(0.0f, 0.0f, -distance);
+        Distance = startDistance;
+		//cameraRotation.transform.rotation = Quaternion.Euler (startRotation.x, startRotation.y, startRotation.z);
+        //cameraDistance.transform.localPosition = new Vector3(0.0f, 0.0f, -distance);
     }
 	
     void Update()
@@ -104,7 +118,7 @@ public class MouseOrbit: MonoBehaviour {
 	{
         if (target)
         {
-			cameraRotation.transform.position = target.transform.position;
+			//cameraRotation.transform.position = target.transform.position;
 
 			if (!PosInited)
             {
@@ -156,5 +170,11 @@ public class MouseOrbit: MonoBehaviour {
 		if (angle > 360F)
 			angle -= 360F;
 		return Mathf.Clamp(angle, min, max);
+	}
+	public void SetRotation(Vector3 rot)
+	{
+		cameraRotation.transform.localRotation = Quaternion.Euler (rot.x, rot.y, rot.z);
+		x = rot.y;
+		y = rot.z;
 	}
 }

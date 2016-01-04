@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 //using ParticlePlayground;
 
+public enum ParamInitializationMode {Auto, Manual};
+
 public enum State {System = 0, ReduceAlpha, ZoomInSubsystem, Subsystem, ZoomOutSubsystem, IncreaseAlpha,
 	PlayAnimation};
 
@@ -20,7 +22,20 @@ public class SystemBrowser : MonoBehaviour {
 	//public PlaygroundParticlesC[] Particles;
 	//public GameObject ParticleController;
 
+	//starting transform of system
+	public ParamInitializationMode startPositionMode = ParamInitializationMode.Auto;
+
+	//public bool setStartCameraPosition = false;
+	//public bool setStartCameraRotation = false;
+	//public bool setStartCameraDistance = false;
+	public Vector3 startPosition = new Vector3(0, 0, 0);
+	public Vector3 startRotation = new Vector3(0, 0, 0);
+	public float startDistance = 10.0f;
+
 	Camera mainCam; //main camera
+
+	//GameObject CameraRotation
+
 	GameObject GO; //gameobject of main system
 	MeshRenderer[] meshes; //all meshes of 3D model
 
@@ -36,13 +51,13 @@ public class SystemBrowser : MonoBehaviour {
 	Vector3 mainPos;
 	Vector3 subPos;
 
-	[Tooltip("Value of system alpha-cannel when subsystem is browsing. Set 0 for system invisible")]
-	[Range(0.0f,1.0f)]
-	public float alphaMin = 0.1f; //alpha-cannel when subsystem browsing
+	//[Tooltip("Value of system alpha-cannel when subsystem is browsing. Set 0 for system invisible")]
+	//[Range(0.0f,1.0f)]
+	private float alphaMin = 0.0f; //alpha-cannel when subsystem browsing
 	private float alphaMax = 1.0f; //alpha-cannel when system browsing
 
-	[Range(0.0f,1.0f)]
-	public float alphaWhenPlay = 0.1f; //alpha-channel when playing animation
+	//[Range(0.0f,1.0f)]
+	//public float alphaWhenPlay = 0.1f; //alpha-channel when playing animation
 
 	[Tooltip("Time in seconds for alpha-cannel reducing and increasing process")]
 	public float shiftAlphaTime = 1.0f; //time for change system alpha-channel
@@ -88,34 +103,48 @@ public class SystemBrowser : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		//if (ParticleController != null)
-		//	ParticleController.SetActive (false);
-
 		GameObject canvas = GameObject.FindWithTag ("Player");
 		bGUI = canvas.GetComponent<BrowserGUI> (); 
 		
 		GO = gameObject;
+		GO.transform.position = new Vector3 (0,0,0);
 		cameraHelper = new GameObject("CameraHelper");
 
+		//камера направляется на специально созданного помощника
+		//начальное положение помощника может быть рассчитано 
+		//автоматически - как центр общий мешей, либо задано пользователем
+		if (startPositionMode == ParamInitializationMode.Auto)
+			cameraHelper.transform.position = CalcCenterOfGameObject2 (GO);
+		else
+			cameraHelper.transform.position = startPosition;
 		//+++
 		//GameObject ctrlObject = GameObject.FindWithTag("GameController");
 		//GameControl ctrlComponent = ctrlObject.GetComponent<GameControl>();
 		//cameraHelper.transform.parent = ctrlComponent.target.transform;
 
 		Subs = GetComponent<SubsystemList> ();
-		//CreateClones ();
 
 		GameObject mainCamObj = GameObject.FindWithTag ("MainCamera"); 
 		mainCam = mainCamObj.GetComponent<Camera>();
 		orbitNav = mainCam.GetComponent<MouseOrbit>();
-		mainPos = GO.transform.position;
+		orbitNav.SetTarget (cameraHelper.transform); //напрявляем на помощника
 
+		mainPos = startPosition; //GO.transform.position;
 
 		BuildMeshes ();
 
 		PrepareForAlphaBlending ();
-		//PrepareForOutline (); //New !!!
+
 		m_alpha = alphaMax;
+
+		ResetStartTransform ();
+	}
+
+	//set initial camera position
+	void ResetStartTransform()
+	{
+		orbitNav.SetRotation(startRotation);
+		orbitNav.Distance = startDistance;
 	}
 	void BuildMeshes()
 	{
@@ -175,41 +204,7 @@ public class SystemBrowser : MonoBehaviour {
 		//raycasting
 		UpdateRaycasting ();
 	}
-	//public void Play()
-	//{
-	//	if (state == State.System)
-	//		StartPlay ();
-	//	else if (state == State.PlayAnimation)
-	//		StopPlay ();
-	//}
-	//play animation or other actions
-	//public void StartPlay()
-	//{
-	//	state = State.PlayAnimation;
 
-		//1. make all system transparent
-	//	SetAlpha (alphaWhenPlay);
-
-		//2. start emit particles
-		//foreach (PlaygroundParticlesC P in Particles) {
-		//	P.Emit (true);
-		//}
-		//if (ParticleController != null)
-		//	ParticleController.SetActive (true);
-	//}
-	//public void StopPlay()
-	//{
-	//	state = State.System;
-
-		//1. stop emit particles
-		//foreach (PlaygroundParticlesC P in Particles)
-		//	P.Emit (false);
-		//if (ParticleController != null)
-		//	ParticleController.SetActive (false);
-
-		//2. make all system non transparent
-	//	SetAlpha (alphaMax);
-	//}
 	void UpdateRaycasting()
 	{
 		if (state != State.System)
@@ -219,13 +214,12 @@ public class SystemBrowser : MonoBehaviour {
 		bool isHit = Physics.Raycast (ray, out hit, 100.0f);
 		if (isHit) 
 		{
-			//Collider coll = hit.collider;
+
 			GameObject obj = hit.collider.gameObject;
 			SubsystemFlag flag = obj.GetComponentInParent<SubsystemFlag>();
 			if (flag != null)
 			{
 				bGUI.textSubsystemName.text = flag.subsystemName;
-				//OutlineObject(flag.gameObject);
 				if (Input.GetMouseButtonUp(0))
 				{
 					float deltaTime = Time.time - lastDown0;
@@ -250,20 +244,7 @@ public class SystemBrowser : MonoBehaviour {
 			bGUI.textSubsystemName.text = "";
 
 	}
-	/*void OutlineObject(GameObject obj)
-	{
-		MeshRenderer[] objMeshes = obj.GetComponentsInChildren<MeshRenderer>();
-		if (objMeshes == null)
-			return;
-		foreach (MeshRenderer rend in objMeshes)
-		{
-			Material m = rend.materials[1];
-			m.SetFloat("_outline_enable", 1.0f);
-			//Material m = Resources.Load("Outline") as Material;
-			//m.SetFloat("_outline_width", 0.3f);
-			//rend.materials.SetValue(m, 1);
-		}
-	}*/
+
 	//Create clone for each subsystem gameobject //DEPRECATED
 	void CreateClones()
 	{
@@ -278,11 +259,9 @@ public class SystemBrowser : MonoBehaviour {
 			clone.SetActive(false);
 			clone.transform.rotation = original.gameObject.transform.rotation;
 			clone.transform.position = original.gameObject.transform.position;
-			//clone.transform.localScale = GO.transform.localScale;
 
 			clone.transform.parent = GO.transform; //<=
 			clone.transform.localScale = original.gameObject.transform.localScale;
-			//clone.transform.sca = original.gameObject.transform.lossyScale;
 		}
 	}
 
@@ -307,28 +286,6 @@ public class SystemBrowser : MonoBehaviour {
 			}
 		}
 	}
-	/*void PrepareForOutline()
-	{
-		if (meshes == null)
-			return;
-		foreach (MeshRenderer rend in meshes)
-		{
-
-			Material m = outlineMat;
-
-			m.SetFloat("_outline_enable", 0.0f);
-			//m.SetFloat("_outline_width", 0.0f);
-			//m.SetColor("_outline_color", new Color(0,1,0,0));
-
-			//m.shader = Shader.Find("Outline");
-			Material[] oldMats = rend.materials;
-			Material[] newMats = new Material[oldMats.Length+1];
-			for (int i = 0; i < oldMats.Length; ++i)
-				newMats[i] = oldMats[i];
-			newMats[oldMats.Length] = m;
-			rend.materials = newMats;
-		}
-	}*/
 
 	public void SetAlpha(float a)
 	{
@@ -423,6 +380,7 @@ public class SystemBrowser : MonoBehaviour {
 		SetAlpha(alpha);
 	}
 	//--- increadible code duplicate --- !!!
+
 	public int GetSubsystemIndex(GameObject obj)
 	{
 		List<Subsystem> list = Subs.list;
@@ -679,6 +637,7 @@ public class SystemBrowser : MonoBehaviour {
 			rend.enabled = isVisible;
 		}
 	}
+	//mass center for all meshes
 	Vector3 CalcCenterOfGameObject(GameObject obj)
 	{
 		int N = 0;
@@ -690,6 +649,24 @@ public class SystemBrowser : MonoBehaviour {
 			N++;
 		}
 		center /= (float)N;
+		return center;
+	}
+	//total bounding box for all meshes
+	Vector3 CalcCenterOfGameObject2(GameObject obj)
+	{
+		Vector3 center = new Vector3(0,0,0);
+		Vector3 minPoint = new Vector3(0,0,0);
+		Vector3 maxPoint = new Vector3(0,0,0);
+		MeshRenderer[] meshes = obj.GetComponentsInChildren<MeshRenderer>();
+		minPoint = meshes [0].bounds.min;
+		maxPoint = meshes [0].bounds.max;
+		foreach (MeshRenderer rend in meshes)
+		{
+			minPoint = Vector3.Min (minPoint, rend.bounds.min);
+			maxPoint = Vector3.Max (maxPoint, rend.bounds.max);
+		}
+
+		center = (minPoint + maxPoint)/2;
 		return center;
 	}
 }

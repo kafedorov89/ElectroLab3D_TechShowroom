@@ -60,9 +60,12 @@ public class GameControl : MonoBehaviour {
 			BoxCollider box = target.GetComponent<BoxCollider>();
 			//if (gui != null) gui.enabled = true;
 			if (box != null) box.enabled = false;
+
+			//target.transform.position = browser.startPosition;
 			
 			Camera mainCam = Camera.main;
 			MouseOrbit orbitNav = mainCam.GetComponent<MouseOrbit>();
+			 
 			if (orbitNav != null){ 
 				orbitNav.SetTarget(target.transform);
 				//orbitNav.target = target.transform;
