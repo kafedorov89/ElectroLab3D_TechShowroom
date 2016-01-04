@@ -108,15 +108,22 @@ public class SystemBrowser : MonoBehaviour {
 		
 		GO = gameObject;
 		GO.transform.position = new Vector3 (0,0,0);
+
+		//создаем помощника - именно на него будет направлена камера
+		//в течение всего времени просмотра установки;
+		//куда будет двигаться просмотрщик - туда и камера;
 		cameraHelper = new GameObject("CameraHelper");
 
-		//камера направляется на специально созданного помощника
 		//начальное положение помощника может быть рассчитано 
 		//автоматически - как центр общий мешей, либо задано пользователем
 		if (startPositionMode == ParamInitializationMode.Auto)
-			cameraHelper.transform.position = CalcCenterOfGameObject2 (GO);
+			mainPos = CalcCenterOfGameObject2 (GO);
 		else
-			cameraHelper.transform.position = startPosition;
+			mainPos = startPosition;
+		Debug.Log (mainPos);
+		
+		cameraHelper.transform.position = mainPos;
+
 		//+++
 		//GameObject ctrlObject = GameObject.FindWithTag("GameController");
 		//GameControl ctrlComponent = ctrlObject.GetComponent<GameControl>();
@@ -129,7 +136,7 @@ public class SystemBrowser : MonoBehaviour {
 		orbitNav = mainCam.GetComponent<MouseOrbit>();
 		orbitNav.SetTarget (cameraHelper.transform); //напрявляем на помощника
 
-		mainPos = startPosition; //GO.transform.position;
+		//mainPos = startPosition; //GO.transform.position;
 
 		BuildMeshes ();
 
@@ -148,14 +155,14 @@ public class SystemBrowser : MonoBehaviour {
 	}
 	void BuildMeshes()
 	{
-		//суть в том, что надо собрать группы мешей, которые относятся к каждой подсистеме
-		//а также все остальные меши надо объеденить в отдельную группу
+		//суть в том, что надо собрать группы мешей, которые относятся к каждой подсистеме;
+		//все остальные меши надо объеденить в отдельную группу
 		int N = Subs.list.Count;
 		meshesALL = new MeshPack[N];
 
 		for (int i = 0; i < N; ++i)
 		{
-			//получаем все меши данной подсистемы
+			//полу	чаем все меши данной подсистемы
 			MeshRenderer[] subsystemMeshes = Subs.list[i].gameObject.GetComponentsInChildren<MeshRenderer>();
 			meshesALL[i].meshes = subsystemMeshes;
 
@@ -201,7 +208,7 @@ public class SystemBrowser : MonoBehaviour {
 		if (state == State.IncreaseAlpha) 
 			IncreaseAlpha();
 
-		//raycasting
+		//raycasting - left or right click on subsystem
 		UpdateRaycasting ();
 	}
 
@@ -220,22 +227,22 @@ public class SystemBrowser : MonoBehaviour {
 			if (flag != null)
 			{
 				bGUI.textSubsystemName.text = flag.subsystemName;
-				if (Input.GetMouseButtonUp(0))
+				if (Input.GetMouseButtonUp(0)) //left mouse click
 				{
 					float deltaTime = Time.time - lastDown0;
 					if (deltaTime < catchTime)
 					{
 						int a = GetSubsystemIndex(flag.gameObject);
-						bGUI.ChooseSubsystem(a);
+						bGUI.ChooseSubsystem(a); //go to selected subsystem
 					}
 				}
-				if (Input.GetMouseButtonUp(1))
+				if (Input.GetMouseButtonUp(1)) //right mouse click
 				{
 					float deltaTime = Time.time - lastDown1;
 					if (deltaTime < catchTime)
 					{
 						int a = GetSubsystemIndex(flag.gameObject);
-						bGUI.HideSubsystem(a);
+						bGUI.HideSubsystem(a); //hide selected subsystem
 					}
 				}
 			}
@@ -421,6 +428,7 @@ public class SystemBrowser : MonoBehaviour {
 	{
 		Subs.list [index].gameObject.SetActive (false);
 	}
+
 	//Go to system browsing
 	public void GoToSystem()
 	{
@@ -431,17 +439,11 @@ public class SystemBrowser : MonoBehaviour {
 
 		isReady = false;
 		FixTime ();
-		//orbitNav.target = GO.transform;
-		//orbitNav.SetTarget (GO.transform;);
 
-		//new fuctional +++
-		//foreach (Subsystem sub in Subs.list)
-		//	sub.gameObject.SetActive (true);
-		//new fuctional ---
-
-		//switch point from and point to, start distance
-		//and finish distance
+		//switch point from and point to, start distance and finish distance
 		SwithVector3Value (ref subTo, ref subFrom);
+		Debug.Log (subFrom);
+		Debug.Log (subTo);
 
 		SwithVector3Value (ref parallelTo, ref parallelFrom);
 		//parallelFrom = orbitNav.gameObject.transform.localPosition;
@@ -452,7 +454,7 @@ public class SystemBrowser : MonoBehaviour {
 		distTo = Mathf.Min(orbitNav.distanceMax, orbitNav.distance + zoomIncrement);
 
 		//orbitNav.target = cameraHelper.transform; //look at camera helper
-		orbitNav.SetTarget (cameraHelper.transform);
+		//orbitNav.SetTarget (cameraHelper.transform);
 		state = State.ZoomOutSubsystem; //next state
 
 		//current_subs_index = -1;
@@ -487,24 +489,31 @@ public class SystemBrowser : MonoBehaviour {
 		}
 		else
 		{
-			SetAllMeshesVisibility(false); //кроме выбранной //!!!
-			FixTime();
-			state = State.ZoomInSubsystem; //next state
-
-			//cameraHelper.transform.position = GO.transform.position;
-			//orbitNav.target = cameraHelper.transform;
-			orbitNav.SetTarget(cameraHelper.transform);
-
-			subFrom = GO.transform.position;
-			//subTo = clonedSub.transform.position;
-			subTo = CalcCenterOfGameObject(Subs.list[current_subs_index].gameObject); //clonedSub
-
-			parallelFrom = orbitNav.transform.localPosition;
-			parallelTo = new Vector3(0,0,0);
-
-			distFrom = orbitNav.distance;
-			distTo = Mathf.Max(orbitNav.distanceMin, orbitNav.distance - zoomIncrement);
+			PrepareForZoomIn ();
 		}
+	}
+	void PrepareForZoomIn()
+	{
+		state = State.ZoomInSubsystem; //next state
+		SetAllMeshesVisibility(false); //кроме выбранной //!!!
+		FixTime();
+
+		//cameraHelper.transform.position = GO.transform.position;
+		//orbitNav.target = cameraHelper.transform;
+
+		//orbitNav.SetTarget(cameraHelper.transform);
+
+		subFrom = mainPos; //GO.transform.position;
+		subTo = CalcCenterOfGameObject2(Subs.list[current_subs_index].gameObject); //clonedSub
+		Debug.Log(subFrom);
+		Debug.Log(subTo);
+
+		//панорамирование нужно будет сбросить
+		parallelFrom = orbitNav.transform.localPosition;
+		parallelTo = new Vector3(0,0,0);
+
+		distFrom = orbitNav.distance;
+		distTo = Mathf.Max(orbitNav.distanceMin, orbitNav.distance - zoomIncrement);
 	}
 
 	//Increase alpha-channel of whole system 
@@ -525,7 +534,7 @@ public class SystemBrowser : MonoBehaviour {
 			state = State.System; //next state
 			//clonedSub.SetActive(false);
 			//orbitNav.target = GO.transform;
-			orbitNav.SetTarget(GO.transform);
+			//orbitNav.SetTarget(GO.transform);
 			current_subs_index = -1;
 		}
 	}
@@ -545,7 +554,8 @@ public class SystemBrowser : MonoBehaviour {
 			state = State.Subsystem; //next state
 			isReady = true;
 			//orbitNav.target = clonedSub.transform;
-			orbitNav.SetTarget(cameraHelper.transform);
+
+			//orbitNav.SetTarget(cameraHelper.transform);
 
 			//mainCam.transform.LookAt(GO.transform);
 		}
@@ -562,10 +572,14 @@ public class SystemBrowser : MonoBehaviour {
 		}
 		else 
 		{
-			FixTime();
-			state = State.IncreaseAlpha; //next state
-			SetAllMeshesVisibility(true); //кроме выбранной //!!!
+			PrepareForIncreaseAlpha ();
 		}
+	}
+	void PrepareForIncreaseAlpha()
+	{
+		FixTime();
+		state = State.IncreaseAlpha; //next state
+		SetAllMeshesVisibility(true); //кроме выбранной //!!!
 	}
 
 	//Save current time as start time of next process (animation)

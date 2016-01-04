@@ -118,7 +118,7 @@ public class MouseOrbit: MonoBehaviour {
 	{
         if (target)
         {
-			//cameraRotation.transform.position = target.transform.position;
+			cameraRotation.transform.position = target.transform.position;
 
 			if (!PosInited)
             {
