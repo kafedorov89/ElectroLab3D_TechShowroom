@@ -374,7 +374,7 @@ public class MegaSpline
 	public float				length;
 	public bool					closed;
 	public List<MegaKnot>		knots = new List<MegaKnot>();
-	public List<MegaKnotAnim>	animations;
+	public List<MegaKnotAnim>	animation;
 	public Vector3				offset = Vector3.zero;
 	public Vector3				rotate = Vector3.zero;
 	public Vector3				scale = Vector3.one;
@@ -420,8 +420,8 @@ public class MegaSpline
 			spl.knots.Add(knot);
 		}
 
-		if ( src.animations != null )
-			spl.animations = new List<MegaKnotAnim>(src.animations);
+		if ( src.animation != null )
+			spl.animation = new List<MegaKnotAnim>(src.animation);
 
 		return spl;
 	}
@@ -1800,17 +1800,17 @@ public class MegaShape : MonoBehaviour
 				}
 				else
 				{
-					if ( splines[s].animations != null && splines[s].animations.Count > 0 )
+					if ( splines[s].animation != null && splines[s].animation.Count > 0 )
 					{
-						for ( int i = 0; i < splines[s].animations.Count; i++ )
+						for ( int i = 0; i < splines[s].animation.Count; i++ )
 						{
-							Vector3 pos = splines[s].animations[i].con.GetVector3(t);
+							Vector3 pos = splines[s].animation[i].con.GetVector3(t);
 
-							switch ( splines[s].animations[i].t )
+							switch ( splines[s].animation[i].t )
 							{
-								case 0:	splines[splines[s].animations[i].s].knots[splines[s].animations[i].p].invec		= pos;	break;
-								case 1:	splines[splines[s].animations[i].s].knots[splines[s].animations[i].p].p			= pos;	break;
-								case 2:	splines[splines[s].animations[i].s].knots[splines[s].animations[i].p].outvec	= pos;	break;
+								case 0:	splines[splines[s].animation[i].s].knots[splines[s].animation[i].p].invec		= pos;	break;
+								case 1:	splines[splines[s].animation[i].s].knots[splines[s].animation[i].p].p			= pos;	break;
+								case 2:	splines[splines[s].animation[i].s].knots[splines[s].animation[i].p].outvec	= pos;	break;
 							}
 						}
 
@@ -2077,12 +2077,12 @@ public class MegaShape : MonoBehaviour
 				splines[i].knots[k].outvec *= scale;
 			}
 
-			if ( splines[i].animations != null )
+			if ( splines[i].animation != null )
 			{
-				for ( int a = 0; a < splines[i].animations.Count; a++ )
+				for ( int a = 0; a < splines[i].animation.Count; a++ )
 				{
-					if ( splines[i].animations[a].con != null )
-						splines[i].animations[a].con.Scale(scale);
+					if ( splines[i].animation[a].con != null )
+						splines[i].animation[a].con.Scale(scale);
 				}
 			}
 		}
@@ -2101,12 +2101,12 @@ public class MegaShape : MonoBehaviour
 				splines[i].knots[k].outvec *= scale;
 			}
 
-			if ( splines[i].animations != null )
+			if ( splines[i].animation != null )
 			{
-				for ( int a = 0; a < splines[i].animations.Count; a++ )
+				for ( int a = 0; a < splines[i].animation.Count; a++ )
 				{
-					if ( splines[i].animations[a].con != null )
-						splines[i].animations[a].con.Scale(scale);
+					if ( splines[i].animation[a].con != null )
+						splines[i].animation[a].con.Scale(scale);
 				}
 			}
 		}
@@ -2133,12 +2133,12 @@ public class MegaShape : MonoBehaviour
 				splines[i].knots[k].outvec.z *= scale.z;
 			}
 
-			if ( splines[i].animations != null )
+			if ( splines[i].animation != null )
 			{
-				for ( int a = 0; a < splines[i].animations.Count; a++ )
+				for ( int a = 0; a < splines[i].animation.Count; a++ )
 				{
-					if ( splines[i].animations[a].con != null )
-						splines[i].animations[a].con.Scale(scale);
+					if ( splines[i].animation[a].con != null )
+						splines[i].animation[a].con.Scale(scale);
 				}
 			}
 		}
@@ -2165,12 +2165,12 @@ public class MegaShape : MonoBehaviour
 			splines[c].knots[k].outvec += delta;
 		}
 
-		if ( splines[c].animations != null )
+		if ( splines[c].animation != null )
 		{
-			for ( int a = 0; a < splines[c].animations.Count; a++ )
+			for ( int a = 0; a < splines[c].animation.Count; a++ )
 			{
-				if ( splines[c].animations[a].con != null )
-					splines[c].animations[a].con.Move(delta);
+				if ( splines[c].animation[a].con != null )
+					splines[c].animation[a].con.Move(delta);
 			}
 		}
 
@@ -2189,12 +2189,12 @@ public class MegaShape : MonoBehaviour
 			splines[c].knots[k].p = tm.MultiplyPoint3x4(splines[c].knots[k].p);
 		}
 
-		if ( splines[c].animations != null )
+		if ( splines[c].animation != null )
 		{
-			for ( int a = 0; a < splines[c].animations.Count; a++ )
+			for ( int a = 0; a < splines[c].animation.Count; a++ )
 			{
-				if ( splines[c].animations[a].con != null )
-					splines[c].animations[a].con.Rotate(tm);
+				if ( splines[c].animation[a].con != null )
+					splines[c].animation[a].con.Rotate(tm);
 			}
 		}
 

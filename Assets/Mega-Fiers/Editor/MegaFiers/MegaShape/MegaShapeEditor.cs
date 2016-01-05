@@ -1308,11 +1308,11 @@ public class MegaShapeEditor : Editor
 
 		for ( int s = 0; s < ms.splines.Count; s++ )
 		{
-			if ( ms.splines[s].animations != null )
+			if ( ms.splines[s].animation != null )
 			{
-				for ( int a = 0; a < ms.splines[s].animations.Count; a++ )
+				for ( int a = 0; a < ms.splines[s].animation.Count; a++ )
 				{
-					MegaControl con = ms.splines[s].animations[a].con;
+					MegaControl con = ms.splines[s].animation[a].con;
 					if ( con != null )
 					{
 						float t = con.Times[con.Times.Length - 1];
@@ -1430,10 +1430,10 @@ public class MegaShapeEditor : Editor
 				ma = new MegaKnotAnim();
 				int s = ms.GetSpline(v, ref ma);	//.s, ref ma.p, ref ma.t);
 
-				if ( ms.splines[s].animations == null )
-					ms.splines[s].animations = new List<MegaKnotAnim>();
+				if ( ms.splines[s].animation == null )
+					ms.splines[s].animation = new List<MegaKnotAnim>();
 
-				ms.splines[s].animations.Add(ma);
+				ms.splines[s].animation.Add(ma);
 				break;
 
 			case "Anim":

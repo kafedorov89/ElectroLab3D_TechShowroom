@@ -92,7 +92,6 @@ public class BrowserGUI : MonoBehaviour {
 	{
 		menu.interactable = false;
 		compile.interactable = false;
-		//compile.transform.gameObject.se
 		home.interactable = true;
 		help.interactable = false;
 	}
@@ -139,6 +138,7 @@ public class BrowserGUI : MonoBehaviour {
 		HideTextAbout ();
 		help.interactable = false;
 		compile.interactable = false;
+		Stop (true); //
 		browser.GoToSystem();
 	}
 	public void HideSubsystem(int index)
@@ -188,18 +188,25 @@ public class BrowserGUI : MonoBehaviour {
 		foreach (VisClass vis in Visualizations)
 			vis.StartVis ();
 	}
-	public void Stop()
+	public void Stop(bool now)
 	{
-		//set current state
-		VisState = false;
+		//if (VisState == true)
+		//{
+			VisState = false;
 
-		//switch buttons
-		play.transform.gameObject.SetActive (true);
-		stop.transform.gameObject.SetActive (false);
+			//switch buttons
+			play.transform.gameObject.SetActive (true);
+			stop.transform.gameObject.SetActive (false);
 
-		//stop all visualizations
-		foreach (VisClass vis in Visualizations)
-			vis.StopVis ();
+			//stop all visualizations
+			foreach (VisClass vis in Visualizations)
+			{
+				if (!now)
+					vis.StopVis ();
+				else
+					vis.StopImmidiately ();
+			}
+		//}
 	}
 
 	public void Update()
