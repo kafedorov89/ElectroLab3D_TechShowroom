@@ -33,6 +33,9 @@ public class MouseOrbit: MonoBehaviour {
 	float x = 0.0f;
 	float y = 0.0f;
 
+	float dx = 0.0f;
+	float dy = 0.0f;
+
     public float step = 0.16f;
     public float smoothing = 10f;
 
@@ -135,17 +138,26 @@ public class MouseOrbit: MonoBehaviour {
                 Quaternion rotation = new Quaternion();
 
                 //Rotation
-                if (Input.GetMouseButton(0))
-                {
-                    //MouseEvent = true;
-                    x += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
-                    y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
-                    y = ClampAngle(y, yMinLimit, yMaxLimit);
-                    rotation = Quaternion.Euler(y, x, 0);
-                    cameraRotation.transform.localRotation = rotation;
-					//cameraRotation.transform.rotation = rotation;
-                    //transform.LookAt(cameraContainer.transform);
-                }
+				if (Input.GetMouseButton (0)) {
+                    
+					x = cameraRotation.transform.localRotation.eulerAngles.y;
+					y = cameraRotation.transform.localRotation.eulerAngles.x;
+
+					dx = Input.GetAxis ("Mouse X") * xSpeed * 0.02f;
+					dy = Input.GetAxis ("Mouse Y") * ySpeed * 0.02f;
+					x += dx;
+					y -= dy;
+					y = ClampAngle (y, yMinLimit, yMaxLimit);
+					rotation = Quaternion.Euler (y, x, 0);
+					cameraRotation.transform.localRotation = rotation;
+
+					/*x += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
+					y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
+					y = ClampAngle(y, yMinLimit, yMaxLimit);
+					rotation = Quaternion.Euler(y, x, 0);
+					cameraRotation.transform.localRotation = rotation;*/
+
+				}
 
                 //Zoom
                 if (Input.GetAxis("Mouse ScrollWheel") != 0)
@@ -160,6 +172,8 @@ public class MouseOrbit: MonoBehaviour {
                 //Parallel
                 ParallelMoving();
             }
+
+
 		}
 	}
 
@@ -174,7 +188,7 @@ public class MouseOrbit: MonoBehaviour {
 	public void SetRotation(Vector3 rot)
 	{
 		cameraRotation.transform.localRotation = Quaternion.Euler (rot.x, rot.y, rot.z);
-		x = rot.y;
-		y = rot.z;
+		//x = rot.y;
+		//y = rot.z;
 	}
 }
