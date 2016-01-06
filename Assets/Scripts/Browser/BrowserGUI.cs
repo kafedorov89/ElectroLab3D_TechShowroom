@@ -177,6 +177,41 @@ public class BrowserGUI : MonoBehaviour {
 	}
 	public void Play()
 	{
+		if (browser.IsReady == false)
+			return;
+		if (browser.playAnimationMode == BrowsingMode.System) //если анимация проигрывается в системе
+		{ 
+			if (browser.State == BrowserState.System) //если мы и так в системе
+			{ 
+				PlayAnimation();
+			} 
+			else
+			{
+				browser.GiveTaskToPlayAnimation (BrowsingMode.System);
+				Compile ();
+			}
+		} 
+		else   //если анимация проигрывается в подсистеме
+		{
+			if (browser.State == BrowserState.Subsystem) //если мы и так в подсистеме
+			{ 
+				PlayAnimation();
+			}
+			else
+			{
+				int indexOfSub = browser.GetIndexOfSubsystem (browser.playAnimationSubsystem);
+				Debug.Log (indexOfSub);
+				if (indexOfSub != -1)
+				{
+					browser.GiveTaskToPlayAnimation (BrowsingMode.Subsystem);
+					ChooseSubsystem (indexOfSub);
+				}
+			}
+
+		}
+	}
+	public void PlayAnimation()
+	{
 		//set current state
 		VisState = true;
 

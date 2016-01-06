@@ -147,9 +147,9 @@ public class MouseOrbit: MonoBehaviour {
 					dy = Input.GetAxis ("Mouse Y") * ySpeed * 0.02f;
 					x += dx;
 					y -= dy;
-					Debug.Log ("Source: " + y);
+					//Debug.Log ("Source: " + y);
 					y = ClampAngle (y, yMinLimit, yMaxLimit);
-					Debug.Log ("Clamp: " + y.ToString());
+					//Debug.Log ("Clamp: " + y.ToString());
 					rotation = Quaternion.Euler (y, x, 0);
 					cameraRotation.transform.localRotation = rotation;
 
@@ -174,8 +174,6 @@ public class MouseOrbit: MonoBehaviour {
                 //Parallel
                 ParallelMoving();
             }
-
-
 		}
 	}
 

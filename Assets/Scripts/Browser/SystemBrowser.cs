@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 
+public enum BrowsingMode {System, Subsystem };
 public enum ParamInitializationMode {Auto, Manual};
 
-public enum State {System = 0, ReduceAlpha, ZoomInSubsystem, Subsystem, ZoomOutSubsystem, IncreaseAlpha,
+public enum BrowserState {System = 0, ReduceAlpha, ZoomInSubsystem, Subsystem, ZoomOutSubsystem, IncreaseAlpha,
 	PlayAnimation};
 
 public enum RenderingMode {Opaque = 0, Cutout = 1, Fade = 2, Transparent = 3};
@@ -17,6 +18,12 @@ public struct MeshPack
 }
 
 public class SystemBrowser : MonoBehaviour {
+
+	public BrowsingMode playAnimationMode = BrowsingMode.System;
+	public GameObject playAnimationSubsystem;
+
+	private bool taskToPlayAnimationInSystem = false;
+	private bool taskToPlayAnimationInSubsystem = false;
 
 	//starting transform of system
 	public ParamInitializationMode startCamPositionMode = ParamInitializationMode.Auto;
@@ -75,7 +82,11 @@ public class SystemBrowser : MonoBehaviour {
 		get { return isReady; }
 	}
 	private float m_alpha;
-	private State state = State.System;
+	private BrowserState state = BrowserState.System;
+	public BrowserState State
+	{
+		get { return state; }
+	}
 
 	//for raycasting
 	private Ray ray;   
@@ -166,19 +177,27 @@ public class SystemBrowser : MonoBehaviour {
 			lastDown1 = Time.time;
 
 		//update state
-		if (state == State.System) {
+		if (state == BrowserState.System) 
+		{
 			if (stored_index != -1)
 				GoToSubsystem (stored_index);
-			else
+			else 
+			{
+				if (taskToPlayAnimationInSystem)
+				{
+					taskToPlayAnimationInSystem = false;
+					bGUI.PlayAnimation ();
+				}
 				isReady = true;
+			}
 		}
-		if (state == State.ReduceAlpha) 
+		if (state == BrowserState.ReduceAlpha) 
 			ReduceAlpha (); 
-		if (state == State.ZoomInSubsystem) 
+		if (state == BrowserState.ZoomInSubsystem) 
 			ZoomInSub();
-		if (state == State.ZoomOutSubsystem) 
+		if (state == BrowserState.ZoomOutSubsystem) 
 			ZoomOutSub();
-		if (state == State.IncreaseAlpha) 
+		if (state == BrowserState.IncreaseAlpha) 
 			IncreaseAlpha();
 
 		//raycasting - left or right click on subsystem
@@ -187,7 +206,7 @@ public class SystemBrowser : MonoBehaviour {
 
 	void UpdateRaycasting()
 	{
-		if (state != State.System)
+		if (state != BrowserState.System)
 			return;
 		if (EventSystem.current.IsPointerOverGameObject ()) //защита от клика сквозь интерфейс
 			return;
@@ -419,7 +438,7 @@ public class SystemBrowser : MonoBehaviour {
 		distFrom = orbitNav.distance;
 		distTo = Mathf.Min(orbitNav.distanceMax, orbitNav.distance + zoomIncrement);
 
-		state = State.ZoomOutSubsystem; //next state
+		state = BrowserState.ZoomOutSubsystem; //next state
 	}
 
 	//===============================================================================
@@ -428,7 +447,7 @@ public class SystemBrowser : MonoBehaviour {
 	void GoToSubsystem(int subs_index)
 	{
 		isReady = false;
-		state = State.ReduceAlpha;
+		state = BrowserState.ReduceAlpha;
 		FixTime ();
 		current_subs_index = subs_index;
 		if (stored_index != -1) //clear memory about task
@@ -461,7 +480,7 @@ public class SystemBrowser : MonoBehaviour {
 	//===============================================================================
 	void PrepareForZoomIn()
 	{
-		state = State.ZoomInSubsystem; //next state
+		state = BrowserState.ZoomInSubsystem; //next state
 		SetAllMeshesVisibility(false); //кроме выбранной //!!!
 		FixTime();
 
@@ -495,7 +514,7 @@ public class SystemBrowser : MonoBehaviour {
 		}
 		else
 		{
-			state = State.System; //next state
+			state = BrowserState.System; //next state
 			current_subs_index = -1;
 		}
 	}
@@ -513,8 +532,13 @@ public class SystemBrowser : MonoBehaviour {
 		}
 		else 
 		{
-			state = State.Subsystem; //next state
+			state = BrowserState.Subsystem; //next state
 			isReady = true;
+			if (taskToPlayAnimationInSubsystem)
+			{
+				taskToPlayAnimationInSubsystem = false;
+				bGUI.PlayAnimation ();
+			}
 		}
 	}
 
@@ -540,7 +564,7 @@ public class SystemBrowser : MonoBehaviour {
 	void PrepareForIncreaseAlpha()
 	{
 		FixTime();
-		state = State.IncreaseAlpha; //next state
+		state = BrowserState.IncreaseAlpha; //next state
 		SetAllMeshesVisibility(true); //кроме выбранной //!!!
 	}
 
@@ -663,5 +687,22 @@ public class SystemBrowser : MonoBehaviour {
 
 		center = (minPoint + maxPoint)/2;
 		return center;
+	}
+	public void GiveTaskToPlayAnimation(BrowsingMode mode)
+	{
+		if (mode == BrowsingMode.System)
+			taskToPlayAnimationInSystem = true;
+		else
+			taskToPlayAnimationInSubsystem = true;
+	}
+
+	public int GetIndexOfSubsystem(GameObject subsystemGameObject)
+	{
+		for (int i = 0; i < Subs.list.Count; ++i)
+		{
+			if (Subs.list [i].gameObject == subsystemGameObject)
+				return i;
+		}
+		return -1;
 	}
 }
