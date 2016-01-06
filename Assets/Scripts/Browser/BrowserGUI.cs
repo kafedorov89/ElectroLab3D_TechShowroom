@@ -116,11 +116,29 @@ public class BrowserGUI : MonoBehaviour {
 		if (browser.IsReady == false)
 			return;
 
-		compile.interactable = true;
-		help.interactable = true;
+
+		//browser.GoToSubsystemWithCheck(index);
+
+		if (index == -1 || index == browser.CurrentSubsystemIndex) return;
+		if (browser.Subs.list[index].gameObject == null) return;
+
+		if (browser.CurrentSubsystemIndex == -1 && browser.IsHiddenSubsystems()==false)
+			browser.GoToSubsystem(index);
+		else
+		{
+			browser.StoredIndex = index;
+			Compile ();
+		}
+	}
+
+	public void ReceiveEventSubsystem()
+	{
+		int index = browser.CurrentSubsystemIndex;
 		textSubsystemName.text = list.list [index].name;
 		textAbout.text = list.list [index].textAbout;
-		browser.GoToSubsystemWithCheck(index);
+
+		compile.interactable = true;
+		help.interactable = true;
 	}
 
 	//Go to whole system browsing
@@ -193,14 +211,25 @@ public class BrowserGUI : MonoBehaviour {
 		} 
 		else   //если анимация проигрывается в подсистеме
 		{
-			if (browser.State == BrowserState.Subsystem) //если мы и так в подсистеме
-			{ 
-				PlayAnimation();
+			int indexOfSub = browser.GetIndexOfSubsystem (browser.playAnimationSubsystem);
+			if (indexOfSub == -1)
+				return;
+
+			if (browser.State == BrowserState.Subsystem) //если мы в подсистеме
+			{
+				if (indexOfSub == browser.CurrentSubsystemIndex) //если мы в нужной подсистеме
+				{ 
+					PlayAnimation ();
+				} 
+				else  //мы в какой-то другой подсистеме
+				{
+					browser.GiveTaskToPlayAnimation (BrowsingMode.Subsystem);
+					ChooseSubsystem (indexOfSub);
+				}
 			}
 			else
 			{
-				int indexOfSub = browser.GetIndexOfSubsystem (browser.playAnimationSubsystem);
-				Debug.Log (indexOfSub);
+				
 				if (indexOfSub != -1)
 				{
 					browser.GiveTaskToPlayAnimation (BrowsingMode.Subsystem);

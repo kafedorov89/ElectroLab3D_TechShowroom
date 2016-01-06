@@ -194,9 +194,9 @@ public class SubsystemListEditor : Editor
 		int count = 0;
 		Debug.Log ("Deleting mesh colliders ...");
 		List<Subsystem> list = t.list;
-		foreach (Subsystem sub in list)
-		{
-			Transform[] childrens = sub.gameObject.GetComponentsInChildren<Transform>();
+		//foreach (Subsystem sub in list)
+		//{
+			Transform[] childrens = GO.GetComponentsInChildren<Transform>();
 			foreach (Transform children in childrens)
 			{
 				MeshFilter meshFilter = children.gameObject.GetComponent<MeshFilter>();
@@ -214,7 +214,7 @@ public class SubsystemListEditor : Editor
 				//children.gameObject.AddComponent<MeshCollider>();
 				
 			}
-		}
+		//}
 		Debug.Log (count + " deleted");
 	}
 }

@@ -147,7 +147,7 @@ public class MouseOrbit: MonoBehaviour {
 					dy = Input.GetAxis ("Mouse Y") * ySpeed * 0.02f;
 					x += dx;
 					y -= dy;
-					//Debug.Log ("Source: " + y);
+					//Debug.Log ("Source: " + y.ToString());
 					y = ClampAngle (y, yMinLimit, yMaxLimit);
 					//Debug.Log ("Clamp: " + y.ToString());
 					rotation = Quaternion.Euler (y, x, 0);
@@ -179,21 +179,24 @@ public class MouseOrbit: MonoBehaviour {
 
 	public static float ClampAngle(float angle, float min, float max)
 	{
+		//угол при передаче в Mathf.Clamp() должен быть строго от -90 до 90
 		if (angle < -360F)
 			angle += 360F;
 		if (angle > 360F)
 			angle -= 360F;
-		return Mathf.Clamp(angle, min, max);
-		/*if (angle < min)
-			angle = min;
-		if (angle > max)
-			angle = max;
-		return angle;*/
+
+		float arcsin = Mathf.Asin (Mathf.Sin (angle / 180.0f * Mathf.PI));
+		angle = arcsin * 180.0f / Mathf.PI;
+		//Debug.Log ("Arcsin = " + angle.ToString());
+
+		float clamped = Mathf.Clamp(angle, min, max); 
+		//Debug.Log ("Clamped = " + clamped.ToString());
+		return clamped;
 	}
 	public void SetRotation(Vector3 rot)
 	{
 		cameraRotation.transform.localRotation = Quaternion.Euler (rot.x, rot.y, rot.z);
-		//x = rot.y;
-		//y = rot.z;
+
+
 	}
 }

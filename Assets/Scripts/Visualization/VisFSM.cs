@@ -55,5 +55,25 @@ public class VisFSM : VisClass {
 				Debug.LogError ("Missing CameraRotation");
 		}
 	}
+
+
+
+	public float ClampAngle(float angle)
+	{
+
+		float arcsin = Mathf.Asin (Mathf.Sin (angle / 180.0f * Mathf.PI));
+		angle = arcsin * 180.0f / Mathf.PI;
+		return angle;
+	}
+
+	public void ClampCameraRotationFrom()
+	{
+		Vector3 cameraRotationFrom = unitFSM.FsmVariables.GetFsmVector3 ("CameraRotationFrom").Value;
+		float x = cameraRotationFrom.x;
+		float y = cameraRotationFrom.y;
+		float z = cameraRotationFrom.z;
+		x = ClampAngle (x);
+		unitFSM.FsmVariables.GetFsmVector3 ("CameraRotationFrom").Value = new Vector3 (x, y, z);
+	}
 }
 

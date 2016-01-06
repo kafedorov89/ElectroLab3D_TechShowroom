@@ -38,7 +38,11 @@ public class SystemBrowser : MonoBehaviour {
 	MeshPack[] meshesALL; //меши подсистем
 	List<MeshRenderer> meshesTrash; //меши мусора (объекты, не входящие ни в одну подсистему)
 
-	SubsystemList Subs; //subsystems
+	private SubsystemList subs; //subsystems
+	public SubsystemList Subs
+	{
+		get { return subs; }
+	}
 	MouseOrbit orbitNav;  //orbit navigation
 	Camera mainCam; //main camera
 	GameObject cameraHelper;  //camera looks on it
@@ -68,7 +72,12 @@ public class SystemBrowser : MonoBehaviour {
 	private float lastDown0 = 0.0f; //last moment when mouse button down
 	private float lastDown1 = 0.0f; //last moment when mouse button down
 
-	private int current_subs_index = -1;
+	private int current_subs_index = -1; //индекс текущей выбранной подсистемы
+	public int CurrentSubsystemIndex
+	{
+		get { return current_subs_index; }
+	}
+
 	private Vector3 subFrom, subTo;
 	private Vector3 parallelFrom = new Vector3(), parallelTo = new Vector3();
 	private float distFrom, distTo;
@@ -76,6 +85,11 @@ public class SystemBrowser : MonoBehaviour {
 	private float subJourneyLength;
 	private float sysJourneyLength;
 	private int stored_index = -1; 
+	public int StoredIndex
+	{
+		get { return stored_index; }
+		set { stored_index = value; }
+	}
 	private bool isReady = true; //is ready to hadle command from GUI
 	public bool IsReady
 	{
@@ -98,7 +112,7 @@ public class SystemBrowser : MonoBehaviour {
 	{
 		GameObject canvas = GameObject.FindWithTag ("Player");
 		bGUI = canvas.GetComponent<BrowserGUI> (); 
-		Subs = GetComponent<SubsystemList> (); //list of subsystems
+		subs = GetComponent<SubsystemList> (); //list of subsystems
 
 		GO = gameObject;
 		GO.transform.position = new Vector3 (0,0,0);
@@ -411,7 +425,7 @@ public class SystemBrowser : MonoBehaviour {
 	}
 
 	//===============================================================================
-	//Set all subsystems inactive 
+	//
 	//===============================================================================
 	public void HideSubsystem(int index)
 	{
@@ -444,7 +458,7 @@ public class SystemBrowser : MonoBehaviour {
 	//===============================================================================
 	// Go to subsystem browsing; NOT FOR EXTERNAL USING!
 	//===============================================================================
-	void GoToSubsystem(int subs_index)
+	public void GoToSubsystem(int subs_index)
 	{
 		isReady = false;
 		state = BrowserState.ReduceAlpha;
@@ -486,8 +500,8 @@ public class SystemBrowser : MonoBehaviour {
 
 		subFrom = mainPos;
 		subTo = CalcCenterOfGameObject2(Subs.list[current_subs_index].gameObject); 
-		Debug.Log(subFrom);
-		Debug.Log(subTo);
+		//Debug.Log(subFrom);
+		//Debug.Log(subTo);
 
 		//панорамирование нужно будет сбросить
 		parallelFrom = orbitNav.transform.localPosition;
@@ -534,6 +548,7 @@ public class SystemBrowser : MonoBehaviour {
 		{
 			state = BrowserState.Subsystem; //next state
 			isReady = true;
+			bGUI.ReceiveEventSubsystem ();
 			if (taskToPlayAnimationInSubsystem)
 			{
 				taskToPlayAnimationInSubsystem = false;
