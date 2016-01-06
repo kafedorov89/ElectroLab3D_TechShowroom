@@ -2,32 +2,18 @@
 using System.Collections;
 using HutongGames.PlayMaker;
 
-public class VisPM : VisClass {
+public class VisFSM : VisClass {
 
-	public GameObject gameObjWithFSM;
+	//public GameObject gameObjWithFSM;
 	private PlayMakerFSM unitFSM; //конечный автомат, который управляет установкой
-
-	//public GameObject cameraRotation; 
-
-	//public AudioSource soundStart;
-	//public AudioSource soundWork;
-	//public AudioSource soundStop;
 
 	private GameObject cameraRotation;
 	private MouseOrbit orbit;
-
-	//private float L1, L2, L3;
-
-	// Use this for initialization
-	//void Start () {
-
-	//}
 
 	public override void StartVis()
 	{
 		base.StartVis();
 		unitFSM.SendEvent ("Start");
-
 	}
 
 	public override void StopVis()
@@ -45,24 +31,14 @@ public class VisPM : VisClass {
 	{
 		base.Start();
 
-		//L1 = soundStart.clip.length;
-		//L2 = soundWork.clip.length; 
-		//L3 = soundStop.clip.length; 
-
-		unitFSM = gameObjWithFSM.GetComponent<PlayMakerFSM> ();
+		unitFSM = VisObject.GetComponent<PlayMakerFSM> ();
 		if (unitFSM == null)
 			Debug.LogError ("Missing FSM");
-
-
 	}
 
 	public override void Update ()
 	{
 		base.Update ();
-		/*if (unitFSM.ActiveStateName.CompareTo ("Starting")==0)
-			unitFSM.FsmVariables.GetFsmFloat ("pos").Value = soundStart.time;
-		if (unitFSM.ActiveStateName.CompareTo ("Stopping")==0)
-			unitFSM.FsmVariables.GetFsmFloat ("pos").Value = soundStop.time;*/
 	}
 
 	void OnLevelWasLoaded(int currentLevel)
