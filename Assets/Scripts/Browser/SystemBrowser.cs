@@ -125,7 +125,7 @@ public class SystemBrowser : MonoBehaviour {
 		orbitNav.SetTarget (cameraHelper.transform); //напрявляем на помощника
 
 		BuildMeshes (); //search meshes and join it into groups
-		PrepareForAlphaBlending (); //prepare materials
+		//PrepareForAlphaBlending (); //prepare materials
 		m_alpha = alphaMax; //initial alpha
 
 		//initial camera rotation and distance
@@ -263,7 +263,7 @@ public class SystemBrowser : MonoBehaviour {
 	//===============================================================================
 	// Prepare standart shader for transparency
 	//===============================================================================
-	void PrepareForAlphaBlending()
+	/*void PrepareForAlphaBlending()
 	{
 		if (meshes == null)
 			return;
@@ -280,6 +280,48 @@ public class SystemBrowser : MonoBehaviour {
 				material.EnableKeyword ("_ALPHABLEND_ON");
 				material.DisableKeyword ("_ALPHAPREMULTIPLY_ON");
 				material.renderQueue = 3000;
+			}
+		}
+	}*/
+
+	public void EnableTransparency()
+	{
+		if (meshes == null)
+			return;
+		foreach (MeshRenderer rend in meshes)
+		{
+			foreach (Material material in rend.materials)
+			{
+				//material.SetFloat ("_Mode", 1.0f);
+				material.SetFloat ("_Mode", (float)RenderingMode.Transparent); //fade or transparent
+				material.SetInt ("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+				material.SetInt ("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+				//material.SetInt ("_ZWrite", 0);
+				material.DisableKeyword ("_ALPHATEST_ON");
+				material.EnableKeyword ("_ALPHABLEND_ON");
+				material.DisableKeyword ("_ALPHAPREMULTIPLY_ON");
+				material.renderQueue = 3000;
+			}
+		}
+	}
+
+	public void DisableTransparency()
+	{
+		if (meshes == null)
+			return;
+		foreach (MeshRenderer rend in meshes)
+		{
+			foreach (Material material in rend.materials)
+			{
+				//material.SetFloat ("_Mode", 1.0f);
+				material.SetFloat ("_Mode", (float)RenderingMode.Opaque); //fade or transparent
+				//material.SetInt ("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+				//material.SetInt ("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+				//material.SetInt ("_ZWrite", 0);
+				//material.DisableKeyword ("_ALPHATEST_ON");
+				//material.EnableKeyword ("_ALPHABLEND_ON");
+				//material.DisableKeyword ("_ALPHAPREMULTIPLY_ON");
+				material.renderQueue = 1000;
 			}
 		}
 	}
@@ -310,9 +352,7 @@ public class SystemBrowser : MonoBehaviour {
 				{
 					foreach (Material material in rend.materials)
 					{
-						if (material.HasProperty("_node_op"))
-							material.SetFloat("_node_op", a);
-						SetColorMaterialAlpha(material, "_Color", a);
+						SetAlphaForMaterial (material, a);
 					}
 				}
 			}
@@ -325,11 +365,20 @@ public class SystemBrowser : MonoBehaviour {
 		{
 			foreach (Material material in rend.materials)
 			{
-				if (material.HasProperty("_node_op"))
-					material.SetFloat("_node_op", a);
-				SetColorMaterialAlpha(material, "_Color", a);
+				SetAlphaForMaterial (material, a);
 			}
 		}
+	}
+
+	public void SetAlphaForMaterial (Material material, float a)
+	{
+		//для нестандартных шейдеров
+		//(ShaderForge, специальный узел - node_op - контролирует параметр opacity)
+		if (material.HasProperty("_node_op"))
+			material.SetFloat("_node_op", a);
+
+		//для стандартного шейдера
+		SetColorMaterialAlpha(material, "_Color", a);
 	}
 
 	//TODO: fix increadible code duplicate !!!
@@ -471,6 +520,7 @@ public class SystemBrowser : MonoBehaviour {
 	{
 		isReady = false;
 		state = BrowserState.ReduceAlpha;
+		EnableTransparency ();
 		FixTime ();
 		current_subs_index = subs_index;
 		if (stored_index != -1) //clear memory about task
@@ -490,6 +540,7 @@ public class SystemBrowser : MonoBehaviour {
 			{
 				m_alpha = alphaMin;
 				SetAllMeshesVisibility(false); //кроме выбранной
+				DisableTransparency();
 			}
 		}
 		else
@@ -539,6 +590,7 @@ public class SystemBrowser : MonoBehaviour {
 		{
 			state = BrowserState.System; //next state
 			current_subs_index = -1;
+			DisableTransparency ();
 		}
 	}
 
@@ -588,6 +640,7 @@ public class SystemBrowser : MonoBehaviour {
 	void PrepareForIncreaseAlpha()
 	{
 		FixTime();
+		EnableTransparency ();
 		state = BrowserState.IncreaseAlpha; //next state
 		SetAllMeshesVisibility(true); //кроме выбранной //!!!
 	}
