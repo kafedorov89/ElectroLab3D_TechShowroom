@@ -18,14 +18,14 @@ public class ShowHideOnLoad : MonoBehaviour {
 
 	void Show ()
 	{
-		Debug.Log ("Show");
+		//Debug.Log ("Show");
 		foreach (GameObject obj in targets)
 			obj.SetActive (true);
 	}
 
 	void Hide ()
 	{
-		Debug.Log ("Hide");
+		//Debug.Log ("Hide");
 		foreach (GameObject obj in targets)
 			obj.SetActive (false);
 	}

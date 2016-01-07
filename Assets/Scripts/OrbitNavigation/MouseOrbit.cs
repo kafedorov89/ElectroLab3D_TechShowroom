@@ -14,7 +14,7 @@ public class MouseOrbit: MonoBehaviour {
 		get { return distance; }
 		set 
 		{ 
-			distance = value;
+			distance = Mathf.Clamp(value, distanceMin, distanceMax);
 			cameraDistance.transform.localPosition = new Vector3(0.0f, 0.0f, -distance);
 		}
 	}
@@ -28,11 +28,8 @@ public class MouseOrbit: MonoBehaviour {
 	public float distanceMin = 0.5f;
 	public float distanceMax = 15f;
 	
-	//private Rigidbody rigidbody;
-	
 	float x = 0.0f;
 	float y = 0.0f;
-
 	float dx = 0.0f;
 	float dy = 0.0f;
 
@@ -103,13 +100,11 @@ public class MouseOrbit: MonoBehaviour {
 		y = angles.x;
 
         Distance = startDistance;
-		//cameraRotation.transform.rotation = Quaternion.Euler (startRotation.x, startRotation.y, startRotation.z);
-        //cameraDistance.transform.localPosition = new Vector3(0.0f, 0.0f, -distance);
     }
 	
     void Update()
     {
-        //ParallelMoving();
+  
     }
 
 	public void SetTarget(Transform t)
@@ -152,13 +147,6 @@ public class MouseOrbit: MonoBehaviour {
 					//Debug.Log ("Clamp: " + y.ToString());
 					rotation = Quaternion.Euler (y, x, 0);
 					cameraRotation.transform.localRotation = rotation;
-
-					/*x += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
-					y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
-					y = ClampAngle(y, yMinLimit, yMaxLimit);
-					rotation = Quaternion.Euler(y, x, 0);
-					cameraRotation.transform.localRotation = rotation;*/
-
 				}
 
                 //Zoom

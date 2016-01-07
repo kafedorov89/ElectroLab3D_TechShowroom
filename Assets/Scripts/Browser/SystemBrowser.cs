@@ -335,6 +335,9 @@ public class SystemBrowser : MonoBehaviour {
 	//TODO: fix increadible code duplicate !!!
 	void Move(GameObject obj, float start_time, float shift_time, Vector3 from, Vector3 to)
 	{
+		if (from == to)
+			return;
+		
 		float journeyLength = Vector3.Distance(from, to);
 		float speed = journeyLength / shift_time;
 		float distCovered = (Time.time - start_time) * speed;
@@ -359,20 +362,26 @@ public class SystemBrowser : MonoBehaviour {
 
 	void ChangeDist(MouseOrbit orb, float start_time, float shift_time, float from, float to)
 	{
+		if (from == to)
+			return;
+
 		float journeyLength = Mathf.Abs (to - from);
 		float speed = journeyLength / shift_time;
 		float distCovered = (Time.time - start_time) * speed;
 		float fractJourney = distCovered / journeyLength;
 		float dist = Mathf.Lerp (from, to, fractJourney);
 		
-		orb.distance = dist;
-		orb.cameraDistance.transform.localPosition = new Vector3(orb.cameraDistance.transform.localPosition.x, 
-		                                                    orb.cameraDistance.transform.localPosition.y, 
-		                                                    -dist);
+		orb.Distance = dist;
+		//orb.cameraDistance.transform.localPosition = new Vector3(orb.cameraDistance.transform.localPosition.x, 
+		 //                                                   orb.cameraDistance.transform.localPosition.y, 
+		 //                                                   -dist);
 	}
 
 	void ChangeAlpha(GameObject obj, float start_time, float shift_time, float from, float to)
 	{
+		if (from == to)
+			return;
+		
 		float journeyLength = Mathf.Abs (to - from);
 		float speed = journeyLength / shift_time;
 		float distCovered = (Time.time - start_time) * speed;
