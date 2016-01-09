@@ -40,7 +40,6 @@ public class SubsystemListEditor : Editor
 
 		//Show buttons
 
-
 		//GetTarget.ApplyModifiedProperties();
 
 		/*EditorGUILayout.BeginHorizontal();
@@ -86,12 +85,16 @@ public class SubsystemListEditor : Editor
 			SerializedProperty MyName2 = MyListRef2.FindPropertyRelative ("name");
 			SerializedProperty MyGameObj2 = MyListRef2.FindPropertyRelative ("gameObject");
 			SerializedProperty MyTextAbout2 = MyListRef2.FindPropertyRelative ("textAbout");
+			SerializedProperty MyStartCamDistance2 = MyListRef2.FindPropertyRelative ("startCamDistance");
+			SerializedProperty MyStartCamRotation2 = MyListRef2.FindPropertyRelative ("startCamRotation");
 			GUI.enabled = false;
+
 			EditorGUILayout.PropertyField(MyName2);
 			EditorGUILayout.PropertyField (MyGameObj2);
+			EditorGUILayout.PropertyField (MyStartCamDistance2);
+			EditorGUILayout.PropertyField (MyStartCamRotation2);
 			EditorGUILayout.PropertyField (MyTextAbout2);
 			GUI.enabled = true;
-			//EditorGUILayout.pro
 		}
 
 		//push our changes to origin object
@@ -153,9 +156,14 @@ public class SubsystemListEditor : Editor
 			SerializedProperty MyName = MyListRef.FindPropertyRelative ("name");
 			SerializedProperty MyGameObj = MyListRef.FindPropertyRelative ("gameObject");
 			SerializedProperty MyTextAbout = MyListRef.FindPropertyRelative ("textAbout");
+			SerializedProperty MyStartCamDistance = MyListRef.FindPropertyRelative ("startCamDistance");
+			SerializedProperty MyStartCamRotation = MyListRef.FindPropertyRelative ("startCamRotation");
+
 			MyName.stringValue = flag.subsystemName;
 			MyGameObj.objectReferenceValue = flag.gameObject;
 			MyTextAbout.stringValue = flag.textAbout;
+			MyStartCamDistance.floatValue = flag.startCamDistance;
+			MyStartCamRotation.vector3Value = flag.startCamRotation;
 		}
 	}
 	//automatically create mesh collider for any children mesh of each subsystem

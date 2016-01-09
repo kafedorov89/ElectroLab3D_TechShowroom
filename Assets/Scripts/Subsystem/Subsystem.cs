@@ -6,6 +6,9 @@ public class Subsystem /*: MonoBehaviour*/ {
 
 	public string name;
 	public GameObject gameObject;
+	public float startCamDistance;
+	public Vector3 startCamRotation;
+
 	[TextArea(3,10)]
 	public string textAbout;
 
@@ -24,7 +27,9 @@ public class Subsystem /*: MonoBehaviour*/ {
 	public Subsystem()
 	{
 		name = "some subsystem";
-		gameObject = null;//transform.gameObject;
+		gameObject = null; //transform.gameObject;
 		textAbout = "some description";
+		startCamDistance = 5.0f;
+		startCamRotation = new Vector3 (20,300,0);
 	}
 }

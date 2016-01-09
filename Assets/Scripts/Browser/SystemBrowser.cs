@@ -81,6 +81,12 @@ public class SystemBrowser : MonoBehaviour {
 	private Vector3 subFrom, subTo;
 	private Vector3 parallelFrom = new Vector3(), parallelTo = new Vector3();
 	private float distFrom, distTo;
+
+	//при приближении к подсистеме - вращаем камеру в заданное положение
+	//при отдалении - ничего не делаем
+	private Quaternion camRotateFrom;
+	private Quaternion camRotateTo;
+
 	private float startTime; //start time for some process (alpha changing/camera moving)
 	private float subJourneyLength;
 	private float sysJourneyLength;
@@ -425,6 +431,7 @@ public class SystemBrowser : MonoBehaviour {
 		 //                                                   orb.cameraDistance.transform.localPosition.y, 
 		 //                                                   -dist);
 	}
+		
 
 	void ChangeAlpha(GameObject obj, float start_time, float shift_time, float from, float to)
 	{
@@ -460,8 +467,10 @@ public class SystemBrowser : MonoBehaviour {
 		if (subs_index == -1 || subs_index == current_subs_index) return;
 		if (Subs.list[subs_index].gameObject == null) return;
 
-		if (current_subs_index == -1 && IsHiddenSubsystems()==false)
-			GoToSubsystem(subs_index);
+		if (current_subs_index == -1)
+		{
+			GoToSubsystem (subs_index);
+		}
 		else
 		{
 			stored_index = subs_index;
@@ -505,10 +514,13 @@ public class SystemBrowser : MonoBehaviour {
 
 		//switch point from and point to, start distance and finish distance
 		SwithVector3Value (ref subTo, ref subFrom);
-		SwithVector3Value (ref parallelTo, ref parallelFrom);
+		//SwithVector3Value (ref parallelTo, ref parallelFrom);
+
+		parallelFrom = orbitNav.gameObject.transform.localPosition;
+		parallelTo = new Vector3 (0, 0, 0);
 
 		distFrom = orbitNav.distance;
-		distTo = Mathf.Min(orbitNav.distanceMax, orbitNav.distance + zoomIncrement);
+		distTo = startCamDistance; //Mathf.Min(orbitNav.distanceMax, orbitNav.distance + zoomIncrement);
 
 		state = BrowserState.ZoomOutSubsystem; //next state
 	}
@@ -518,6 +530,9 @@ public class SystemBrowser : MonoBehaviour {
 	//===============================================================================
 	public void GoToSubsystem(int subs_index)
 	{
+		if (IsHiddenSubsystems ())
+			Subs.list [subs_index].gameObject.SetActive (true);
+
 		isReady = false;
 		state = BrowserState.ReduceAlpha;
 		EnableTransparency ();
@@ -568,7 +583,11 @@ public class SystemBrowser : MonoBehaviour {
 		parallelTo = new Vector3(0,0,0);
 
 		distFrom = orbitNav.distance;
-		distTo = Mathf.Max(orbitNav.distanceMin, orbitNav.distance - zoomIncrement);
+		//distTo = Mathf.Max(orbitNav.distanceMin, orbitNav.distance - zoomIncrement);
+		distTo = Mathf.Max(orbitNav.distanceMin, Subs.list[current_subs_index].startCamDistance);
+
+		camRotateFrom = orbitNav.transform.rotation;
+		camRotateTo = Quaternion.Euler (Subs.list [current_subs_index].startCamRotation);
 	}
 
 	//===============================================================================
@@ -599,13 +618,37 @@ public class SystemBrowser : MonoBehaviour {
 	//===============================================================================
 	void ZoomInSub()
 	{
-		if (cameraHelper.transform.position != subTo)
+		bool IsEnd = false;
+
+		if (Time.time > startTime + shiftZoomTime) //если время кончилось
 		{
-			Move(cameraHelper, startTime, shiftZoomTime, subFrom, subTo);
-			MoveLocal(orbitNav.gameObject, startTime, shiftZoomTime, parallelFrom, parallelTo);
-			ChangeDist(orbitNav, startTime, shiftZoomTime, distFrom, distTo);
+			IsEnd = true;
+			cameraHelper.transform.position = subTo;
+			orbitNav.gameObject.transform.localPosition = parallelTo;
+			orbitNav.cameraRotation.transform.localRotation = camRotateTo;
+			orbitNav.Distance = distTo;
 		}
-		else 
+		else
+		{
+			if ((cameraHelper.transform.position != subTo) ||
+			    (orbitNav.gameObject.transform.localPosition != parallelTo) ||
+			    (orbitNav.cameraRotation.transform.localRotation != camRotateTo) ||
+			    (orbitNav.Distance != distTo)) {
+				//Move(cameraHelper, startTime, shiftZoomTime, subFrom, subTo);
+				//MoveLocal(orbitNav.gameObject, startTime, shiftZoomTime, parallelFrom, parallelTo);
+				//ChangeDist(orbitNav, startTime, shiftZoomTime, distFrom, distTo);
+
+				float t = (Time.time - startTime) / shiftZoomTime;
+				cameraHelper.transform.position = Vector3.Lerp (subFrom, subTo, t);
+				orbitNav.gameObject.transform.localPosition = Vector3.Lerp (parallelFrom, parallelTo, t);
+				orbitNav.cameraRotation.transform.localRotation = Quaternion.Lerp (camRotateFrom, camRotateTo, t);
+				orbitNav.Distance = Mathf.Lerp (distFrom, distTo, t);
+			}
+			else
+				IsEnd = true;
+		}
+			
+		if (IsEnd)
 		{
 			state = BrowserState.Subsystem; //next state
 			isReady = true;
@@ -623,16 +666,40 @@ public class SystemBrowser : MonoBehaviour {
 	//===============================================================================
 	void ZoomOutSub()
 	{
-		if (cameraHelper.transform.position != subTo)
+		bool IsEnd = false;
+
+		if (Time.time > startTime + shiftZoomTime) //если время кончилось
 		{
-			Move(cameraHelper, startTime, shiftZoomTime, subFrom, subTo);
-			MoveLocal(orbitNav.gameObject, startTime, shiftZoomTime, parallelFrom, parallelTo);
-			ChangeDist(orbitNav, startTime, shiftZoomTime, distFrom, distTo);
+			IsEnd = true;
+
+			//ставим все на конечные позиции
+			cameraHelper.transform.position = subTo;
+			orbitNav.gameObject.transform.localPosition = parallelTo;
+			orbitNav.Distance = distTo;
 		}
-		else 
+		else
 		{
+			if ((cameraHelper.transform.position != subTo) ||
+				(orbitNav.gameObject.transform.localPosition != parallelTo) ||
+				(orbitNav.Distance != distTo))
+			{
+				//Move(cameraHelper, startTime, shiftZoomTime, subFrom, subTo);
+				//MoveLocal(orbitNav.gameObject, startTime, shiftZoomTime, parallelFrom, parallelTo);
+				//ChangeDist(orbitNav, startTime, shiftZoomTime, distFrom, distTo);
+
+				float t = (Time.time - startTime) / shiftZoomTime;
+				cameraHelper.transform.position = Vector3.Lerp(subFrom, subTo, t);
+				orbitNav.gameObject.transform.localPosition = Vector3.Lerp (parallelFrom, parallelTo, t);
+				orbitNav.Distance = Mathf.Lerp (distFrom, distTo, t);
+			}
+			else 
+			{
+				IsEnd = true;
+			}
+		}
+
+		if (IsEnd)
 			PrepareForIncreaseAlpha ();
-		}
 	}
 	//===============================================================================
 	//

@@ -122,7 +122,7 @@ public class BrowserGUI : MonoBehaviour {
 		if (index == -1 || index == browser.CurrentSubsystemIndex) return;
 		if (browser.Subs.list[index].gameObject == null) return;
 
-		if (browser.CurrentSubsystemIndex == -1 && browser.IsHiddenSubsystems()==false)
+		if (browser.CurrentSubsystemIndex == -1)// && browser.IsHiddenSubsystems()==false)
 			browser.GoToSubsystem(index);
 		else
 		{
