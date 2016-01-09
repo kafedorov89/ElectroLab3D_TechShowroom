@@ -112,6 +112,7 @@ public class SystemBrowser : MonoBehaviour {
 	private Ray ray;   
 	private RaycastHit hit;
 
+	//Dictionary<Material,Material> materialPairs = new Dictionary<Material, Material>();
 
 	// Use this for initialization
 	void Start () 
@@ -292,13 +293,10 @@ public class SystemBrowser : MonoBehaviour {
 
 	public void EnableTransparency()
 	{
-		if (meshes == null)
-			return;
 		foreach (MeshRenderer rend in meshes)
 		{
 			foreach (Material material in rend.materials)
 			{
-				//material.SetFloat ("_Mode", 1.0f);
 				material.SetFloat ("_Mode", (float)RenderingMode.Transparent); //fade or transparent
 				material.SetInt ("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
 				material.SetInt ("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
@@ -307,6 +305,8 @@ public class SystemBrowser : MonoBehaviour {
 				material.EnableKeyword ("_ALPHABLEND_ON");
 				material.DisableKeyword ("_ALPHAPREMULTIPLY_ON");
 				material.renderQueue = 3000;
+
+				//AlphaBlend.SetupMaterialWithBlendMode (material, RenderingMode.Fade);
 			}
 		}
 	}
@@ -319,15 +319,29 @@ public class SystemBrowser : MonoBehaviour {
 		{
 			foreach (Material material in rend.materials)
 			{
+				/*
 				//material.SetFloat ("_Mode", 1.0f);
 				material.SetFloat ("_Mode", (float)RenderingMode.Opaque); //fade or transparent
 				//material.SetInt ("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-				//material.SetInt ("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-				//material.SetInt ("_ZWrite", 0);
-				//material.DisableKeyword ("_ALPHATEST_ON");
-				//material.EnableKeyword ("_ALPHABLEND_ON");
-				//material.DisableKeyword ("_ALPHAPREMULTIPLY_ON");
-				material.renderQueue = 1000;
+				//material.SetInt ("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+				//material.SetInt ("_ZWrite", 1);
+				material.EnableKeyword ("_ALPHATEST_ON");
+				material.DisableKeyword ("_ALPHABLEND_ON");
+				material.EnableKeyword ("_ALPHAPREMULTIPLY_ON");
+				material.renderQueue = 2000;
+				*/
+
+				/*
+				material.SetInt ("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+				material.SetInt ("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+				material.SetInt ("_ZWrite", 1);
+				material.DisableKeyword ("_ALPHATEST_ON");
+				material.DisableKeyword ("_ALPHABLEND_ON");
+				material.DisableKeyword ("_ALPHAPREMULTIPLY_ON");
+				material.renderQueue = -1;
+				*/
+
+				AlphaBlend.SetupMaterialWithBlendMode (material, RenderingMode.Opaque);
 			}
 		}
 	}
@@ -554,8 +568,7 @@ public class SystemBrowser : MonoBehaviour {
 			else
 			{
 				m_alpha = alphaMin;
-				SetAllMeshesVisibility(false); //кроме выбранной
-				DisableTransparency();
+				//SetAllMeshesVisibility(false); //кроме выбранной
 			}
 		}
 		else
@@ -571,12 +584,11 @@ public class SystemBrowser : MonoBehaviour {
 	{
 		state = BrowserState.ZoomInSubsystem; //next state
 		SetAllMeshesVisibility(false); //кроме выбранной //!!!
+		DisableTransparency();
 		FixTime();
 
 		subFrom = mainPos;
 		subTo = CalcCenterOfGameObject2(Subs.list[current_subs_index].gameObject); 
-		//Debug.Log(subFrom);
-		//Debug.Log(subTo);
 
 		//панорамирование нужно будет сбросить
 		parallelFrom = orbitNav.transform.localPosition;
