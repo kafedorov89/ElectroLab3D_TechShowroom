@@ -35279,15 +35279,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  isReadyForThreadedCalculations: 1
+  isReadyForThreadedCalculations: 0
   prewarm: 0
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  localTime: 432.27094
-  localDeltaTime: 0.64068604
+  localTime: 0.44781014
+  localDeltaTime: 0
   previousActiveState: 0
-  simulationStarted: 3.2985108
+  simulationStarted: 0.44781014
   loopExceeded: 0
   loopExceededOnParticle: -1
 --- !u!199 &331079460
@@ -41082,15 +41082,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  isReadyForThreadedCalculations: 1
+  isReadyForThreadedCalculations: 0
   prewarm: 0
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  localTime: 432.27094
-  localDeltaTime: 0.64068604
+  localTime: 0.44781014
+  localDeltaTime: 0
   previousActiveState: 0
-  simulationStarted: 3.2986689
+  simulationStarted: 0.44781014
   loopExceeded: 0
   loopExceededOnParticle: -1
 --- !u!199 &489485508
@@ -85926,7 +85926,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2914e81f0ed711841bba3787a2e75093, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1bb1fd85aba8f4946aada8c11b308021, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -91322,15 +91322,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  isReadyForThreadedCalculations: 1
+  isReadyForThreadedCalculations: 0
   prewarm: 0
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  localTime: 432.27094
-  localDeltaTime: 0.64068604
+  localTime: 0.44781014
+  localDeltaTime: 0
   previousActiveState: 0
-  simulationStarted: 3.2986689
+  simulationStarted: 0.44781014
   loopExceeded: 0
   loopExceededOnParticle: -1
 --- !u!199 &1772199460

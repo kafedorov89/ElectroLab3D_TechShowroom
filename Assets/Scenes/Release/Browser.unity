@@ -720,6 +720,14 @@ Prefab:
       propertyPath: stop
       value: 
       objectReference: {fileID: 1897486346}
+    - target: {fileID: 11435124, guid: 387d89e0dac77ff488149210e9e591e0, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HomeButtonClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 11435124, guid: 387d89e0dac77ff488149210e9e591e0, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 387d89e0dac77ff488149210e9e591e0, type: 2}
   m_IsPrefabParent: 0

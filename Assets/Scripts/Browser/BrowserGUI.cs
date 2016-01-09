@@ -108,6 +108,12 @@ public class BrowserGUI : MonoBehaviour {
 		Application.LoadLevel (level);
 	}
 
+	public void HomeButtonClicked()
+	{
+		Stop (true);
+		Application.LoadLevel (0);
+	}
+
 	//Go to selected subsystem
 	public void ChooseSubsystem(int index)
 	{
