@@ -1,3 +1,5 @@
+#define UNITY_EDITOR
+
 using UnityEngine;
 using System;
 using System.Collections;

@@ -60,6 +60,7 @@ public class SelectObject : MonoBehaviour {
 							Application.LoadLevel(1);  
 						}
 					}
+					break;
 				}
 			}	
 		}

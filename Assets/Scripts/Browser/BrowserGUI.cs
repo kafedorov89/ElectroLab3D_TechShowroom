@@ -122,13 +122,18 @@ public class BrowserGUI : MonoBehaviour {
 		if (browser.IsReady == false)
 			return;
 
-
 		//browser.GoToSubsystemWithCheck(index);
 
 		if (index == -1 || index == browser.CurrentSubsystemIndex) return;
 		if (browser.Subs.list[index].gameObject == null) return;
+		//если сейчас проигрывается анимация, её надо остановить
+		if (VisState) 
+		{
+			Stop (true);
+		}
 
-		if (browser.CurrentSubsystemIndex == -1)// && browser.IsHiddenSubsystems()==false)
+		//переходим к выбранной, или сначала собираемся, а потом переходим
+		if (browser.CurrentSubsystemIndex == -1)
 			browser.GoToSubsystem(index);
 		else
 		{
