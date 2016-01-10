@@ -38,33 +38,30 @@ public class SelectObject : MonoBehaviour {
 			lastDown = Time.time;
 		}
 
-		for (int i = 0; i < targets.Length; ++i)
+		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		if (Physics.Raycast(ray, out hit, maxDistance))
 		{
-			GameObject obj = targets[i];  //get current object
-			//obj.transform.localScale = scales[i];  //set origin scale
-
-			//detect collision between ray and gameobject collider
-			ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			if (Physics.Raycast(ray, out hit, maxDistance) && hit.collider.gameObject == obj)
+			for (int i = 0; i < targets.Length; ++i)
 			{
-				//set increased scale
-				//obj.transform.localScale = scaleFactor * scales[i];
-
-				//mouse click on object => Load Browser level 
-				if (Input.GetMouseButtonUp(0))
+				GameObject obj = targets[i];  //get current object
+				if (hit.collider.gameObject == obj)
 				{
-					float deltaTime = Time.time - lastDown;
-					//print(deltaTime);
-					if (deltaTime < catchTime)
+					//mouse click on object => Load Browser level 
+					if (Input.GetMouseButtonUp(0))
 					{
-						GameObject ctrlObject = GameObject.FindWithTag("GameController");
-						GameControl ctrlComponent = ctrlObject.GetComponent<GameControl>();
-						obj.transform.SetParent(ctrlObject.transform);
-						ctrlComponent.SetTarget(obj);
-						Application.LoadLevel(1);  
+						float deltaTime = Time.time - lastDown;
+						//print(deltaTime);
+						if (deltaTime < catchTime)
+						{
+							GameObject ctrlObject = GameObject.FindWithTag("GameController");
+							GameControl ctrlComponent = ctrlObject.GetComponent<GameControl>();
+							obj.transform.SetParent(ctrlObject.transform);
+							ctrlComponent.SetTarget(obj);
+							Application.LoadLevel(1);  
+						}
 					}
 				}
-			}
+			}	
 		}
 	}
 }
