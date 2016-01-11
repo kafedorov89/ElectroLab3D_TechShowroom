@@ -1,4 +1,4 @@
-﻿#define UNITY_EDITOR
+﻿//#define UNITY_EDITOR
 
 using UnityEngine;
 
