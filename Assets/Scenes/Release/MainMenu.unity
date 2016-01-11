@@ -41,7 +41,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -66,7 +66,8 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000001, guid: cb93ceb8b49309e46b913e1101a2c230,
+    type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
 NavMeshSettings:
@@ -6700,8 +6701,8 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 8
-  m_Range: 18.540865
-  m_SpotAngle: 60.244156
+  m_Range: 21.272535
+  m_SpotAngle: 62.803715
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -11683,7 +11684,7 @@ MonoBehaviour:
   sourceTransform: {fileID: 331079458}
   sourceTransforms:
   - transform: {fileID: 331079458}
-    instanceID: 24674
+    instanceID: 471074
     available: 1
     position: {x: 9.954355, y: 1.5116146, z: 3.9445438}
     localPosition: {x: 0, y: 0, z: 0}
@@ -11853,10 +11854,10 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  localTime: 42.743664
-  localDeltaTime: 0.5720558
+  localTime: 0
+  localDeltaTime: 0
   previousActiveState: 0
-  simulationStarted: 3.0466568
+  simulationStarted: 0.1
   loopExceeded: 0
   loopExceededOnParticle: -1
 --- !u!199 &331079460
@@ -17254,7 +17255,7 @@ MonoBehaviour:
   sourceTransform: {fileID: 489485506}
   sourceTransforms:
   - transform: {fileID: 489485506}
-    instanceID: 25384
+    instanceID: 471784
     available: 1
     position: {x: 9.922855, y: 1.6661146, z: 4.303044}
     localPosition: {x: 0, y: 0, z: 0}
@@ -17424,10 +17425,10 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  localTime: 42.743664
-  localDeltaTime: 0.5720558
+  localTime: 0
+  localDeltaTime: 0
   previousActiveState: 0
-  simulationStarted: 3.0466568
+  simulationStarted: 0.1
   loopExceeded: 0
   loopExceededOnParticle: -1
 --- !u!199 &489485508
@@ -38149,7 +38150,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &853797281
 Transform:
   m_ObjectHideFlags: 0
@@ -43023,7 +43024,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1049103554
 Transform:
   m_ObjectHideFlags: 0
@@ -48349,7 +48350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1118884113
 Transform:
   m_ObjectHideFlags: 0
@@ -52479,7 +52480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1246714509
 Transform:
   m_ObjectHideFlags: 0
@@ -63010,7 +63011,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1541427132
 Transform:
   m_ObjectHideFlags: 0
@@ -66709,7 +66710,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1741422909
 Transform:
   m_ObjectHideFlags: 0
@@ -68027,7 +68028,7 @@ MonoBehaviour:
   sourceTransform: {fileID: 1772199458}
   sourceTransforms:
   - transform: {fileID: 1772199458}
-    instanceID: 30788
+    instanceID: 477190
     available: 1
     position: {x: 9.928355, y: 1.5306144, z: 4.6530437}
     localPosition: {x: 0, y: 0, z: 0}
@@ -68197,10 +68198,10 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  localTime: 42.743664
-  localDeltaTime: 0.5720558
+  localTime: 0
+  localDeltaTime: 0
   previousActiveState: 0
-  simulationStarted: 3.0466568
+  simulationStarted: 0.1
   loopExceeded: 0
   loopExceededOnParticle: -1
 --- !u!199 &1772199460
@@ -77718,8 +77719,8 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 8
-  m_Range: 17.440506
-  m_SpotAngle: 65.91865
+  m_Range: 19.049065
+  m_SpotAngle: 67.40274
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
