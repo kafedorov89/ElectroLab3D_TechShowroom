@@ -2,9 +2,11 @@
 using System.Collections;
 using UnityEditor;
 
-namespace ElectroLab3D{
+namespace ElectroLab3D
+{
     [CustomEditor(typeof(AddLOD))]
-    public class AddLODEditor : Editor {
+    public class AddLODEditor : Editor 
+	{
         AddLOD addLOD;
         
         public void OnEnable()
@@ -17,20 +19,33 @@ namespace ElectroLab3D{
             // Draw the default inspector
             DrawDefaultInspector ();
             
-            if (GUILayout.Button ("Add LOD Recursively")) {
+			//Button "Add"
+            if (GUILayout.Button ("Add LODs Recursively")) 
+			{
                 Debug.Log ("Add LOD Recursively");
                 addLOD.Add(addLOD.transform);
+				Debug.Log ("Finished");
             }
+
+			//Button "Delete"
+			if (GUILayout.Button ("Delete LODs")) 
+			{
+				Debug.Log ("Deleting LODs");
+				addLOD.Delete(addLOD.transform);
+				Debug.Log ("Finished");
+			}
         }
 
-	// Use this for initialization
-	void Start () {
-	
+		// Use this for initialization
+		void Start ()
+		{
+		
+		}
+		
+		// Update is called once per frame
+		void Update () 
+		{
+		
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-}
 }
