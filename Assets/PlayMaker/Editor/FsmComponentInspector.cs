@@ -162,7 +162,7 @@ public class FsmComponentInspector : Editor
 
         GUI.enabled = !string.IsNullOrEmpty(fsm.DocUrl);
 
-        if (FsmEditorGUILayout.HelpButton())
+        if (FsmEditorGUILayout.HelpButton("Online Help"))
         {
             Application.OpenURL(fsm.DocUrl);
         }
@@ -201,7 +201,7 @@ public class FsmComponentInspector : Editor
                 if (fsmVar.ShowInInspector)
                 {
                     const string next = ":\n";
-                    fsmVar.DoValueGUI(new GUIContent(fsmVar.Name, fsmVar.Name + (!string.IsNullOrEmpty(fsmVar.Tooltip) ? next + fsmVar.Tooltip : "")));
+                    fsmVar.DoValueGUI(new GUIContent(fsmVar.Name, fsmVar.Name + (!string.IsNullOrEmpty(fsmVar.Tooltip) ? next + fsmVar.Tooltip : "")), false);
                 }
             }
 
