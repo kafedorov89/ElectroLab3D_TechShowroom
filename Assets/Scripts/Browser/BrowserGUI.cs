@@ -26,9 +26,15 @@ public class BrowserGUI : MonoBehaviour {
 	public Button play;
 	public Button stop;
 
+	public Button editButton;
+	public GameObject editPanel;
+	public InputField inputField;
+
 	private GameObject target;
 	private SubsystemList list;
 	private SystemBrowser browser;
+
+	private string editableText = "Начальный текст";
 
 	// Use this for initialization
 	void Start () 
@@ -82,11 +88,39 @@ public class BrowserGUI : MonoBehaviour {
 		}
 	}
 
+	public void OnClickEditButton()
+	{
+		//ToogleGameObjectActivity(GameObject obj);
+		if (editPanel.activeInHierarchy == true) {
+			editPanel.SetActive (false);
+		} 
+		else
+		{
+			//1. загружаем в текстовое поле ввода тект с описанием текущей подсистемы
+			inputField.text = editableText;
+
+			//2. показываем панель
+			editPanel.SetActive(true);
+		}
+	}
+
+	public void OnClickEditOkButton()
+	{
+		editableText = inputField.text;
+		editPanel.SetActive (false);
+	}
+
+	public void OnClickEditCancelButton()
+	{
+		editPanel.SetActive (false);
+	}
+
 	void SetInitialGUIState()
 	{
 		SetInitialButtonStates ();
 		SetInitialTextContent ();
 		dropDownMenu.SetActive (false);
+		editPanel.SetActive (false);
 	}
 	void SetInitialButtonStates()
 	{
