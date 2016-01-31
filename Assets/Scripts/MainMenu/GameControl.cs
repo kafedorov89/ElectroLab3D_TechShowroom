@@ -76,6 +76,15 @@ public class GameControl : MonoBehaviour {
 		} 
 		else if (currentLevel == 1 && previousLevel == 0)
 		{
+			//Switch light
+			LightSwitcher switcher = target.GetComponent<LightSwitcher> ();
+			GameObject mainMenuLight = switcher.mainMenuLight;
+			GameObject browserLight = switcher.browserLight;
+			if (mainMenuLight != null)
+				mainMenuLight.SetActive (false);
+			if (browserLight != null)
+				browserLight.SetActive (true);
+
 			//BrowserGUI gui = t.GetComponent<BrowserGUI>();
 			SystemBrowser browser = target.GetComponent<SystemBrowser>();
 			//if (gui != null) gui.enabled = true;
