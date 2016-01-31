@@ -251,11 +251,11 @@ public class SubsystemListEditor : Editor
 	//сохраняет важные параметры системы и подсистем в файл на диске
 	void SaveDataToFile ()
 	{
-		t.WriteToFile ("Data/Backup");
+		t.WriteToFile ("Subsystems");
 	}
 	void LoadDataFromFile()
 	{
-		t.LoadFromFile ("Data");
+		t.LoadFromFile ("Subsystems");
 	}
 }
 

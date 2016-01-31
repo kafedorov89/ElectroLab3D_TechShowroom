@@ -23,7 +23,7 @@ public class SubsystemList : MonoBehaviour {
 	public void LoadFromFile(string foldername)
 	{
 		int N = 0, M = 0;
-		Debug.Log ("Read subsystems for " + systemName + " (" + gameObject.name + ")");
+		Debug.Log ("Load subsystems for " + systemName + " (" + gameObject.name + ")");
 		List<string> errors = new List<string>();
 		string json = FileReader.ReadJSONfromFolder (dataFileName, foldername);
 		List<SubsystemIO> data = JsonConvert.DeserializeObject<List<SubsystemIO>> (json, 

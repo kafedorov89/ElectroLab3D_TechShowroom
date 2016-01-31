@@ -9,36 +9,35 @@ public static class FileReader{
         return ReadFile(filename, ".json", "");
     }
 
-	public static string ReadJSONfromFolder(string filename, string foldername)//, bool fullpath)
+	public static string ReadJSONfromFolder(string filename, string foldername)
     {
-		return ReadFile (filename, ".json", foldername);//, fullpath);
+		return ReadFile (filename, ".json", foldername);
     }
 
-	public static string ReadFile(string filename, string extension, string foldername)//, bool fullpath)
+	public static string ReadFile(string filename, string extension, string foldername)
     {
         string folderPath = "";
-        string fileName = "";
 
-        fileName = filename + extension;
+		if (foldername.CompareTo("") != 0)
+		{
+			folderPath = Application.dataPath + "/" + foldername + "/";
+		}
+		else
+		{
+			folderPath = Application.dataPath + "/";
+		}
 
-		//if (!fullpath) {
-			if (foldername != "") {
-				folderPath = Application.dataPath + "/../" + foldername + "/";
-			} else {
-				folderPath = Application.dataPath + "/../";
-			}
-		//} else
-		//	folderPath = foldername;
+		string fileName = filename + extension; //имя файла с расширением
+		string fullPath = folderPath + fileName; //полный путь к файлу
 
-        if (File.Exists(folderPath + fileName))
+		if (File.Exists(fullPath))
         {
-            return File.ReadAllText(folderPath + fileName);
+			Debug.Log ("Read from file: " + fullPath);
+			return File.ReadAllText(fullPath);
         }
         else
         {
             return "";
         }
-
-        
     }
 }

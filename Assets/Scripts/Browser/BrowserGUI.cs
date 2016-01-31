@@ -125,7 +125,7 @@ public class BrowserGUI : MonoBehaviour {
 		sub.textAbout = inputField.text;
 
 		//затем пишем на диск для всех подсистем
-		browser.Subs.WriteToFile("Data");
+		browser.Subs.WriteToFile("Subsystems");
 	}
 
 	public void OnClickEditCancelButton()

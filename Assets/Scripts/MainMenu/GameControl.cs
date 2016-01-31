@@ -33,11 +33,11 @@ public class GameControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		/*if (first)
+		if (first)
 		{
 			first = false;
 			LoadSubsystemsDataFromFile ();
-		}*/
+		}
 	}
 
 	void LoadSubsystemsDataFromFile ()
@@ -49,7 +49,7 @@ public class GameControl : MonoBehaviour {
 		foreach (GameObject unit in units)
 		{
 			subs = unit.GetComponent<SubsystemList> ();
-			subs.LoadFromFile ("Data");
+			subs.LoadFromFile ("Subsystems");
 		}
 	}
 

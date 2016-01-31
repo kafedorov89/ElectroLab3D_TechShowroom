@@ -20,39 +20,34 @@ public static class FileWriter{
 
         if (filename != "")
         {
-			folderPath = Application.dataPath + "/../" + foldername + "/";
+			folderPath = Application.dataPath + "/" + foldername + "/";
         }
         else
         {
-            folderPath = Application.dataPath + "/../";
+			folderPath = Application.dataPath + "/";
         }
 
-        string fileName = filename + extension;
+        string fileName = filename + extension; //имя файла с расширением
+		string fullPath = folderPath + fileName; //полный путь к файлу
 
         if (!Directory.Exists(folderPath))
         {
-            //Debug.Log("folder doesn't exist");
             Directory.CreateDirectory(folderPath);
-            //Debug.Log("folder was created");
-        }
-        else
-        {
-            //Debug.Log("folder alredy exist");
         }
 
-        if (File.Exists(folderPath + fileName))
+        if (File.Exists(fullPath))
         {
-            //Debug.Log("File " + fileName + " already exists.");
             if (overwrite)
             {
-                File.Delete(folderPath + fileName);
-                //Debug.Log("File " + fileName + " was deleted");
-                File.WriteAllText(folderPath + fileName, content);
+				File.Delete(fullPath);
+				File.WriteAllText(fullPath, content);
+				Debug.Log ("Write to file: " + fullPath);
             }
         }
         else
         {
             File.WriteAllText(folderPath + fileName, content);
+			Debug.Log ("Write to file: " + fullPath);
         }
     }
 }
