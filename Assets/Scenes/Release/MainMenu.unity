@@ -3276,22 +3276,6 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400060, guid: cf5f1a7173e94c849bfd0566869324d5, type: 3}
   m_PrefabInternal: {fileID: 565539077}
---- !u!114 &94256109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 94256107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u043E\u0442\u0432\u0435\u0434\u0435\u043D\u0438\u044F
-    \u0433\u0430\u0437\u043E\u0432"
-  startCamDistance: 13
-  startCamRotation: {x: 20, y: 42, z: 0}
-  textAbout: 
 --- !u!1 &94994567 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100358, guid: 597134ffa94eb9946a07ac64afa7773e, type: 3}
@@ -5569,7 +5553,6 @@ GameObject:
   - 4: {fileID: 132402291}
   - 33: {fileID: 132402293}
   - 23: {fileID: 132402292}
-  - 114: {fileID: 132402295}
   - 64: {fileID: 132402294}
   m_Layer: 0
   m_Name: SST_060_COND
@@ -5637,21 +5620,6 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300016, guid: fe78f6e0424d72346a1a7d830ec3ce21, type: 3}
---- !u!114 &132402295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 132402290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u041A\u043E\u043D\u0434\u0438\u0446\u0438\u043E\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435"
-  startCamDistance: 5
-  startCamRotation: {x: 36, y: 235, z: 0}
-  textAbout: 
 --- !u!1 &134737694 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100748, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
@@ -7514,22 +7482,6 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400080, guid: 7371f66d92bf1704fb38d89ac21ec2ba, type: 3}
   m_PrefabInternal: {fileID: 1434476514}
---- !u!114 &219853549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 219853547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u0437\u0430\u043F\u0443\u0441\u043A\u0430
-    \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044F"
-  startCamDistance: 5
-  startCamRotation: {x: 33, y: 51, z: 0}
-  textAbout: 
 --- !u!1 &221752194 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100282, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
@@ -7570,21 +7522,6 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400012, guid: 5bbcb92c271d9884694eb12aea01fd04, type: 3}
   m_PrefabInternal: {fileID: 794233817}
---- !u!114 &223071670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 223071668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u041C\u0435\u0442\u0430\u043B\u043B\u043E\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u044F"
-  startCamDistance: 6.5
-  startCamRotation: {x: 13, y: 300, z: 0}
-  textAbout: 
 --- !u!1 &223466889 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100354, guid: 597134ffa94eb9946a07ac64afa7773e, type: 3}
@@ -11806,7 +11743,7 @@ MonoBehaviour:
   sourceTransform: {fileID: 331079458}
   sourceTransforms:
   - transform: {fileID: 331079458}
-    instanceID: 279468
+    instanceID: 25950
     available: 1
     position: {x: 9.954355, y: 1.5116146, z: 3.9445438}
     localPosition: {x: 0, y: 0, z: 0}
@@ -11971,15 +11908,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  isReadyForThreadedCalculations: 1
+  isReadyForThreadedCalculations: 0
   prewarm: 0
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  localTime: 53.280807
-  localDeltaTime: 3.2319107
+  localTime: 0
+  localDeltaTime: 0
   previousActiveState: 0
-  simulationStarted: 0.36456695
+  simulationStarted: 0.1
   loopExceeded: 0
   loopExceededOnParticle: -1
 --- !u!199 &331079460
@@ -15409,33 +15346,6 @@ MeshCollider:
 GameObject:
   m_PrefabParentObject: {fileID: 101294, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
   m_PrefabInternal: {fileID: 1803406650}
---- !u!114 &426913336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 426913334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u0428\u0443\u043C\u043E\u043F\u043E\u0433\u043B\u043E\u0449\u0430\u044E\u0449\u0435\u0435
-    \u0443\u043A\u0440\u044B\u0442\u0438\u0435 \u0442\u0443\u0440\u0431\u0438\u043D\u044B"
-  startCamDistance: 8.8
-  startCamRotation: {x: -10, y: 180, z: 0}
-  textAbout: "    \u0428\u0443\u043C\u043E\u043F\u043E\u0433\u043B\u043E\u0449\u0430\u044E\u0449\u0435\u0435
-    \u0443\u043A\u0440\u044B\u0442\u0438\u0435 \u0441\u043D\u0430\u0431\u0436\u0435\u043D\u043E
-    \u043D\u0435\u0441\u0443\u0449\u0435\u0439 \u0440\u0430\u043C\u043E\u0439 \u0441\u043E
-    \u0441\u044A\u0435\u043C\u043D\u044B\u043C\u0438\r\n\u043F\u0430\u043D\u0435\u043B\u044F\u043C\u0438
-    \u0438 \u0434\u0432\u0435\u0440\u044C\u043C\u0438 \u043D\u0430 \u043F\u0435\u0442\u043B\u044F\u0445,
-    \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u0443\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0435\u0442\u0441\u044F
-    \u043D\u0430 \u043E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u0438\r\n\u0442\u0443\u0440\u0431\u0438\u043D\u044B.
-    \u0428\u0443\u043C\u043E\u043F\u043E\u0433\u043B\u043E\u0449\u0435\u043D\u0438\u0435
-    \u0434\u043E\u0441\u0442\u0438\u0433\u0430\u0435\u0442\u0441\u044F \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E
-    \u0442\u043E\u043B\u0441\u0442\u043E\u0433\u043E \u0438\u0437\u043E\u043B\u044F\u0446\u0438\u043E\u043D\u043D\u043E\u0433\u043E
-    \u043C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u0430, \u0430\u043A\u0443\u0441\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
-    \u0437\u0430\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044F \u0438 \u0430\u043A\u0443\u0441\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0439\r\n\u044E\u0431\u043A\u0438. "
 --- !u!1 &426945769 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100930, guid: 597134ffa94eb9946a07ac64afa7773e, type: 3}
@@ -17438,7 +17348,7 @@ MonoBehaviour:
   sourceTransform: {fileID: 489485506}
   sourceTransforms:
   - transform: {fileID: 489485506}
-    instanceID: 280564
+    instanceID: 26666
     available: 1
     position: {x: 9.922855, y: 1.6661146, z: 4.303044}
     localPosition: {x: 0, y: 0, z: 0}
@@ -17603,15 +17513,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  isReadyForThreadedCalculations: 1
+  isReadyForThreadedCalculations: 0
   prewarm: 0
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  localTime: 53.280807
-  localDeltaTime: 3.2319107
+  localTime: 0
+  localDeltaTime: 0
   previousActiveState: 0
-  simulationStarted: 0.36456695
+  simulationStarted: 0.1
   loopExceeded: 0
   loopExceededOnParticle: -1
 --- !u!199 &489485508
@@ -19306,22 +19216,6 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400058, guid: df334e6774e0e6e4cb71bc535af27cda, type: 3}
   m_PrefabInternal: {fileID: 1506661506}
---- !u!114 &496709513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 496709511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u043F\u043E\u0434\u0430\u0447\u0438
-    \u0432\u043E\u0437\u0434\u0443\u0445\u0430"
-  startCamDistance: 16
-  startCamRotation: {x: 10, y: 220, z: 0}
-  textAbout: 
 --- !u!1 &497037373 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100836, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
@@ -23207,38 +23101,6 @@ MeshCollider:
 GameObject:
   m_PrefabParentObject: {fileID: 101306, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
   m_PrefabInternal: {fileID: 1803406650}
---- !u!114 &535672434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 535672432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u0437\u0430\u043F\u0443\u0441\u043A\u0430"
-  startCamDistance: 1.2
-  startCamRotation: {x: 37, y: 210, z: 0}
-  textAbout: "    \u0417\u0430\u043F\u0443\u0441\u043A \u0442\u0443\u0440\u0431\u0438\u043D\u044B
-    \u043E\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043B\u044F\u0435\u0442\u0441\u044F
-    \u043F\u0440\u0438 \u043F\u043E\u043C\u043E\u0449\u0438 \u0441\u0438\u0441\u0442\u0435\u043C\u044B
-    \u0433\u0438\u0434\u0440\u0430\u0432\u043B\u0438\u0447\u0435\u0441\u043A\u043E\u0439\r
-    \u0442\u0440\u0430\u043D\u0441\u043C\u0438\u0441\u0441\u0438\u0438, \u043E\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043B\u044F\u044E\u0449\u0435\u0439
-    \u043F\u0440\u0438\u0432\u043E\u0434 \u0447\u0435\u0440\u0435\u0437 \u043F\u043E\u0432\u044B\u0448\u0430\u044E\u0449\u0438\u0439
-    \u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440 \u0432\r \u043E\u0431\u0445\u043E\u0434
-    \u0443\u0437\u043B\u0430 \u043C\u0443\u0444\u0442\u044B. \u0420\u043E\u0442\u043E\u0440
-    \u0442\u0443\u0440\u0431\u0438\u043D\u044B \u0440\u0430\u0437\u0433\u043E\u043D\u044F\u0435\u0442\u0441\u044F
-    \u0434\u043E \u0447\u0430\u0441\u0442\u043E\u0442\u044B \u0432\u0440\u0430\u0449\u0435\u043D\u0438\u044F,
-    \u043F\u0440\u0438\r \u043A\u043E\u0442\u043E\u0440\u043E\u0439 \u0442\u043E\u043F\u043B\u0438\u0432\u043E
-    \u043C\u043E\u0436\u0435\u0442 \u043F\u043E\u0434\u0430\u0432\u0430\u0442\u044C\u0441\u044F
-    \u0432 \u0441\u0438\u0441\u0442\u0435\u043C\u0443 \u0441\u0433\u043E\u0440\u0430\u043D\u0438\u044F
-    \u0438 \u043F\u043E\u0434\u0436\u0438\u0433\u0430\u0442\u044C\u0441\u044F \u0441\r
-    \u0442\u0435\u043C, \u0447\u0442\u043E\u0431\u044B \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u0442\u044C
-    \u0440\u0430\u0437\u0433\u043E\u043D \u0434\u043E \u043D\u043E\u0440\u043C\u0430\u043B\u044C\u043D\u043E\u0439
-    \u0440\u0430\u0431\u043E\u0447\u0435\u0439 \u0447\u0430\u0441\u0442\u043E\u0442\u044B\r
-    \u0432\u0440\u0430\u0449\u0435\u043D\u0438\u044F \u0441\u0430\u043C\u043E\u0441\u0442\u043E\u044F\u0442\u0435\u043B\u044C\u043D\u043E. "
 --- !u!1 &536668400 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100742, guid: 597134ffa94eb9946a07ac64afa7773e, type: 3}
@@ -31356,69 +31218,6 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 401236, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
   m_PrefabInternal: {fileID: 1803406650}
---- !u!114 &642105015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 642105013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u0413\u0430\u0437\u043E\u0442\u0443\u0440\u0431\u0438\u043D\u043D\u044B\u0439
-    \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044C"
-  startCamDistance: 2.8
-  startCamRotation: {x: 30, y: 200, z: 0}
-  textAbout: "    \u0414\u0432\u0443\u0445\u0432\u0430\u043B\u044C\u043D\u0430\u044F
-    \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 SGT-400 \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u044F\u0435\u0442
-    \u0441\u043E\u0431\u043E\u0439 \u043F\u0440\u043E\u043C\u044B\u0448\u043B\u0435\u043D\u043D\u0443\u044E\r
-    \u0433\u0430\u0437\u043E\u0432\u0443\u044E \u0442\u0443\u0440\u0431\u0438\u043D\u0443
-    \u0441 \u043F\u0440\u043E\u0441\u0442\u044B\u043C \u043D\u0435\u0437\u0430\u043C\u043A\u043D\u0443\u0442\u044B\u043C
-    \u0446\u0438\u043A\u043B\u043E\u043C, \u0431\u0435\u0437 \u0440\u0435\u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u0438,
-    \u043A\u043E\u0442\u043E\u0440\u0430\u044F\r \u043F\u0440\u0435\u0434\u043D\u0430\u0437\u043D\u0430\u0447\u0435\u043D\u0430
-    \u043A\u0430\u043A \u0434\u043B\u044F \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0430
-    \u044D\u043D\u0435\u0440\u0433\u0438\u0438, \u0442\u0430\u043A \u0438 \u0434\u043B\u044F
-    \u043C\u0435\u0445\u0430\u043D\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E\r
-    \u043F\u0440\u0438\u0432\u043E\u0434\u0430. \n    \u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0439
-    \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044C \u0441\u043E\u0441\u0442\u043E\u0438\u0442
-    \u0438\u0437 \u0440\u0430\u0434\u0438\u0430\u043B\u044C\u043D\u043E\u0433\u043E
-    \u0432\u0445\u043E\u0434\u043D\u043E\u0433\u043E \u043A\u043E\u0440\u043F\u0443\u0441\u0430,
-    \u0447\u0435\u0440\u0435\u0437\r\n\u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u0432\u043E\u0437\u0434\u0443\u0445
-    \u043F\u043E\u0441\u0442\u0443\u043F\u0430\u0435\u0442 \u0432 11-\u0441\u0442\u0443\u043F\u0435\u043D\u0447\u0430\u0442\u044B\u0439
-    \u043E\u0441\u0435\u0432\u043E\u0439 \u043A\u043E\u043C\u043F\u0440\u0435\u0441\u0441\u043E\u0440,\r\n\u043F\u043E\u0432\u044B\u0448\u0430\u044E\u0449\u0438\u0439
-    \u0434\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0432\u043E\u0437\u0434\u0443\u0445\u0430
-    \u043F\u0435\u0440\u0435\u0434 \u043F\u043E\u0434\u0430\u0447\u0435\u0439 \u0432
-    \u0441\u0438\u0441\u0442\u0435\u043C\u0443 \u0441\u0433\u043E\u0440\u0430\u043D\u0438\u044F\r\n\u0442\u043E\u043F\u043B\u0438\u0432\u0430.\r
-    \n    \u0412 \u0441\u043E\u0441\u0442\u0430\u0432 \u0441\u0438\u0441\u0442\u0435\u043C\u044B
-    \u0441\u0433\u043E\u0440\u0430\u043D\u0438\u044F \u0442\u043E\u043F\u043B\u0438\u0432\u0430
-    \u0432\u0445\u043E\u0434\u044F\u0442 \u043A\u0430\u043C\u0435\u0440\u044B \u0441\u0433\u043E\u0440\u0430\u043D\u0438\u044F
-    \u0441 \u043E\u0431\u0440\u0430\u0442\u043D\u044B\u043C\r \u043F\u043E\u0442\u043E\u043A\u043E\u043C
-    \u0434\u043B\u044F \u0441\u043C\u0435\u0448\u0438\u0432\u0430\u043D\u0438\u044F,
-    \u0441\u0436\u0438\u0433\u0430\u043D\u0438\u044F \u0438 \u0440\u0430\u0441\u0448\u0438\u0440\u0435\u043D\u0438\u044F
-    \u0442\u043E\u043F\u043B\u0438\u0432\u043E\u0432\u043E\u0437\u0434\u0443\u0448\u043D\u043E\u0439\r
-    \u0441\u043C\u0435\u0441\u0438 \u0434\u043B\u044F \u043F\u0440\u0438\u0432\u043E\u0434\u0430
-    \u0434\u0432\u0443\u0445\u0432\u0430\u043B\u044C\u043D\u043E\u0439 \u0442\u0443\u0440\u0431\u0438\u043D\u044B.
-    \u041E\u0442\u0440\u0430\u0431\u043E\u0442\u0430\u0432\u0448\u0438\u0435 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u044B\r
-    \u0441\u0433\u043E\u0440\u0430\u043D\u0438\u044F \u0432\u044B\u043F\u0443\u0441\u043A\u0430\u044E\u0442\u0441\u044F
-    \u0447\u0435\u0440\u0435\u0437 \u0432\u044B\u0445\u043B\u043E\u043F\u043D\u043E\u0439
-    \u0434\u0438\u0444\u0444\u0443\u0437\u043E\u0440.\r\n    \u041A\u043E\u043C\u043F\u0440\u0435\u0441\u0441\u043E\u0440
-    \u0438 \u043A\u043E\u043C\u043F\u0440\u0435\u0441\u0441\u043E\u0440\u043D\u0430\u044F
-    \u0442\u0443\u0440\u0431\u0438\u043D\u0430, \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u044F\u044E\u0449\u0438\u0435
-    \u0441\u043E\u0431\u043E\u0439 \u043E\u0434\u0438\u043D\r \u0430\u0433\u0440\u0435\u0433\u0430\u0442,
-    \u0430 \u0442\u0430\u043A\u0436\u0435 \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u044B\u0439
-    \u0443\u0437\u0435\u043B \u0440\u043E\u0442\u043E\u0440\u0430 \u0441\u0438\u043B\u043E\u0432\u043E\u0439
-    \u0442\u0443\u0440\u0431\u0438\u043D\u044B \u043E\u043F\u0438\u0440\u0430\u044E\u0442\u0441\u044F
-    \u043D\u0430\r \u0440\u0430\u0434\u0438\u0430\u043B\u044C\u043D\u044B\u0435 \u0438
-    \u0443\u043F\u043E\u0440\u043D\u044B\u0435 \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u0438,
-    \u043D\u0430\u0445\u043E\u0434\u044F\u0449\u0438\u0435\u0441\u044F \u0432\u043E
-    \u0432\u0445\u043E\u0434\u043D\u043E\u043C\r \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u043E\u0432\u043E\u043C
-    \u043A\u043E\u0440\u043F\u0443\u0441\u0435, \u0430 \u0442\u0430\u043A\u0436\u0435
-    \u0432 \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u043E\u0432\u044B\u0445
-    \u043A\u043E\u0440\u043F\u0443\u0441\u0430\u0445\r \u043A\u043E\u043C\u043F\u0440\u0435\u0441\u0441\u043E\u0440\u043D\u043E\u0439
-    \u0442\u0443\u0440\u0431\u0438\u043D\u044B \u0438 \u0441\u0438\u043B\u043E\u0432\u043E\u0439
-    \u0442\u0443\u0440\u0431\u0438\u043D\u044B. "
 --- !u!1 &643169578 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100546, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
@@ -32994,23 +32793,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   systemName: "\u041F\u0430\u0440\u043E\u0442\u0443\u0440\u0431\u0438\u043D\u043D\u0430\u044F
     \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 SST-060"
+  dataFileName: SST-060
   list:
   - name: "\u041E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u0435"
+    UID: 9a1117f5-2971-4938-88a1-821bc4fd59cd
     gameObject: {fileID: 1113479861}
     startCamDistance: 5
     startCamRotation: {x: 27, y: 160, z: 0}
     textAbout: 
   - name: "\u041A\u043E\u043D\u0434\u0438\u0446\u0438\u043E\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435"
+    UID: 12d7b6ad-427b-4a7b-bab5-1e21f5d3328d
     gameObject: {fileID: 132402290}
     startCamDistance: 5
     startCamRotation: {x: 36, y: 235, z: 0}
     textAbout: 
   - name: "\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440"
+    UID: 8e5d427a-0f91-488d-8047-77acc6b01c50
     gameObject: {fileID: 1256475450}
     startCamDistance: 4.5
     startCamRotation: {x: 21, y: 220, z: 0}
     textAbout: 
   - name: "\u041C\u0430\u0441\u043B\u043E\u0441\u0438\u0441\u0442\u0435\u043C\u0430"
+    UID: acfb2b0b-a1ff-4d96-9cdb-69fc9f0457bb
     gameObject: {fileID: 1622375150}
     startCamDistance: 3.5
     startCamRotation: {x: 26, y: 226, z: 0}
@@ -33054,55 +32858,6 @@ MonoBehaviour:
 GameObject:
   m_PrefabParentObject: {fileID: 101238, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
   m_PrefabInternal: {fileID: 1803406650}
---- !u!114 &740426129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 740426127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u0440\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u0438\u044F
-    \u0432\u043E\u0437\u0434\u0443\u0445\u0430"
-  startCamDistance: 13.6
-  startCamRotation: {x: 13, y: 223, z: 0}
-  textAbout: "    \u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u0440\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u0438\u044F
-    \u0432\u043E\u0437\u0434\u0443\u0445\u0430 \u043F\u043E\u0441\u0442\u0430\u0432\u043B\u044F\u0435\u0442
-    \u0432\u043E\u0437\u0434\u0443\u0445 \u043F\u043E \u0441\u0438\u0441\u0442\u0435\u043C\u0435\r\n\u0442\u0440\u0443\u0431\u043E\u043F\u0440\u043E\u0432\u043E\u0434\u043E\u0432
-    \u0438 \u043A\u043E\u043B\u043B\u0435\u043A\u0442\u043E\u0440\u043E\u0432 \u043A
-    \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u044B\u043C \u043A\u043E\u043C\u043F\u043E\u043D\u0435\u043D\u0442\u0430\u043C.
-    \    \n    \u0412\u043E\u0437\u0434\u0443\u0445 \u041A\u0418\u041F \u043F\u043E\u0434\u0430\u0435\u0442\u0441\u044F
-    \u0432 \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0443 \u0434\u043B\u044F
-    \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0435\u043D\u0438\u044F \u0440\u0430\u0431\u043E\u0442\u044B
-    \u0438 \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F\r \u043A\u043B\u0430\u043F\u0430\u043D\u043E\u0432
-    \u0433\u0430\u0437\u043E\u0442\u043E\u043F\u043B\u0438\u0432\u043D\u043E\u0433\u043E
-    \u043C\u043E\u0434\u0443\u043B\u044F, \u0437\u0430\u043F\u043E\u0440\u043D\u044B\u0445
-    \u0438 \u043F\u0440\u043E\u0434\u0443\u0432\u043E\u0447\u043D\u044B\u0445 \u043A\u043B\u0430\u043F\u0430\u043D\u043E\u0432\r
-    \u0433\u0430\u0437\u043E\u0432\u043E\u0433\u043E \u0442\u043E\u043F\u043B\u0438\u0432\u0430
-    \u0432\u043D\u0435 \u0440\u0430\u043C\u044B, \u043A\u043B\u0430\u043F\u0430\u043D\u043E\u0432
-    \u043C\u043E\u0434\u0443\u043B\u044F \u0441\u043C\u0430\u0437\u043E\u0447\u043D\u043E\u0433\u043E
-    \u043C\u0430\u0441\u043B\u0430, \u0441\u0431\u0440\u043E\u0441\u043D\u044B\u0445\r
-    \u043A\u043B\u0430\u043F\u0430\u043D\u043E\u0432 \u04202 \u0432 \u043F\u0440\u043E\u0446\u0435\u0441\u0441\u0435
-    \u0437\u0430\u043F\u0443\u0441\u043A\u0430 \u0438 \u043E\u0441\u0442\u0430\u043D\u043E\u0432\u0430,
-    \u043A\u043B\u0430\u043F\u0430\u043D\u0430 \u043C\u0435\u0436\u0441\u0442\u0443\u043F\u0435\u043D\u0447\u0430\u0442\u043E\u0433\u043E\r
-    \u043E\u0442\u0431\u043E\u0440\u0430, \u0441\u0438\u0441\u0442\u0435\u043C\u044B
-    \u043F\u0443\u043B\u044C\u0441\u0430\u0446\u0438\u043E\u043D\u043D\u043E\u0439
-    \u043E\u0447\u0438\u0441\u0442\u043A\u0438 \u0444\u0438\u043B\u044C\u0442\u0440\u0430
-    \u0432\u043E\u0437\u0434\u0443\u0445\u0430 \u0433\u043E\u0440\u0435\u043D\u0438\u044F,\r
-    \u0430\u0432\u0442\u043E\u0434\u0440\u0435\u043D\u0430\u0436\u043D\u043E\u0439
-    \u0441\u0438\u0441\u0442\u0435\u043C\u044B, \u043F\u0440\u0438\u0432\u043E\u0434\u043D\u044B\u0445
-    \u043C\u0435\u0445\u0430\u043D\u0438\u0437\u043C\u043E\u0432 \u0437\u0430\u0441\u043B\u043E\u043D\u043A\u0438
-    \u0432\u0435\u043D\u0442\u0438\u043B\u044F\u0446\u0438\u0438 \u0438\r \u0443\u043F\u043B\u043E\u0442\u043D\u0435\u043D\u0438\u0439
-    \u0442\u0443\u0440\u0431\u0438\u043D\u044B. \u0414\u043B\u044F \u0440\u0430\u0431\u043E\u0442\u044B
-    \u0438 \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F \u0441\u0431\u0440\u043E\u0441\u043D\u044B\u0445
-    \u043A\u043B\u0430\u043F\u0430\u043D\u043E\u0432 \u04202 \u0432\r \u043F\u0440\u043E\u0446\u0435\u0441\u0441\u0435
-    \u043D\u043E\u0440\u043C\u0430\u043B\u044C\u043D\u043E\u0439 \u044D\u043A\u0441\u043F\u043B\u0443\u0430\u0442\u0430\u0446\u0438\u0438
-    \u0442\u0443\u0440\u0431\u0438\u043D\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442\u0441\u044F
-    \u0432\u043E\u0437\u0434\u0443\u0445 \u04202 \u0438\u0437\r \u0446\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u043E\u0439
-    \u0447\u0430\u0441\u0442\u0438 \u0442\u0443\u0440\u0431\u0438\u043D\u044B.\r"
 --- !u!1 &740514765
 GameObject:
   m_ObjectHideFlags: 0
@@ -39773,46 +39528,6 @@ MeshCollider:
 GameObject:
   m_PrefabParentObject: {fileID: 101302, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
   m_PrefabInternal: {fileID: 1803406650}
---- !u!114 &914464997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 914464995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440"
-  startCamDistance: 13.6
-  startCamRotation: {x: 0, y: 131, z: 0}
-  textAbout: "    \u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440 \u0438\u043C\u0435\u0435\u0442
-    \u044F\u0432\u043D\u043E\u043F\u043E\u043B\u044E\u0441\u043D\u0443\u044E \u043A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u044E
-    \u0441 \u0431\u0435\u0441\u0449\u0435\u0442\u043E\u0447\u043D\u044B\u043C\r\n\u0432\u043E\u0437\u0431\u0443\u0436\u0434\u0435\u043D\u0438\u0435\u043C
-    \u0438 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u043E\u043C \u0441
-    \u043F\u043E\u0441\u0442\u043E\u044F\u043D\u043D\u044B\u043C\u0438 \u043C\u0430\u0433\u043D\u0438\u0442\u0430\u043C\u0438
-    \u0434\u043B\u044F\r\n\u0430\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0439
-    \u0440\u0435\u0433\u0443\u043B\u0438\u0440\u043E\u0432\u043A\u0438 \u0432\u044B\u0434\u0430\u0432\u0430\u0435\u043C\u043E\u0433\u043E
-    \u043D\u0430\u043F\u0440\u044F\u0436\u0435\u043D\u0438\u044F.\r\n\u0421\u043C\u0430\u0437\u043A\u0430
-    \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u043E\u0432 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430
-    \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
-    \u043F\u0440\u0438 \u043F\u043E\u043C\u043E\u0449\u0438 \u0441\u0438\u0441\u0442\u0435\u043C\u044B\r
-    \u0441\u043C\u0430\u0437\u043E\u0447\u043D\u043E\u0433\u043E \u043C\u0430\u0441\u043B\u0430
-    \u0433\u0430\u0437\u043E\u0432\u043E\u0439 \u0442\u0443\u0440\u0431\u0438\u043D\u044B.\r\n
-    \   \u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440 \u0443\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0435\u0442\u0441\u044F
-    \u043D\u0430 \u043E\u043F\u043E\u0440\u043D\u043E\u0439 \u0440\u0430\u043C\u0435,
-    \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u043C\u043E\u043D\u0442\u0438\u0440\u0443\u0435\u0442\u0441\u044F
-    \u043D\u0430 \u0442\u043E\u043C\r \u0436\u0435 \u043E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u0438,
-    \u0447\u0442\u043E \u0438 \u043E\u043F\u043E\u0440\u043D\u0430\u044F \u0440\u0430\u043C\u0430
-    \u0433\u0430\u0437\u043E\u0432\u043E\u0439 \u0442\u0443\u0440\u0431\u0438\u043D\u044B.
-    \u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440 \u0441 \u0441\u0438\u0441\u0442\u0435\u043C\u043E\u0439\r
-    \u0432\u043E\u0437\u0434\u0443\u0448\u043D\u043E\u0439 \u0432\u0435\u043D\u0442\u0438\u043B\u044F\u0446\u0438\u0438
-    \u0438 \u043E\u0445\u043B\u0430\u0436\u0434\u0435\u043D\u0438\u044F, \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u044E\u0449\u0435\u0439
-    \u043F\u043E\u0434\u0430\u0447\u0443 \u0432\u043E\u0437\u0434\u0443\u0445\u0430\r
-    \u0434\u043B\u044F \u043E\u0445\u043B\u0430\u0436\u0434\u0435\u043D\u0438\u044F
-    \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u044F, \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D
-    \u0432 \u0443\u043A\u0440\u044B\u0442\u0438\u0438. "
 --- !u!1 &915753137 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100780, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
@@ -40387,39 +40102,6 @@ MeshCollider:
 GameObject:
   m_PrefabParentObject: {fileID: 101240, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
   m_PrefabInternal: {fileID: 1803406650}
---- !u!114 &943612698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 943612696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u0412\u0441\u043F\u043E\u043C\u043E\u0433\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0435
-    \u0441\u0438\u0441\u0442\u0435\u043C\u044B \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044F"
-  startCamDistance: 1
-  startCamRotation: {x: 27, y: 220, z: 0}
-  textAbout: "    \u0412\u0441\u043F\u043E\u043C\u043E\u0433\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0439
-    \u043C\u043E\u0434\u0443\u043B\u044C \u0433\u0430\u0437\u043E\u0432\u043E\u0439
-    \u0442\u0443\u0440\u0431\u0438\u043D\u044B \u0440\u0430\u0441\u043F\u043E\u043B\u043E\u0436\u0435\u043D
-    \u043D\u0438\u0436\u0435 \u043A\u0430\u043C\u0435\u0440\r\n\u0441\u0433\u043E\u0440\u0430\u043D\u0438\u044F
-    \u043F\u043E \u043F\u0440\u0430\u0432\u043E\u0439 \u0441\u0442\u043E\u0440\u043E\u043D\u0435
-    \u043E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u044F \u043F\u0440\u0438 \u0432\u0437\u0433\u043B\u044F\u0434\u0435
-    \u0441\u043E \u0441\u0442\u043E\u0440\u043E\u043D\u044B \u0432\u0445\u043E\u0434\u0430\r\n\u0442\u0443\u0440\u0431\u0438\u043D\u044B.\r\n
-    \   \u041C\u043E\u0434\u0443\u043B\u044C \u0441\u043E\u0441\u0442\u043E\u0438\u0442
-    \u0438\u0437 \u0434\u0440\u0435\u043D\u0430\u0436\u043D\u044B\u0445 \u0431\u0430\u043A\u043E\u0432,
-    \u043A\u043E\u043C\u043F\u043E\u043D\u0435\u043D\u0442\u043E\u0432 \u0441\u0438\u0441\u0442\u0435\u043C\u044B
-    \u0432\u043E\u0434\u044F\u043D\u043E\u0439\r\n\u043F\u0440\u043E\u043C\u044B\u0432\u043A\u0438
-    \u043D\u0430 \u0440\u0430\u043C\u0435, \u043A\u043E\u043C\u043F\u043E\u043D\u0435\u043D\u0442\u043E\u0432
-    \u0441\u0438\u0441\u0442\u0435\u043C\u044B \u0430\u0432\u0442\u043E\u0434\u0440\u0435\u043D\u0430\u0436\u043D\u044B\u0445
-    \u043A\u043B\u0430\u043F\u0430\u043D\u043E\u0432,\r\n\u043A\u043E\u043C\u043F\u043E\u043D\u0435\u043D\u0442\u043E\u0432
-    \u0441\u0438\u0441\u0442\u0435\u043C\u044B \u0432\u043E\u0437\u0434\u0443\u0445\u0430
-    \u0443\u043F\u043B\u043E\u0442\u043D\u0435\u043D\u0438\u044F, \u043A\u043E\u043B\u043B\u0435\u043A\u0442\u043E\u0440\u0430
-    \u0432\u043E\u0437\u0434\u0443\u0445\u0430 \u041A\u0418\u041F \u0438\r\n\u044D\u043B\u0435\u043A\u0442\u0440\u0438\u0447\u0435\u0441\u043A\u043E\u0439
-    \u043A\u043B\u0435\u043C\u043C\u043D\u043E\u0439 \u043A\u043E\u0440\u043E\u0431\u043A\u0438. "
 --- !u!1 &944643314 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 102102, guid: 597134ffa94eb9946a07ac64afa7773e, type: 3}
@@ -43975,14 +43657,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   systemName: "\u0413\u0430\u0437\u043E\u043F\u043E\u0440\u0448\u043D\u0435\u0432\u0430\u044F
     \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 TCG-2032"
+  dataFileName: TCG-2032
   list:
   - name: "\u041C\u0435\u0442\u0430\u043B\u043B\u043E\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u044F"
+    UID: 98550ce4-bdd2-470a-9a03-65e8a6219d5b
     gameObject: {fileID: 223071668}
     startCamDistance: 6.5
     startCamRotation: {x: 13, y: 300, z: 0}
     textAbout: 
   - name: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u043F\u043E\u0434\u0430\u0447\u0438
       \u0432\u043E\u0437\u0434\u0443\u0445\u0430"
+    UID: 79ff1ee6-d7d6-4822-b76a-8ffcc0d26a94
     gameObject: {fileID: 496709511}
     startCamDistance: 16
     startCamRotation: {x: 10, y: 220, z: 0}
@@ -43990,40 +43675,47 @@ MonoBehaviour:
   - name: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u043E\u0445\u043B\u0430\u0436\u0434\u0435\u043D\u0438\u044F
       (\u043A\u043E\u043D\u0442\u0443\u0440 \u0443\u0445\u043E\u0434\u044F\u0449\u0438\u0445
       \u0433\u0430\u0437\u043E\u0432)"
+    UID: 5a7f9a86-8924-4006-8172-ffcdee05a3a5
     gameObject: {fileID: 1626581075}
     startCamDistance: 12
     startCamRotation: {x: 54, y: 213, z: 0}
     textAbout: 
   - name: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u043F\u043E\u0434\u0430\u0447\u0438
       \u0442\u043E\u043F\u043B\u0438\u0432\u0430"
+    UID: 941a4e0f-68be-41da-ab12-7a3bb746a790
     gameObject: {fileID: 1432597496}
     startCamDistance: 14
     startCamRotation: {x: 20, y: 150, z: 0}
     textAbout: 
   - name: "\u041C\u0430\u0441\u043B\u043E\u0441\u0438\u0441\u0442\u0435\u043C\u0430"
+    UID: 2ba06d23-fb13-4532-80e7-8f043ac12bc8
     gameObject: {fileID: 1412960717}
     startCamDistance: 7
     startCamRotation: {x: 25, y: 327, z: 0}
     textAbout: 
   - name: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u043E\u0442\u0432\u0435\u0434\u0435\u043D\u0438\u044F
       \u0433\u0430\u0437\u043E\u0432"
+    UID: ce16c792-3fec-4d40-9027-14a53794027b
     gameObject: {fileID: 94256107}
     startCamDistance: 13
     startCamRotation: {x: 20, y: 42, z: 0}
     textAbout: 
   - name: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u0437\u0430\u043F\u0443\u0441\u043A\u0430
       \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044F"
+    UID: 8554d2af-6812-47dd-aa7c-578b337ed3b0
     gameObject: {fileID: 219853547}
     startCamDistance: 5
     startCamRotation: {x: 33, y: 51, z: 0}
     textAbout: 
   - name: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u043E\u0445\u043B\u0430\u0436\u0434\u0435\u043D\u0438\u044F
       (\u043A\u043E\u043D\u0442\u0443\u0440 \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044F)"
+    UID: 2582d78c-fee4-485d-9f98-f5a6e1455aea
     gameObject: {fileID: 1121303359}
     startCamDistance: 5
     startCamRotation: {x: 25, y: 210, z: 0}
     textAbout: 
   - name: "\u0414\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044C"
+    UID: b3a69bb5-5760-4f15-8b0e-f4c9b263a5ff
     gameObject: {fileID: 2118242600}
     startCamDistance: 5.3
     startCamRotation: {x: 10, y: 210, z: 0}
@@ -45718,46 +45410,6 @@ ParticleSystem:
 GameObject:
   m_PrefabParentObject: {fileID: 101242, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
   m_PrefabInternal: {fileID: 1803406650}
---- !u!114 &1085580349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1085580347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u0412\u0441\u043F\u043E\u043C\u043E\u0433\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0439
-    \u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440"
-  startCamDistance: 1
-  startCamRotation: {x: 24, y: 227, z: 0}
-  textAbout: "    \u0412\u0441\u043F\u043E\u043C\u043E\u0433\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0439
-    \u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440 \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D
-    \u0447\u0435\u0440\u0435\u0437 \u0430\u0434\u0430\u043F\u0442\u0435\u0440\u043D\u043E\u0435
-    \u043A\u043E\u043B\u044C\u0446\u043E\r\n\u043D\u0435\u043F\u043E\u0441\u0440\u0435\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u043E
-    \u043D\u0430 \u0432\u0445\u043E\u0434\u043D\u043E\u043C \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u043E\u0432\u043E\u043C
-    \u043A\u043E\u0440\u043F\u0443\u0441\u0435 \u0433\u0430\u0437\u043E\u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430
-    \u0438\r\n\u043F\u0440\u0438\u0432\u043E\u0434\u0438\u0442\u0441\u044F \u0432
-    \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0432\u0430\u043B\u043E\u043C
-    \u0433\u0430\u0437\u043E\u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430.
-    \u0412\u0441\u043F\u043E\u043C\u043E\u0433\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0439
-    \u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440\r\n\u043E\u0441\u043D\u0430\u0449\u0435\u043D
-    \u0442\u0440\u0430\u043D\u0441\u043C\u0438\u0441\u0441\u0438\u043E\u043D\u043D\u044B\u043C\u0438
-    \u0443\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u0430\u043C\u0438 \u0434\u043B\u044F
-    \u043F\u0440\u0438\u0432\u043E\u0434\u0430 \u043E\u0442 \u0441\u0442\u0430\u0440\u0442\u0435\u0440\u043D\u043E\u0433\u043E\r\n\u0433\u0438\u0434\u0440\u0430\u0432\u043B\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
-    \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044F \u0441 \u0435\u0433\u043E
-    \u043C\u0443\u0444\u0442\u043E\u0439 \u0441\u0446\u0435\u043F\u043B\u0435\u043D\u0438\u044F
-    \u0438 \u0434\u043B\u044F \u043F\u0440\u0438\u0432\u043E\u0434\u0430\r\n\u043E\u0441\u043D\u043E\u0432\u043D\u043E\u0433\u043E
-    \u043C\u0430\u0441\u043B\u044F\u043D\u043E\u0433\u043E \u043D\u0430\u0441\u043E\u0441\u0430.
-    \u0412 \u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440\u0435 \u043F\u0440\u0435\u0434\u0443\u0441\u043C\u043E\u0442\u0440\u0435\u043D\u0430
-    \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u044C\r\n\u043F\u043E\u0434\u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u044F
-    \u0435\u0449\u0435 \u0434\u0432\u0443\u0445 \u0441\u044A\u0435\u043C\u043D\u044B\u0445
-    \u0431\u043B\u043E\u043A\u043E\u0432, \u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440,
-    \u043D\u0430\u0441\u043E\u0441\u0430 \u0436\u0438\u0434\u043A\u043E\u0433\u043E\r\n\u0442\u043E\u043F\u043B\u0438\u0432\u0430
-    \u0438\u043B\u0438 \u043D\u0430\u0441\u043E\u0441\u0430 \u0443\u043F\u043B\u043E\u0442\u043D\u044F\u044E\u0449\u0435\u0433\u043E
-    \u043C\u0430\u0441\u043B\u0430. "
 --- !u!1 &1086104746 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 101098, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
@@ -46345,7 +45997,6 @@ GameObject:
   - 4: {fileID: 1113479862}
   - 33: {fileID: 1113479864}
   - 23: {fileID: 1113479863}
-  - 114: {fileID: 1113479866}
   - 64: {fileID: 1113479865}
   m_Layer: 0
   m_Name: SST_060_BASE
@@ -46413,21 +46064,6 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300018, guid: fe78f6e0424d72346a1a7d830ec3ce21, type: 3}
---- !u!114 &1113479866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1113479861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u041E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u0435"
-  startCamDistance: 5
-  startCamRotation: {x: 27, y: 160, z: 0}
-  textAbout: 
 --- !u!1 &1113634410 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 102090, guid: 597134ffa94eb9946a07ac64afa7773e, type: 3}
@@ -48876,22 +48512,6 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400238, guid: 862ffc2d013e80041b47bdc92e8b4e46, type: 3}
   m_PrefabInternal: {fileID: 411548498}
---- !u!114 &1121303361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1121303359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u043E\u0445\u043B\u0430\u0436\u0434\u0435\u043D\u0438\u044F
-    (\u043A\u043E\u043D\u0442\u0443\u0440 \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044F)"
-  startCamDistance: 5
-  startCamRotation: {x: 25, y: 210, z: 0}
-  textAbout: 
 --- !u!1 &1121665864 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100740, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
@@ -53059,7 +52679,6 @@ GameObject:
   - 4: {fileID: 1256475451}
   - 33: {fileID: 1256475453}
   - 23: {fileID: 1256475452}
-  - 114: {fileID: 1256475455}
   - 64: {fileID: 1256475454}
   m_Layer: 0
   m_Name: SST_060_Generator
@@ -53127,21 +52746,6 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300014, guid: fe78f6e0424d72346a1a7d830ec3ce21, type: 3}
---- !u!114 &1256475455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1256475450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440"
-  startCamDistance: 4.5
-  startCamRotation: {x: 21, y: 220, z: 0}
-  textAbout: 
 --- !u!1 &1258199025 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100146, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
@@ -54718,27 +54322,6 @@ MeshCollider:
 GameObject:
   m_PrefabParentObject: {fileID: 101298, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
   m_PrefabInternal: {fileID: 1803406650}
---- !u!114 &1334846494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1334846492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u0422\u043E\u043F\u043B\u0438\u0432\u043D\u0430\u044F \u0441\u0438\u0441\u0442\u0435\u043C\u0430"
-  startCamDistance: 1.6
-  startCamRotation: {x: 21, y: 220, z: 0}
-  textAbout: "    \u0422\u043E\u043F\u043B\u0438\u0432\u043D\u0430\u044F \u0441\u0438\u0441\u0442\u0435\u043C\u0430
-    \u043F\u0440\u0435\u0434\u043D\u0430\u0437\u043D\u0430\u0447\u0435\u043D\u0430
-    \u0434\u043B\u044F \u043F\u043E\u0434\u0430\u0447\u0438 \u0442\u043E\u043F\u043B\u0438\u0432\u043D\u043E\u0433\u043E
-    \u0433\u0430\u0437\u0430 \u0432 \u0441\u0438\u0441\u0442\u0435\u043C\u0443\r\n\u0441\u0433\u043E\u0440\u0430\u043D\u0438\u044F
-    \u043F\u043E\u0434 \u043D\u0443\u0436\u043D\u044B\u043C \u0434\u0430\u0432\u043B\u0435\u043D\u0438\u0435\u043C
-    \u0438 \u0441 \u0440\u0430\u0441\u0445\u043E\u0434\u043E\u043C, \u0441\u043E\u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044E\u0449\u0438\u043C\r\n\u043F\u043E\u0442\u0440\u0435\u0431\u043D\u043E\u0439
-    \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u0438. "
 --- !u!1 &1337189258 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100590, guid: 597134ffa94eb9946a07ac64afa7773e, type: 3}
@@ -57689,21 +57272,6 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400130, guid: e671a7f80698ef5439d558c9f3345d8b, type: 3}
   m_PrefabInternal: {fileID: 564852938}
---- !u!114 &1412960719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1412960717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u041C\u0430\u0441\u043B\u043E\u0441\u0438\u0441\u0442\u0435\u043C\u0430"
-  startCamDistance: 7
-  startCamRotation: {x: 25, y: 327, z: 0}
-  textAbout: 
 --- !u!1 &1414878967 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100368, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
@@ -57945,52 +57513,6 @@ MeshCollider:
 GameObject:
   m_PrefabParentObject: {fileID: 101244, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
   m_PrefabInternal: {fileID: 1803406650}
---- !u!114 &1431977961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1431977959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u041E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u0435 \u0442\u0443\u0440\u0431\u0438\u043D\u044B"
-  startCamDistance: 6.5
-  startCamRotation: {x: 30, y: 210, z: 0}
-  textAbout: "    \u0426\u0435\u043B\u044C\u043D\u043E\u0435 \u043E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u0435
-    \u0413\u0422\u0423, \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043D\u043E\u0435
-    \u0432 \u0432\u0438\u0434\u0435 \u0441\u0442\u0430\u043B\u044C\u043D\u043E\u0439
-    \u0441\u0432\u0430\u0440\u043D\u043E\u0439\r\n\u043A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u0438,
-    \u0432\u043A\u043B\u044E\u0447\u0430\u044E\u0449\u0435\u0439 \u0432\u0441\u0442\u0440\u043E\u0435\u043D\u043D\u044B\u0439
-    \u0431\u0430\u043A \u0441\u043C\u0430\u0437\u043E\u0447\u043D\u043E\u0433\u043E
-    \u043C\u0430\u0441\u043B\u0430,\r\n\u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u0435\u0442
-    \u0442\u043E\u0447\u043A\u0438 \u043A\u0440\u0435\u043F\u043B\u0435\u043D\u0438\u044F
-    \u043E\u043F\u043E\u0440 \u043E\u0441\u043D\u043E\u0432\u043D\u043E\u0439 \u0442\u0443\u0440\u0431\u0438\u043D\u044B/\u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440\u0430
-    \u0438 \u043E\u043F\u043E\u0440\r\n\u043A\u043E\u0440\u043F\u0443\u0441\u0430
-    \u0441\u0438\u0441\u0442\u0435\u043C\u044B \u0441\u0433\u043E\u0440\u0430\u043D\u0438\u044F
-    \u0442\u0443\u0440\u0431\u0438\u043D\u044B. \u0420\u0435\u0430\u043A\u0442\u0438\u0432\u043D\u044B\u0435
-    \u043C\u043E\u043C\u0435\u043D\u0442\u044B \u043F\u0435\u0440\u0435\u0434\u0430\u044E\u0442\u0441\u044F
-    \u043E\u0442\r\n\u0442\u0443\u0440\u0431\u0438\u043D\u044B/\u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440\u0430
-    \u043D\u0430 \u043E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u0435, \u0430 \u043E\u0442
-    \u043D\u0435\u0433\u043E, \u0447\u0435\u0440\u0435\u0437 \u043E\u043F\u043E\u0440\u043D\u044B\u0435
-    \u043F\u043B\u0438\u0442\u044B \u0438\r\n\u0444\u0443\u043D\u0434\u0430\u043C\u0435\u043D\u0442\u043D\u044B\u0435
-    \u0431\u043E\u043B\u0442\u044B, \u043D\u0430 \u0444\u0443\u043D\u0434\u0430\u043C\u0435\u043D\u0442\u044B.\r\n
-    \   \u041D\u0430 \u043E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u0438 \u043F\u0440\u0435\u0434\u0443\u0441\u043C\u043E\u0442\u0440\u0435\u043D\u044B
-    \u043A\u0440\u0435\u043F\u0435\u0436\u043D\u044B\u0435 \u043F\u0440\u0438\u0441\u043F\u043E\u0441\u043E\u0431\u043B\u0435\u043D\u0438\u044F/\u0442\u043E\u0447\u043A\u0438
-    \u0434\u043B\u044F \u0432\u0441\u0435\u0445\r\n\u0441\u0438\u0441\u0442\u0435\u043C
-    \u0442\u0443\u0440\u0431\u0438\u043D\u044B. \u0421\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u044F
-    \u0434\u043B\u044F \u0438\u043D\u0436\u0435\u043D\u0435\u0440\u043D\u044B\u0445
-    \u0441\u0438\u0441\u0442\u0435\u043C, \u0430 \u0442\u0430\u043A\u0436\u0435\r\n\u043F\u0440\u043E\u0434\u0443\u0432\u043E\u0447\u043D\u044B\u0435
-    \u0438 \u0441\u043B\u0438\u0432\u043D\u044B\u0435 \u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u044F
-    \u0432\u0441\u0442\u0440\u043E\u0435\u043D\u044B \u0432 \u0431\u043E\u043A\u043E\u0432\u0438\u043D\u044B
-    \u0441\u0432\u0430\u0440\u043D\u043E\u0433\u043E\r\n\u043E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u044F.
-    \u0421\u043D\u0438\u0437\u0443 \u043A \u043A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u0438
-    \u043E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u044F \u0442\u0430\u043A\u0436\u0435
-    \u0437\u0430\u043A\u0440\u0435\u043F\u043B\u0435\u043D \u043F\u043E\u0434\u0434\u043E\u043D,\r\n\u043F\u0440\u0435\u0434\u043D\u0430\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044B\u0439
-    \u0434\u043B\u044F \u0441\u0431\u043E\u0440\u0430 \u0432\u0441\u0435\u0445 \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u044B\u0445
-    \u0443\u0442\u0435\u0447\u0435\u043A \u0438\u0437 \u0441\u0438\u0441\u0442\u0435\u043C. "
 --- !u!1 &1432597496 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100134, guid: 9770cdfb1f3fdc443aa630438578a223, type: 3}
@@ -57999,22 +57521,6 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400134, guid: 9770cdfb1f3fdc443aa630438578a223, type: 3}
   m_PrefabInternal: {fileID: 80910982}
---- !u!114 &1432597498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1432597496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u043F\u043E\u0434\u0430\u0447\u0438
-    \u0442\u043E\u043F\u043B\u0438\u0432\u0430"
-  startCamDistance: 14
-  startCamRotation: {x: 20, y: 150, z: 0}
-  textAbout: 
 --- !u!1001 &1434476514
 Prefab:
   m_ObjectHideFlags: 0
@@ -58513,56 +58019,6 @@ MeshCollider:
 GameObject:
   m_PrefabParentObject: {fileID: 101296, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
   m_PrefabInternal: {fileID: 1803406650}
---- !u!114 &1455935152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1455935150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u041F\u0440\u043E\u0442\u0438\u0432\u043E\u043F\u043E\u0436\u0430\u0440\u043D\u0430\u044F
-    \u0438 \u0433\u0430\u0437\u043E\u0432\u0430\u044F \u0441\u0438\u0441\u0442\u0435\u043C\u0430"
-  startCamDistance: 1
-  startCamRotation: {x: 21, y: 220, z: 0}
-  textAbout: "    \u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u0432\u043A\u043B\u044E\u0447\u0430\u0435\u0442
-    \u0432 \u0441\u0435\u0431\u044F \u0434\u0435\u0442\u0435\u043A\u0442\u043E\u0440\u044B
-    \u0433\u0430\u0437\u0430, \u0438\u043D\u0444\u0440\u0430\u043A\u0440\u0430\u0441\u043D\u044B\u0435
-    \u0434\u0435\u0442\u0435\u043A\u0442\u043E\u0440\u044B\r\n\u043F\u043B\u0430\u043C\u0435\u043D\u0438
-    \u0438 \u0442\u0435\u043F\u043B\u043E\u0432\u044B\u0435 \u0434\u0435\u0442\u0435\u043A\u0442\u043E\u0440\u044B,
-    \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u043D\u044B\u0435
-    \u0432 \u0443\u043A\u0440\u044B\u0442\u0438\u0438 \u0442\u0443\u0440\u0431\u0438\u043D\u044B.\r\n\u0411\u0430\u043B\u043B\u043E\u043D\u044B
-    \u0441 \u043E\u0433\u043D\u0435\u0442\u0443\u0448\u0430\u0449\u0438\u043C \u0433\u0430\u0437\u043E\u043C
-    \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u044B \u0441\u043D\u0430\u0440\u0443\u0436\u0438
-    \u0443\u043A\u0440\u044B\u0442\u0438\u044F \u0438 \u043E\u0441\u043D\u0430\u0449\u0435\u043D\u044B\r\n\u043C\u0435\u0445\u0430\u043D\u0438\u0437\u043C\u0430\u043C\u0438
-    \u0440\u0430\u0437\u0440\u044F\u0434\u043A\u0438, \u043A\u043E\u0442\u043E\u0440\u044B\u0435
-    \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u044E\u0442 \u043F\u043E\u0434\u0430\u0447\u0443
-    \u043E\u0433\u043D\u0435\u0442\u0443\u0448\u0430\u0449\u0435\u0433\u043E \u0433\u0430\u0437\u0430\r\n\u0432
-    \u0442\u0440\u0443\u0431\u043E\u043F\u0440\u043E\u0432\u043E\u0434\u044B, \u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u043D\u044B\u0435
-    \u0441 \u043D\u0430\u0445\u043E\u0434\u044F\u0449\u0438\u043C\u0438\u0441\u044F
-    \u0432\u043D\u0443\u0442\u0440\u0438 \u0443\u043A\u0440\u044B\u0442\u0438\u044F
-    \u0441\u043E\u043F\u043B\u0430\u043C\u0438.\r\n    \u0421\u0438\u0441\u0442\u0435\u043C\u0430
-    \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u0442 \u0430\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u0438
-    \u043F\u043E\u0434 \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435\u043C
-    \u043C\u043E\u0434\u0443\u043B\u044F\r\n\u043F\u0440\u043E\u0442\u0438\u0432\u043E\u043F\u043E\u0436\u0430\u0440\u043D\u043E\u0439
-    \u0438 \u0433\u0430\u0437\u043E\u0432\u043E\u0439 \u0441\u0438\u0441\u0442\u0435\u043C\u044B,
-    \u0432\u0445\u043E\u0434\u044F\u0449\u0435\u0433\u043E \u0432 \u0441\u043E\u0441\u0442\u0430\u0432
-    \u043F\u0430\u043D\u0435\u043B\u0438\r\n\u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F
-    \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0438. \u0411\u043B\u043E\u043A\u0438
-    \"\u0440\u0430\u0437\u0431\u0435\u0439 \u0441\u0442\u0435\u043A\u043B\u043E\",
-    \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u043D\u044B\u0435
-    \u0441\u043D\u0430\u0440\u0443\u0436\u0438\r\n\u0443\u043A\u0440\u044B\u0442\u0438\u044F
-    \u0438 \u043D\u0430 \u043F\u0430\u043D\u0435\u043B\u0438 \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F
-    \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0438, \u0434\u0430\u044E\u0442
-    \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u044C \u0440\u0443\u0447\u043D\u043E\u0433\u043E\r\n\u0432\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u044F
-    \u0441\u0438\u0441\u0442\u0435\u043C\u044B \u043F\u043E\u0436\u0430\u0440\u043E\u0442\u0443\u0448\u0435\u043D\u0438\u044F.
-    \u041D\u0430 \u043A\u0440\u044B\u0448\u0435 \u0443\u043A\u0440\u044B\u0442\u0438\u044F
-    \u0442\u0443\u0440\u0431\u0438\u043D\u044B\r\n\u043C\u043E\u043D\u0442\u0438\u0440\u0443\u044E\u0442\u0441\u044F
-    \u0437\u0432\u0443\u043A\u043E\u0432\u043E\u0439 \u0438 \u0432\u0438\u0437\u0443\u0430\u043B\u044C\u043D\u044B\u0439
-    \u0441\u0438\u0433\u043D\u0430\u043B\u0438\u0437\u0430\u0442\u043E\u0440\u044B. "
 --- !u!1 &1456716891 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100970, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
@@ -65087,7 +64543,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1622375151}
-  - 114: {fileID: 1622375152}
   m_Layer: 0
   m_Name: SST_Oil_subsystem
   m_TagString: Untagged
@@ -65110,21 +64565,6 @@ Transform:
   - {fileID: 130230586}
   m_Father: {fileID: 1943590890}
   m_RootOrder: 13
---- !u!114 &1622375152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1622375150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u041C\u0430\u0441\u043B\u043E\u0441\u0438\u0441\u0442\u0435\u043C\u0430"
-  startCamDistance: 3.5
-  startCamRotation: {x: 26, y: 226, z: 0}
-  textAbout: 
 --- !u!1 &1622527460 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100934, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
@@ -65197,23 +64637,6 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400048, guid: 9cf6dcc3b9a8fc04fb540f1290939e44, type: 3}
   m_PrefabInternal: {fileID: 1400552113}
---- !u!114 &1626581077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1626581075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u043E\u0445\u043B\u0430\u0436\u0434\u0435\u043D\u0438\u044F
-    (\u043A\u043E\u043D\u0442\u0443\u0440 \u0443\u0445\u043E\u0434\u044F\u0449\u0438\u0445
-    \u0433\u0430\u0437\u043E\u0432)"
-  startCamDistance: 12
-  startCamRotation: {x: 54, y: 213, z: 0}
-  textAbout: 
 --- !u!1 &1626690821 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100058, guid: cf5f1a7173e94c849bfd0566869324d5, type: 3}
@@ -68574,7 +67997,7 @@ MonoBehaviour:
   sourceTransform: {fileID: 1772199458}
   sourceTransforms:
   - transform: {fileID: 1772199458}
-    instanceID: 289412
+    instanceID: 32110
     available: 1
     position: {x: 9.928355, y: 1.5306144, z: 4.6530437}
     localPosition: {x: 0, y: 0, z: 0}
@@ -68739,15 +68162,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  isReadyForThreadedCalculations: 1
+  isReadyForThreadedCalculations: 0
   prewarm: 0
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  localTime: 53.280807
-  localDeltaTime: 3.2319107
+  localTime: 0
+  localDeltaTime: 0
   previousActiveState: 0
-  simulationStarted: 0.36456695
+  simulationStarted: 0.1
   loopExceeded: 0
   loopExceededOnParticle: -1
 --- !u!199 &1772199460
@@ -71866,9 +71289,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   systemName: "\u0413\u0430\u0437\u043E\u0442\u0443\u0440\u0431\u0438\u043D\u043D\u0430\u044F
     \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 SGT-400"
+  dataFileName: SGT-400
   list:
   - name: "\u0413\u0430\u0437\u043E\u0442\u0443\u0440\u0431\u0438\u043D\u043D\u044B\u0439
       \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044C"
+    UID: 2ef14602-0a56-4f55-814c-5be6f0df50d8
     gameObject: {fileID: 642105013}
     startCamDistance: 2.8
     startCamRotation: {x: 30, y: 200, z: 0}
@@ -71922,6 +71347,7 @@ MonoBehaviour:
       \u0442\u0443\u0440\u0431\u0438\u043D\u044B \u0438 \u0441\u0438\u043B\u043E\u0432\u043E\u0439
       \u0442\u0443\u0440\u0431\u0438\u043D\u044B. "
   - name: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u0437\u0430\u043F\u0443\u0441\u043A\u0430"
+    UID: dd070f81-251e-40ca-bfdb-ec914d0fb53d
     gameObject: {fileID: 535672432}
     startCamDistance: 1.2
     startCamRotation: {x: 37, y: 210, z: 0}
@@ -71945,6 +71371,7 @@ MonoBehaviour:
       \u0432\u0440\u0430\u0449\u0435\u043D\u0438\u044F \u0441\u0430\u043C\u043E\u0441\u0442\u043E\u044F\u0442\u0435\u043B\u044C\u043D\u043E. "
   - name: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u0441\u043C\u0430\u0437\u043E\u0447\u043D\u043E\u0433\u043E
       \u043C\u0430\u0441\u043B\u0430"
+    UID: 32fdd5fc-8b32-4da1-a286-ece6a5f0ce1c
     gameObject: {fileID: 1974055498}
     startCamDistance: 5
     startCamRotation: {x: 22, y: 221, z: 0}
@@ -71965,6 +71392,7 @@ MonoBehaviour:
       \u043F\u0443\u0441\u043A\u043E\u0432\u043E\u0439 \u0441\u0438\u0441\u0442\u0435\u043C\u044B
       \u043F\u0440\u0438 \u0437\u0430\u043F\u0443\u0441\u043A\u0435 \u0442\u0443\u0440\u0431\u0438\u043D\u044B. "
   - name: "\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440"
+    UID: 6a648041-945b-4536-8e2c-b00860355757
     gameObject: {fileID: 914464995}
     startCamDistance: 13.6
     startCamRotation: {x: 0, y: 131, z: 0}
@@ -71996,6 +71424,7 @@ MonoBehaviour:
       \u0432 \u0443\u043A\u0440\u044B\u0442\u0438\u0438. "
   - name: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u0440\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u0438\u044F
       \u0432\u043E\u0437\u0434\u0443\u0445\u0430"
+    UID: 19beef88-2fbb-4369-be95-7a29e78c3168
     gameObject: {fileID: 740426127}
     startCamDistance: 13.6
     startCamRotation: {x: 13, y: 223, z: 0}
@@ -72035,6 +71464,7 @@ MonoBehaviour:
       \u0447\u0430\u0441\u0442\u0438 \u0442\u0443\u0440\u0431\u0438\u043D\u044B.\r"
   - name: "\u0412\u0441\u043F\u043E\u043C\u043E\u0433\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0435
       \u0441\u0438\u0441\u0442\u0435\u043C\u044B \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044F"
+    UID: f499ec10-b2d4-47ee-bb29-951b47202078
     gameObject: {fileID: 943612696}
     startCamDistance: 1
     startCamRotation: {x: 27, y: 220, z: 0}
@@ -72058,6 +71488,7 @@ MonoBehaviour:
       \u043A\u043B\u0435\u043C\u043C\u043D\u043E\u0439 \u043A\u043E\u0440\u043E\u0431\u043A\u0438. "
   - name: "\u0412\u0441\u043F\u043E\u043C\u043E\u0433\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0439
       \u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440"
+    UID: 5a3aef43-f3f3-49f7-9f18-8e37afaf6799
     gameObject: {fileID: 1085580347}
     startCamDistance: 1
     startCamRotation: {x: 24, y: 227, z: 0}
@@ -72087,6 +71518,7 @@ MonoBehaviour:
       \u0438\u043B\u0438 \u043D\u0430\u0441\u043E\u0441\u0430 \u0443\u043F\u043B\u043E\u0442\u043D\u044F\u044E\u0449\u0435\u0433\u043E
       \u043C\u0430\u0441\u043B\u0430. "
   - name: "\u041E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u0435 \u0442\u0443\u0440\u0431\u0438\u043D\u044B"
+    UID: 33a9c324-fb3c-4973-b325-55d692c78e86
     gameObject: {fileID: 1431977959}
     startCamDistance: 6.5
     startCamRotation: {x: 30, y: 210, z: 0}
@@ -72121,9 +71553,11 @@ MonoBehaviour:
       \u043E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u044F \u0442\u0430\u043A\u0436\u0435
       \u0437\u0430\u043A\u0440\u0435\u043F\u043B\u0435\u043D \u043F\u043E\u0434\u0434\u043E\u043D,\r\n\u043F\u0440\u0435\u0434\u043D\u0430\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044B\u0439
       \u0434\u043B\u044F \u0441\u0431\u043E\u0440\u0430 \u0432\u0441\u0435\u0445 \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u044B\u0445
-      \u0443\u0442\u0435\u0447\u0435\u043A \u0438\u0437 \u0441\u0438\u0441\u0442\u0435\u043C. "
+      \u0443\u0442\u0435\u0447\u0435\u043A \u0438\u0437 \u0441\u0438\u0441\u0442\u0435\u043C.
+      ()"
   - name: "\u0428\u0443\u043C\u043E\u043F\u043E\u0433\u043B\u043E\u0449\u0430\u044E\u0449\u0435\u0435
       \u0443\u043A\u0440\u044B\u0442\u0438\u0435 \u0442\u0443\u0440\u0431\u0438\u043D\u044B"
+    UID: 96cb8c36-6880-4987-be7a-d21b25d56ef7
     gameObject: {fileID: 426913334}
     startCamDistance: 8.8
     startCamRotation: {x: -10, y: 180, z: 0}
@@ -72141,6 +71575,7 @@ MonoBehaviour:
       \u0437\u0430\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044F \u0438 \u0430\u043A\u0443\u0441\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0439\r\n\u044E\u0431\u043A\u0438. "
   - name: "\u041F\u0440\u043E\u0442\u0438\u0432\u043E\u043F\u043E\u0436\u0430\u0440\u043D\u0430\u044F
       \u0438 \u0433\u0430\u0437\u043E\u0432\u0430\u044F \u0441\u0438\u0441\u0442\u0435\u043C\u0430"
+    UID: b9d5d5db-ac29-447a-9c95-908d25760c5b
     gameObject: {fileID: 1455935150}
     startCamDistance: 1
     startCamRotation: {x: 21, y: 220, z: 0}
@@ -72180,6 +71615,7 @@ MonoBehaviour:
       \u0437\u0432\u0443\u043A\u043E\u0432\u043E\u0439 \u0438 \u0432\u0438\u0437\u0443\u0430\u043B\u044C\u043D\u044B\u0439
       \u0441\u0438\u0433\u043D\u0430\u043B\u0438\u0437\u0430\u0442\u043E\u0440\u044B. "
   - name: "\u0422\u043E\u043F\u043B\u0438\u0432\u043D\u0430\u044F \u0441\u0438\u0441\u0442\u0435\u043C\u0430"
+    UID: d2d5f465-b459-4a62-970a-a8289e42dfa1
     gameObject: {fileID: 1334846492}
     startCamDistance: 1.6
     startCamRotation: {x: 21, y: 220, z: 0}
@@ -72191,6 +71627,7 @@ MonoBehaviour:
       \u0438 \u0441 \u0440\u0430\u0441\u0445\u043E\u0434\u043E\u043C, \u0441\u043E\u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044E\u0449\u0438\u043C\r\n\u043F\u043E\u0442\u0440\u0435\u0431\u043D\u043E\u0439
       \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u0438. "
   - name: "\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0439 \u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440"
+    UID: 2472612b-2108-4911-a67b-29318665a5e9
     gameObject: {fileID: 1945723966}
     startCamDistance: 2.8
     startCamRotation: {x: 24, y: 224, z: 0}
@@ -75991,55 +75428,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 101300, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
   m_PrefabInternal: {fileID: 1803406650}
---- !u!114 &1945723968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1945723966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0439 \u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440"
-  startCamDistance: 2.8
-  startCamRotation: {x: 24, y: 224, z: 0}
-  textAbout: "    \u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0439 \u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440,
-    \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u043D\u044B\u0439
-    \u043C\u0435\u0436\u0434\u0443 \u0433\u0430\u0437\u043E\u0432\u043E\u0439 \u0442\u0443\u0440\u0431\u0438\u043D\u043E\u0439
-    \u0438\r\n\u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u043E\u043C,
-    \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u0435\u0442 \u043F\u043E\u043D\u0438\u0436\u0435\u043D\u0438\u0435
-    \u0447\u0430\u0441\u0442\u043E\u0442\u044B \u0432\u0440\u0430\u0449\u0435\u043D\u0438\u044F
-    \u0432\u044B\u0445\u043E\u0434\u043D\u043E\u0433\u043E \u0432\u0430\u043B\u0430\r\n\u0442\u0443\u0440\u0431\u0438\u043D\u044B
-    \u0434\u043E \u0447\u0430\u0441\u0442\u043E\u0442\u044B, \u043F\u043E\u0434\u0445\u043E\u0434\u044F\u0449\u0435\u0439
-    \u0434\u043B\u044F \u0440\u0430\u0431\u043E\u0442\u044B \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430.\r\n\u0411\u043B\u043E\u043A
-    \u0448\u0435\u0441\u0442\u0435\u0440\u0435\u043D \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u044F\u0435\u0442
-    \u0441\u043E\u0431\u043E\u0439 \u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0443
-    \u043F\u043B\u0430\u043D\u0435\u0442\u0430\u0440\u043D\u043E\u0433\u043E \u0442\u0438\u043F\u0430
-    \u0441 \u0441\u043E\u043E\u0441\u043D\u043E\r\n\u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u043D\u044B\u043C\u0438
-    \u0432\u0445\u043E\u0434\u043D\u044B\u043C \u0438 \u0432\u044B\u0445\u043E\u0434\u043D\u044B\u043C
-    \u0432\u0430\u043B\u0430\u043C\u0438. \u0428\u0435\u0441\u0442\u0435\u0440\u043D\u0438
-    \u0440\u0430\u0441\u043F\u043E\u043B\u043E\u0436\u0435\u043D\u044B \u0432\r\n\u0444\u043E\u0440\u043C\u0435
-    \u043F\u0440\u043E\u0441\u0442\u043E\u0439 \u0437\u0432\u0435\u0437\u0434\u044B.
-    \u0421\u043C\u0430\u0437\u043A\u0430 \u0437\u0443\u0431\u0447\u0430\u0442\u043E\u0439
-    \u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0438 \u0438 \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u043E\u0432\r\n\u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
-    \u043F\u0440\u0438 \u043F\u043E\u043C\u043E\u0449\u0438 \u0441\u0438\u0441\u0442\u0435\u043C\u044B
-    \u0441\u043C\u0430\u0437\u043E\u0447\u043D\u043E\u0433\u043E \u043C\u0430\u0441\u043B\u0430
-    \u0433\u0430\u0437\u043E\u0432\u043E\u0439 \u0442\u0443\u0440\u0431\u0438\u043D\u044B.\r\n\u0417\u0443\u0431\u0447\u0430\u0442\u0430\u044F
-    \u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0430 \u0440\u0430\u0441\u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0430
-    \u0432\u043D\u0443\u0442\u0440\u0438 \u043E\u0441\u043D\u043E\u0432\u043D\u043E\u0433\u043E
-    \u043A\u043E\u0440\u043F\u0443\u0441\u0430 \u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440\u0430.\r\n\u041A\u043E\u0440\u043F\u0443\u0441
-    \u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440\u0430 \u0443\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0435\u0442\u0441\u044F
-    \u043D\u0430 \u043E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u0438 \u0442\u0443\u0440\u0431\u0438\u043D\u044B
-    \u043D\u0430 \u043E\u043F\u043E\u0440\u0430\u0445 \u043B\u0438\u0431\u043E\r\n\u043A\u0440\u0435\u043F\u0438\u0442\u0441\u044F
-    \u043A \u043A\u043E\u043D\u0446\u0435\u0432\u043E\u0439 \u0440\u0430\u043C\u0435
-    \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430, \u0432\u0445\u043E\u0434\u044F
-    \u0432 \u0441\u043E\u0441\u0442\u0430\u0432 \u0443\u0437\u043B\u0430 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430.\r\n\u0414\u0430\u0442\u0447\u0438\u043A
-    \u0443\u0441\u043A\u043E\u0440\u0435\u043D\u0438\u044F (UD39), \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u043D\u044B\u0439
-    \u043D\u0430 \u043A\u043E\u0440\u043F\u0443\u0441\u0435 \u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440\u0430,\r\n\u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u0435\u0442
-    \u0438\u043D\u0434\u0438\u043A\u0430\u0446\u0438\u044E \u0447\u0440\u0435\u0437\u043C\u0435\u0440\u043D\u043E\u0439
-    \u0432\u0435\u043B\u0438\u0447\u0438\u043D\u044B \u0432\u0438\u0431\u0440\u0430\u0446\u0438\u0439. "
 --- !u!1 &1946842967 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100984, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
@@ -78237,36 +77625,6 @@ MeshCollider:
 GameObject:
   m_PrefabParentObject: {fileID: 101304, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
   m_PrefabInternal: {fileID: 1803406650}
---- !u!114 &1974055500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1974055498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 \u0441\u043C\u0430\u0437\u043E\u0447\u043D\u043E\u0433\u043E
-    \u043C\u0430\u0441\u043B\u0430"
-  startCamDistance: 5
-  startCamRotation: {x: 22, y: 221, z: 0}
-  textAbout: "    \u0414\u043B\u044F \u0441\u043C\u0430\u0437\u043A\u0438 \u0438 \u043E\u0445\u043B\u0430\u0436\u0434\u0435\u043D\u0438\u044F
-    \u043E\u043F\u043E\u0440\u043D\u044B\u0445 \u0438 \u0443\u043F\u043E\u0440\u043D\u044B\u0445
-    \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u043E\u0432 \u0442\u0443\u0440\u0431\u0438\u043D\u044B,\r
-    \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u043E\u0432 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430
-    \u0438 \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u043E\u0432 \u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440\u0430,
-    \u0437\u0443\u0431\u0447\u0430\u0442\u044B\u0445 \u043A\u043E\u043B\u0435\u0441
-    \u0438\r \u0448\u043B\u0438\u0446\u0435\u0432\u044B\u0445 \u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0439
-    \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442\u0441\u044F \u043C\u0438\u043D\u0435\u0440\u0430\u043B\u044C\u043D\u043E\u0435
-    \u0441\u043C\u0430\u0437\u043E\u0447\u043D\u043E\u0435 \u043C\u0430\u0441\u043B\u043E.\r
-    \u041C\u0430\u0441\u043B\u043E \u0442\u0430\u043A\u0436\u0435 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442\u0441\u044F
-    \u0432 \u043A\u0430\u0447\u0435\u0441\u0442\u0432\u0435 \u0433\u0438\u0434\u0440\u0430\u0432\u043B\u0438\u0447\u0435\u0441\u043A\u043E\u0439
-    \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438 \u0434\u043B\u044F\r \u043F\u0440\u0438\u0432\u043E\u0434\u0430
-    \u0433\u0438\u0434\u0440\u0430\u0432\u043B\u0438\u0447\u0435\u0441\u043A\u043E\u0439
-    \u043F\u0443\u0441\u043A\u043E\u0432\u043E\u0439 \u0441\u0438\u0441\u0442\u0435\u043C\u044B
-    \u043F\u0440\u0438 \u0437\u0430\u043F\u0443\u0441\u043A\u0435 \u0442\u0443\u0440\u0431\u0438\u043D\u044B. "
 --- !u!1 &1974460536 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100116, guid: 862ffc2d013e80041b47bdc92e8b4e46, type: 3}
@@ -80713,21 +80071,6 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 401286, guid: 597134ffa94eb9946a07ac64afa7773e, type: 3}
   m_PrefabInternal: {fileID: 166371513}
---- !u!114 &2118242603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2118242600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817afd222240fcd4d8680d7479c67c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subsystemName: "\u0414\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044C"
-  startCamDistance: 5.3
-  startCamRotation: {x: 10, y: 210, z: 0}
-  textAbout: 
 --- !u!1 &2123788029 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100972, guid: 597134ffa94eb9946a07ac64afa7773e, type: 3}

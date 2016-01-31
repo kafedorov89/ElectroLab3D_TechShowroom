@@ -31,22 +31,22 @@ public static class FileWriter{
 
         if (!Directory.Exists(folderPath))
         {
-            Debug.Log("folder doesn't exist");
+            //Debug.Log("folder doesn't exist");
             Directory.CreateDirectory(folderPath);
-            Debug.Log("folder was created");
+            //Debug.Log("folder was created");
         }
         else
         {
-            Debug.Log("folder alredy exist");
+            //Debug.Log("folder alredy exist");
         }
 
         if (File.Exists(folderPath + fileName))
         {
-            Debug.Log("File " + fileName + " already exists.");
+            //Debug.Log("File " + fileName + " already exists.");
             if (overwrite)
             {
                 File.Delete(folderPath + fileName);
-                Debug.Log("File " + fileName + " was deleted");
+                //Debug.Log("File " + fileName + " was deleted");
                 File.WriteAllText(folderPath + fileName, content);
             }
         }

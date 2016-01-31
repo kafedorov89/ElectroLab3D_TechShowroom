@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 //Advanced GUI for browser
 //Using new UI System
@@ -34,7 +36,7 @@ public class BrowserGUI : MonoBehaviour {
 	private SubsystemList list;
 	private SystemBrowser browser;
 
-	private string editableText = "Начальный текст";
+	//private string editableText = "Начальный текст";
 
 	// Use this for initialization
 	void Start () 
@@ -96,18 +98,34 @@ public class BrowserGUI : MonoBehaviour {
 		} 
 		else
 		{
-			//1. загружаем в текстовое поле ввода тект с описанием текущей подсистемы
-			inputField.text = editableText;
-
-			//2. показываем панель
-			editPanel.SetActive(true);
+			textAboutPanel.SetActive (false);
+			LoadEditPanel ();
 		}
 	}
 
 	public void OnClickEditOkButton()
 	{
-		editableText = inputField.text;
+		//1. сохраняем текст
+		SaveText();
+
+		//2. убираем панель
 		editPanel.SetActive (false);
+	}
+
+	public void OnClickEditApplyButton()
+	{
+		//сохраняем текст
+		SaveText();
+	}
+
+	public void SaveText()
+	{
+		//сначала пишет в сам объект
+		Subsystem sub = browser.GetSelectedSubsystem();
+		sub.textAbout = inputField.text;
+
+		//затем пишем на диск для всех подсистем
+		browser.Subs.WriteToFile("Data");
 	}
 
 	public void OnClickEditCancelButton()
@@ -121,6 +139,7 @@ public class BrowserGUI : MonoBehaviour {
 		SetInitialTextContent ();
 		dropDownMenu.SetActive (false);
 		editPanel.SetActive (false);
+		textAboutPanel.SetActive (false);
 	}
 	void SetInitialButtonStates()
 	{
@@ -128,13 +147,14 @@ public class BrowserGUI : MonoBehaviour {
 		compile.interactable = false;
 		home.interactable = true;
 		help.interactable = false;
+		editButton.interactable = false;
 	}
 	void SetInitialTextContent()
 	{
 		textSystemName.text = "";
 		textSubsystemName.text = "";
 		textAbout.text = "";
-		textAboutPanel.SetActive (false);
+
 	}
 
 	public void LoadLevel(int level)
@@ -184,6 +204,7 @@ public class BrowserGUI : MonoBehaviour {
 
 		compile.interactable = true;
 		help.interactable = true;
+		editButton.interactable = true;
 	}
 
 	//Go to whole system browsing
@@ -199,7 +220,10 @@ public class BrowserGUI : MonoBehaviour {
 
 		textSubsystemName.text = "";
 		HideTextAbout ();
+		editPanel.SetActive (false);
 		help.interactable = false;
+
+		editButton.interactable = false;
 		compile.interactable = false;
 		Stop (true); //
 		browser.GoToSystem();
@@ -237,6 +261,31 @@ public class BrowserGUI : MonoBehaviour {
 	public void ToogleGameObjectActivity(GameObject obj)
 	{
 		obj.SetActive (!obj.activeInHierarchy);
+	}
+
+	public void OnClickButtonHelp()
+	{
+		editPanel.SetActive (false);
+		textAbout.text = browser.GetSelectedSubsystem ().textAbout;
+		ToogleGameObjectActivity (textAboutPanel);
+		//textAboutPanel.SetActive (true);
+		//LoadEditPanel ();
+
+	}
+	public void LoadEditPanel()
+	{
+		Subsystem sub = browser.GetSelectedSubsystem();
+		if (sub != null) {
+			//1. загружаем описание текущей подсистемы
+			inputField.text = sub.textAbout;
+
+			//2. показываем панель
+			editPanel.SetActive (true);
+		}
+		else {
+			Debug.LogError ("Try to edit description of subsystem when no subsystems selected");
+		}
+
 	}
 	public void Play()
 	{

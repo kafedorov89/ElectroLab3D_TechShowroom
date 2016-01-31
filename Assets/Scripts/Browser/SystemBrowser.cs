@@ -120,6 +120,7 @@ public class SystemBrowser : MonoBehaviour {
 		GameObject canvas = GameObject.FindWithTag ("Player");
 		bGUI = canvas.GetComponent<BrowserGUI> (); 
 		subs = GetComponent<SubsystemList> (); //list of subsystems
+		MarkSubsystemsWithTag();
 
 		GO = gameObject;
 		GO.transform.position = new Vector3 (0,0,0);
@@ -138,6 +139,26 @@ public class SystemBrowser : MonoBehaviour {
 		//initial camera rotation and distance
 		orbitNav.SetRotation(startCamRotation);
 		orbitNav.Distance = startCamDistance;
+	}
+
+	//пометить gameobject-ы тегами, чтобы их было лечге искать
+	void MarkSubsystemsWithTag()
+	{
+		foreach (Subsystem subsystem in subs.list)
+		{
+			subsystem.gameObject.tag = "Subsystem";
+		}
+	}
+
+	private GameObject FindGameObjectWithTagInParents(GameObject start, string tag)
+	{
+		Transform[] parents = start.GetComponentsInParent<Transform>();
+		foreach (Transform parent in parents) 
+		{
+			if (parent.gameObject.CompareTag (tag))
+				return parent.gameObject;
+		}
+		return null;
 	}
 
 	void CreateCameraHelper()
@@ -181,11 +202,11 @@ public class SystemBrowser : MonoBehaviour {
 		foreach (MeshRenderer m in meshes)
 		{
 			//если среди родителя не найден флаг подсистемы
-			SubsystemFlag flag = m.gameObject.GetComponentInParent<SubsystemFlag>();
+			//SubsystemFlag flag = m.gameObject.GetComponentInParent<SubsystemFlag>();
+			GameObject flag = FindGameObjectWithTagInParents(m.gameObject, "Subsystem");
 			if (flag == null)
 				meshesTrash.Add(m); //добавляем мусорный меш
 		}
-
 	}
 
 	// Update is called once per frame
@@ -238,16 +259,18 @@ public class SystemBrowser : MonoBehaviour {
 		{
 
 			GameObject obj = hit.collider.gameObject;
-			SubsystemFlag flag = obj.GetComponentInParent<SubsystemFlag>();
+			//SubsystemFlag flag = obj.GetComponentInParent<SubsystemFlag>();
+			GameObject flag = FindGameObjectWithTagInParents(obj, "Subsystem");
 			if (flag != null)
 			{
-				bGUI.textSubsystemName.text = flag.subsystemName;
+				Subsystem subsystem = GetSubsystemByGameObject (flag);
+				bGUI.textSubsystemName.text = subsystem.name;
 				if (Input.GetMouseButtonUp(0)) //left mouse click
 				{
 					float deltaTime = Time.time - lastDown0;
 					if (deltaTime < catchTime)
 					{
-						int a = GetSubsystemIndex(flag.gameObject);
+						int a = GetSubsystemIndex(subsystem.gameObject);
 						bGUI.ChooseSubsystem(a); //go to selected subsystem
 					}
 				}
@@ -256,7 +279,7 @@ public class SystemBrowser : MonoBehaviour {
 					float deltaTime = Time.time - lastDown1;
 					if (deltaTime < catchTime)
 					{
-						int a = GetSubsystemIndex(flag.gameObject);
+						int a = GetSubsystemIndex(subsystem.gameObject);
 						bGUI.HideSubsystem(a); //hide selected subsystem
 					}
 				}
@@ -309,6 +332,17 @@ public class SystemBrowser : MonoBehaviour {
 				//AlphaBlend.SetupMaterialWithBlendMode (material, RenderingMode.Fade);
 			}
 		}
+	}
+
+	public Subsystem GetSubsystemByGameObject(GameObject obj)
+	{
+		foreach (Subsystem subsytem in subs.list)
+		{
+			if (subsytem.gameObject == obj)
+				return subsytem;
+		}
+
+		return null;
 	}
 
 	public void DisableTransparency()
@@ -860,5 +894,12 @@ public class SystemBrowser : MonoBehaviour {
 				return i;
 		}
 		return -1;
+	}
+	public Subsystem GetSelectedSubsystem()
+	{
+		if (current_subs_index == -1)
+			return null;
+		else
+			return Subs.list [current_subs_index];
 	}
 }

@@ -1,5 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json.Converters;
+
 
 public class GameControl : MonoBehaviour {
 
@@ -7,6 +12,9 @@ public class GameControl : MonoBehaviour {
 
 	public GameObject target; //object transfered to next scene
 	private int previousLevel = 0;
+	private bool first = true;
+
+	//bool IsFirstApplicationLoad = true;
 
 	void Awake()
 	{
@@ -23,10 +31,26 @@ public class GameControl : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+	{
+		/*if (first)
+		{
+			first = false;
+			LoadSubsystemsDataFromFile ();
+		}*/
+	}
 
-
+	void LoadSubsystemsDataFromFile ()
+	{
+		//int N = 0, M = 0;
+		//List<string> errors = new List<string>();
+		GameObject[] units = GameObject.FindGameObjectsWithTag ("Browser");
+		SubsystemList subs;
+		foreach (GameObject unit in units)
+		{
+			subs = unit.GetComponent<SubsystemList> ();
+			subs.LoadFromFile ("Data");
+		}
 	}
 
 	// Update is called once per frame
@@ -43,6 +67,8 @@ public class GameControl : MonoBehaviour {
 
 	void OnLevelWasLoaded(int currentLevel)
 	{
+		LoadSubsystemsDataFromFile ();
+
 		if (currentLevel == 0 && previousLevel == 1) 
 		{
 			Destroy (target);
@@ -50,8 +76,6 @@ public class GameControl : MonoBehaviour {
 		} 
 		else if (currentLevel == 1 && previousLevel == 0)
 		{
-			//target.transform.localPosition = new Vector3();
-
 			//BrowserGUI gui = t.GetComponent<BrowserGUI>();
 			SystemBrowser browser = target.GetComponent<SystemBrowser>();
 			//if (gui != null) gui.enabled = true;
