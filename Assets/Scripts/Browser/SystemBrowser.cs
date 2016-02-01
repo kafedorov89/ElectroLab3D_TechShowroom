@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-//using ParticlePlayground;
+using UnityEngine.EventSystems;
 
-public enum State {System = 0, ReduceAlpha, ZoomInSubsystem, Subsystem, ZoomOutSubsystem, IncreaseAlpha,
+public enum BrowsingMode {System, Subsystem };
+public enum ParamInitializationMode {Auto, Manual};
+
+public enum BrowserState {System = 0, ReduceAlpha, ZoomInSubsystem, Subsystem, ZoomOutSubsystem, IncreaseAlpha,
 	PlayAnimation};
 
 public enum RenderingMode {Opaque = 0, Cutout = 1, Fade = 2, Transparent = 3};
@@ -16,33 +19,39 @@ public struct MeshPack
 
 public class SystemBrowser : MonoBehaviour {
 
-	//public Material outlineMat; 
-	//public PlaygroundParticlesC[] Particles;
-	//public GameObject ParticleController;
+	public BrowsingMode playAnimationMode = BrowsingMode.System;
+	public GameObject playAnimationSubsystem;
 
-	Camera mainCam; //main camera
+	private bool taskToPlayAnimationInSystem = false;
+	private bool taskToPlayAnimationInSubsystem = false;
+
+	//starting transform of system
+	public ParamInitializationMode startCamPositionMode = ParamInitializationMode.Auto;
+
+	public Vector3 startCamPosition = new Vector3(0, 0, 0);
+	public Vector3 startCamRotation = new Vector3(0, 0, 0);
+	public float startCamDistance = 10.0f;
+
 	GameObject GO; //gameobject of main system
 	MeshRenderer[] meshes; //all meshes of 3D model
 
 	MeshPack[] meshesALL; //меши подсистем
 	List<MeshRenderer> meshesTrash; //меши мусора (объекты, не входящие ни в одну подсистему)
 
-	GameObject clonedSub;  //clone of subsystem
-	SubsystemList Subs;
+	private SubsystemList subs; //subsystems
+	public SubsystemList Subs
+	{
+		get { return subs; }
+	}
 	MouseOrbit orbitNav;  //orbit navigation
-	GameObject cameraHelper; //camera looks on it when moving
-	BrowserGUI bGUI;
+	Camera mainCam; //main camera
+	GameObject cameraHelper;  //camera looks on it
+	BrowserGUI bGUI;  //GUI script
 
-	Vector3 mainPos;
-	Vector3 subPos;
+	Vector3 mainPos; //center position of main gameobject
 
-	[Tooltip("Value of system alpha-cannel when subsystem is browsing. Set 0 for system invisible")]
-	[Range(0.0f,1.0f)]
-	public float alphaMin = 0.1f; //alpha-cannel when subsystem browsing
-	private float alphaMax = 1.0f; //alpha-cannel when system browsing
-
-	[Range(0.0f,1.0f)]
-	public float alphaWhenPlay = 0.1f; //alpha-channel when playing animation
+	float alphaMin = 0.0f; //alpha-cannel when subsystem browsing
+	float alphaMax = 1.0f; //alpha-cannel when system browsing
 
 	[Tooltip("Time in seconds for alpha-cannel reducing and increasing process")]
 	public float shiftAlphaTime = 1.0f; //time for change system alpha-channel
@@ -60,67 +69,120 @@ public class SystemBrowser : MonoBehaviour {
 	public RenderingMode renderingMode = RenderingMode.Fade;
 
 	public float catchTime = 0.25f; //maximum time to catch object
-	private float lastDown0 = 0.0f; //when mouse button down
-	private float lastDown1 = 0.0f; //when mouse button down
+	private float lastDown0 = 0.0f; //last moment when mouse button down
+	private float lastDown1 = 0.0f; //last moment when mouse button down
 
-	private int current_subs_index = -1;
+	private int current_subs_index = -1; //индекс текущей выбранной подсистемы
+	public int CurrentSubsystemIndex
+	{
+		get { return current_subs_index; }
+	}
+
 	private Vector3 subFrom, subTo;
 	private Vector3 parallelFrom = new Vector3(), parallelTo = new Vector3();
 	private float distFrom, distTo;
+
+	//при приближении к подсистеме - вращаем камеру в заданное положение
+	//при отдалении - ничего не делаем
+	private Quaternion camRotateFrom;
+	private Quaternion camRotateTo;
+
 	private float startTime; //start time for some process (alpha changing/camera moving)
 	private float subJourneyLength;
 	private float sysJourneyLength;
 	private int stored_index = -1; 
+	public int StoredIndex
+	{
+		get { return stored_index; }
+		set { stored_index = value; }
+	}
 	private bool isReady = true; //is ready to hadle command from GUI
+	public bool IsReady
+	{
+		get { return isReady; }
+	}
 	private float m_alpha;
-	private State state = State.System;
-	private List<GameObject> clones = new List<GameObject>();
+	private BrowserState state = BrowserState.System;
+	public BrowserState State
+	{
+		get { return state; }
+	}
 
+	//for raycasting
 	private Ray ray;   
 	private RaycastHit hit;
 
-	//Is browser ready to handle new command
-	public bool IsReady()
-	{
-		return isReady;
-	}
+	//Dictionary<Material,Material> materialPairs = new Dictionary<Material, Material>();
 
 	// Use this for initialization
 	void Start () 
 	{
-		//if (ParticleController != null)
-		//	ParticleController.SetActive (false);
-
 		GameObject canvas = GameObject.FindWithTag ("Player");
 		bGUI = canvas.GetComponent<BrowserGUI> (); 
-		
+		subs = GetComponent<SubsystemList> (); //list of subsystems
+		MarkSubsystemsWithTag();
+
 		GO = gameObject;
-		cameraHelper = new GameObject("CameraHelper");
+		GO.transform.position = new Vector3 (0,0,0);
 
-		//+++
-		//GameObject ctrlObject = GameObject.FindWithTag("GameController");
-		//GameControl ctrlComponent = ctrlObject.GetComponent<GameControl>();
-		//cameraHelper.transform.parent = ctrlComponent.target.transform;
-
-		Subs = GetComponent<SubsystemList> ();
-		//CreateClones ();
+		CreateCameraHelper(); //create object for camera targeting
 
 		GameObject mainCamObj = GameObject.FindWithTag ("MainCamera"); 
 		mainCam = mainCamObj.GetComponent<Camera>();
 		orbitNav = mainCam.GetComponent<MouseOrbit>();
-		mainPos = GO.transform.position;
+		orbitNav.SetTarget (cameraHelper.transform); //напрявляем на помощника
 
+		BuildMeshes (); //search meshes and join it into groups
+		//PrepareForAlphaBlending (); //prepare materials
+		m_alpha = alphaMax; //initial alpha
 
-		BuildMeshes ();
-
-		PrepareForAlphaBlending ();
-		//PrepareForOutline (); //New !!!
-		m_alpha = alphaMax;
+		//initial camera rotation and distance
+		orbitNav.SetRotation(startCamRotation);
+		orbitNav.Distance = startCamDistance;
 	}
+
+	//пометить gameobject-ы тегами, чтобы их было лечге искать
+	void MarkSubsystemsWithTag()
+	{
+		foreach (Subsystem subsystem in subs.list)
+		{
+			subsystem.gameObject.tag = "Subsystem";
+		}
+	}
+
+	private GameObject FindGameObjectWithTagInParents(GameObject start, string tag)
+	{
+		Transform[] parents = start.GetComponentsInParent<Transform>();
+		foreach (Transform parent in parents) 
+		{
+			if (parent.gameObject.CompareTag (tag))
+				return parent.gameObject;
+		}
+		return null;
+	}
+
+	void CreateCameraHelper()
+	{
+		//создаем помощника - именно на него будет направлена камера
+		//в течение всего времени просмотра установки;
+		//куда будет двигаться просмотрщик - туда и камера;
+		cameraHelper = new GameObject("CameraHelper");
+
+		//начальное положение помощника может быть рассчитано 
+		//автоматически - как центр общий мешей, либо задано пользователем
+		if (startCamPositionMode == ParamInitializationMode.Auto)
+			mainPos = CalcCenterOfGameObject2 (GO);
+		else
+			mainPos = startCamPosition;
+
+		//initial camera position = position of target object
+		cameraHelper.transform.position = mainPos;
+	}
+
 	void BuildMeshes()
 	{
-		//суть в том, что надо собрать группы мешей, которые относятся к каждой подсистеме
-		//а также все остальные меши надо объеденить в отдельную группу
+		//суть в том, что надо собрать группы мешей, которые относятся к каждой подсистеме;
+		//все остальные меши надо объеденить в отдельную группу
 		int N = Subs.list.Count;
 		meshesALL = new MeshPack[N];
 
@@ -140,11 +202,11 @@ public class SystemBrowser : MonoBehaviour {
 		foreach (MeshRenderer m in meshes)
 		{
 			//если среди родителя не найден флаг подсистемы
-			SubsystemFlag flag = m.gameObject.GetComponentInParent<SubsystemFlag>();
+			//SubsystemFlag flag = m.gameObject.GetComponentInParent<SubsystemFlag>();
+			GameObject flag = FindGameObjectWithTagInParents(m.gameObject, "Subsystem");
 			if (flag == null)
 				meshesTrash.Add(m); //добавляем мусорный меш
 		}
-
 	}
 
 	// Update is called once per frame
@@ -157,91 +219,68 @@ public class SystemBrowser : MonoBehaviour {
 			lastDown1 = Time.time;
 
 		//update state
-		if (state == State.System) {
+		if (state == BrowserState.System) 
+		{
 			if (stored_index != -1)
 				GoToSubsystem (stored_index);
-			else
+			else 
+			{
+				if (taskToPlayAnimationInSystem)
+				{
+					taskToPlayAnimationInSystem = false;
+					bGUI.PlayAnimation ();
+				}
 				isReady = true;
+			}
 		}
-		if (state == State.ReduceAlpha) 
+		if (state == BrowserState.ReduceAlpha) 
 			ReduceAlpha (); 
-		if (state == State.ZoomInSubsystem) 
+		if (state == BrowserState.ZoomInSubsystem) 
 			ZoomInSub();
-		if (state == State.ZoomOutSubsystem) 
+		if (state == BrowserState.ZoomOutSubsystem) 
 			ZoomOutSub();
-		if (state == State.IncreaseAlpha) 
+		if (state == BrowserState.IncreaseAlpha) 
 			IncreaseAlpha();
 
-		//raycasting
+		//raycasting - left or right click on subsystem
 		UpdateRaycasting ();
 	}
-	//public void Play()
-	//{
-	//	if (state == State.System)
-	//		StartPlay ();
-	//	else if (state == State.PlayAnimation)
-	//		StopPlay ();
-	//}
-	//play animation or other actions
-	//public void StartPlay()
-	//{
-	//	state = State.PlayAnimation;
 
-		//1. make all system transparent
-	//	SetAlpha (alphaWhenPlay);
-
-		//2. start emit particles
-		//foreach (PlaygroundParticlesC P in Particles) {
-		//	P.Emit (true);
-		//}
-		//if (ParticleController != null)
-		//	ParticleController.SetActive (true);
-	//}
-	//public void StopPlay()
-	//{
-	//	state = State.System;
-
-		//1. stop emit particles
-		//foreach (PlaygroundParticlesC P in Particles)
-		//	P.Emit (false);
-		//if (ParticleController != null)
-		//	ParticleController.SetActive (false);
-
-		//2. make all system non transparent
-	//	SetAlpha (alphaMax);
-	//}
 	void UpdateRaycasting()
 	{
-		if (state != State.System)
+		if (state != BrowserState.System)
+			return;
+		if (EventSystem.current.IsPointerOverGameObject ()) //защита от клика сквозь интерфейс
 			return;
 
 		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		bool isHit = Physics.Raycast (ray, out hit, 100.0f);
 		if (isHit) 
 		{
-			//Collider coll = hit.collider;
+
 			GameObject obj = hit.collider.gameObject;
-			SubsystemFlag flag = obj.GetComponentInParent<SubsystemFlag>();
+			//SubsystemFlag flag = obj.GetComponentInParent<SubsystemFlag>();
+			GameObject flag = FindGameObjectWithTagInParents(obj, "Subsystem");
 			if (flag != null)
 			{
-				bGUI.textSubsystemName.text = flag.subsystemName;
-				//OutlineObject(flag.gameObject);
-				if (Input.GetMouseButtonUp(0))
+				Subsystem subsystem = GetSubsystemByGameObject (flag);
+				bGUI.textSubsystemName.text = subsystem.name;
+				if (Input.GetMouseButtonUp(0)) //left mouse click
 				{
 					float deltaTime = Time.time - lastDown0;
 					if (deltaTime < catchTime)
 					{
-						int a = GetSubsystemIndex(flag.gameObject);
-						bGUI.ChooseSubsystem(a);
+						int a = GetSubsystemIndex(subsystem.gameObject);
+						bGUI.ChooseSubsystem(a); //go to selected subsystem
 					}
 				}
-				if (Input.GetMouseButtonUp(1))
+				if (Input.GetMouseButtonUp(1)) //right mouse click
 				{
 					float deltaTime = Time.time - lastDown1;
 					if (deltaTime < catchTime)
 					{
-						int a = GetSubsystemIndex(flag.gameObject);
-						bGUI.HideSubsystem(a);
+						int a = GetSubsystemIndex(subsystem.gameObject);
+						bGUI.HideSubsystem(a); //hide selected subsystem
 					}
 				}
 			}
@@ -250,44 +289,11 @@ public class SystemBrowser : MonoBehaviour {
 			bGUI.textSubsystemName.text = "";
 
 	}
-	/*void OutlineObject(GameObject obj)
-	{
-		MeshRenderer[] objMeshes = obj.GetComponentsInChildren<MeshRenderer>();
-		if (objMeshes == null)
-			return;
-		foreach (MeshRenderer rend in objMeshes)
-		{
-			Material m = rend.materials[1];
-			m.SetFloat("_outline_enable", 1.0f);
-			//Material m = Resources.Load("Outline") as Material;
-			//m.SetFloat("_outline_width", 0.3f);
-			//rend.materials.SetValue(m, 1);
-		}
-	}*/
-	//Create clone for each subsystem gameobject //DEPRECATED
-	void CreateClones()
-	{
-		GameObject original, clone;
-		for (int i = 0; i < Subs.list.Count; ++i) 
-		{
-			original = Subs.list[i].gameObject;
-			if (original == null) continue;
 
-			clone = Instantiate(original);
-			clones.Add(clone);
-			clone.SetActive(false);
-			clone.transform.rotation = original.gameObject.transform.rotation;
-			clone.transform.position = original.gameObject.transform.position;
-			//clone.transform.localScale = GO.transform.localScale;
-
-			clone.transform.parent = GO.transform; //<=
-			clone.transform.localScale = original.gameObject.transform.localScale;
-			//clone.transform.sca = original.gameObject.transform.lossyScale;
-		}
-	}
-
-	//prepare standart shader for transparency
-	void PrepareForAlphaBlending()
+	//===============================================================================
+	// Prepare standart shader for transparency
+	//===============================================================================
+	/*void PrepareForAlphaBlending()
 	{
 		if (meshes == null)
 			return;
@@ -306,29 +312,73 @@ public class SystemBrowser : MonoBehaviour {
 				material.renderQueue = 3000;
 			}
 		}
+	}*/
+
+	public void EnableTransparency()
+	{
+		foreach (MeshRenderer rend in meshes)
+		{
+			foreach (Material material in rend.materials)
+			{
+				material.SetFloat ("_Mode", (float)RenderingMode.Transparent); //fade or transparent
+				material.SetInt ("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+				material.SetInt ("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+				//material.SetInt ("_ZWrite", 0);
+				material.DisableKeyword ("_ALPHATEST_ON");
+				material.EnableKeyword ("_ALPHABLEND_ON");
+				material.DisableKeyword ("_ALPHAPREMULTIPLY_ON");
+				material.renderQueue = 3000;
+
+				//AlphaBlend.SetupMaterialWithBlendMode (material, RenderingMode.Fade);
+			}
+		}
 	}
-	/*void PrepareForOutline()
+
+	public Subsystem GetSubsystemByGameObject(GameObject obj)
+	{
+		foreach (Subsystem subsytem in subs.list)
+		{
+			if (subsytem.gameObject == obj)
+				return subsytem;
+		}
+
+		return null;
+	}
+
+	public void DisableTransparency()
 	{
 		if (meshes == null)
 			return;
 		foreach (MeshRenderer rend in meshes)
 		{
+			foreach (Material material in rend.materials)
+			{
+				/*
+				//material.SetFloat ("_Mode", 1.0f);
+				material.SetFloat ("_Mode", (float)RenderingMode.Opaque); //fade or transparent
+				//material.SetInt ("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+				//material.SetInt ("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+				//material.SetInt ("_ZWrite", 1);
+				material.EnableKeyword ("_ALPHATEST_ON");
+				material.DisableKeyword ("_ALPHABLEND_ON");
+				material.EnableKeyword ("_ALPHAPREMULTIPLY_ON");
+				material.renderQueue = 2000;
+				*/
 
-			Material m = outlineMat;
+				/*
+				material.SetInt ("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+				material.SetInt ("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+				material.SetInt ("_ZWrite", 1);
+				material.DisableKeyword ("_ALPHATEST_ON");
+				material.DisableKeyword ("_ALPHABLEND_ON");
+				material.DisableKeyword ("_ALPHAPREMULTIPLY_ON");
+				material.renderQueue = -1;
+				*/
 
-			m.SetFloat("_outline_enable", 0.0f);
-			//m.SetFloat("_outline_width", 0.0f);
-			//m.SetColor("_outline_color", new Color(0,1,0,0));
-
-			//m.shader = Shader.Find("Outline");
-			Material[] oldMats = rend.materials;
-			Material[] newMats = new Material[oldMats.Length+1];
-			for (int i = 0; i < oldMats.Length; ++i)
-				newMats[i] = oldMats[i];
-			newMats[oldMats.Length] = m;
-			rend.materials = newMats;
+				AlphaBlend.SetupMaterialWithBlendMode (material, RenderingMode.Opaque);
+			}
 		}
-	}*/
+	}
 
 	public void SetAlpha(float a)
 	{
@@ -345,6 +395,7 @@ public class SystemBrowser : MonoBehaviour {
 		SetAlphaForSubsystems (a);
 		SetAlphaForTrash (a);
 	}
+
 	public void SetAlphaForSubsystems(float a)
 	{
 		for (int i = 0; i < meshesALL.Length; ++i)
@@ -355,30 +406,41 @@ public class SystemBrowser : MonoBehaviour {
 				{
 					foreach (Material material in rend.materials)
 					{
-						if (material.HasProperty("_node_op"))
-							material.SetFloat("_node_op", a);
-						SetColorMaterialAlpha(material, "_Color", a);
+						SetAlphaForMaterial (material, a);
 					}
 				}
 			}
 		}
 	}
+
 	public void SetAlphaForTrash(float a)
 	{
 		foreach (MeshRenderer rend in meshesTrash)
 		{
 			foreach (Material material in rend.materials)
 			{
-				if (material.HasProperty("_node_op"))
-					material.SetFloat("_node_op", a);
-				SetColorMaterialAlpha(material, "_Color", a);
+				SetAlphaForMaterial (material, a);
 			}
 		}
+	}
+
+	public void SetAlphaForMaterial (Material material, float a)
+	{
+		//для нестандартных шейдеров
+		//(ShaderForge, специальный узел - node_op - контролирует параметр opacity)
+		if (material.HasProperty("_node_op"))
+			material.SetFloat("_node_op", a);
+
+		//для стандартного шейдера
+		SetColorMaterialAlpha(material, "_Color", a);
 	}
 
 	//TODO: fix increadible code duplicate !!!
 	void Move(GameObject obj, float start_time, float shift_time, Vector3 from, Vector3 to)
 	{
+		if (from == to)
+			return;
+		
 		float journeyLength = Vector3.Distance(from, to);
 		float speed = journeyLength / shift_time;
 		float distCovered = (Time.time - start_time) * speed;
@@ -386,6 +448,7 @@ public class SystemBrowser : MonoBehaviour {
 
 		obj.transform.position = Vector3.Lerp(from, to, fractJourney);
 	}
+
 	void MoveLocal(GameObject obj, float start_time, float shift_time, Vector3 from, Vector3 to)
 	{
 		if (from == to)
@@ -399,21 +462,30 @@ public class SystemBrowser : MonoBehaviour {
 		//Debug.Log (from + "/" + to);
 		obj.transform.localPosition = Vector3.Lerp(from, to, fractJourney);
 	}
+
 	void ChangeDist(MouseOrbit orb, float start_time, float shift_time, float from, float to)
 	{
+		if (from == to)
+			return;
+
 		float journeyLength = Mathf.Abs (to - from);
 		float speed = journeyLength / shift_time;
 		float distCovered = (Time.time - start_time) * speed;
 		float fractJourney = distCovered / journeyLength;
 		float dist = Mathf.Lerp (from, to, fractJourney);
 		
-		orb.distance = dist;
-		orb.cameraDistance.transform.localPosition = new Vector3(orb.cameraDistance.transform.localPosition.x, 
-		                                                    orb.cameraDistance.transform.localPosition.y, 
-		                                                    -dist);
+		orb.Distance = dist;
+		//orb.cameraDistance.transform.localPosition = new Vector3(orb.cameraDistance.transform.localPosition.x, 
+		 //                                                   orb.cameraDistance.transform.localPosition.y, 
+		 //                                                   -dist);
 	}
+		
+
 	void ChangeAlpha(GameObject obj, float start_time, float shift_time, float from, float to)
 	{
+		if (from == to)
+			return;
+		
 		float journeyLength = Mathf.Abs (to - from);
 		float speed = journeyLength / shift_time;
 		float distCovered = (Time.time - start_time) * speed;
@@ -423,6 +495,7 @@ public class SystemBrowser : MonoBehaviour {
 		SetAlpha(alpha);
 	}
 	//--- increadible code duplicate --- !!!
+
 	public int GetSubsystemIndex(GameObject obj)
 	{
 		List<Subsystem> list = Subs.list;
@@ -434,7 +507,7 @@ public class SystemBrowser : MonoBehaviour {
 		return -1;
 	}
 
-	// Go to subsystem browsing with check current situation
+	// Go to subsystem browsing with check current situation ====================================
 	public void GoToSubsystemWithCheck(int subs_index)
 	{
 		if (isReady == false) return;
@@ -442,14 +515,20 @@ public class SystemBrowser : MonoBehaviour {
 		if (subs_index == -1 || subs_index == current_subs_index) return;
 		if (Subs.list[subs_index].gameObject == null) return;
 
-		if (current_subs_index == -1 && IsHiddenSubsystems()==false)
-			GoToSubsystem(subs_index);
+		if (current_subs_index == -1)
+		{
+			GoToSubsystem (subs_index);
+		}
 		else
 		{
 			stored_index = subs_index;
 			GoToSystem();
 		}
 	}
+
+	//===============================================================================
+	//Is inactive subsystems 
+	//===============================================================================
 	public bool IsHiddenSubsystems()
 	{
 		foreach (Subsystem sub in Subs.list)
@@ -459,11 +538,18 @@ public class SystemBrowser : MonoBehaviour {
 		}
 		return false;
 	}
+
+	//===============================================================================
+	//
+	//===============================================================================
 	public void HideSubsystem(int index)
 	{
 		Subs.list [index].gameObject.SetActive (false);
 	}
-	//Go to system browsing
+
+	//===============================================================================
+	// Go to system browsing
+	//===============================================================================
 	public void GoToSystem()
 	{
 		if (isReady == false) //browser is busy
@@ -473,48 +559,40 @@ public class SystemBrowser : MonoBehaviour {
 
 		isReady = false;
 		FixTime ();
-		//orbitNav.target = GO.transform;
-		//orbitNav.SetTarget (GO.transform;);
 
-		//new fuctional +++
-		//foreach (Subsystem sub in Subs.list)
-		//	sub.gameObject.SetActive (true);
-		//new fuctional ---
-
-		//switch point from and point to, start distance
-		//and finish distance
+		//switch point from and point to, start distance and finish distance
 		SwithVector3Value (ref subTo, ref subFrom);
+		//SwithVector3Value (ref parallelTo, ref parallelFrom);
 
-		SwithVector3Value (ref parallelTo, ref parallelFrom);
-		//parallelFrom = orbitNav.gameObject.transform.localPosition;
-		//parallelTo = new Vector3(0,0,0);
+		parallelFrom = orbitNav.gameObject.transform.localPosition;
+		parallelTo = new Vector3 (0, 0, 0);
 
-		//SwithFloatValue (ref distFrom, ref distTo);
 		distFrom = orbitNav.distance;
-		distTo = Mathf.Min(orbitNav.distanceMax, orbitNav.distance + zoomIncrement);
+		distTo = startCamDistance; //Mathf.Min(orbitNav.distanceMax, orbitNav.distance + zoomIncrement);
 
-		//orbitNav.target = cameraHelper.transform; //look at camera helper
-		orbitNav.SetTarget (cameraHelper.transform);
-		state = State.ZoomOutSubsystem; //next state
-
-		//current_subs_index = -1;
+		state = BrowserState.ZoomOutSubsystem; //next state
 	}
 
+	//===============================================================================
 	// Go to subsystem browsing; NOT FOR EXTERNAL USING!
-	void GoToSubsystem(int subs_index)
+	//===============================================================================
+	public void GoToSubsystem(int subs_index)
 	{
+		if (IsHiddenSubsystems ())
+			Subs.list [subs_index].gameObject.SetActive (true);
+
 		isReady = false;
-		state = State.ReduceAlpha;
+		state = BrowserState.ReduceAlpha;
+		EnableTransparency ();
 		FixTime ();
 		current_subs_index = subs_index;
 		if (stored_index != -1) //clear memory about task
 			stored_index = -1;
-
-		//clonedSub = clones[subs_index];
-		//clonedSub.SetActive (true);
 	}
 
+	//===============================================================================
 	//Reduce alpha-channel of whole system
+	//===============================================================================
 	void ReduceAlpha()
 	{
 		if (m_alpha != alphaMin)
@@ -524,32 +602,43 @@ public class SystemBrowser : MonoBehaviour {
 			else
 			{
 				m_alpha = alphaMin;
-				SetAllMeshesVisibility(false); //кроме выбранной
+				//SetAllMeshesVisibility(false); //кроме выбранной
 			}
 		}
 		else
 		{
-			SetAllMeshesVisibility(false); //кроме выбранной //!!!
-			FixTime();
-			state = State.ZoomInSubsystem; //next state
-
-			//cameraHelper.transform.position = GO.transform.position;
-			//orbitNav.target = cameraHelper.transform;
-			orbitNav.SetTarget(cameraHelper.transform);
-
-			subFrom = GO.transform.position;
-			//subTo = clonedSub.transform.position;
-			subTo = CalcCenterOfGameObject(Subs.list[current_subs_index].gameObject); //clonedSub
-
-			parallelFrom = orbitNav.transform.localPosition;
-			parallelTo = new Vector3(0,0,0);
-
-			distFrom = orbitNav.distance;
-			distTo = Mathf.Max(orbitNav.distanceMin, orbitNav.distance - zoomIncrement);
+			PrepareForZoomIn ();
 		}
 	}
 
+	//===============================================================================
+	//
+	//===============================================================================
+	void PrepareForZoomIn()
+	{
+		state = BrowserState.ZoomInSubsystem; //next state
+		SetAllMeshesVisibility(false); //кроме выбранной //!!!
+		DisableTransparency();
+		FixTime();
+
+		subFrom = mainPos;
+		subTo = CalcCenterOfGameObject2(Subs.list[current_subs_index].gameObject); 
+
+		//панорамирование нужно будет сбросить
+		parallelFrom = orbitNav.transform.localPosition;
+		parallelTo = new Vector3(0,0,0);
+
+		distFrom = orbitNav.distance;
+		//distTo = Mathf.Max(orbitNav.distanceMin, orbitNav.distance - zoomIncrement);
+		distTo = Mathf.Max(orbitNav.distanceMin, Subs.list[current_subs_index].startCamDistance);
+
+		camRotateFrom = orbitNav.transform.rotation;
+		camRotateTo = Quaternion.Euler (Subs.list [current_subs_index].startCamRotation);
+	}
+
+	//===============================================================================
 	//Increase alpha-channel of whole system 
+	//===============================================================================
 	void IncreaseAlpha()
 	{
 		if (m_alpha != alphaMax)
@@ -564,59 +653,122 @@ public class SystemBrowser : MonoBehaviour {
 		}
 		else
 		{
-			state = State.System; //next state
-			//clonedSub.SetActive(false);
-			//orbitNav.target = GO.transform;
-			orbitNav.SetTarget(GO.transform);
+			state = BrowserState.System; //next state
 			current_subs_index = -1;
+			DisableTransparency ();
 		}
 	}
 
+	//===============================================================================
 	//Move camera closer to selected subsystem
+	//===============================================================================
 	void ZoomInSub()
 	{
-		if (cameraHelper.transform.position != subTo)
-		{
-			Move(cameraHelper, startTime, shiftZoomTime, subFrom, subTo);
-			MoveLocal(orbitNav.gameObject, startTime, shiftZoomTime, parallelFrom, parallelTo);
-			//Move(orbitNav.cameraRotation, startTime, shiftZoomTime, subFrom, subTo);
-			ChangeDist(orbitNav, startTime, shiftZoomTime, distFrom, distTo);
-		}
-		else 
-		{
-			state = State.Subsystem; //next state
-			isReady = true;
-			//orbitNav.target = clonedSub.transform;
-			orbitNav.SetTarget(cameraHelper.transform);
+		bool IsEnd = false;
 
-			//mainCam.transform.LookAt(GO.transform);
+		if (Time.time > startTime + shiftZoomTime) //если время кончилось
+		{
+			IsEnd = true;
+			cameraHelper.transform.position = subTo;
+			orbitNav.gameObject.transform.localPosition = parallelTo;
+			orbitNav.cameraRotation.transform.localRotation = camRotateTo;
+			orbitNav.Distance = distTo;
+		}
+		else
+		{
+			if ((cameraHelper.transform.position != subTo) ||
+			    (orbitNav.gameObject.transform.localPosition != parallelTo) ||
+			    (orbitNav.cameraRotation.transform.localRotation != camRotateTo) ||
+			    (orbitNav.Distance != distTo)) {
+				//Move(cameraHelper, startTime, shiftZoomTime, subFrom, subTo);
+				//MoveLocal(orbitNav.gameObject, startTime, shiftZoomTime, parallelFrom, parallelTo);
+				//ChangeDist(orbitNav, startTime, shiftZoomTime, distFrom, distTo);
+
+				float t = (Time.time - startTime) / shiftZoomTime;
+				cameraHelper.transform.position = Vector3.Lerp (subFrom, subTo, t);
+				orbitNav.gameObject.transform.localPosition = Vector3.Lerp (parallelFrom, parallelTo, t);
+				orbitNav.cameraRotation.transform.localRotation = Quaternion.Lerp (camRotateFrom, camRotateTo, t);
+				orbitNav.Distance = Mathf.Lerp (distFrom, distTo, t);
+			}
+			else
+				IsEnd = true;
+		}
+			
+		if (IsEnd)
+		{
+			state = BrowserState.Subsystem; //next state
+			isReady = true;
+			bGUI.ReceiveEventSubsystem ();
+			if (taskToPlayAnimationInSubsystem)
+			{
+				taskToPlayAnimationInSubsystem = false;
+				bGUI.PlayAnimation ();
+			}
 		}
 	}
 
+	//===============================================================================
 	//Move camera further from selected subsystem
+	//===============================================================================
 	void ZoomOutSub()
 	{
-		if (cameraHelper.transform.position != subTo)
+		bool IsEnd = false;
+
+		if (Time.time > startTime + shiftZoomTime) //если время кончилось
 		{
-			Move(cameraHelper, startTime, shiftZoomTime, subFrom, subTo);
-			MoveLocal(orbitNav.gameObject, startTime, shiftZoomTime, parallelFrom, parallelTo);
-			ChangeDist(orbitNav, startTime, shiftZoomTime, distFrom, distTo);
+			IsEnd = true;
+
+			//ставим все на конечные позиции
+			cameraHelper.transform.position = subTo;
+			orbitNav.gameObject.transform.localPosition = parallelTo;
+			orbitNav.Distance = distTo;
 		}
-		else 
+		else
 		{
-			FixTime();
-			state = State.IncreaseAlpha; //next state
-			SetAllMeshesVisibility(true); //кроме выбранной //!!!
+			if ((cameraHelper.transform.position != subTo) ||
+				(orbitNav.gameObject.transform.localPosition != parallelTo) ||
+				(orbitNav.Distance != distTo))
+			{
+				//Move(cameraHelper, startTime, shiftZoomTime, subFrom, subTo);
+				//MoveLocal(orbitNav.gameObject, startTime, shiftZoomTime, parallelFrom, parallelTo);
+				//ChangeDist(orbitNav, startTime, shiftZoomTime, distFrom, distTo);
+
+				float t = (Time.time - startTime) / shiftZoomTime;
+				cameraHelper.transform.position = Vector3.Lerp(subFrom, subTo, t);
+				orbitNav.gameObject.transform.localPosition = Vector3.Lerp (parallelFrom, parallelTo, t);
+				orbitNav.Distance = Mathf.Lerp (distFrom, distTo, t);
+			}
+			else 
+			{
+				IsEnd = true;
+			}
 		}
+
+		if (IsEnd)
+			PrepareForIncreaseAlpha ();
+	}
+	//===============================================================================
+	//
+	//===============================================================================
+	void PrepareForIncreaseAlpha()
+	{
+		FixTime();
+		EnableTransparency ();
+		state = BrowserState.IncreaseAlpha; //next state
+		SetAllMeshesVisibility(true); //кроме выбранной //!!!
 	}
 
+	//===============================================================================
 	//Save current time as start time of next process (animation)
+	//===============================================================================
 	void FixTime()
 	{
 		startTime = Time.time;
 	}
 
+	//===============================================================================
 	//float a <=> b
+	//===============================================================================
 	void SwithFloatValue(ref float a, ref float b)
 	{
 		float temp;
@@ -625,7 +777,9 @@ public class SystemBrowser : MonoBehaviour {
 		b = temp;
 	}
 
+	//===============================================================================
 	//Vector3 a <=> b
+	//===============================================================================
 	void SwithVector3Value(ref Vector3 a, ref Vector3 b)
 	{
 		Vector3 temp;
@@ -651,6 +805,10 @@ public class SystemBrowser : MonoBehaviour {
 		foreach (Subsystem sub in Subs.list)
 			SetVisibility (sub.gameObject, isVisible);
 	}
+
+	//===============================================================================
+	//
+	//===============================================================================
 	void SetAllMeshesVisibility(bool isVisible)
 	{
 		//foreach (MeshRenderer mesh in meshes)
@@ -670,7 +828,10 @@ public class SystemBrowser : MonoBehaviour {
 			m.enabled = isVisible;
 		}
 	}
-	//Set object visible or invisible
+
+	//===============================================================================
+	// Set object visible or invisible
+	//===============================================================================
 	void SetVisibility(GameObject obj, bool isVisible)
 	{
 		MeshRenderer[] meshes = obj.GetComponentsInChildren<MeshRenderer>();
@@ -679,6 +840,10 @@ public class SystemBrowser : MonoBehaviour {
 			rend.enabled = isVisible;
 		}
 	}
+
+	//===============================================================================
+	// Mass center for all meshes
+	//===============================================================================
 	Vector3 CalcCenterOfGameObject(GameObject obj)
 	{
 		int N = 0;
@@ -691,5 +856,50 @@ public class SystemBrowser : MonoBehaviour {
 		}
 		center /= (float)N;
 		return center;
+	}
+
+	//===============================================================================
+	// Total bounding box for all meshes
+	//===============================================================================
+	Vector3 CalcCenterOfGameObject2(GameObject obj)
+	{
+		Vector3 center = new Vector3(0,0,0);
+		Vector3 minPoint = new Vector3(0,0,0);
+		Vector3 maxPoint = new Vector3(0,0,0);
+		MeshRenderer[] meshes = obj.GetComponentsInChildren<MeshRenderer>();
+		minPoint = meshes [0].bounds.min;
+		maxPoint = meshes [0].bounds.max;
+		foreach (MeshRenderer rend in meshes)
+		{
+			minPoint = Vector3.Min (minPoint, rend.bounds.min);
+			maxPoint = Vector3.Max (maxPoint, rend.bounds.max);
+		}
+
+		center = (minPoint + maxPoint)/2;
+		return center;
+	}
+	public void GiveTaskToPlayAnimation(BrowsingMode mode)
+	{
+		if (mode == BrowsingMode.System)
+			taskToPlayAnimationInSystem = true;
+		else
+			taskToPlayAnimationInSubsystem = true;
+	}
+
+	public int GetIndexOfSubsystem(GameObject subsystemGameObject)
+	{
+		for (int i = 0; i < Subs.list.Count; ++i)
+		{
+			if (Subs.list [i].gameObject == subsystemGameObject)
+				return i;
+		}
+		return -1;
+	}
+	public Subsystem GetSelectedSubsystem()
+	{
+		if (current_subs_index == -1)
+			return null;
+		else
+			return Subs.list [current_subs_index];
 	}
 }

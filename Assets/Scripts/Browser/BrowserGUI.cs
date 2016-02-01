@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 //Advanced GUI for browser
 //Using new UI System
@@ -25,9 +28,15 @@ public class BrowserGUI : MonoBehaviour {
 	public Button play;
 	public Button stop;
 
+	public Button editButton;
+	public GameObject editPanel;
+	public InputField inputField;
+
 	private GameObject target;
 	private SubsystemList list;
 	private SystemBrowser browser;
+
+	//private string editableText = "Начальный текст";
 
 	// Use this for initialization
 	void Start () 
@@ -49,9 +58,6 @@ public class BrowserGUI : MonoBehaviour {
 
 		//get visualizations
 		Visualizations = target.GetComponentsInChildren<VisClass>();
-
-		//search audio in childrens
-		//audio = target.GetComponentInChildren<AudioSource>();
 
 		textSystemName.text = list.systemName;
 		if (list.list.Count > 0)
@@ -84,26 +90,71 @@ public class BrowserGUI : MonoBehaviour {
 		}
 	}
 
+	public void OnClickEditButton()
+	{
+		//ToogleGameObjectActivity(GameObject obj);
+		if (editPanel.activeInHierarchy == true) {
+			editPanel.SetActive (false);
+		} 
+		else
+		{
+			textAboutPanel.SetActive (false);
+			LoadEditPanel ();
+		}
+	}
+
+	public void OnClickEditOkButton()
+	{
+		//1. сохраняем текст
+		SaveText();
+
+		//2. убираем панель
+		editPanel.SetActive (false);
+	}
+
+	public void OnClickEditApplyButton()
+	{
+		//сохраняем текст
+		SaveText();
+	}
+
+	public void SaveText()
+	{
+		//сначала пишет в сам объект
+		Subsystem sub = browser.GetSelectedSubsystem();
+		sub.textAbout = inputField.text;
+
+		//затем пишем на диск для всех подсистем
+		browser.Subs.WriteToFile("Subsystems");
+	}
+
+	public void OnClickEditCancelButton()
+	{
+		editPanel.SetActive (false);
+	}
+
 	void SetInitialGUIState()
 	{
 		SetInitialButtonStates ();
 		SetInitialTextContent ();
 		dropDownMenu.SetActive (false);
+		editPanel.SetActive (false);
+		textAboutPanel.SetActive (false);
 	}
 	void SetInitialButtonStates()
 	{
 		menu.interactable = false;
 		compile.interactable = false;
-		//compile.transform.gameObject.se
 		home.interactable = true;
 		help.interactable = false;
+		editButton.interactable = false;
 	}
 	void SetInitialTextContent()
 	{
 		textSystemName.text = "";
 		textSubsystemName.text = "";
 		textAbout.text = "";
-		textAboutPanel.SetActive (false);
+
 	}
 
 	public void LoadLevel(int level)
@@ -111,25 +162,55 @@ public class BrowserGUI : MonoBehaviour {
 		Application.LoadLevel (level);
 	}
 
+	public void HomeButtonClicked()
+	{
+		Stop (true);
+		Application.LoadLevel (0);
+	}
+
 	//Go to selected subsystem
 	public void ChooseSubsystem(int index)
 	{
 		//ToogleDropDown ();
 		dropDownMenu.SetActive (false);
-		if (browser.IsReady () == false)
+		if (browser.IsReady == false)
 			return;
+
+		//browser.GoToSubsystemWithCheck(index);
+
+		if (index == -1 || index == browser.CurrentSubsystemIndex) return;
+		if (browser.Subs.list[index].gameObject == null) return;
+		//если сейчас проигрывается анимация, её надо остановить
+		if (VisState) 
+		{
+			Stop (true);
+		}
+
+		//переходим к выбранной, или сначала собираемся, а потом переходим
+		if (browser.CurrentSubsystemIndex == -1)
+			browser.GoToSubsystem(index);
+		else
+		{
+			browser.StoredIndex = index;
+			Compile ();
+		}
+	}
+
+	public void ReceiveEventSubsystem()
+	{
+		int index = browser.CurrentSubsystemIndex;
+		textSubsystemName.text = list.list [index].name;
+		textAbout.text = list.list [index].textAbout;
 
 		compile.interactable = true;
 		help.interactable = true;
-		textSubsystemName.text = list.list [index].name;
-		textAbout.text = list.list [index].textAbout;
-		browser.GoToSubsystemWithCheck(index);
+		editButton.interactable = true;
 	}
 
 	//Go to whole system browsing
 	public void Compile()
 	{
-		if (browser.IsReady () == false)
+		if (browser.IsReady == false)
 			return;
 
 		//new fuctional +++
@@ -139,8 +220,12 @@ public class BrowserGUI : MonoBehaviour {
 
 		textSubsystemName.text = "";
 		HideTextAbout ();
+		editPanel.SetActive (false);
 		help.interactable = false;
+
+		editButton.interactable = false;
 		compile.interactable = false;
+		Stop (true); //
 		browser.GoToSystem();
 	}
 	public void HideSubsystem(int index)
@@ -177,7 +262,78 @@ public class BrowserGUI : MonoBehaviour {
 	{
 		obj.SetActive (!obj.activeInHierarchy);
 	}
+
+	public void OnClickButtonHelp()
+	{
+		editPanel.SetActive (false);
+		textAbout.text = browser.GetSelectedSubsystem ().textAbout;
+		ToogleGameObjectActivity (textAboutPanel);
+		//textAboutPanel.SetActive (true);
+		//LoadEditPanel ();
+
+	}
+	public void LoadEditPanel()
+	{
+		Subsystem sub = browser.GetSelectedSubsystem();
+		if (sub != null) {
+			//1. загружаем описание текущей подсистемы
+			inputField.text = sub.textAbout;
+
+			//2. показываем панель
+			editPanel.SetActive (true);
+		}
+		else {
+			Debug.LogError ("Try to edit description of subsystem when no subsystems selected");
+		}
+
+	}
 	public void Play()
+	{
+		if (browser.IsReady == false)
+			return;
+		if (browser.playAnimationMode == BrowsingMode.System) //если анимация проигрывается в системе
+		{ 
+			if (browser.State == BrowserState.System) //если мы и так в системе
+			{ 
+				PlayAnimation();
+			} 
+			else
+			{
+				browser.GiveTaskToPlayAnimation (BrowsingMode.System);
+				Compile ();
+			}
+		} 
+		else   //если анимация проигрывается в подсистеме
+		{
+			int indexOfSub = browser.GetIndexOfSubsystem (browser.playAnimationSubsystem);
+			if (indexOfSub == -1)
+				return;
+
+			if (browser.State == BrowserState.Subsystem) //если мы в подсистеме
+			{
+				if (indexOfSub == browser.CurrentSubsystemIndex) //если мы в нужной подсистеме
+				{ 
+					PlayAnimation ();
+				} 
+				else  //мы в какой-то другой подсистеме
+				{
+					browser.GiveTaskToPlayAnimation (BrowsingMode.Subsystem);
+					ChooseSubsystem (indexOfSub);
+				}
+			}
+			else
+			{
+				
+				if (indexOfSub != -1)
+				{
+					browser.GiveTaskToPlayAnimation (BrowsingMode.Subsystem);
+					ChooseSubsystem (indexOfSub);
+				}
+			}
+
+		}
+	}
+	public void PlayAnimation()
 	{
 		//set current state
 		VisState = true;
@@ -190,17 +346,35 @@ public class BrowserGUI : MonoBehaviour {
 		foreach (VisClass vis in Visualizations)
 			vis.StartVis ();
 	}
-	public void Stop()
+	public void Stop(bool now)
 	{
-		//set current state
-		VisState = false;
+		//if (VisState == true)
+		//{
+			VisState = false;
 
-		//switch buttons
-		play.transform.gameObject.SetActive (true);
-		stop.transform.gameObject.SetActive (false);
+			//switch buttons
+			play.transform.gameObject.SetActive (true);
+			stop.transform.gameObject.SetActive (false);
 
-		//stop all visualizations
-		foreach (VisClass vis in Visualizations)
-			vis.StopVis ();
+			//stop all visualizations
+			foreach (VisClass vis in Visualizations)
+			{
+				if (!now)
+					vis.StopVis ();
+				else
+					vis.StopImmidiately ();
+			}
+		//}
+	}
+
+	public void Update()
+	{
+		if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+		{
+			if (EventSystem.current.IsPointerOverGameObject () == false)
+			{
+				dropDownMenu.SetActive (false);
+			}
+		}
 	}
 }

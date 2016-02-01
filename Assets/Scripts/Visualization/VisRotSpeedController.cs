@@ -80,21 +80,9 @@ public class VisRotSpeedController : VisClass {
 	public override void Start()
 	{
 		base.Start();
-
 		Rot = VisObject.GetComponent<VisRotation>();
-		//у каждого объекта ищем визуализацию вращения
-		//Rots = new VisRotation[Objs.Length];
-		//for (int i = 0; i < Objs.Length; ++i)
-		//	Rots[i] = Objs[i].GetComponent<VisRotation>();
-
-		//L1 = soundStart.clip.length;
-		//L2 = soundWork.clip.length; 
-		//L3 = soundStop.clip.length; 
 	}
-	//public void SetObjectsRotationSpeed(float speed)
-	//{
-		//foreach ()
-	//}
+
 	public override void Update()
 	{
 		//обновление состояний
@@ -123,10 +111,7 @@ public class VisRotSpeedController : VisClass {
 			Rot.Speed = CorrectTimeLerp(q, dt, v_from, v_to);
 		}
 	}
-	//public void SetAudioSource()
-	//{
-	//	source = GetComponent<AudioSource>();
-	//}
+
 	public float CorrectTimeLerp(float start_time, float dt, float from, float to)
 	{
 		float journeyLength = Mathf.Abs (to - from);

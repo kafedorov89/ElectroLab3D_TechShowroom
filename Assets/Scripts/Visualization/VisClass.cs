@@ -26,16 +26,23 @@ public class VisClass : MonoBehaviour {
 
     public virtual void StartVis()
     {
-        Debug.Log("StartVis");
+        //Debug.Log("StartVis");
         VisStarted = true;
     }
 
     public virtual void StopVis()
     {
-        Debug.Log("StopVis");
+        //Debug.Log("StopVis");
         VisStarted = false;
         Activated = false;
     }
+
+	//остановить анимацию несмотря ни на что, мнгновенно;
+	//по умолчанию включается обычный стоп;
+	public virtual void StopImmidiately()
+	{
+		StopVis ();
+	}
 
     // Use this for initialization
     public virtual void Start () {

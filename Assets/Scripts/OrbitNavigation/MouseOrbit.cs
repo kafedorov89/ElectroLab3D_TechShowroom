@@ -7,7 +7,18 @@ public class MouseOrbit: MonoBehaviour {
 	//move camera, not object
 
 	public Transform target;
+
 	public float distance;
+	public float Distance
+	{
+		get { return distance; }
+		set 
+		{ 
+			distance = Mathf.Clamp(value, distanceMin, distanceMax);
+			cameraDistance.transform.localPosition = new Vector3(0.0f, 0.0f, -distance);
+		}
+	}
+
 	public float xSpeed = 120.0f;
 	public float ySpeed = 120.0f;
 	
@@ -17,10 +28,10 @@ public class MouseOrbit: MonoBehaviour {
 	public float distanceMin = 0.5f;
 	public float distanceMax = 15f;
 	
-	//private Rigidbody rigidbody;
-	
 	float x = 0.0f;
 	float y = 0.0f;
+	float dx = 0.0f;
+	float dy = 0.0f;
 
     public float step = 0.16f;
     public float smoothing = 10f;
@@ -33,7 +44,9 @@ public class MouseOrbit: MonoBehaviour {
     public GameObject cameraRotation;
     public GameObject cameraDistance;
     private bool PosInited;
+
     public float startDistance = 10.0f;
+	public Vector3 startRotation = new Vector3 (0,0,0);
 
     void ParallelMoving()
     {
@@ -86,13 +99,12 @@ public class MouseOrbit: MonoBehaviour {
 		x = angles.y;
 		y = angles.x;
 
-        distance = startDistance;
-        cameraDistance.transform.localPosition = new Vector3(0.0f, 0.0f, -distance);
+        Distance = startDistance;
     }
 	
     void Update()
     {
-        //ParallelMoving();
+  
     }
 
 	public void SetTarget(Transform t)
@@ -121,17 +133,21 @@ public class MouseOrbit: MonoBehaviour {
                 Quaternion rotation = new Quaternion();
 
                 //Rotation
-                if (Input.GetMouseButton(0))
-                {
-                    //MouseEvent = true;
-                    x += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
-                    y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
-                    y = ClampAngle(y, yMinLimit, yMaxLimit);
-                    rotation = Quaternion.Euler(y, x, 0);
-                    cameraRotation.transform.localRotation = rotation;
-					//cameraRotation.transform.rotation = rotation;
-                    //transform.LookAt(cameraContainer.transform);
-                }
+				if (Input.GetMouseButton (0)) {
+                    
+					x = cameraRotation.transform.localRotation.eulerAngles.y;
+					y = cameraRotation.transform.localRotation.eulerAngles.x;
+
+					dx = Input.GetAxis ("Mouse X") * xSpeed * 0.02f;
+					dy = Input.GetAxis ("Mouse Y") * ySpeed * 0.02f;
+					x += dx;
+					y -= dy;
+					//Debug.Log ("Source: " + y.ToString());
+					y = ClampAngle (y, yMinLimit, yMaxLimit);
+					//Debug.Log ("Clamp: " + y.ToString());
+					rotation = Quaternion.Euler (y, x, 0);
+					cameraRotation.transform.localRotation = rotation;
+				}
 
                 //Zoom
                 if (Input.GetAxis("Mouse ScrollWheel") != 0)
@@ -151,10 +167,24 @@ public class MouseOrbit: MonoBehaviour {
 
 	public static float ClampAngle(float angle, float min, float max)
 	{
+		//угол при передаче в Mathf.Clamp() должен быть строго от -90 до 90
 		if (angle < -360F)
 			angle += 360F;
 		if (angle > 360F)
 			angle -= 360F;
-		return Mathf.Clamp(angle, min, max);
+
+		float arcsin = Mathf.Asin (Mathf.Sin (angle / 180.0f * Mathf.PI));
+		angle = arcsin * 180.0f / Mathf.PI;
+		//Debug.Log ("Arcsin = " + angle.ToString());
+
+		float clamped = Mathf.Clamp(angle, min, max); 
+		//Debug.Log ("Clamped = " + clamped.ToString());
+		return clamped;
+	}
+	public void SetRotation(Vector3 rot)
+	{
+		cameraRotation.transform.localRotation = Quaternion.Euler (rot.x, rot.y, rot.z);
+
+
 	}
 }
