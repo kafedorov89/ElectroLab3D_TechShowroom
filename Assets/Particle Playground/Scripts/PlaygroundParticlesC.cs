@@ -1,8 +1,11 @@
+//#define UNITY_EDITOR
+
 using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using PlaygroundSplines;
+//using UnityEditor;
 
 namespace ParticlePlayground {
 	[RequireComponent (typeof(ParticleSystem))]
@@ -2732,7 +2735,7 @@ namespace ParticlePlayground {
 				#if UNITY_EDITOR
 				if (!UnityEditor.EditorApplication.isPlaying) {
 					calculate = true;
-					skipFrustumCheck = true;
+					skipFrustumCheck = true; 
 				}
 				#endif
 				if (!skipFrustumCheck && Camera.main!=null && PlaygroundC.frustumPlanes!=null) {

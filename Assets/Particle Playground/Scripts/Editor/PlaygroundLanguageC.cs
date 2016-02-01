@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//#define UNITY_EDITOR 
+
+using UnityEngine;
 using System;
 using System.Collections;
 #if UNITY_EDITOR

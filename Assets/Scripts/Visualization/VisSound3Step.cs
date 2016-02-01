@@ -19,37 +19,71 @@ public class VisSound3Step : VisClass {
 	
 	public override void StartVis()
 	{
-		base.StartVis();
-		unitState = UnitState.Starting;
-		soundStart.Play ();
-		t = Time.time + L1; //когда должен запуститься звук работы
+		if (unitState == UnitState.Idle) //Idle => Starting
+		{
+			base.StartVis();
+			unitState = UnitState.Starting;
+			soundStart.Play ();
+			t = Time.time + L1; //когда должен запуститься звук работы
+		}
+		else if (unitState == UnitState.Stopping)
+		{
+			base.StartVis();
+			unitState = UnitState.Starting;
+
+			//останавливаем стартование
+			float pos = soundStop.time;
+			float p = pos / L3;
+			soundStop.Stop();
+
+			//запускаем остановку
+			soundStart.time = L1 * (1.0f - p);
+			soundStart.Play ();
+			//Debug.Log("Stop time: " + soundStop.time);
+
+			t = Time.time + pos;
+
+		}
 	}
 	
 	public override void StopVis()
 	{
-		base.StopVis();
-		if (unitState == UnitState.Starting) //если мы только стартуем
-		{ 
-			//останавливаем стартование
-			float pos = soundStart.time;
-			float p = pos / L1;
-			//Debug.Log("Pos: " + pos);
-			soundStart.Stop();
-
-			//запускаем остановку
-			soundStop.time = L3 * (1.0f - p);
-			//Debug.Log("Stop time: " + soundStop.time);
-
-			t2 = Time.time + pos; 
-		}
-		else if (unitState == UnitState.Working)
+		if (unitState == UnitState.Idle || unitState == UnitState.Stopping)
 		{
-			t2 = Time.time + L3;
-			soundWork.Stop();
+			return;
 		}
-		soundStop.Play ();
+		else
+		{
+			if (unitState == UnitState.Starting) //если мы только стартуем
+			{ 
+				//останавливаем стартование
+				float pos = soundStart.time;
+				float p = pos / L1;
+				soundStart.Stop();
 
-		unitState = UnitState.Stopping;
+				//запускаем остановку
+				soundStop.time = L3 * (1.0f - p);
+				//Debug.Log("Stop time: " + soundStop.time);
+
+				t2 = Time.time + pos; 
+			}
+			if (unitState == UnitState.Working) //если работаем
+			{
+				t2 = Time.time + L3;
+				soundWork.Stop();
+			}
+			soundStop.Play ();
+			unitState = UnitState.Stopping;
+		}
+	}
+
+	public override void StopImmidiately()
+	{
+		unitState = UnitState.Idle;
+		soundStart.Stop ();
+		soundWork.Stop ();
+		soundStop.Stop ();
+		t = t2 = 0.0f;
 	}
 	
 	public override void Start()
@@ -62,24 +96,26 @@ public class VisSound3Step : VisClass {
 
 	public override void Update()
 	{
-		if (unitState == UnitState.Starting &&
-			Time.time > t)
+		if (unitState == UnitState.Idle)
+		{
+			return;
+		}
+		if (unitState == UnitState.Starting && Time.time > t)
 		{
 			unitState = UnitState.Working;
 			soundStart.Stop();
 			soundWork.time = 5.0f;
 			soundWork.Play();
 		}
-		if (unitState == UnitState.Stopping &&
-		    Time.time > t2)
+		if (unitState == UnitState.Stopping && Time.time > t2)
 		{
 			unitState = UnitState.Idle;
+			base.StopVis();
 		}
-		if (soundWork.time > 10.0f)
-			soundWork.time = 5.0f;
+		if (unitState == UnitState.Working)
+		{
+			if (soundWork.time > 10.0f)
+				soundWork.time = 5.0f;
+		}
 	}
-	//public void SetAudioSource()
-	//{
-	//	source = GetComponent<AudioSource>();
-	//}
 }
