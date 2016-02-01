@@ -485,7 +485,7 @@ Transform:
   m_Children:
   - {fileID: 1862511552}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &590540842
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,7 +545,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &703704065
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,7 +596,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: .75, g: .75, b: .75, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -653,7 +653,7 @@ MonoBehaviour:
   distanceMin: .5
   distanceMax: 30
   step: .00999999978
-  smoothing: 1
+  smoothing: 4
   cameraRotation: {fileID: 472135407}
   cameraDistance: {fileID: 1862511551}
   startDistance: 10
@@ -1002,7 +1002,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 913913314}
-  m_LocalRotation: {x: -.430654287, y: .839309633, z: -.141798347, w: -.29998228}
+  m_LocalRotation: {x: -.430654317, y: .839309692, z: -.141798362, w: -.299982309}
   m_LocalPosition: {x: 12.5799999, y: 17.4400005, z: 19.7900009}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1094,7 +1094,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1614422131
 GameObject:
   m_ObjectHideFlags: 0
