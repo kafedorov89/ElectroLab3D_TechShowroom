@@ -10,11 +10,14 @@ public class SelectObject : MonoBehaviour {
 	private Vector3[] scales;   //initial scale of each target
 	private Ray ray;   
 	private RaycastHit hit; 	
+	
+	public float catchTime = 0.25f; //maximum time to catch object
+	private float lastDown = 0.0f; //when mouse button down
 
 	// Use this for initialization
 	void Start () 
 	{
-		SaveInitialScale();
+		//SaveInitialScale();
 	}
 	
 	//Save initial scale of all target objects
@@ -30,28 +33,36 @@ public class SelectObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		for (int i = 0; i < targets.Length; ++i)
+		if (Input.GetMouseButtonDown (0)) 
 		{
-			GameObject obj = targets[i];  //get current object
-			obj.transform.localScale = scales[i];  //set origin scale
+			lastDown = Time.time;
+		}
 
-			//detect collision between ray and gameobject collider
-			ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			if (Physics.Raycast(ray, out hit, maxDistance) && hit.collider.gameObject == obj)
+		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		if (Physics.Raycast(ray, out hit, maxDistance))
+		{
+			for (int i = 0; i < targets.Length; ++i)
 			{
-				//set increased scale
-				obj.transform.localScale = scaleFactor * scales[i];
-
-				//mouse click on object => Load Browser level 
-				if (Input.GetMouseButtonDown(0))
+				GameObject obj = targets[i];  //get current object
+				if (hit.collider.gameObject == obj)
 				{
-					GameObject ctrlObject = GameObject.FindWithTag("GameController");
-					GameControl ctrlComponent = ctrlObject.GetComponent<GameControl>();
-					obj.transform.SetParent(ctrlObject.transform);
-					ctrlComponent.SetTarget(obj);
-					Application.LoadLevel(1);  
+					//mouse click on object => Load Browser level 
+					if (Input.GetMouseButtonUp(0))
+					{
+						float deltaTime = Time.time - lastDown;
+						//print(deltaTime);
+						if (deltaTime < catchTime)
+						{
+							GameObject ctrlObject = GameObject.FindWithTag("GameController");
+							GameControl ctrlComponent = ctrlObject.GetComponent<GameControl>();
+							obj.transform.SetParent(ctrlObject.transform);
+							ctrlComponent.SetTarget(obj);
+							Application.LoadLevel(1);  
+						}
+					}
+					break;
 				}
-			}
+			}	
 		}
 	}
 }

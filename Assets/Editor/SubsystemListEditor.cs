@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using Newtonsoft.Json;
 
 [CustomEditor(typeof(SubsystemList))]
 public class SubsystemListEditor : Editor 
@@ -10,6 +11,7 @@ public class SubsystemListEditor : Editor
 	int index = 0;
 	int size = 0;
 
+	GameObject GO;
 	SubsystemList t;
 	SerializedObject GetTarget;
 	SerializedProperty ThisList;
@@ -21,6 +23,7 @@ public class SubsystemListEditor : Editor
 		t = (SubsystemList)target;
 		GetTarget = new SerializedObject(t);
 		ThisList = GetTarget.FindProperty("list"); // Find the List in our script and create a refrence of it
+		GO = t.gameObject;
 	}
 
 	public override void OnInspectorGUI()
@@ -32,11 +35,17 @@ public class SubsystemListEditor : Editor
 		SerializedProperty systemName = GetTarget.FindProperty ("systemName");
 		EditorGUILayout.PropertyField (systemName);
 
+		SerializedProperty dataFileName = GetTarget.FindProperty ("dataFileName");
+		EditorGUILayout.PropertyField (dataFileName);
+
 		//Get list size and show it
 		size = ThisList.arraySize;
 		EditorGUILayout.LabelField ("List size: " + size);
 
 		//Show buttons
+
+		//GetTarget.ApplyModifiedProperties();
+
 		EditorGUILayout.BeginHorizontal();
 		if (GUILayout.Button (new GUIContent ("Add"), GUILayout.Width (nButtonWidth))) 
 			Add ();
@@ -51,6 +60,19 @@ public class SubsystemListEditor : Editor
 		EditorGUILayout.EndHorizontal();
 		EditorGUILayout.Space();
 
+		EditorGUILayout.BeginVertical();
+		//if (GUILayout.Button (new GUIContent ("Search subsystems"))) //, GUILayout.Width (200))) 
+		//	SearchAndBuild ();
+		if (GUILayout.Button (new GUIContent ("Create mesh colliders"))) 
+			CreateMeshColliders();
+		if (GUILayout.Button (new GUIContent ("Delete mesh colliders"))) 
+			DeleteMeshColliders();
+		if (GUILayout.Button (new GUIContent ("Save subsystems to file"))) 
+			SaveDataToFile ();
+		if (GUILayout.Button (new GUIContent ("Load subsystems from file"))) 
+			LoadDataFromFile ();
+		EditorGUILayout.EndVertical();
+
 		//Create List<string> with names of subsystems,
 		//then create popup menu based on it
 		List<string> SubsystemNames = new List<string> (0);
@@ -64,16 +86,31 @@ public class SubsystemListEditor : Editor
 
 		//Get current selected index in popup menu
 		index = EditorGUILayout.Popup("Choose subsystem: ", index, vars);
-		if (index >= 0 && index < size)
+		if (index >= 0 && index < ThisList.arraySize)
 		{
 			//Allow user to configure properties of selected item
 			SerializedProperty MyListRef2 = ThisList.GetArrayElementAtIndex (index);
 			SerializedProperty MyName2 = MyListRef2.FindPropertyRelative ("name");
+			SerializedProperty MyUID2 = MyListRef2.FindPropertyRelative ("UID");
 			SerializedProperty MyGameObj2 = MyListRef2.FindPropertyRelative ("gameObject");
 			SerializedProperty MyTextAbout2 = MyListRef2.FindPropertyRelative ("textAbout");
-			EditorGUILayout.PropertyField (MyName2);
+			SerializedProperty MyStartCamDistance2 = MyListRef2.FindPropertyRelative ("startCamDistance");
+			SerializedProperty MyStartCamRotation2 = MyListRef2.FindPropertyRelative ("startCamRotation");
+			//GUI.enabled = false;
+
+			EditorGUILayout.PropertyField(MyName2);
+
+			GUI.enabled = false;
+			EditorGUILayout.PropertyField(MyUID2);
+			GUI.enabled = true;
+			//if (GUILayout.Button (new GUIContent ("Generate UID"), GUILayout.Width (200)))
+			//	MyUID2.stringValue = System.Guid.NewGuid ().ToString();
+
 			EditorGUILayout.PropertyField (MyGameObj2);
+			EditorGUILayout.PropertyField (MyStartCamDistance2);
+			EditorGUILayout.PropertyField (MyStartCamRotation2);
 			EditorGUILayout.PropertyField (MyTextAbout2);
+			//GUI.enabled = true;
 		}
 
 		//push our changes to origin object
@@ -82,24 +119,29 @@ public class SubsystemListEditor : Editor
 	//Add new item to the end of list (push back)
 	void Add()
 	{
-		if (size > 0)
-			ThisList.InsertArrayElementAtIndex(size - 1);
+		//Debug.Log (size);
+		if (ThisList.arraySize > 0)
+			ThisList.InsertArrayElementAtIndex(ThisList.arraySize - 1);
 		else
 			ThisList.InsertArrayElementAtIndex(0);
+		Debug.Log ("Added new subsystem");
 	}
 
 	//Delete current item
 	void Delete()
 	{
-		if (size > 0)
-			ThisList.DeleteArrayElementAtIndex(index);
+		if (ThisList.arraySize > 0) 
+		{
+			ThisList.DeleteArrayElementAtIndex (index);
+			Debug.Log ("Added new subsystem");
+		}
 	}
 
 	//Delete item from the end of list (pop back)
 	void DeleteLast()
 	{
-		if (size > 0)
-			ThisList.DeleteArrayElementAtIndex(size - 1);
+		if (ThisList.arraySize > 0)
+			ThisList.DeleteArrayElementAtIndex(ThisList.arraySize - 1);
 	}
 
 	//Move current item up in list (<=)
@@ -114,6 +156,106 @@ public class SubsystemListEditor : Editor
 	{
 		bool moveResult = ThisList.MoveArrayElement(index, index + 1);
 		if (moveResult) index++;
+	}
+	//search subsystems in all children components and build list; DEPRECATED!!!
+	void SearchAndBuild()
+	{
+		/*
+		//clear list
+		//Debug.Log ();
+		ThisList.ClearArray ();
+		//Add ();
+
+		//search in childrens
+		SubsystemFlag[] flags = GO.transform.GetComponentsInChildren<SubsystemFlag> ();
+		Debug.Log("Found " + flags.Length + " subsystems");
+
+		foreach (SubsystemFlag flag in flags)
+		{
+			Add (); //add new element to the list
+			SerializedProperty MyListRef = ThisList.GetArrayElementAtIndex (ThisList.arraySize - 1);
+			SerializedProperty MyName = MyListRef.FindPropertyRelative ("name");
+			SerializedProperty MyGameObj = MyListRef.FindPropertyRelative ("gameObject");
+			SerializedProperty MyTextAbout = MyListRef.FindPropertyRelative ("textAbout");
+			SerializedProperty MyStartCamDistance = MyListRef.FindPropertyRelative ("startCamDistance");
+			SerializedProperty MyStartCamRotation = MyListRef.FindPropertyRelative ("startCamRotation");
+
+			MyName.stringValue = flag.subsystemName;
+			MyGameObj.objectReferenceValue = flag.gameObject;
+			MyTextAbout.stringValue = flag.textAbout;
+			MyStartCamDistance.floatValue = flag.startCamDistance;
+			MyStartCamRotation.vector3Value = flag.startCamRotation;
+		}
+		*/
+	}
+	//automatically create mesh collider for any children mesh of each subsystem
+	void CreateMeshColliders()
+	{
+		int count = 0;
+		Debug.Log ("Creating mesh colliders ...");
+		List<Subsystem> list = t.list;
+		foreach (Subsystem sub in list)
+		{
+			Transform[] childrens = sub.gameObject.GetComponentsInChildren<Transform>();
+			foreach (Transform children in childrens)
+			{
+				MeshFilter meshFilter = children.gameObject.GetComponent<MeshFilter>();
+				if (meshFilter == null) continue;
+
+				//delete old mesh collider
+				MeshCollider meshCollider = children.gameObject.GetComponent<MeshCollider>();
+				if (meshCollider != null)
+				{
+					DestroyImmediate(meshCollider);
+					meshCollider = null;
+				}
+
+				//add new mesh collider
+				children.gameObject.AddComponent<MeshCollider>();
+				count++;
+
+			}
+		}
+		Debug.Log (count + " created");
+
+	}
+	void DeleteMeshColliders()
+	{
+		int count = 0;
+		Debug.Log ("Deleting mesh colliders ...");
+		List<Subsystem> list = t.list;
+		//foreach (Subsystem sub in list)
+		//{
+			Transform[] childrens = GO.GetComponentsInChildren<Transform>();
+			foreach (Transform children in childrens)
+			{
+				MeshFilter meshFilter = children.gameObject.GetComponent<MeshFilter>();
+				if (meshFilter == null) continue;
+				
+				//delete old mesh collider
+				MeshCollider meshCollider = children.gameObject.GetComponent<MeshCollider>();
+				if (meshCollider != null)
+				{
+					DestroyImmediate(meshCollider);
+					meshCollider = null;
+					count++;
+				}
+				//add new mesh collider
+				//children.gameObject.AddComponent<MeshCollider>();
+				
+			}
+		//}
+		Debug.Log (count + " deleted");
+	}
+
+	//сохраняет важные параметры системы и подсистем в файл на диске
+	void SaveDataToFile ()
+	{
+		t.WriteToFile ("Subsystems");
+	}
+	void LoadDataFromFile()
+	{
+		t.LoadFromFile ("Subsystems");
 	}
 }
 

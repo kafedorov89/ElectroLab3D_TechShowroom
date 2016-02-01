@@ -1,0 +1,209 @@
+fileFormatVersion: 2
+guid: cf5f1a7173e94c849bfd0566869324d5
+timeCreated: 1450242934
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: 118_int_829
+    100002: 118_int_830
+    100004: 118_int_831
+    100006: 118_int_832
+    100008: 118_int_833
+    100010: 118_int_834
+    100012: 119_int_060
+    100014: 128_Diesel_Tubes_057
+    100016: 304_kpa_001
+    100018: 304_zaslonka
+    100020: Box352
+    100022: Box353
+    100024: Box354
+    100026: Box356
+    100028: Cylinder738
+    100030: Cylinder739
+    100032: Line243
+    100034: Line244
+    100036: Line245
+    100038: Line246
+    100040: Object805
+    100042: ROU_2_036
+    100044: ROU_2_037
+    100046: ROU_2_038
+    100048: ROU_2_039
+    100050: ROU_2_040
+    100052: ROU_2_041
+    100054: Shape015
+    100056: Shape016
+    100058: SUMZ_PIPES_EXT_034
+    100060: //RootNode
+    400000: 118_int_829
+    400002: 118_int_830
+    400004: 118_int_831
+    400006: 118_int_832
+    400008: 118_int_833
+    400010: 118_int_834
+    400012: 119_int_060
+    400014: 128_Diesel_Tubes_057
+    400016: 304_kpa_001
+    400018: 304_zaslonka
+    400020: Box352
+    400022: Box353
+    400024: Box354
+    400026: Box356
+    400028: Cylinder738
+    400030: Cylinder739
+    400032: Line243
+    400034: Line244
+    400036: Line245
+    400038: Line246
+    400040: Object805
+    400042: ROU_2_036
+    400044: ROU_2_037
+    400046: ROU_2_038
+    400048: ROU_2_039
+    400050: ROU_2_040
+    400052: ROU_2_041
+    400054: Shape015
+    400056: Shape016
+    400058: SUMZ_PIPES_EXT_034
+    400060: //RootNode
+    2300000: 118_int_829
+    2300002: 118_int_830
+    2300004: 118_int_831
+    2300006: 118_int_832
+    2300008: 118_int_833
+    2300010: 118_int_834
+    2300012: 119_int_060
+    2300014: 128_Diesel_Tubes_057
+    2300016: Box352
+    2300018: Box353
+    2300020: Box354
+    2300022: Box356
+    2300024: Cylinder738
+    2300026: Cylinder739
+    2300028: Line243
+    2300030: Line244
+    2300032: Line245
+    2300034: Line246
+    2300036: Object805
+    2300038: ROU_2_037
+    2300040: ROU_2_038
+    2300042: ROU_2_039
+    2300044: ROU_2_041
+    2300046: Shape015
+    2300048: Shape016
+    2300050: SUMZ_PIPES_EXT_034
+    3300000: 118_int_829
+    3300002: 118_int_830
+    3300004: 118_int_831
+    3300006: 118_int_832
+    3300008: 118_int_833
+    3300010: 118_int_834
+    3300012: 119_int_060
+    3300014: 128_Diesel_Tubes_057
+    3300016: Box352
+    3300018: Box353
+    3300020: Box354
+    3300022: Box356
+    3300024: Cylinder738
+    3300026: Cylinder739
+    3300028: Line243
+    3300030: Line244
+    3300032: Line245
+    3300034: Line246
+    3300036: Object805
+    3300038: ROU_2_037
+    3300040: ROU_2_038
+    3300042: ROU_2_039
+    3300044: ROU_2_041
+    3300046: Shape015
+    3300048: Shape016
+    3300050: SUMZ_PIPES_EXT_034
+    4300000: Box352
+    4300002: Cylinder738
+    4300004: Line243
+    4300006: Shape015
+    4300008: Line246
+    4300010: 118_int_829
+    4300012: 118_int_830
+    4300014: 118_int_831
+    4300016: 118_int_832
+    4300018: 118_int_833
+    4300020: Cylinder739
+    4300022: Line245
+    4300024: Box356
+    4300026: Object805
+    4300028: 118_int_834
+    4300030: ROU_2_039
+    4300032: ROU_2_041
+    4300034: ROU_2_037
+    4300036: ROU_2_038
+    4300038: 128_Diesel_Tubes_057
+    4300040: Box354
+    4300042: 119_int_060
+    4300044: Box353
+    4300046: Shape016
+    4300048: Line244
+    4300050: SUMZ_PIPES_EXT_034
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

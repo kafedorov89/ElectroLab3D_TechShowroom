@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8f164334a1589424cb6c7938f292687c
+labels:
+- find
+- replace
+- delete
+- tags
+- layers
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

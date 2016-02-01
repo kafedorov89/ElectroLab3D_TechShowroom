@@ -1,0 +1,1195 @@
+fileFormatVersion: 2
+guid: 02ea77d9569f7fc46873263f79089a26
+timeCreated: 1451315991
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Chassis_001
+    100002: Chassis_002
+    100004: Chassis_003
+    100006: Chassis_004
+    100008: Chassis_005
+    100010: Chassis_006
+    100012: Chassis_007
+    100014: Chassis_008
+    100016: Chassis_009
+    100018: Chassis_010
+    100020: Chassis_011
+    100022: Chassis_012
+    100024: Chassis_013
+    100026: Chassis_014
+    100028: Chassis_015
+    100030: Chassis_016
+    100032: Crank_001
+    100034: Crank_002
+    100036: Crank_003
+    100038: Crank_004
+    100040: Crank_005
+    100042: Crank_006
+    100044: Crank_007
+    100046: Crank_008
+    100048: Crank_009
+    100050: Crank_010
+    100052: Crank_011
+    100054: Crank_012
+    100056: Crank_013
+    100058: Crank_014
+    100060: Crank_015
+    100062: Crank_016
+    100064: Piston_001
+    100066: Piston_002
+    100068: Piston_003
+    100070: Piston_004
+    100072: Piston_005
+    100074: Piston_006
+    100076: Piston_007
+    100078: Piston_008
+    100080: Piston_009
+    100082: Piston_010
+    100084: Piston_011
+    100086: Piston_012
+    100088: Piston_013
+    100090: Piston_014
+    100092: Piston_015
+    100094: Piston_016
+    100096: Piston_L002
+    100098: Piston_L003
+    100100: Piston_L004
+    100102: Piston_L005
+    100104: Piston_L006
+    100106: Piston_L007
+    100108: Piston_L008
+    100110: Piston_L1
+    100112: Piston_r003
+    100114: Piston_r004
+    100116: Piston_r005
+    100118: Piston_r006
+    100120: Piston_r007
+    100122: Piston_r008
+    100124: Piston_r009
+    100126: Piston_r1
+    100128: //RootNode
+    100130: Plane021
+    100132: pointA_001
+    100134: pointA_002
+    100136: pointA_003
+    100138: pointA_004
+    100140: pointA_005
+    100142: pointA_006
+    100144: pointA_007
+    100146: pointA_008
+    100148: pointA_009
+    100150: pointA_010
+    100152: pointA_011
+    100154: pointA_012
+    100156: pointA_013
+    100158: pointA_014
+    100160: pointA_015
+    100162: pointA_016
+    100164: pointB_001
+    100166: pointB_002
+    100168: pointB_003
+    100170: pointB_004
+    100172: pointB_005
+    100174: pointB_006
+    100176: pointB_007
+    100178: pointB_008
+    100180: pointB_009
+    100182: pointB_010
+    100184: pointB_011
+    100186: pointB_012
+    100188: pointB_013
+    100190: pointB_014
+    100192: pointB_015
+    100194: pointB_016
+    100196: pointO_001
+    100198: pointO_002
+    100200: pointO_003
+    100202: pointO_004
+    100204: pointO_005
+    100206: pointO_006
+    100208: pointO_007
+    100210: pointO_008
+    100212: pointO_009
+    100214: pointO_010
+    100216: pointO_011
+    100218: pointO_012
+    100220: pointO_013
+    100222: pointO_014
+    100224: pointO_015
+    100226: pointO_016
+    100228: rod_001
+    100230: rod_002
+    100232: rod_003
+    100234: rod_004
+    100236: rod_005
+    100238: rod_006
+    100240: rod_007
+    100242: rod_008
+    100244: rod_009
+    100246: rod_010
+    100248: rod_011
+    100250: rod_012
+    100252: rod_013
+    100254: rod_014
+    100256: rod_015
+    100258: rod_016
+    100260: rod_L002
+    100262: rod_L003
+    100264: rod_L004
+    100266: rod_L005
+    100268: rod_L006
+    100270: rod_L007
+    100272: rod_L008
+    100274: rod_L1
+    100276: rod_R002
+    100278: rod_R003
+    100280: rod_R004
+    100282: rod_R005
+    100284: rod_R006
+    100286: rod_R007
+    100288: rod_R008
+    100290: rod_R1
+    100292: splOffset
+    100294: splOffset 1
+    100296: splOffset001
+    100298: splOffset002
+    100300: splOffset003
+    100302: splOffset004
+    100304: splOffset005
+    100306: splOffset006
+    100308: splOffset007
+    100310: splOffset008
+    100312: splOffset009
+    100314: splOffset010
+    100316: splOffset011
+    100318: splOffset012
+    100320: splOffset013
+    100322: splOffset014
+    400000: Chassis_001
+    400002: Chassis_002
+    400004: Chassis_003
+    400006: Chassis_004
+    400008: Chassis_005
+    400010: Chassis_006
+    400012: Chassis_007
+    400014: Chassis_008
+    400016: Chassis_009
+    400018: Chassis_010
+    400020: Chassis_011
+    400022: Chassis_012
+    400024: Chassis_013
+    400026: Chassis_014
+    400028: Chassis_015
+    400030: Chassis_016
+    400032: Crank_001
+    400034: Crank_002
+    400036: Crank_003
+    400038: Crank_004
+    400040: Crank_005
+    400042: Crank_006
+    400044: Crank_007
+    400046: Crank_008
+    400048: Crank_009
+    400050: Crank_010
+    400052: Crank_011
+    400054: Crank_012
+    400056: Crank_013
+    400058: Crank_014
+    400060: Crank_015
+    400062: Crank_016
+    400064: Piston_001
+    400066: Piston_002
+    400068: Piston_003
+    400070: Piston_004
+    400072: Piston_005
+    400074: Piston_006
+    400076: Piston_007
+    400078: Piston_008
+    400080: Piston_009
+    400082: Piston_010
+    400084: Piston_011
+    400086: Piston_012
+    400088: Piston_013
+    400090: Piston_014
+    400092: Piston_015
+    400094: Piston_016
+    400096: Piston_L002
+    400098: Piston_L003
+    400100: Piston_L004
+    400102: Piston_L005
+    400104: Piston_L006
+    400106: Piston_L007
+    400108: Piston_L008
+    400110: Piston_L1
+    400112: Piston_r003
+    400114: Piston_r004
+    400116: Piston_r005
+    400118: Piston_r006
+    400120: Piston_r007
+    400122: Piston_r008
+    400124: Piston_r009
+    400126: Piston_r1
+    400128: //RootNode
+    400130: Plane021
+    400132: pointA_001
+    400134: pointA_002
+    400136: pointA_003
+    400138: pointA_004
+    400140: pointA_005
+    400142: pointA_006
+    400144: pointA_007
+    400146: pointA_008
+    400148: pointA_009
+    400150: pointA_010
+    400152: pointA_011
+    400154: pointA_012
+    400156: pointA_013
+    400158: pointA_014
+    400160: pointA_015
+    400162: pointA_016
+    400164: pointB_001
+    400166: pointB_002
+    400168: pointB_003
+    400170: pointB_004
+    400172: pointB_005
+    400174: pointB_006
+    400176: pointB_007
+    400178: pointB_008
+    400180: pointB_009
+    400182: pointB_010
+    400184: pointB_011
+    400186: pointB_012
+    400188: pointB_013
+    400190: pointB_014
+    400192: pointB_015
+    400194: pointB_016
+    400196: pointO_001
+    400198: pointO_002
+    400200: pointO_003
+    400202: pointO_004
+    400204: pointO_005
+    400206: pointO_006
+    400208: pointO_007
+    400210: pointO_008
+    400212: pointO_009
+    400214: pointO_010
+    400216: pointO_011
+    400218: pointO_012
+    400220: pointO_013
+    400222: pointO_014
+    400224: pointO_015
+    400226: pointO_016
+    400228: rod_001
+    400230: rod_002
+    400232: rod_003
+    400234: rod_004
+    400236: rod_005
+    400238: rod_006
+    400240: rod_007
+    400242: rod_008
+    400244: rod_009
+    400246: rod_010
+    400248: rod_011
+    400250: rod_012
+    400252: rod_013
+    400254: rod_014
+    400256: rod_015
+    400258: rod_016
+    400260: rod_L002
+    400262: rod_L003
+    400264: rod_L004
+    400266: rod_L005
+    400268: rod_L006
+    400270: rod_L007
+    400272: rod_L008
+    400274: rod_L1
+    400276: rod_R002
+    400278: rod_R003
+    400280: rod_R004
+    400282: rod_R005
+    400284: rod_R006
+    400286: rod_R007
+    400288: rod_R008
+    400290: rod_R1
+    400292: splOffset
+    400294: splOffset 1
+    400296: splOffset001
+    400298: splOffset002
+    400300: splOffset003
+    400302: splOffset004
+    400304: splOffset005
+    400306: splOffset006
+    400308: splOffset007
+    400310: splOffset008
+    400312: splOffset009
+    400314: splOffset010
+    400316: splOffset011
+    400318: splOffset012
+    400320: splOffset013
+    400322: splOffset014
+    2300000: Piston_L002
+    2300002: Piston_L003
+    2300004: Piston_L004
+    2300006: Piston_L005
+    2300008: Piston_L006
+    2300010: Piston_L007
+    2300012: Piston_L008
+    2300014: Piston_L1
+    2300016: Piston_r003
+    2300018: Piston_r004
+    2300020: Piston_r005
+    2300022: Piston_r006
+    2300024: Piston_r007
+    2300026: Piston_r008
+    2300028: Piston_r009
+    2300030: Piston_r1
+    2300032: Plane021
+    2300034: rod_L002
+    2300036: rod_L003
+    2300038: rod_L004
+    2300040: rod_L005
+    2300042: rod_L006
+    2300044: rod_L007
+    2300046: rod_L008
+    2300048: rod_L1
+    2300050: rod_R002
+    2300052: rod_R003
+    2300054: rod_R004
+    2300056: rod_R005
+    2300058: rod_R006
+    2300060: rod_R007
+    2300062: rod_R008
+    2300064: rod_R1
+    3300000: Piston_L002
+    3300002: Piston_L003
+    3300004: Piston_L004
+    3300006: Piston_L005
+    3300008: Piston_L006
+    3300010: Piston_L007
+    3300012: Piston_L008
+    3300014: Piston_L1
+    3300016: Piston_r003
+    3300018: Piston_r004
+    3300020: Piston_r005
+    3300022: Piston_r006
+    3300024: Piston_r007
+    3300026: Piston_r008
+    3300028: Piston_r009
+    3300030: Piston_r1
+    3300032: Plane021
+    3300034: rod_L002
+    3300036: rod_L003
+    3300038: rod_L004
+    3300040: rod_L005
+    3300042: rod_L006
+    3300044: rod_L007
+    3300046: rod_L008
+    3300048: rod_L1
+    3300050: rod_R002
+    3300052: rod_R003
+    3300054: rod_R004
+    3300056: rod_R005
+    3300058: rod_R006
+    3300060: rod_R007
+    3300062: rod_R008
+    3300064: rod_R1
+    4300000: rod_R1
+    4300002: Plane021
+    4300004: Piston_r1
+    4300006: rod_L1
+    4300008: Piston_L1
+    4300010: Piston_r003
+    4300012: rod_R002
+    4300014: Piston_L002
+    4300016: rod_L002
+    4300018: Piston_r004
+    4300020: rod_R003
+    4300022: Piston_L003
+    4300024: rod_L003
+    4300026: Piston_r006
+    4300028: rod_R005
+    4300030: Piston_L005
+    4300032: rod_L004
+    4300034: Piston_r005
+    4300036: rod_R004
+    4300038: Piston_L004
+    4300040: rod_L005
+    4300042: Piston_r008
+    4300044: rod_R007
+    4300046: Piston_L007
+    4300048: rod_L006
+    4300050: Piston_r007
+    4300052: rod_R006
+    4300054: Piston_L006
+    4300056: rod_L007
+    4300058: Piston_r009
+    4300060: rod_R008
+    4300062: Piston_L008
+    4300064: rod_L008
+    7400000: Idle
+    7400002: Work
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: TSG2032_Diesel_9
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Chassis_001
+        weight: 1
+      - path: Chassis_001/pointO_001
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001/Plane021
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001/pointA_001
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001/pointA_001/rod_001
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001/pointA_001/rod_001/rod_R1
+        weight: 1
+      - path: Chassis_001/splOffset
+        weight: 1
+      - path: Chassis_001/splOffset/pointB_001
+        weight: 1
+      - path: Chassis_001/splOffset/pointB_001/Piston_001
+        weight: 1
+      - path: Chassis_001/splOffset/pointB_001/Piston_001/Piston_r1
+        weight: 1
+      - path: Chassis_002
+        weight: 1
+      - path: Chassis_002/pointO_002
+        weight: 1
+      - path: Chassis_002/pointO_002/Crank_002
+        weight: 1
+      - path: Chassis_002/pointO_002/Crank_002/pointA_002
+        weight: 1
+      - path: Chassis_002/pointO_002/Crank_002/pointA_002/rod_002
+        weight: 1
+      - path: Chassis_002/pointO_002/Crank_002/pointA_002/rod_002/rod_L1
+        weight: 1
+      - path: Chassis_002/splOffset 1
+        weight: 1
+      - path: Chassis_002/splOffset 1/pointB_002
+        weight: 1
+      - path: Chassis_002/splOffset 1/pointB_002/Piston_002
+        weight: 1
+      - path: Chassis_002/splOffset 1/pointB_002/Piston_002/Piston_L1
+        weight: 1
+      - path: Chassis_003
+        weight: 1
+      - path: Chassis_003/pointO_003
+        weight: 1
+      - path: Chassis_003/pointO_003/Crank_003
+        weight: 1
+      - path: Chassis_003/pointO_003/Crank_003/pointA_003
+        weight: 1
+      - path: Chassis_003/pointO_003/Crank_003/pointA_003/rod_003
+        weight: 1
+      - path: Chassis_003/pointO_003/Crank_003/pointA_003/rod_003/rod_R002
+        weight: 1
+      - path: Chassis_003/splOffset002
+        weight: 1
+      - path: Chassis_003/splOffset002/pointB_003
+        weight: 1
+      - path: Chassis_003/splOffset002/pointB_003/Piston_004
+        weight: 1
+      - path: Chassis_003/splOffset002/pointB_003/Piston_004/Piston_r003
+        weight: 1
+      - path: Chassis_004
+        weight: 1
+      - path: Chassis_004/pointO_004
+        weight: 1
+      - path: Chassis_004/pointO_004/Crank_004
+        weight: 1
+      - path: Chassis_004/pointO_004/Crank_004/pointA_004
+        weight: 1
+      - path: Chassis_004/pointO_004/Crank_004/pointA_004/rod_004
+        weight: 1
+      - path: Chassis_004/pointO_004/Crank_004/pointA_004/rod_004/rod_L002
+        weight: 1
+      - path: Chassis_004/splOffset001
+        weight: 1
+      - path: Chassis_004/splOffset001/pointB_004
+        weight: 1
+      - path: Chassis_004/splOffset001/pointB_004/Piston_003
+        weight: 1
+      - path: Chassis_004/splOffset001/pointB_004/Piston_003/Piston_L002
+        weight: 1
+      - path: Chassis_005
+        weight: 1
+      - path: Chassis_005/pointO_005
+        weight: 1
+      - path: Chassis_005/pointO_005/Crank_006
+        weight: 1
+      - path: Chassis_005/pointO_005/Crank_006/pointA_006
+        weight: 1
+      - path: Chassis_005/pointO_005/Crank_006/pointA_006/rod_005
+        weight: 1
+      - path: Chassis_005/pointO_005/Crank_006/pointA_006/rod_005/rod_R003
+        weight: 1
+      - path: Chassis_005/splOffset004
+        weight: 1
+      - path: Chassis_005/splOffset004/pointB_005
+        weight: 1
+      - path: Chassis_005/splOffset004/pointB_005/Piston_006
+        weight: 1
+      - path: Chassis_005/splOffset004/pointB_005/Piston_006/Piston_r004
+        weight: 1
+      - path: Chassis_006
+        weight: 1
+      - path: Chassis_006/pointO_006
+        weight: 1
+      - path: Chassis_006/pointO_006/Crank_005
+        weight: 1
+      - path: Chassis_006/pointO_006/Crank_005/pointA_005
+        weight: 1
+      - path: Chassis_006/pointO_006/Crank_005/pointA_005/rod_006
+        weight: 1
+      - path: Chassis_006/pointO_006/Crank_005/pointA_005/rod_006/rod_L003
+        weight: 1
+      - path: Chassis_006/splOffset003
+        weight: 1
+      - path: Chassis_006/splOffset003/pointB_006
+        weight: 1
+      - path: Chassis_006/splOffset003/pointB_006/Piston_005
+        weight: 1
+      - path: Chassis_006/splOffset003/pointB_006/Piston_005/Piston_L003
+        weight: 1
+      - path: Chassis_007
+        weight: 1
+      - path: Chassis_007/pointO_007
+        weight: 1
+      - path: Chassis_007/pointO_007/Crank_010
+        weight: 1
+      - path: Chassis_007/pointO_007/Crank_010/pointA_007
+        weight: 1
+      - path: Chassis_007/pointO_007/Crank_010/pointA_007/rod_007
+        weight: 1
+      - path: Chassis_007/pointO_007/Crank_010/pointA_007/rod_007/rod_R005
+        weight: 1
+      - path: Chassis_007/splOffset005
+        weight: 1
+      - path: Chassis_007/splOffset005/pointB_007
+        weight: 1
+      - path: Chassis_007/splOffset005/pointB_007/Piston_010
+        weight: 1
+      - path: Chassis_007/splOffset005/pointB_007/Piston_010/Piston_r006
+        weight: 1
+      - path: Chassis_008
+        weight: 1
+      - path: Chassis_008/pointO_008
+        weight: 1
+      - path: Chassis_008/pointO_008/Crank_009
+        weight: 1
+      - path: Chassis_008/pointO_008/Crank_009/pointA_008
+        weight: 1
+      - path: Chassis_008/pointO_008/Crank_009/pointA_008/rod_008
+        weight: 1
+      - path: Chassis_008/pointO_008/Crank_009/pointA_008/rod_008/rod_L004
+        weight: 1
+      - path: Chassis_008/splOffset008
+        weight: 1
+      - path: Chassis_008/splOffset008/pointB_008
+        weight: 1
+      - path: Chassis_008/splOffset008/pointB_008/Piston_009
+        weight: 1
+      - path: Chassis_008/splOffset008/pointB_008/Piston_009/Piston_L005
+        weight: 1
+      - path: Chassis_009
+        weight: 1
+      - path: Chassis_009/pointO_009
+        weight: 1
+      - path: Chassis_009/pointO_009/Crank_008
+        weight: 1
+      - path: Chassis_009/pointO_009/Crank_008/pointA_010
+        weight: 1
+      - path: Chassis_009/pointO_009/Crank_008/pointA_010/rod_009
+        weight: 1
+      - path: Chassis_009/pointO_009/Crank_008/pointA_010/rod_009/rod_R004
+        weight: 1
+      - path: Chassis_009/splOffset007
+        weight: 1
+      - path: Chassis_009/splOffset007/pointB_009
+        weight: 1
+      - path: Chassis_009/splOffset007/pointB_009/Piston_008
+        weight: 1
+      - path: Chassis_009/splOffset007/pointB_009/Piston_008/Piston_r005
+        weight: 1
+      - path: Chassis_010
+        weight: 1
+      - path: Chassis_010/pointO_010
+        weight: 1
+      - path: Chassis_010/pointO_010/Crank_007
+        weight: 1
+      - path: Chassis_010/pointO_010/Crank_007/pointA_009
+        weight: 1
+      - path: Chassis_010/pointO_010/Crank_007/pointA_009/rod_010
+        weight: 1
+      - path: Chassis_010/pointO_010/Crank_007/pointA_009/rod_010/rod_L005
+        weight: 1
+      - path: Chassis_010/splOffset006
+        weight: 1
+      - path: Chassis_010/splOffset006/pointB_010
+        weight: 1
+      - path: Chassis_010/splOffset006/pointB_010/Piston_007
+        weight: 1
+      - path: Chassis_010/splOffset006/pointB_010/Piston_007/Piston_L004
+        weight: 1
+      - path: Chassis_011
+        weight: 1
+      - path: Chassis_011/pointO_011
+        weight: 1
+      - path: Chassis_011/pointO_011/Crank_014
+        weight: 1
+      - path: Chassis_011/pointO_011/Crank_014/pointA_011
+        weight: 1
+      - path: Chassis_011/pointO_011/Crank_014/pointA_011/rod_011
+        weight: 1
+      - path: Chassis_011/pointO_011/Crank_014/pointA_011/rod_011/rod_R007
+        weight: 1
+      - path: Chassis_011/splOffset009
+        weight: 1
+      - path: Chassis_011/splOffset009/pointB_011
+        weight: 1
+      - path: Chassis_011/splOffset009/pointB_011/Piston_014
+        weight: 1
+      - path: Chassis_011/splOffset009/pointB_011/Piston_014/Piston_r008
+        weight: 1
+      - path: Chassis_012
+        weight: 1
+      - path: Chassis_012/pointO_012
+        weight: 1
+      - path: Chassis_012/pointO_012/Crank_013
+        weight: 1
+      - path: Chassis_012/pointO_012/Crank_013/pointA_012
+        weight: 1
+      - path: Chassis_012/pointO_012/Crank_013/pointA_012/rod_012
+        weight: 1
+      - path: Chassis_012/pointO_012/Crank_013/pointA_012/rod_012/rod_L006
+        weight: 1
+      - path: Chassis_012/splOffset012
+        weight: 1
+      - path: Chassis_012/splOffset012/pointB_012
+        weight: 1
+      - path: Chassis_012/splOffset012/pointB_012/Piston_013
+        weight: 1
+      - path: Chassis_012/splOffset012/pointB_012/Piston_013/Piston_L007
+        weight: 1
+      - path: Chassis_013
+        weight: 1
+      - path: Chassis_013/pointO_013
+        weight: 1
+      - path: Chassis_013/pointO_013/Crank_012
+        weight: 1
+      - path: Chassis_013/pointO_013/Crank_012/pointA_014
+        weight: 1
+      - path: Chassis_013/pointO_013/Crank_012/pointA_014/rod_013
+        weight: 1
+      - path: Chassis_013/pointO_013/Crank_012/pointA_014/rod_013/rod_R006
+        weight: 1
+      - path: Chassis_013/splOffset011
+        weight: 1
+      - path: Chassis_013/splOffset011/pointB_013
+        weight: 1
+      - path: Chassis_013/splOffset011/pointB_013/Piston_012
+        weight: 1
+      - path: Chassis_013/splOffset011/pointB_013/Piston_012/Piston_r007
+        weight: 1
+      - path: Chassis_014
+        weight: 1
+      - path: Chassis_014/pointO_014
+        weight: 1
+      - path: Chassis_014/pointO_014/Crank_011
+        weight: 1
+      - path: Chassis_014/pointO_014/Crank_011/pointA_013
+        weight: 1
+      - path: Chassis_014/pointO_014/Crank_011/pointA_013/rod_014
+        weight: 1
+      - path: Chassis_014/pointO_014/Crank_011/pointA_013/rod_014/rod_L007
+        weight: 1
+      - path: Chassis_014/splOffset010
+        weight: 1
+      - path: Chassis_014/splOffset010/pointB_014
+        weight: 1
+      - path: Chassis_014/splOffset010/pointB_014/Piston_011
+        weight: 1
+      - path: Chassis_014/splOffset010/pointB_014/Piston_011/Piston_L006
+        weight: 1
+      - path: Chassis_015
+        weight: 1
+      - path: Chassis_015/pointO_015
+        weight: 1
+      - path: Chassis_015/pointO_015/Crank_016
+        weight: 1
+      - path: Chassis_015/pointO_015/Crank_016/pointA_016
+        weight: 1
+      - path: Chassis_015/pointO_015/Crank_016/pointA_016/rod_015
+        weight: 1
+      - path: Chassis_015/pointO_015/Crank_016/pointA_016/rod_015/rod_R008
+        weight: 1
+      - path: Chassis_015/splOffset013
+        weight: 1
+      - path: Chassis_015/splOffset013/pointB_015
+        weight: 1
+      - path: Chassis_015/splOffset013/pointB_015/Piston_016
+        weight: 1
+      - path: Chassis_015/splOffset013/pointB_015/Piston_016/Piston_r009
+        weight: 1
+      - path: Chassis_016
+        weight: 1
+      - path: Chassis_016/pointO_016
+        weight: 1
+      - path: Chassis_016/pointO_016/Crank_015
+        weight: 1
+      - path: Chassis_016/pointO_016/Crank_015/pointA_015
+        weight: 1
+      - path: Chassis_016/pointO_016/Crank_015/pointA_015/rod_016
+        weight: 1
+      - path: Chassis_016/pointO_016/Crank_015/pointA_015/rod_016/rod_L008
+        weight: 1
+      - path: Chassis_016/splOffset014
+        weight: 1
+      - path: Chassis_016/splOffset014/pointB_016
+        weight: 1
+      - path: Chassis_016/splOffset014/pointB_016/Piston_015
+        weight: 1
+      - path: Chassis_016/splOffset014/pointB_016/Piston_015/Piston_L008
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Work
+      takeName: TSG2032_Diesel_9
+      firstFrame: 0
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Chassis_001
+        weight: 1
+      - path: Chassis_001/pointO_001
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001/Plane021
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001/pointA_001
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001/pointA_001/rod_001
+        weight: 1
+      - path: Chassis_001/pointO_001/Crank_001/pointA_001/rod_001/rod_R1
+        weight: 1
+      - path: Chassis_001/splOffset
+        weight: 1
+      - path: Chassis_001/splOffset/pointB_001
+        weight: 1
+      - path: Chassis_001/splOffset/pointB_001/Piston_001
+        weight: 1
+      - path: Chassis_001/splOffset/pointB_001/Piston_001/Piston_r1
+        weight: 1
+      - path: Chassis_002
+        weight: 1
+      - path: Chassis_002/pointO_002
+        weight: 1
+      - path: Chassis_002/pointO_002/Crank_002
+        weight: 1
+      - path: Chassis_002/pointO_002/Crank_002/pointA_002
+        weight: 1
+      - path: Chassis_002/pointO_002/Crank_002/pointA_002/rod_002
+        weight: 1
+      - path: Chassis_002/pointO_002/Crank_002/pointA_002/rod_002/rod_L1
+        weight: 1
+      - path: Chassis_002/splOffset 1
+        weight: 1
+      - path: Chassis_002/splOffset 1/pointB_002
+        weight: 1
+      - path: Chassis_002/splOffset 1/pointB_002/Piston_002
+        weight: 1
+      - path: Chassis_002/splOffset 1/pointB_002/Piston_002/Piston_L1
+        weight: 1
+      - path: Chassis_003
+        weight: 1
+      - path: Chassis_003/pointO_003
+        weight: 1
+      - path: Chassis_003/pointO_003/Crank_003
+        weight: 1
+      - path: Chassis_003/pointO_003/Crank_003/pointA_003
+        weight: 1
+      - path: Chassis_003/pointO_003/Crank_003/pointA_003/rod_003
+        weight: 1
+      - path: Chassis_003/pointO_003/Crank_003/pointA_003/rod_003/rod_R002
+        weight: 1
+      - path: Chassis_003/splOffset002
+        weight: 1
+      - path: Chassis_003/splOffset002/pointB_003
+        weight: 1
+      - path: Chassis_003/splOffset002/pointB_003/Piston_004
+        weight: 1
+      - path: Chassis_003/splOffset002/pointB_003/Piston_004/Piston_r003
+        weight: 1
+      - path: Chassis_004
+        weight: 1
+      - path: Chassis_004/pointO_004
+        weight: 1
+      - path: Chassis_004/pointO_004/Crank_004
+        weight: 1
+      - path: Chassis_004/pointO_004/Crank_004/pointA_004
+        weight: 1
+      - path: Chassis_004/pointO_004/Crank_004/pointA_004/rod_004
+        weight: 1
+      - path: Chassis_004/pointO_004/Crank_004/pointA_004/rod_004/rod_L002
+        weight: 1
+      - path: Chassis_004/splOffset001
+        weight: 1
+      - path: Chassis_004/splOffset001/pointB_004
+        weight: 1
+      - path: Chassis_004/splOffset001/pointB_004/Piston_003
+        weight: 1
+      - path: Chassis_004/splOffset001/pointB_004/Piston_003/Piston_L002
+        weight: 1
+      - path: Chassis_005
+        weight: 1
+      - path: Chassis_005/pointO_005
+        weight: 1
+      - path: Chassis_005/pointO_005/Crank_006
+        weight: 1
+      - path: Chassis_005/pointO_005/Crank_006/pointA_006
+        weight: 1
+      - path: Chassis_005/pointO_005/Crank_006/pointA_006/rod_005
+        weight: 1
+      - path: Chassis_005/pointO_005/Crank_006/pointA_006/rod_005/rod_R003
+        weight: 1
+      - path: Chassis_005/splOffset004
+        weight: 1
+      - path: Chassis_005/splOffset004/pointB_005
+        weight: 1
+      - path: Chassis_005/splOffset004/pointB_005/Piston_006
+        weight: 1
+      - path: Chassis_005/splOffset004/pointB_005/Piston_006/Piston_r004
+        weight: 1
+      - path: Chassis_006
+        weight: 1
+      - path: Chassis_006/pointO_006
+        weight: 1
+      - path: Chassis_006/pointO_006/Crank_005
+        weight: 1
+      - path: Chassis_006/pointO_006/Crank_005/pointA_005
+        weight: 1
+      - path: Chassis_006/pointO_006/Crank_005/pointA_005/rod_006
+        weight: 1
+      - path: Chassis_006/pointO_006/Crank_005/pointA_005/rod_006/rod_L003
+        weight: 1
+      - path: Chassis_006/splOffset003
+        weight: 1
+      - path: Chassis_006/splOffset003/pointB_006
+        weight: 1
+      - path: Chassis_006/splOffset003/pointB_006/Piston_005
+        weight: 1
+      - path: Chassis_006/splOffset003/pointB_006/Piston_005/Piston_L003
+        weight: 1
+      - path: Chassis_007
+        weight: 1
+      - path: Chassis_007/pointO_007
+        weight: 1
+      - path: Chassis_007/pointO_007/Crank_010
+        weight: 1
+      - path: Chassis_007/pointO_007/Crank_010/pointA_007
+        weight: 1
+      - path: Chassis_007/pointO_007/Crank_010/pointA_007/rod_007
+        weight: 1
+      - path: Chassis_007/pointO_007/Crank_010/pointA_007/rod_007/rod_R005
+        weight: 1
+      - path: Chassis_007/splOffset005
+        weight: 1
+      - path: Chassis_007/splOffset005/pointB_007
+        weight: 1
+      - path: Chassis_007/splOffset005/pointB_007/Piston_010
+        weight: 1
+      - path: Chassis_007/splOffset005/pointB_007/Piston_010/Piston_r006
+        weight: 1
+      - path: Chassis_008
+        weight: 1
+      - path: Chassis_008/pointO_008
+        weight: 1
+      - path: Chassis_008/pointO_008/Crank_009
+        weight: 1
+      - path: Chassis_008/pointO_008/Crank_009/pointA_008
+        weight: 1
+      - path: Chassis_008/pointO_008/Crank_009/pointA_008/rod_008
+        weight: 1
+      - path: Chassis_008/pointO_008/Crank_009/pointA_008/rod_008/rod_L004
+        weight: 1
+      - path: Chassis_008/splOffset008
+        weight: 1
+      - path: Chassis_008/splOffset008/pointB_008
+        weight: 1
+      - path: Chassis_008/splOffset008/pointB_008/Piston_009
+        weight: 1
+      - path: Chassis_008/splOffset008/pointB_008/Piston_009/Piston_L005
+        weight: 1
+      - path: Chassis_009
+        weight: 1
+      - path: Chassis_009/pointO_009
+        weight: 1
+      - path: Chassis_009/pointO_009/Crank_008
+        weight: 1
+      - path: Chassis_009/pointO_009/Crank_008/pointA_010
+        weight: 1
+      - path: Chassis_009/pointO_009/Crank_008/pointA_010/rod_009
+        weight: 1
+      - path: Chassis_009/pointO_009/Crank_008/pointA_010/rod_009/rod_R004
+        weight: 1
+      - path: Chassis_009/splOffset007
+        weight: 1
+      - path: Chassis_009/splOffset007/pointB_009
+        weight: 1
+      - path: Chassis_009/splOffset007/pointB_009/Piston_008
+        weight: 1
+      - path: Chassis_009/splOffset007/pointB_009/Piston_008/Piston_r005
+        weight: 1
+      - path: Chassis_010
+        weight: 1
+      - path: Chassis_010/pointO_010
+        weight: 1
+      - path: Chassis_010/pointO_010/Crank_007
+        weight: 1
+      - path: Chassis_010/pointO_010/Crank_007/pointA_009
+        weight: 1
+      - path: Chassis_010/pointO_010/Crank_007/pointA_009/rod_010
+        weight: 1
+      - path: Chassis_010/pointO_010/Crank_007/pointA_009/rod_010/rod_L005
+        weight: 1
+      - path: Chassis_010/splOffset006
+        weight: 1
+      - path: Chassis_010/splOffset006/pointB_010
+        weight: 1
+      - path: Chassis_010/splOffset006/pointB_010/Piston_007
+        weight: 1
+      - path: Chassis_010/splOffset006/pointB_010/Piston_007/Piston_L004
+        weight: 1
+      - path: Chassis_011
+        weight: 1
+      - path: Chassis_011/pointO_011
+        weight: 1
+      - path: Chassis_011/pointO_011/Crank_014
+        weight: 1
+      - path: Chassis_011/pointO_011/Crank_014/pointA_011
+        weight: 1
+      - path: Chassis_011/pointO_011/Crank_014/pointA_011/rod_011
+        weight: 1
+      - path: Chassis_011/pointO_011/Crank_014/pointA_011/rod_011/rod_R007
+        weight: 1
+      - path: Chassis_011/splOffset009
+        weight: 1
+      - path: Chassis_011/splOffset009/pointB_011
+        weight: 1
+      - path: Chassis_011/splOffset009/pointB_011/Piston_014
+        weight: 1
+      - path: Chassis_011/splOffset009/pointB_011/Piston_014/Piston_r008
+        weight: 1
+      - path: Chassis_012
+        weight: 1
+      - path: Chassis_012/pointO_012
+        weight: 1
+      - path: Chassis_012/pointO_012/Crank_013
+        weight: 1
+      - path: Chassis_012/pointO_012/Crank_013/pointA_012
+        weight: 1
+      - path: Chassis_012/pointO_012/Crank_013/pointA_012/rod_012
+        weight: 1
+      - path: Chassis_012/pointO_012/Crank_013/pointA_012/rod_012/rod_L006
+        weight: 1
+      - path: Chassis_012/splOffset012
+        weight: 1
+      - path: Chassis_012/splOffset012/pointB_012
+        weight: 1
+      - path: Chassis_012/splOffset012/pointB_012/Piston_013
+        weight: 1
+      - path: Chassis_012/splOffset012/pointB_012/Piston_013/Piston_L007
+        weight: 1
+      - path: Chassis_013
+        weight: 1
+      - path: Chassis_013/pointO_013
+        weight: 1
+      - path: Chassis_013/pointO_013/Crank_012
+        weight: 1
+      - path: Chassis_013/pointO_013/Crank_012/pointA_014
+        weight: 1
+      - path: Chassis_013/pointO_013/Crank_012/pointA_014/rod_013
+        weight: 1
+      - path: Chassis_013/pointO_013/Crank_012/pointA_014/rod_013/rod_R006
+        weight: 1
+      - path: Chassis_013/splOffset011
+        weight: 1
+      - path: Chassis_013/splOffset011/pointB_013
+        weight: 1
+      - path: Chassis_013/splOffset011/pointB_013/Piston_012
+        weight: 1
+      - path: Chassis_013/splOffset011/pointB_013/Piston_012/Piston_r007
+        weight: 1
+      - path: Chassis_014
+        weight: 1
+      - path: Chassis_014/pointO_014
+        weight: 1
+      - path: Chassis_014/pointO_014/Crank_011
+        weight: 1
+      - path: Chassis_014/pointO_014/Crank_011/pointA_013
+        weight: 1
+      - path: Chassis_014/pointO_014/Crank_011/pointA_013/rod_014
+        weight: 1
+      - path: Chassis_014/pointO_014/Crank_011/pointA_013/rod_014/rod_L007
+        weight: 1
+      - path: Chassis_014/splOffset010
+        weight: 1
+      - path: Chassis_014/splOffset010/pointB_014
+        weight: 1
+      - path: Chassis_014/splOffset010/pointB_014/Piston_011
+        weight: 1
+      - path: Chassis_014/splOffset010/pointB_014/Piston_011/Piston_L006
+        weight: 1
+      - path: Chassis_015
+        weight: 1
+      - path: Chassis_015/pointO_015
+        weight: 1
+      - path: Chassis_015/pointO_015/Crank_016
+        weight: 1
+      - path: Chassis_015/pointO_015/Crank_016/pointA_016
+        weight: 1
+      - path: Chassis_015/pointO_015/Crank_016/pointA_016/rod_015
+        weight: 1
+      - path: Chassis_015/pointO_015/Crank_016/pointA_016/rod_015/rod_R008
+        weight: 1
+      - path: Chassis_015/splOffset013
+        weight: 1
+      - path: Chassis_015/splOffset013/pointB_015
+        weight: 1
+      - path: Chassis_015/splOffset013/pointB_015/Piston_016
+        weight: 1
+      - path: Chassis_015/splOffset013/pointB_015/Piston_016/Piston_r009
+        weight: 1
+      - path: Chassis_016
+        weight: 1
+      - path: Chassis_016/pointO_016
+        weight: 1
+      - path: Chassis_016/pointO_016/Crank_015
+        weight: 1
+      - path: Chassis_016/pointO_016/Crank_015/pointA_015
+        weight: 1
+      - path: Chassis_016/pointO_016/Crank_015/pointA_015/rod_016
+        weight: 1
+      - path: Chassis_016/pointO_016/Crank_015/pointA_015/rod_016/rod_L008
+        weight: 1
+      - path: Chassis_016/splOffset014
+        weight: 1
+      - path: Chassis_016/splOffset014/pointB_016
+        weight: 1
+      - path: Chassis_016/splOffset014/pointB_016/Piston_015
+        weight: 1
+      - path: Chassis_016/splOffset014/pointB_016/Piston_015/Piston_L008
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
