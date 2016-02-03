@@ -1,0 +1,124 @@
+fileFormatVersion: 2
+guid: c7c8a2bf8f2a9934788a1bd40dfa7e5a
+timeCreated: 1454527588
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: SST_060_Generator001_slice
+    100002: sst_060_Generator_000
+    100004: sst_060_Generator_001
+    100006: sst_060_Generator_002
+    100008: sst_060_Generator_003
+    100010: sst_060_Generator_004
+    100012: sst_060_Generator_005
+    100014: sst_060_Generator_006
+    100016: sst_060_Generator_007
+    100018: sst_060_Generator_008
+    100020: sst_060_Generator_009
+    100022: sst_060_Generator_010
+    100024: //RootNode
+    400000: SST_060_Generator001_slice
+    400002: sst_060_Generator_000
+    400004: sst_060_Generator_001
+    400006: sst_060_Generator_002
+    400008: sst_060_Generator_003
+    400010: sst_060_Generator_004
+    400012: sst_060_Generator_005
+    400014: sst_060_Generator_006
+    400016: sst_060_Generator_007
+    400018: sst_060_Generator_008
+    400020: sst_060_Generator_009
+    400022: sst_060_Generator_010
+    400024: //RootNode
+    2300000: SST_060_Generator001_slice
+    2300002: sst_060_Generator_000
+    2300004: sst_060_Generator_002
+    2300006: sst_060_Generator_003
+    2300008: sst_060_Generator_004
+    2300010: sst_060_Generator_005
+    2300012: sst_060_Generator_006
+    2300014: sst_060_Generator_009
+    2300016: sst_060_Generator_010
+    3300000: SST_060_Generator001_slice
+    3300002: sst_060_Generator_000
+    3300004: sst_060_Generator_002
+    3300006: sst_060_Generator_003
+    3300008: sst_060_Generator_004
+    3300010: sst_060_Generator_005
+    3300012: sst_060_Generator_006
+    3300014: sst_060_Generator_009
+    3300016: sst_060_Generator_010
+    4300000: sst_060_Generator_009
+    4300002: sst_060_Generator_010
+    4300004: sst_060_Generator_002
+    4300006: sst_060_Generator_003
+    4300008: sst_060_Generator_004
+    4300010: sst_060_Generator_005
+    4300012: sst_060_Generator_006
+    4300014: sst_060_Generator_000
+    4300016: SST_060_Generator001_slice
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
