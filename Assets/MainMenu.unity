@@ -16141,15 +16141,15 @@ MonoBehaviour:
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
-  isReadyForThreadedCalculations: 0
+  isReadyForThreadedCalculations: 1
   prewarm: 0
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  localTime: 6.97249699
-  localDeltaTime: 0
+  localTime: 11.5317411
+  localDeltaTime: 4.46596861
   previousActiveState: 0
-  simulationStarted: 6.97249699
+  simulationStarted: 7.06577253
   loopExceeded: 0
   loopExceededOnParticle: -1
 --- !u!199 &331079460
@@ -22287,15 +22287,15 @@ MonoBehaviour:
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
-  isReadyForThreadedCalculations: 0
+  isReadyForThreadedCalculations: 1
   prewarm: 0
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  localTime: 6.97249699
-  localDeltaTime: 0
+  localTime: 11.5317411
+  localDeltaTime: 4.46596861
   previousActiveState: 0
-  simulationStarted: 6.97249699
+  simulationStarted: 7.06577253
   loopExceeded: 0
   loopExceededOnParticle: -1
 --- !u!199 &489485508
@@ -41103,7 +41103,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 818443918}
   m_LocalRotation: {x: -.707106233, y: -5.59146827e-07, z: .707107365, w: 5.59147736e-07}
-  m_LocalPosition: {x: -.677999973, y: 5.71299982, z: -.899999976}
+  m_LocalPosition: {x: -.711000025, y: 5.71299982, z: -.899999976}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 604474395}
@@ -46104,7 +46104,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1026066503}
   m_LocalRotation: {x: .688932836, y: .159281895, z: -.688934147, w: .159281641}
-  m_LocalPosition: {x: -.853999972, y: 6.15399981, z: -.899999976}
+  m_LocalPosition: {x: -.907999992, y: 6.12799978, z: -.899999976}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 604474395}
@@ -48257,7 +48257,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1084321836}
   m_LocalRotation: {x: .701631308, y: .0878209025, z: -.701632857, w: .0878201947}
-  m_LocalPosition: {x: -.749000013, y: 5.98500013, z: -.899999976}
+  m_LocalPosition: {x: -.792999983, y: 5.97399998, z: -.899999976}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 604474395}
@@ -62109,7 +62109,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1460206707}
   m_LocalRotation: {x: .614837408, y: .34924835, z: -.6148386, w: .349247813}
-  m_LocalPosition: {x: -1.153, y: 6.28800011, z: -.899999976}
+  m_LocalPosition: {x: -1.176, y: 6.25, z: -.899999976}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 604474395}
@@ -71781,15 +71781,15 @@ MonoBehaviour:
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
-  isReadyForThreadedCalculations: 0
+  isReadyForThreadedCalculations: 1
   prewarm: 0
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  localTime: 6.97301245
-  localDeltaTime: 0
+  localTime: 11.5317411
+  localDeltaTime: 4.46494532
   previousActiveState: 0
-  simulationStarted: 6.97301245
+  simulationStarted: 7.06577253
   loopExceeded: 0
   loopExceededOnParticle: -1
 --- !u!199 &1772199460
