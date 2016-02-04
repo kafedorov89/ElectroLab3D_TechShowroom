@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DelayTimer /*: MonoBehaviour*/ {
+
+[ExecuteInEditMode]
+public class DelayTimer : MonoBehaviour{
 
     private float startTime;
     private float currentTime;
@@ -14,27 +16,31 @@ public class DelayTimer /*: MonoBehaviour*/ {
     {
         Delay = delay;
         DeltaTime = 0.0f;
+		Stoped = false;
     }
 
     public DelayTimer()
     {
         Delay = 0.0f;
         DeltaTime = 0.0f;
+		Stoped = false;
     }
 
     public void PrintTime()
     {
-        Debug.Log("DeltaTime = " + DeltaTime.ToString());
-        Debug.Log("StartTime = " + startTime);
-        Debug.Log("CurrentTime = " + currentTime);
+		//Debug.Log ("Delay = " + Delay.ToString());
+		//Debug.Log ("DeltaTime = " + DeltaTime.ToString());
+		//Debug.Log ("StartTime = " + startTime.ToString());
+		//Debug.Log ("CurrentTime = " + currentTime.ToString());
     }
 
     public void TimerStart()
     {
+        ResetTimer();
         Started = true;
         Stoped = false;
-        startTime = Time.fixedTime;
-        currentTime = Time.fixedTime;
+		startTime = Time.fixedTime;
+		currentTime = Time.fixedTime;
     }
 
     public void ResetTimer()
@@ -53,10 +59,10 @@ public class DelayTimer /*: MonoBehaviour*/ {
 
     public bool DrinDrin()
     {
-        currentTime = Time.fixedTime;
+		currentTime = Time.fixedTime;
         DeltaTime = Mathf.Abs(startTime - currentTime);
 
-        if (DeltaTime >= Delay)
+		if (DeltaTime >= Delay && !Stoped)
         {
             TimerStop();
             return true;
@@ -69,6 +75,18 @@ public class DelayTimer /*: MonoBehaviour*/ {
 
     void Update()
     {
-        //DeltaTime = Mathf.Abs(startTime - currentTime);
+        if (Started)
+		{
+			
+            
+            if(DrinDrin())
+			{
+				Debug.Log("Drin-Drin");
+			}
+		}
+
+
+		//DeltaTime = Mathf.Abs(startTime - currentTime);
+		//Debug.Log ("DeltaTime = " + DeltaTime);
     }
 }

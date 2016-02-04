@@ -19,7 +19,15 @@ public class VisClass : MonoBehaviour {
     //public bool isVis;
     public GameObject VisObject;
 
-    DelayTimer delayBeforTimer;
+    public DelayTimer delayBeforTimer;
+
+    public VisClass NextVis;
+
+    public GameObject WaitingTriggerObject1;
+    public GameObject WaitingTriggerObject2;
+    public SolidTrigger solidTrigger;
+
+    public VisClass LockVis;
 
     //DelayTimer delayAfterTimer;
 
@@ -35,6 +43,8 @@ public class VisClass : MonoBehaviour {
         //Debug.Log("StopVis");
         VisStarted = false;
         Activated = false;
+        if (NextVis!=null)
+            NextVis.Activate();
     }
 
 	//остановить анимацию несмотря ни на что, мнгновенно;
@@ -46,7 +56,7 @@ public class VisClass : MonoBehaviour {
 
     // Use this for initialization
     public virtual void Start () {
-        delayBeforTimer = new DelayTimer();
+        delayBeforTimer = GetComponent<DelayTimer>();
 
         if (UseThisObject)
         {
@@ -89,20 +99,37 @@ public class VisClass : MonoBehaviour {
             //Deactivate();
         }
 
-        if (Activated && !delayBeforTimer.Stoped)
+        if (LockVis == null || !LockVis.VisStarted)
         {
-            Debug.Log("Activated");
 
-            if (delayBeforTimer.DrinDrin() && !VisStarted)
+            if (Activated && delayBeforTimer.Stoped)
             {
-                //Enabled = false;
+                Activated = false;
                 StartVis();
-                delayBeforTimer.TimerStop();
             }
-            else
+
+            if (solidTrigger != null)
             {
-                delayBeforTimer.PrintTime();
+                if (WaitingTriggerObject1 != null)
+                {
+                    if (!Activated && solidTrigger.TriggerList.Contains(WaitingTriggerObject1))
+                    {
+                        Activate();
+                    }
+                }
+
+                else if (WaitingTriggerObject2 != null)
+                {
+                    if (!Activated && solidTrigger.TriggerList.Contains(WaitingTriggerObject2))
+                    {
+                        Activate();
+                    }
+                }
             }
+        }
+        else
+        {
+            Debug.Log("Locked " + gameObject.name);
         }
     }
 }

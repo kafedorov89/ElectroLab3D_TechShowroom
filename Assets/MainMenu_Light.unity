@@ -1232,6 +1232,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 1898550694}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
   Speed: 100
   RotationX: 1
   RotationY: 0
@@ -16268,10 +16274,10 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  localTime: .290813595
+  localTime: .65965569
   localDeltaTime: 0
   previousActiveState: 0
-  simulationStarted: .290813595
+  simulationStarted: .65965569
   loopExceeded: 0
   loopExceededOnParticle: -1
 --- !u!199 &331079460
@@ -21570,6 +21576,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 0}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
   initialState: 0
   targets:
   - {fileID: 1235151}
@@ -22414,10 +22426,10 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  localTime: .290813595
+  localTime: .65965569
   localDeltaTime: 0
   previousActiveState: 0
-  simulationStarted: .290813595
+  simulationStarted: .65965569
   loopExceeded: 0
   loopExceededOnParticle: -1
 --- !u!199 &489485508
@@ -26974,6 +26986,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 2118242600}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
   Loop: 1
   loops: 0
   LoopCount: 0
@@ -30249,6 +30267,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 0}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
 --- !u!1 &571222715 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100190, guid: 862ffc2d013e80041b47bdc92e8b4e46, type: 3}
@@ -34295,6 +34319,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 0}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
 --- !u!1 &600886030 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100734, guid: 597134ffa94eb9946a07ac64afa7773e, type: 3}
@@ -40707,6 +40737,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 113746159}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
   Speed: 90
   RotationX: 1
   RotationY: 0
@@ -41068,6 +41104,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 1057284792}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
   Speed: 70
   RotationX: 1
   RotationY: 0
@@ -43133,6 +43175,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 1482713254}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
   unitState: 0
   L1: 40
   L2: 15
@@ -45174,6 +45222,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 0}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
   initialState: 1
   targets:
   - {fileID: 642105013}
@@ -45382,6 +45436,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 815528169}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
   Speed: 100
   RotationX: 1
   RotationY: 0
@@ -53632,6 +53692,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 0}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
   ParticleGameObject: {fileID: 2033048039}
 --- !u!1 &1183674697 stripped
 GameObject:
@@ -55300,6 +55366,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 0}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
 --- !u!1 &1186039998 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100910, guid: 963ba8e054ed9be439b60dde9308e463, type: 3}
@@ -63657,6 +63729,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 1122668422}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
   Speed: 70
   RotationX: 1
   RotationY: 0
@@ -64155,6 +64233,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 1466426982}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
   Speed: -90
   RotationX: 1
   RotationY: 0
@@ -67206,6 +67290,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 0}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
 --- !u!1 &1577513318 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100056, guid: 597134ffa94eb9946a07ac64afa7773e, type: 3}
@@ -69434,6 +69524,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 815389529}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
   unitState: 0
   L1: 40
   L2: 15
@@ -70079,6 +70175,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 0}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
   unitState: 0
   L1: 40
   L2: 15
@@ -70560,6 +70662,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 0}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
   initialState: 1
   targets:
   - {fileID: 367062049}
@@ -71885,10 +71993,10 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
-  localTime: .290813595
+  localTime: .65965569
   localDeltaTime: 0
   previousActiveState: 0
-  simulationStarted: .290813595
+  simulationStarted: .65965569
   loopExceeded: 0
   loopExceededOnParticle: -1
 --- !u!199 &1772199460
@@ -77274,6 +77382,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 0}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
   initialState: 1
   targets:
   - {fileID: 508941985}
@@ -83852,6 +83966,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 0}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
   ParticleGameObject: {fileID: 332528230}
 --- !u!1 &1987502348 stripped
 GameObject:
@@ -85716,6 +85836,12 @@ MonoBehaviour:
   ManualStop: 0
   VisID: 
   VisObject: {fileID: 0}
+  delayBeforTimer: {fileID: 0}
+  NextVis: {fileID: 0}
+  WaitingTriggerObject1: {fileID: 0}
+  WaitingTriggerObject2: {fileID: 0}
+  solidTrigger: {fileID: 0}
+  LockVis: {fileID: 0}
   unitState: 0
   soundStart: {fileID: 2087307964}
   soundWork: {fileID: 2087307963}

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[ExecuteInEditMode]
 public class VisPositionLerp : VisClass {
 
     public Transform StartPosition;
@@ -12,30 +13,37 @@ public class VisPositionLerp : VisClass {
 
     public float Speed;
 
+    public bool ReverseLoop;
+
     public void MovingProcess()
     {
         //Debug.Log("DeltaTime = " + ((Time.time - StartTime) * Speed).ToString());
-
         if (!Reverse)
         {
-            VisObject.transform.localPosition = Vector3.Lerp(StartPosition.localPosition, EndPosition.localPosition, (Time.time - StartTime) * Speed);
-            VisObject.transform.localRotation =  Quaternion.Lerp(StartPosition.localRotation, EndPosition.localRotation, (Time.time - StartTime) * Speed);
+            VisObject.transform.position = Vector3.Lerp(StartPosition.position, EndPosition.position, (Time.time - StartTime) * Speed);
+            VisObject.transform.rotation = Quaternion.Lerp(StartPosition.rotation, EndPosition.rotation, (Time.time - StartTime) * Speed);
         }
         else
         {
-            VisObject.transform.localPosition = Vector3.Lerp(EndPosition.localPosition, StartPosition.localPosition, (Time.time - StartTime) * Speed);
-            VisObject.transform.localRotation = Quaternion.Lerp(EndPosition.localRotation, StartPosition.localRotation, (Time.time - StartTime) * Speed);
+            VisObject.transform.position = Vector3.Lerp(EndPosition.position, StartPosition.position, (Time.time - StartTime) * Speed);
+            VisObject.transform.rotation = Quaternion.Lerp(EndPosition.rotation, StartPosition.rotation, (Time.time - StartTime) * Speed);
         }
     }
 
     public override void StartVis()
     {
         base.StartVis(); //Doesn't use directly
+        StartTimeInited = false;
         //VisObject.transform.Rotate(RotationVector, Speed * Time.deltaTime);
     }
 
     public override void StopVis()
     {
+        if (ReverseLoop)
+        {
+            NextVis = this;
+            Reverse = !Reverse;
+        }
         base.StopVis(); //Doesn't use directly
         //VisObject.transform.Rotate(RotationVector, 0.0f);
     }
@@ -55,7 +63,7 @@ public class VisPositionLerp : VisClass {
 	public override void Update () {
 	    base.Update();
 
-        if (VisStarted)
+        if (VisStarted && StartPosition != null && EndPosition != null)
         {
             if (!StartTimeInited)
             {
@@ -67,35 +75,20 @@ public class VisPositionLerp : VisClass {
 
             //if (VisObject.transform.localPosition == EndPosition.transform.localPosition)
             //!Reverse
-            if (!Reverse && ((VisObject.transform.position == EndPosition.transform.position) && (VisObject.transform.localEulerAngles == EndPosition.transform.localEulerAngles)))// && VisObject.transform.localRotation == EndPosition.transform.localRotation)
+            if (!Reverse && ((VisObject.transform.position == EndPosition.transform.position) && (VisObject.transform.rotation == EndPosition.transform.rotation)))// && VisObject.transform.localRotation == EndPosition.transform.localRotation)
             {
                 //Debug.Log("Position was reached");
                 StopVis();
                 StartTimeInited = false;
             }
 
-            else if(Reverse && ((VisObject.transform.position == StartPosition.transform.position) && (VisObject.transform.localEulerAngles == StartPosition.transform.localEulerAngles)))
+            else if (Reverse && ((VisObject.transform.position == StartPosition.transform.position) && (VisObject.transform.rotation == StartPosition.transform.rotation)))
             {
                 //Debug.Log("2");
                 Debug.Log("Position was reached");
                 StopVis();
                 StartTimeInited = false;
             }
-
-            /*Debug.Log("VisObject.transform.position = " + VisObject.transform.position);
-            Debug.Log("VisObject.transform.localEulerAngles = " + VisObject.transform.localEulerAngles);
-
-            Debug.Log("EndPosition.transform.position = " + EndPosition.transform.position);
-            Debug.Log("EndPosition.transform.localEulerAngles = " + EndPosition.transform.localEulerAngles);
-            
-            Debug.Log("StartPosition.transform.position = " + StartPosition.transform.position);
-            Debug.Log("StartPosition.transform.localEulerAngles = " + StartPosition.transform.localEulerAngles);*/
-
-            
-            
-           
-            
-            //Debug.Log("localEulerAngles = " + VisObject.transform.localEulerAngles);
         }
 	}
 }
