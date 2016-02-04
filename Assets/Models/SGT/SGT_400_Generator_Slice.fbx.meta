@@ -1,0 +1,151 @@
+fileFormatVersion: 2
+guid: d4b7ac42e8a09bd48ba3d7a4a6b5bf42
+timeCreated: 1454527424
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: sgt_400_slice_000
+    100004: sgt_400_slice_001
+    100006: sgt_400_slice_002
+    100008: sgt_400_slice_003
+    100010: sgt_400_slice_004
+    100012: sgt_400_slice_005
+    100014: sgt_400_slice_006
+    100016: sgt_400_slice_007
+    100018: sgt_400_slice_008
+    100020: sgt_400_slice_009
+    100022: sgt_400_slice_010
+    100024: sgt_400_slice_011
+    100026: sgt_400_slice_012
+    100028: sgt_400_slice_013
+    100030: sgt_400_slice_014
+    100032: sgt_400_slice_015
+    100034: sgt_400_slice_016
+    100036: sgt_400_slice_017
+    400000: //RootNode
+    400002: sgt_400_slice_000
+    400004: sgt_400_slice_001
+    400006: sgt_400_slice_002
+    400008: sgt_400_slice_003
+    400010: sgt_400_slice_004
+    400012: sgt_400_slice_005
+    400014: sgt_400_slice_006
+    400016: sgt_400_slice_007
+    400018: sgt_400_slice_008
+    400020: sgt_400_slice_009
+    400022: sgt_400_slice_010
+    400024: sgt_400_slice_011
+    400026: sgt_400_slice_012
+    400028: sgt_400_slice_013
+    400030: sgt_400_slice_014
+    400032: sgt_400_slice_015
+    400034: sgt_400_slice_016
+    400036: sgt_400_slice_017
+    2300000: sgt_400_slice_000
+    2300002: sgt_400_slice_001
+    2300004: sgt_400_slice_002
+    2300006: sgt_400_slice_003
+    2300008: sgt_400_slice_004
+    2300010: sgt_400_slice_005
+    2300012: sgt_400_slice_006
+    2300014: sgt_400_slice_007
+    2300016: sgt_400_slice_008
+    2300018: sgt_400_slice_009
+    2300020: sgt_400_slice_010
+    2300022: sgt_400_slice_011
+    2300024: sgt_400_slice_016
+    2300026: sgt_400_slice_017
+    3300000: sgt_400_slice_000
+    3300002: sgt_400_slice_001
+    3300004: sgt_400_slice_002
+    3300006: sgt_400_slice_003
+    3300008: sgt_400_slice_004
+    3300010: sgt_400_slice_005
+    3300012: sgt_400_slice_006
+    3300014: sgt_400_slice_007
+    3300016: sgt_400_slice_008
+    3300018: sgt_400_slice_009
+    3300020: sgt_400_slice_010
+    3300022: sgt_400_slice_011
+    3300024: sgt_400_slice_016
+    3300026: sgt_400_slice_017
+    4300000: sgt_400_slice_016
+    4300002: sgt_400_slice_017
+    4300004: sgt_400_slice_006
+    4300006: sgt_400_slice_008
+    4300008: sgt_400_slice_001
+    4300010: sgt_400_slice_002
+    4300012: sgt_400_slice_003
+    4300014: sgt_400_slice_004
+    4300016: sgt_400_slice_005
+    4300018: sgt_400_slice_007
+    4300020: sgt_400_slice_009
+    4300022: sgt_400_slice_000
+    4300024: sgt_400_slice_010
+    4300026: sgt_400_slice_011
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
