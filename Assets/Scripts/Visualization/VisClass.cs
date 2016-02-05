@@ -67,7 +67,7 @@ public class VisClass : MonoBehaviour {
 
     public void Activate()
     {
-        Debug.Log("Activate");
+        //Debug.Log("Activate");
         Activated = true;
         delayBeforTimer.ResetTimer();
         delayBeforTimer.Delay = DelayBefore;

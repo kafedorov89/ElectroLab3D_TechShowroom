@@ -85,7 +85,7 @@ public class VisPositionLerp : VisClass {
             else if (Reverse && ((VisObject.transform.position == StartPosition.transform.position) && (VisObject.transform.rotation == StartPosition.transform.rotation)))
             {
                 //Debug.Log("2");
-                Debug.Log("Position was reached");
+                //Debug.Log("Position was reached");
                 StopVis();
                 StartTimeInited = false;
             }

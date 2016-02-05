@@ -46,10 +46,12 @@ public class SubsystemList : MonoBehaviour {
 				for (int j = 0; j < data.Count; ++j) {
 					if (list [i].UID.CompareTo (data [j].UID) == 0) {
 						//ключевой момент
-						if (data [j].textAbout.Length > 0) {
-							list [i].textAbout = data [j].textAbout;
-							++M;
-						}
+						//if (data [j].textAbout.Length > 0)
+						//{
+						list [i].textAbout = data [j].textAbout; //загружаем описание
+						list [i].name = data [j].name; //загружаем назавание
+						++M;
+						//}
 					}
 				}	
 			}

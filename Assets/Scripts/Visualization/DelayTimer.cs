@@ -81,7 +81,7 @@ public class DelayTimer : MonoBehaviour{
             
             if(DrinDrin())
 			{
-				Debug.Log("Drin-Drin");
+				//Debug.Log("Drin-Drin");
 			}
 		}
 
